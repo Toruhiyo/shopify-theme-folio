@@ -23,8 +23,8 @@
 
 <div class="product-card">
   <div class="product-card__media">
-    {%- if product.featured_media -%}
-      <a href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+    <a href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+      {%- if product.featured_media -%}
         <img
           src="{{ product.featured_media | image_url: width: 600 }}"
           alt="{{ product.featured_media.alt | escape | default: product.title | escape }}"
@@ -32,12 +32,12 @@
           height="{{ product.featured_media.height }}"
           {% if lazy_load %}loading="lazy" decoding="async"{% endif %}
         >
-      </a>
-    {%- else -%}
-      <a href="{{ product.url }}" aria-label="{{ product.title | escape }}">
-        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      </a>
-    {%- endif -%}
+      {%- else -%}
+        <div class="product-card__no-image" aria-hidden="true">
+          {% render 'icon-cart', size: 32 %}
+        </div>
+      {%- endif -%}
+    </a>
 
     <div class="product-card__badges">
       {%- if sold_out -%}

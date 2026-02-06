@@ -1,8 +1,8 @@
 <section class="section-spacing">
   <div class="page-width">
     <div class="about-block{% if section.settings.image_position == 'right' %} about-block--reversed{% endif %}">
-      <div class="about-block__media">
-        {%- if section.settings.image != blank -%}
+      {%- if section.settings.image != blank -%}
+        <div class="about-block__media">
           <img
             src="{{ section.settings.image | image_url: width: 1200 }}"
             alt="{{ section.settings.image.alt | escape | default: section.settings.heading | escape }}"
@@ -11,10 +11,8 @@
             width="{{ section.settings.image.width }}"
             height="{{ section.settings.image.height }}"
           >
-        {%- else -%}
-          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-        {%- endif -%}
-      </div>
+        </div>
+      {%- endif -%}
 
       <div class="about-block__content">
         {%- if section.settings.label != blank -%}

@@ -17,34 +17,21 @@
     {%- if section.settings.collection != blank -%}
       {%- assign collection = section.settings.collection -%}
 
-      <div class="grid grid--{{ section.settings.columns }}">
-        {%- for product in collection.products limit: section.settings.products_to_show -%}
-          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
-        {%- endfor -%}
-      </div>
-
-      {%- if section.settings.show_view_all -%}
-        <div class="text-center mt-xl">
-          <a href="{{ collection.url }}" class="btn btn--secondary">
-            View All {{ collection.title }}
-          </a>
+      {%- if collection.products.size > 0 -%}
+        <div class="grid grid--{{ section.settings.columns }}">
+          {%- for product in collection.products limit: section.settings.products_to_show -%}
+            {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+          {%- endfor -%}
         </div>
-      {%- endif -%}
-    {%- else -%}
-      <div class="grid grid--{{ section.settings.columns }}">
-        {%- for i in (1..section.settings.products_to_show) -%}
-          <div class="product-card">
-            <div class="product-card__media">
-              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            </div>
-            <div class="product-card__content">
-              <span class="product-card__vendor label-caps text-muted">Author Name</span>
-              <h3 class="product-card__title"><a href="#">Example Product {{ i }}</a></h3>
-              <div class="product-card__price"><span>{{ 2999 | money }}</span></div>
-            </div>
+
+        {%- if section.settings.show_view_all -%}
+          <div class="text-center mt-xl">
+            <a href="{{ collection.url }}" class="btn btn--secondary">
+              View All {{ collection.title }}
+            </a>
           </div>
-        {%- endfor -%}
-      </div>
+        {%- endif -%}
+      {%- endif -%}
     {%- endif -%}
   </div>
 </section>

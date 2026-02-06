@@ -12,7 +12,9 @@
               height="{{ product.featured_media.height }}"
             >
           {%- else -%}
-            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            <div class="product-card__no-image" aria-hidden="true">
+              {% render 'icon-cart', size: 48 %}
+            </div>
           {%- endif -%}
         </div>
 

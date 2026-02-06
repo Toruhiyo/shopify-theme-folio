@@ -10,7 +10,7 @@
         height="{{ section.settings.image.height }}"
       >
     {%- else -%}
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      <div style="width:100%;height:100%;background:var(--color-primary);"></div>
     {%- endif -%}
   </div>
 

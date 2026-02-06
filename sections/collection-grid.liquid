@@ -15,16 +15,6 @@
         {%- for block in section.blocks -%}
           {%- if block.settings.collection != blank -%}
             {% render 'collection-card', collection: block.settings.collection %}
-          {%- else -%}
-            <div class="collection-card">
-              <div class="collection-card__media">
-                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-              <div class="collection-card__content">
-                <h3 class="collection-card__title">Collection {{ forloop.index }}</h3>
-                <span class="collection-card__link">{{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}</span>
-              </div>
-            </div>
           {%- endif -%}
         {%- endfor -%}
       </div>
@@ -33,16 +23,6 @@
         {%- for block in section.blocks -%}
           {%- if block.settings.collection != blank -%}
             {% render 'collection-card', collection: block.settings.collection %}
-          {%- else -%}
-            <div class="collection-card">
-              <div class="collection-card__media">
-                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-              <div class="collection-card__content">
-                <h3 class="collection-card__title">Collection {{ forloop.index }}</h3>
-                <span class="collection-card__link">{{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}</span>
-              </div>
-            </div>
           {%- endif -%}
         {%- endfor -%}
       </div>

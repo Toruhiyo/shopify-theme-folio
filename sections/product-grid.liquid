@@ -25,25 +25,14 @@
 
     {%- if section.settings.collection != blank -%}
       {%- assign collection = section.settings.collection -%}
-      <div class="grid grid--{{ section.settings.columns }}">
-        {%- for product in collection.products limit: section.settings.products_to_show -%}
-          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
-        {%- endfor -%}
-      </div>
-    {%- else -%}
-      <div class="grid grid--{{ section.settings.columns }}">
-        {%- for i in (1..section.settings.products_to_show) -%}
-          <div class="product-card">
-            <div class="product-card__media">
-              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            </div>
-            <div class="product-card__content">
-              <h3 class="product-card__title"><a href="#">Example Book {{ i }}</a></h3>
-              <div class="product-card__price"><span>{{ 2499 | money }}</span></div>
-            </div>
-          </div>
-        {%- endfor -%}
-      </div>
+
+      {%- if collection.products.size > 0 -%}
+        <div class="grid grid--{{ section.settings.columns }}">
+          {%- for product in collection.products limit: section.settings.products_to_show -%}
+            {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </section>

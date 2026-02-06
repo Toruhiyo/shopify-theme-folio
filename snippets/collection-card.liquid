@@ -6,8 +6,8 @@
 
 <div class="collection-card">
   <div class="collection-card__media">
-    {%- if collection.featured_image -%}
-      <a href="{{ collection.url }}">
+    <a href="{{ collection.url }}">
+      {%- if collection.featured_image -%}
         <img
           src="{{ collection.featured_image | image_url: width: 800 }}"
           alt="{{ collection.featured_image.alt | escape | default: collection.title | escape }}"
@@ -16,12 +16,12 @@
           width="400"
           height="300"
         >
-      </a>
-    {%- else -%}
-      <a href="{{ collection.url }}">
-        {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-      </a>
-    {%- endif -%}
+      {%- else -%}
+        <div class="collection-card__no-image" aria-hidden="true">
+          <span class="h3 serif">{{ collection.title | slice: 0 }}</span>
+        </div>
+      {%- endif -%}
+    </a>
   </div>
 
   <div class="collection-card__content">

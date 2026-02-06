@@ -66,21 +66,6 @@
       --page-width: {{ settings.page_width }}px;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --color-background: {{ settings.color_background_dark }};
-        --color-foreground: {{ settings.color_foreground_dark }};
-        --color-primary: {{ settings.color_primary_dark }};
-        --color-primary-foreground: {{ settings.color_primary_foreground_dark }};
-        --color-secondary: {{ settings.color_secondary_dark }};
-        --color-muted: {{ settings.color_muted_dark }};
-        --color-muted-foreground: {{ settings.color_muted_foreground_dark }};
-        --color-accent: {{ settings.color_accent_dark }};
-        --color-card: {{ settings.color_card_dark }};
-        --color-border: {{ settings.color_border_dark }};
-      }
-    }
-
     [data-theme="dark"] {
       --color-background: {{ settings.color_background_dark }};
       --color-foreground: {{ settings.color_foreground_dark }};
@@ -99,9 +84,6 @@
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
   </script>
 </head>
 

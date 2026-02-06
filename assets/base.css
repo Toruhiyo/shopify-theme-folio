@@ -424,6 +424,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(15, 30, 22, 0.95);
 }
 
+/* Light theme is the default. Dark mode only activates via [data-theme="dark"]. */
+
 .header__inner {
   display: flex;
   align-items: center;

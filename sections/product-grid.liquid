@@ -23,16 +23,20 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.collection != blank -%}
-      {%- assign collection = section.settings.collection -%}
+    {%- liquid
+      if section.settings.collection != blank
+        assign target_collection = section.settings.collection
+      else
+        assign target_collection = collections.all
+      endif
+    -%}
 
-      {%- if collection.products.size > 0 -%}
-        <div class="grid grid--{{ section.settings.columns }}">
-          {%- for product in collection.products limit: section.settings.products_to_show -%}
-            {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
-          {%- endfor -%}
-        </div>
-      {%- endif -%}
+    {%- if target_collection.products.size > 0 -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for product in target_collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+        {%- endfor -%}
+      </div>
     {%- endif -%}
   </div>
 </section>

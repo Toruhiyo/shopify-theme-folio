@@ -10,21 +10,47 @@
       {%- endif -%}
     </div>
 
+    {%- liquid
+      assign has_assigned_collections = false
+      for block in section.blocks
+        if block.settings.collection != blank
+          assign has_assigned_collections = true
+          break
+        endif
+      endfor
+    -%}
+
     {%- if section.settings.layout == 'scroll' -%}
       <div class="collection-scroll">
-        {%- for block in section.blocks -%}
-          {%- if block.settings.collection != blank -%}
-            {% render 'collection-card', collection: block.settings.collection %}
-          {%- endif -%}
-        {%- endfor -%}
+        {%- if has_assigned_collections -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.collection != blank -%}
+              {% render 'collection-card', collection: block.settings.collection %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for collection in collections limit: 6 -%}
+            {%- unless collection.handle == 'all' -%}
+              {% render 'collection-card', collection: collection %}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     {%- else -%}
       <div class="grid grid--{{ section.settings.columns }}">
-        {%- for block in section.blocks -%}
-          {%- if block.settings.collection != blank -%}
-            {% render 'collection-card', collection: block.settings.collection %}
-          {%- endif -%}
-        {%- endfor -%}
+        {%- if has_assigned_collections -%}
+          {%- for block in section.blocks -%}
+            {%- if block.settings.collection != blank -%}
+              {% render 'collection-card', collection: block.settings.collection %}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- for collection in collections limit: 6 -%}
+            {%- unless collection.handle == 'all' -%}
+              {% render 'collection-card', collection: collection %}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     {%- endif -%}
   </div>

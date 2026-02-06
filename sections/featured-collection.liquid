@@ -14,23 +14,27 @@
       {%- endif -%}
     </div>
 
-    {%- if section.settings.collection != blank -%}
-      {%- assign collection = section.settings.collection -%}
+    {%- liquid
+      if section.settings.collection != blank
+        assign target_collection = section.settings.collection
+      else
+        assign target_collection = collections.all
+      endif
+    -%}
 
-      {%- if collection.products.size > 0 -%}
-        <div class="grid grid--{{ section.settings.columns }}">
-          {%- for product in collection.products limit: section.settings.products_to_show -%}
-            {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
-          {%- endfor -%}
+    {%- if target_collection.products.size > 0 -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for product in target_collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_view_all -%}
+        <div class="text-center mt-xl">
+          <a href="{{ target_collection.url }}" class="btn btn--secondary">
+            View All {{ target_collection.title }}
+          </a>
         </div>
-
-        {%- if section.settings.show_view_all -%}
-          <div class="text-center mt-xl">
-            <a href="{{ collection.url }}" class="btn btn--secondary">
-              View All {{ collection.title }}
-            </a>
-          </div>
-        {%- endif -%}
       {%- endif -%}
     {%- endif -%}
   </div>

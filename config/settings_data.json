@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "heading_font": "playfair_display_n7",
@@ -26,8 +35,14 @@
     "page_width": 1200,
     "border_radius": 8,
     "cart_type": "drawer",
-    "sections": {},
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "9413881465143053370": {
+        "type": "shopify://apps/bizmis/blocks/app-embed/7c794697-2a86-4a22-9ab7-ca15d62a64a9",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Default": {

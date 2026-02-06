@@ -1,0 +1,129 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_filters -%}
+      <div class="filter-tabs" data-filter-tabs>
+        <button class="filter-tab is-active" data-filter="all">All</button>
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'filter_tab' and block.settings.label != blank -%}
+            <button class="filter-tab" data-filter="{{ block.settings.tag | handleize }}">
+              {{ block.settings.label }}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.collection != blank -%}
+      {%- assign collection = section.settings.collection -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for i in (1..section.settings.products_to_show) -%}
+          <div class="product-card">
+            <div class="product-card__media">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title"><a href="#">Example Book {{ i }}</a></h3>
+              <div class="product-card__price"><span>{{ 2499 | money }}</span></div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product grid",
+  "tag": "section",
+  "class": "product-grid-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "New Arrivals",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Just In",
+      "label": "Heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 16,
+      "step": 1,
+      "default": 8,
+      "label": "Products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Columns"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": true,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "default": false,
+      "label": "Show filter tabs"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter_tab",
+      "name": "Filter tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Product tag to filter by"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product grid"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,181 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="customer" style="max-width: 800px;">
+      <h1 class="customer__title h1">{{ 'customer.addresses.title' | t }}</h1>
+
+      <div class="mb-xl">
+        <button type="button" class="btn btn--primary" onclick="document.getElementById('new-address-form').style.display = document.getElementById('new-address-form').style.display === 'none' ? 'block' : 'none'">
+          {{ 'customer.addresses.add_new' | t }}
+        </button>
+      </div>
+
+      <div id="new-address-form" class="customer__form mb-xl" style="display: none;">
+        <h2 class="h3 mb-md">{{ 'customer.addresses.add_new' | t }}</h2>
+
+        {%- form 'customer_address', customer.new_address -%}
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-field">
+              <label class="form-label" for="address-first-name">{{ 'customer.addresses.first_name' | t }}</label>
+              <input class="form-input" type="text" id="address-first-name" name="address[first_name]" autocomplete="given-name">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="address-last-name">{{ 'customer.addresses.last_name' | t }}</label>
+              <input class="form-input" type="text" id="address-last-name" name="address[last_name]" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address-company">{{ 'customer.addresses.company' | t }}</label>
+            <input class="form-input" type="text" id="address-company" name="address[company]" autocomplete="organization">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address-address1">{{ 'customer.addresses.address1' | t }}</label>
+            <input class="form-input" type="text" id="address-address1" name="address[address1]" autocomplete="address-line1" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address-address2">{{ 'customer.addresses.address2' | t }}</label>
+            <input class="form-input" type="text" id="address-address2" name="address[address2]" autocomplete="address-line2">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-field">
+              <label class="form-label" for="address-city">{{ 'customer.addresses.city' | t }}</label>
+              <input class="form-input" type="text" id="address-city" name="address[city]" autocomplete="address-level2" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="address-zip">{{ 'customer.addresses.zip' | t }}</label>
+              <input class="form-input" type="text" id="address-zip" name="address[zip]" autocomplete="postal-code">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address-country">{{ 'customer.addresses.country' | t }}</label>
+            <select class="form-select" id="address-country" name="address[country]" autocomplete="country">
+              {{ all_country_option_tags }}
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address-phone">{{ 'customer.addresses.phone' | t }}</label>
+            <input class="form-input" type="tel" id="address-phone" name="address[phone]" autocomplete="tel">
+          </div>
+
+          <div class="form-field">
+            <label>
+              <input type="checkbox" name="address[default]" value="1">
+              {{ 'customer.addresses.default' | t }}
+            </label>
+          </div>
+
+          <div class="flex gap-sm">
+            <button type="submit" class="btn btn--primary">{{ 'customer.addresses.update' | t }}</button>
+            <button type="button" class="btn btn--ghost" onclick="document.getElementById('new-address-form').style.display='none'">
+              {{ 'customer.addresses.cancel' | t }}
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+
+      {%- if customer.addresses.size > 0 -%}
+        {%- for address in customer.addresses -%}
+          <div class="customer__form mb-lg">
+            <div class="flex justify-between items-center mb-md" style="flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <p class="h4">{{ address.name }}</p>
+                {%- if address == customer.default_address -%}
+                  <span class="label-caps text-gold">{{ 'customer.addresses.default' | t }}</span>
+                {%- endif -%}
+              </div>
+              <div class="flex gap-sm">
+                <button type="button" class="btn btn--ghost btn--small" onclick="document.getElementById('edit-address-{{ address.id }}').style.display = document.getElementById('edit-address-{{ address.id }}').style.display === 'none' ? 'block' : 'none'">
+                  {{ 'customer.addresses.edit' | t }}
+                </button>
+                {%- form 'customer_address', address -%}
+                  <input type="hidden" name="_method" value="delete">
+                  <button type="submit" class="btn btn--ghost btn--small" onclick="return confirm('{{ 'customer.addresses.delete_confirm' | t }}')">
+                    {{ 'customer.addresses.delete' | t }}
+                  </button>
+                {%- endform -%}
+              </div>
+            </div>
+
+            <p>{{ address | format_address }}</p>
+
+            <div id="edit-address-{{ address.id }}" style="display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+              {%- form 'customer_address', address -%}
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                  <div class="form-field">
+                    <label class="form-label">{{ 'customer.addresses.first_name' | t }}</label>
+                    <input class="form-input" type="text" name="address[first_name]" value="{{ address.first_name }}">
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">{{ 'customer.addresses.last_name' | t }}</label>
+                    <input class="form-input" type="text" name="address[last_name]" value="{{ address.last_name }}">
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label">{{ 'customer.addresses.address1' | t }}</label>
+                  <input class="form-input" type="text" name="address[address1]" value="{{ address.address1 }}">
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label">{{ 'customer.addresses.address2' | t }}</label>
+                  <input class="form-input" type="text" name="address[address2]" value="{{ address.address2 }}">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                  <div class="form-field">
+                    <label class="form-label">{{ 'customer.addresses.city' | t }}</label>
+                    <input class="form-input" type="text" name="address[city]" value="{{ address.city }}">
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label">{{ 'customer.addresses.zip' | t }}</label>
+                    <input class="form-input" type="text" name="address[zip]" value="{{ address.zip }}">
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label">{{ 'customer.addresses.country' | t }}</label>
+                  <select class="form-select" name="address[country]">
+                    {{ all_country_option_tags }}
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label">{{ 'customer.addresses.phone' | t }}</label>
+                  <input class="form-input" type="tel" name="address[phone]" value="{{ address.phone }}">
+                </div>
+
+                <div class="form-field">
+                  <label>
+                    <input type="checkbox" name="address[default]" value="1" {% if address == customer.default_address %}checked{% endif %}>
+                    {{ 'customer.addresses.default' | t }}
+                  </label>
+                </div>
+
+                <div class="flex gap-sm">
+                  <button type="submit" class="btn btn--primary btn--small">{{ 'customer.addresses.update' | t }}</button>
+                  <button type="button" class="btn btn--ghost btn--small" onclick="document.getElementById('edit-address-{{ address.id }}').style.display='none'">
+                    {{ 'customer.addresses.cancel' | t }}
+                  </button>
+                </div>
+              {%- endform -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Addresses",
+  "tag": "section",
+  "class": "main-addresses-section",
+  "settings": []
+}
+{% endschema %}

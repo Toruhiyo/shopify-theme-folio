@@ -1,0 +1,33 @@
+{%- comment -%}
+  Renders a collection card.
+  Accepts:
+  - collection: {Object} Shopify collection object
+{%- endcomment -%}
+
+<div class="collection-card">
+  <div class="collection-card__media">
+    {%- if collection.featured_image -%}
+      <a href="{{ collection.url }}">
+        <img
+          src="{{ collection.featured_image | image_url: width: 800 }}"
+          alt="{{ collection.featured_image.alt | escape | default: collection.title | escape }}"
+          loading="lazy"
+          decoding="async"
+          width="400"
+          height="300"
+        >
+      </a>
+    {%- else -%}
+      <a href="{{ collection.url }}">
+        {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="collection-card__content">
+    <h3 class="collection-card__title">{{ collection.title }}</h3>
+    <a href="{{ collection.url }}" class="collection-card__link">
+      {{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}
+    </a>
+  </div>
+</div>

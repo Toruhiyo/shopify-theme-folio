@@ -1,0 +1,20 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "Free shipping on orders over $50 — Welcome to our bookshop!"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "tagline": "Books & Curiosities",
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

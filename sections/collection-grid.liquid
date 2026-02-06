@@ -1,0 +1,116 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.layout == 'scroll' -%}
+      <div class="collection-scroll">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.collection != blank -%}
+            {% render 'collection-card', collection: block.settings.collection %}
+          {%- else -%}
+            <div class="collection-card">
+              <div class="collection-card__media">
+                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Collection {{ forloop.index }}</h3>
+                <span class="collection-card__link">{{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}</span>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.collection != blank -%}
+            {% render 'collection-card', collection: block.settings.collection %}
+          {%- else -%}
+            <div class="collection-card">
+              <div class="collection-card__media">
+                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="collection-card__content">
+                <h3 class="collection-card__title">Collection {{ forloop.index }}</h3>
+                <span class="collection-card__link">{{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}</span>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection grid",
+  "tag": "section",
+  "class": "collection-grid-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "Browse",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Shop by Category",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "default": "scroll",
+      "label": "Layout",
+      "options": [
+        { "value": "scroll", "label": "Horizontal scroll" },
+        { "value": "grid", "label": "Grid" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "Columns (grid layout)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection grid",
+      "blocks": [
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
+    }
+  ]
+}
+{% endschema %}

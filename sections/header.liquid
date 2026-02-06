@@ -1,0 +1,142 @@
+<header class="header" data-header>
+  <div class="page-width">
+    <div class="header__inner">
+      <div class="header__left">
+        <button class="header__icon-btn hidden-desktop" data-mobile-menu-toggle aria-label="{{ 'accessibility.menu' | t }}">
+          {% render 'icon-menu' %}
+        </button>
+
+        <a href="{{ routes.root_url }}" class="header__brand">
+          <div class="header__logo-container">
+            {%- if section.settings.logo != blank -%}
+              <img
+                src="{{ section.settings.logo | image_url: width: 100 }}"
+                alt="{{ shop.name | escape }}"
+                width="40"
+                height="40"
+                loading="eager"
+              >
+            {%- else -%}
+              <span class="header__logo-text">{{ shop.name | slice: 0 }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="header__brand-text hidden-mobile">
+            <span class="header__brand-name">{{ shop.name }}</span>
+            {%- if section.settings.tagline != blank -%}
+              <span class="header__brand-tagline">{{ section.settings.tagline }}</span>
+            {%- endif -%}
+          </div>
+        </a>
+
+        <nav class="header__nav" aria-label="Main navigation">
+          {%- for link in section.settings.menu.links -%}
+            <a
+              href="{{ link.url }}"
+              class="header__nav-link{% if link.active %} header__nav-link--active{% endif %}"
+              {% if link.current %} aria-current="page"{% endif %}
+            >
+              {{ link.title }}
+            </a>
+          {%- endfor -%}
+        </nav>
+      </div>
+
+      <div class="header__center">
+        <form action="{{ routes.search_url }}" method="get" class="header__search" role="search">
+          <span class="header__search-icon">{% render 'icon-search' %}</span>
+          <input
+            class="header__search-input"
+            type="search"
+            name="q"
+            placeholder="{{ 'general.search.placeholder' | t }}"
+            aria-label="{{ 'general.search.title' | t }}"
+            autocomplete="off"
+          >
+        </form>
+      </div>
+
+      <div class="header__right">
+        <a href="{{ routes.search_url }}" class="header__icon-btn hidden-desktop" aria-label="{{ 'general.search.title' | t }}">
+          {% render 'icon-search' %}
+        </a>
+
+        {%- if shop.customer_accounts_enabled -%}
+          <a href="{{ routes.account_url }}" class="header__icon-btn hidden-mobile" aria-label="{{ 'customer.account.title' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+        {%- endif -%}
+
+        <button class="header__icon-btn" data-cart-toggle aria-label="{{ 'sections.header.cart' | t }}">
+          {% render 'icon-cart' %}
+          <span class="header__cart-count" data-cart-count style="{% if cart.item_count == 0 %}display:none{% endif %}">{{ cart.item_count }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-overlay" data-mobile-menu-overlay></div>
+<nav class="mobile-menu" data-mobile-menu aria-label="Mobile navigation">
+  <div class="mobile-menu__header">
+    <span class="header__brand-name serif">{{ shop.name }}</span>
+    <button class="mobile-menu__close" data-mobile-menu-close aria-label="{{ 'accessibility.close' | t }}">
+      {% render 'icon-close' %}
+    </button>
+  </div>
+
+  <div class="mobile-menu__nav">
+    {%- for link in section.settings.menu.links -%}
+      <a href="{{ link.url }}" class="mobile-menu__link">{{ link.title }}</a>
+    {%- endfor -%}
+  </div>
+
+  <div class="mobile-menu__search">
+    <form action="{{ routes.search_url }}" method="get" role="search">
+      <input
+        class="form-input"
+        type="search"
+        name="q"
+        placeholder="{{ 'general.search.placeholder' | t }}"
+        aria-label="{{ 'general.search.title' | t }}"
+      >
+    </form>
+  </div>
+
+  {%- if shop.customer_accounts_enabled -%}
+    <div style="padding: 0 1.5rem; border-top: 1px solid var(--color-border); padding-top: 1rem;">
+      <a href="{{ routes.account_url }}" class="mobile-menu__link">{{ 'customer.account.title' | t }}</a>
+    </div>
+  {%- endif -%}
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "default": "Books & Curiosities",
+      "label": "Tagline"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Navigation menu"
+    }
+  ]
+}
+{% endschema %}

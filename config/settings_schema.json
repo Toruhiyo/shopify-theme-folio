@@ -1,0 +1,255 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Folio",
+    "theme_version": "1.0.0",
+    "theme_author": "Bizmis",
+    "theme_documentation_url": "https://github.com/bizmis/shopify-theme-folio",
+    "theme_support_url": "https://github.com/bizmis/shopify-theme-folio/issues"
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "default": "playfair_display_n7",
+        "label": "Heading font",
+        "info": "Serif fonts recommended for the literary aesthetic."
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "default": "inter_n4",
+        "label": "Body font",
+        "info": "Clean sans-serif fonts recommended for readability."
+      }
+    ]
+  },
+  {
+    "name": "Colors — Light Mode",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "default": "#F9F6F1",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground",
+        "default": "#1A3328",
+        "label": "Foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "default": "#2A5C42",
+        "label": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_foreground",
+        "default": "#F9F6F1",
+        "label": "Primary foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "default": "#EDE8DE",
+        "label": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "default": "#EDEAE4",
+        "label": "Muted"
+      },
+      {
+        "type": "color",
+        "id": "color_muted_foreground",
+        "default": "#5E7A6B",
+        "label": "Muted foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "default": "#3B7A57",
+        "label": "Accent"
+      },
+      {
+        "type": "color",
+        "id": "color_card",
+        "default": "#F5F1EA",
+        "label": "Card background"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "default": "#DDD7CB",
+        "label": "Border"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "default": "#CC8A1E",
+        "label": "Gold accent"
+      }
+    ]
+  },
+  {
+    "name": "Colors — Dark Mode",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background_dark",
+        "default": "#0F1E16",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground_dark",
+        "default": "#EDE8DC",
+        "label": "Foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_dark",
+        "default": "#EDE8DC",
+        "label": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_foreground_dark",
+        "default": "#0F1E16",
+        "label": "Primary foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary_dark",
+        "default": "#1A2E22",
+        "label": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "color_muted_dark",
+        "default": "#162518",
+        "label": "Muted"
+      },
+      {
+        "type": "color",
+        "id": "color_muted_foreground_dark",
+        "default": "#8BA898",
+        "label": "Muted foreground"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_dark",
+        "default": "#5CA87A",
+        "label": "Accent"
+      },
+      {
+        "type": "color",
+        "id": "color_card_dark",
+        "default": "#152419",
+        "label": "Card background"
+      },
+      {
+        "type": "color",
+        "id": "color_border_dark",
+        "default": "#1E3826",
+        "label": "Border"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 100,
+        "default": 1200,
+        "unit": "px",
+        "label": "Page width"
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 16,
+        "step": 2,
+        "default": 8,
+        "unit": "px",
+        "label": "Border radius"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https://instagram.com/shopname"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https://facebook.com/shopname"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "X (Twitter)",
+        "info": "https://twitter.com/shopname"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https://pinterest.com/shopname"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "info": "https://tiktok.com/@shopname"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32 x 32px .png recommended"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "default": "drawer",
+        "label": "Cart type",
+        "options": [
+          { "value": "drawer", "label": "Drawer" },
+          { "value": "page", "label": "Page" }
+        ]
+      }
+    ]
+  }
+]

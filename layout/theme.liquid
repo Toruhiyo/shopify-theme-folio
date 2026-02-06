@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction | default: 'ltr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
+
+  {%- unless settings.heading_font.system? and settings.body_font.system? -%}
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  {%- endunless -%}
+
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% render 'meta-tags' %}
+
+  {{ content_for_header }}
+
+  {%- liquid
+    assign heading_font = settings.heading_font
+    assign body_font = settings.body_font
+  -%}
+
+  {% style %}
+    {{ heading_font | font_face: font_display: 'swap' }}
+    {{ body_font | font_face: font_display: 'swap' }}
+
+    :root {
+      --font-heading: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      --font-heading-weight: {{ heading_font.weight }};
+      --font-heading-style: {{ heading_font.style }};
+      --font-body: {{ body_font.family }}, {{ body_font.fallback_families }};
+      --font-body-weight: {{ body_font.weight }};
+      --font-body-style: {{ body_font.style }};
+
+      /* Light Mode Colors */
+      --color-background: {{ settings.color_background }};
+      --color-foreground: {{ settings.color_foreground }};
+      --color-primary: {{ settings.color_primary }};
+      --color-primary-foreground: {{ settings.color_primary_foreground }};
+      --color-secondary: {{ settings.color_secondary }};
+      --color-muted: {{ settings.color_muted }};
+      --color-muted-foreground: {{ settings.color_muted_foreground }};
+      --color-accent: {{ settings.color_accent }};
+      --color-card: {{ settings.color_card }};
+      --color-border: {{ settings.color_border }};
+      --color-gold: {{ settings.color_gold }};
+
+      --border-radius: {{ settings.border_radius }}px;
+      --page-width: {{ settings.page_width }}px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --color-background: {{ settings.color_background_dark }};
+        --color-foreground: {{ settings.color_foreground_dark }};
+        --color-primary: {{ settings.color_primary_dark }};
+        --color-primary-foreground: {{ settings.color_primary_foreground_dark }};
+        --color-secondary: {{ settings.color_secondary_dark }};
+        --color-muted: {{ settings.color_muted_dark }};
+        --color-muted-foreground: {{ settings.color_muted_foreground_dark }};
+        --color-accent: {{ settings.color_accent_dark }};
+        --color-card: {{ settings.color_card_dark }};
+        --color-border: {{ settings.color_border_dark }};
+      }
+    }
+
+    [data-theme="dark"] {
+      --color-background: {{ settings.color_background_dark }};
+      --color-foreground: {{ settings.color_foreground_dark }};
+      --color-primary: {{ settings.color_primary_dark }};
+      --color-primary-foreground: {{ settings.color_primary_foreground_dark }};
+      --color-secondary: {{ settings.color_secondary_dark }};
+      --color-muted: {{ settings.color_muted_dark }};
+      --color-muted-foreground: {{ settings.color_muted_foreground_dark }};
+      --color-accent: {{ settings.color_accent_dark }};
+      --color-card: {{ settings.color_card_dark }};
+      --color-border: {{ settings.color_border_dark }};
+    }
+  {% endstyle %}
+
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</head>
+
+<body class="template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
+  <a class="skip-to-content" href="#MainContent">
+    {{ 'accessibility.skip_to_content' | t }}
+  </a>
+
+  {% sections 'header-group' %}
+
+  <main id="MainContent" class="main-content" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {% sections 'footer-group' %}
+
+  {% render 'cart-drawer' %}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  {%- if request.design_mode -%}
+    <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</body>
+</html>

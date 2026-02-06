@@ -1,0 +1,86 @@
+{%- paginate search.results by 16 -%}
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="page-header">
+      <h1 class="h1">{{ 'general.search.title' | t }}</h1>
+    </div>
+
+    <form action="{{ routes.search_url }}" method="get" class="search-form" role="search">
+      <input
+        class="search-form__input"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}"
+        aria-label="{{ 'general.search.title' | t }}"
+      >
+      <button type="submit" class="btn btn--primary">{{ 'general.search.submit' | t }}</button>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <p class="text-center text-muted mb-lg">
+          {{ 'general.search.results_count' | t: count: search.results_count, terms: search.terms }}
+        </p>
+        <div class="grid grid--4">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', product: item, show_vendor: true %}
+            {%- elsif item.object_type == 'article' -%}
+              <article class="blog-card">
+                {%- if item.image -%}
+                  <div class="blog-card__media">
+                    <a href="{{ item.url }}">
+                      <img src="{{ item.image | image_url: width: 600 }}" alt="{{ item.title | escape }}" loading="lazy">
+                    </a>
+                  </div>
+                {%- endif -%}
+                <div class="blog-card__content">
+                  <h3 class="blog-card__title"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+                  <p class="blog-card__excerpt">{{ item.content | strip_html | truncate: 100 }}</p>
+                </div>
+              </article>
+            {%- elsif item.object_type == 'page' -%}
+              <div class="card">
+                <div class="card__content">
+                  <h3 class="h4"><a href="{{ item.url }}">{{ item.title }}</a></h3>
+                  <p class="body-sm text-muted mt-sm">{{ item.content | strip_html | truncate: 100 }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination" aria-label="Pagination">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}" class="pagination__item">{% render 'icon-arrow', direction: 'left' %}</a>
+            {%- endif -%}
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}
+                <a href="{{ part.url }}" class="pagination__item">{{ part.title }}</a>
+              {%- else -%}
+                <span class="pagination__item{% if part.title == paginate.current_page %} is-current{% endif %}">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="pagination__item">{% render 'icon-arrow', direction: 'right' %}</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <p class="text-center text-muted">{{ 'general.search.no_results' | t: terms: search.terms }}</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Search",
+  "tag": "section",
+  "class": "main-search-section",
+  "settings": []
+}
+{% endschema %}

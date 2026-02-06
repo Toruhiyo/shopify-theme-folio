@@ -1,0 +1,233 @@
+{
+  "general": {
+    "password_page": {
+      "opening_soon": "Opening Soon",
+      "login_form_heading": "Enter store using password",
+      "login_password_button": "Enter using password",
+      "close": "Close",
+      "password_link": "Enter using password",
+      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest"
+      },
+      "links": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "twitter": "X (Twitter)",
+        "pinterest": "Pinterest",
+        "tiktok": "TikTok"
+      }
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you were looking for doesn't exist. You may have mistyped the address or the page may have moved.",
+      "link": "Continue shopping"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Home"
+    },
+    "search": {
+      "title": "Search",
+      "placeholder": "Search our store...",
+      "submit": "Search",
+      "no_results": "No results found for \"{{ terms }}\". Check the spelling or use a different word or phrase.",
+      "results_count": "{{ count }} results for \"{{ terms }}\""
+    },
+    "cart": {
+      "title": "Your Cart",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue shopping",
+      "subtotal": "Subtotal",
+      "taxes_and_shipping": "Taxes and shipping calculated at checkout",
+      "checkout": "Checkout",
+      "remove": "Remove",
+      "update": "Update"
+    }
+  },
+  "sections": {
+    "announcement_bar": {
+      "name": "Announcement bar"
+    },
+    "header": {
+      "name": "Header",
+      "menu": "Menu",
+      "cart": "Cart",
+      "search": "Search",
+      "close": "Close"
+    },
+    "hero": {
+      "name": "Hero banner"
+    },
+    "featured_collection": {
+      "name": "Featured collection"
+    },
+    "collection_grid": {
+      "name": "Collection grid"
+    },
+    "product_grid": {
+      "name": "Product grid"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "email_placeholder": "Your email address",
+      "subscribe": "Subscribe",
+      "success": "Thanks for subscribing!"
+    },
+    "testimonials": {
+      "name": "Testimonials"
+    },
+    "about_story": {
+      "name": "About / Story"
+    },
+    "footer": {
+      "name": "Footer"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "adding": "Adding...",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "sale": "Sale",
+      "new": "New",
+      "quantity": "Quantity",
+      "description": "Description",
+      "share": "Share",
+      "vendor": "Vendor",
+      "type": "Type",
+      "sku": "SKU"
+    }
+  },
+  "collections": {
+    "general": {
+      "all_products": "All Products",
+      "no_products": "No products found in this collection.",
+      "products_count": "{{ count }} products",
+      "sort_by": "Sort by",
+      "sort_options": {
+        "manual": "Featured",
+        "best-selling": "Best selling",
+        "title-ascending": "Alphabetically, A-Z",
+        "title-descending": "Alphabetically, Z-A",
+        "price-ascending": "Price, low to high",
+        "price-descending": "Price, high to low",
+        "created-ascending": "Date, old to new",
+        "created-descending": "Date, new to old"
+      },
+      "explore": "Explore"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read more",
+      "written_by": "Written by {{ author }}",
+      "published_on": "Published on {{ date }}",
+      "back_to_blog": "Back to {{ blog }}"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "orders": "Order History",
+      "no_orders": "You haven't placed any orders yet.",
+      "details": "Account Details",
+      "addresses": "Addresses",
+      "default_address": "Default",
+      "view_addresses": "View Addresses",
+      "logout": "Log Out"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "sign_in": "Sign In",
+      "forgot_password": "Forgot your password?",
+      "create_account": "Create account",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue"
+    },
+    "register": {
+      "title": "Create Account",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create",
+      "already_have_account": "Already have an account? Sign in"
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password.",
+      "email": "Email",
+      "submit": "Submit",
+      "success": "We've sent you an email with a link to update your password.",
+      "back_to_login": "Back to login"
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset Password"
+    },
+    "activate_account": {
+      "title": "Activate Account",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Activate Account",
+      "decline": "Decline Invitation"
+    },
+    "addresses": {
+      "title": "Your Addresses",
+      "add_new": "Add a New Address",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "company": "Company",
+      "address1": "Address",
+      "address2": "Apartment, suite, etc.",
+      "city": "City",
+      "country": "Country/Region",
+      "province": "Province",
+      "zip": "Postal/Zip Code",
+      "phone": "Phone",
+      "default": "Set as default address",
+      "update": "Update Address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date": "Placed on {{ date }}",
+      "cancelled": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "shipping_address": "Shipping Address",
+      "payment_status": "Payment Status",
+      "fulfillment_status": "Fulfillment Status",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "menu": "Menu"
+  }
+}

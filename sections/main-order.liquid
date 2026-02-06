@@ -1,0 +1,113 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="customer" style="max-width: 800px;">
+      <h1 class="customer__title h1">{{ 'customer.order.title' | t: name: order.name }}</h1>
+
+      <p class="text-muted text-center mb-lg">
+        {{ 'customer.order.date' | t: date: order.created_at | date: '%B %d, %Y' }}
+      </p>
+
+      {%- if order.cancelled -%}
+        <div class="customer__form mb-lg" style="background-color: #fef2f2; border-color: #fecaca;">
+          <p>{{ 'customer.order.cancelled' | t: date: order.cancelled_at | date: '%B %d, %Y' }}</p>
+          <p class="text-muted body-sm">{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
+        </div>
+      {%- endif -%}
+
+      <div class="customer__orders mb-xl">
+        <table>
+          <thead>
+            <tr>
+              <th>{{ 'customer.order.product' | t }}</th>
+              <th>{{ 'customer.order.sku' | t }}</th>
+              <th>{{ 'customer.order.price' | t }}</th>
+              <th>{{ 'customer.order.quantity' | t }}</th>
+              <th class="text-right">{{ 'customer.order.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for line_item in order.line_items -%}
+              <tr>
+                <td>
+                  <a href="{{ line_item.url }}" style="color: var(--color-primary); text-decoration: underline;">
+                    {{ line_item.title }}
+                  </a>
+                </td>
+                <td>{{ line_item.sku | default: '-' }}</td>
+                <td>{{ line_item.original_price | money }}</td>
+                <td>{{ line_item.quantity }}</td>
+                <td class="text-right">{{ line_item.final_line_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cart-totals">
+        <div class="cart-totals__row">
+          <span>{{ 'customer.order.subtotal' | t }}</span>
+          <span>{{ order.line_items_subtotal_price | money }}</span>
+        </div>
+
+        {%- for discount_application in order.cart_level_discount_applications -%}
+          <div class="cart-totals__row">
+            <span>{{ 'customer.order.discount' | t }} ({{ discount_application.title }})</span>
+            <span>-{{ discount_application.total_allocated_amount | money }}</span>
+          </div>
+        {%- endfor -%}
+
+        {%- for shipping_method in order.shipping_methods -%}
+          <div class="cart-totals__row">
+            <span>{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</span>
+            <span>{{ shipping_method.price | money }}</span>
+          </div>
+        {%- endfor -%}
+
+        {%- for tax_line in order.tax_lines -%}
+          <div class="cart-totals__row">
+            <span>{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate_percentage }}%)</span>
+            <span>{{ tax_line.price | money }}</span>
+          </div>
+        {%- endfor -%}
+
+        <div class="cart-totals__row cart-totals__row--total">
+          <span>{{ 'customer.order.total' | t }}</span>
+          <span>{{ order.total_price | money }}</span>
+        </div>
+      </div>
+
+      <div class="grid grid--2 mt-xl">
+        <div class="customer__form">
+          <h3 class="h4 mb-md">{{ 'customer.order.billing_address' | t }}</h3>
+          <p>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>
+          <div class="mt-sm text-muted body-sm">
+            {{ order.billing_address | format_address }}
+          </div>
+        </div>
+
+        <div class="customer__form">
+          <h3 class="h4 mb-md">{{ 'customer.order.shipping_address' | t }}</h3>
+          <p>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</p>
+          <div class="mt-sm text-muted body-sm">
+            {{ order.shipping_address | format_address }}
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-xl">
+        <a href="{{ routes.account_url }}" class="btn btn--ghost">
+          {% render 'icon-arrow', direction: 'left' %} Back to Account
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Order",
+  "tag": "section",
+  "class": "main-order-section",
+  "settings": []
+}
+{% endschema %}

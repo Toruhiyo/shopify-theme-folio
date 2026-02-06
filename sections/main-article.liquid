@@ -1,0 +1,113 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <article class="article">
+      <div class="page-header text-center">
+        <h1 class="h1">{{ article.title }}</h1>
+      </div>
+
+      <div class="article__meta">
+        {%- if section.settings.show_author -%}
+          <span>{{ 'blogs.article.written_by' | t: author: article.author }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.show_date -%}
+          <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+            {{ article.published_at | date: '%B %d, %Y' }}
+          </time>
+        {%- endif -%}
+      </div>
+
+      {%- if article.image -%}
+        <div class="article__image">
+          <img
+            src="{{ article.image | image_url: width: 1200 }}"
+            alt="{{ article.image.alt | escape | default: article.title | escape }}"
+            loading="eager"
+            width="{{ article.image.width }}"
+            height="{{ article.image.height }}"
+          >
+        </div>
+      {%- endif -%}
+
+      <div class="article__body rich-text">
+        {{ article.content }}
+      </div>
+
+      <div class="mt-xl">
+        <a href="{{ blog.url }}" class="btn btn--ghost">
+          {% render 'icon-arrow', direction: 'left' %}
+          {{ 'blogs.article.back_to_blog' | t: blog: blog.title }}
+        </a>
+      </div>
+    </article>
+
+    {%- if blog.comments_enabled? -%}
+      <div class="mt-xl" style="max-width: 720px; margin-left: auto; margin-right: auto;">
+        <h2 class="h3 mb-lg">Comments</h2>
+
+        {%- if article.comments_count > 0 -%}
+          {%- for comment in article.comments -%}
+            <div class="testimonial-card mb-md">
+              <p class="testimonial-card__author">{{ comment.author }}</p>
+              <time class="testimonial-card__role" datetime="{{ comment.created_at | date: '%Y-%m-%d' }}">
+                {{ comment.created_at | date: '%B %d, %Y' }}
+              </time>
+              <p class="testimonial-card__text mt-sm" style="font-style: normal;">{{ comment.content }}</p>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- form 'new_comment', article -%}
+          <div class="customer__form mt-lg">
+            <h3 class="h4 mb-md">Leave a comment</h3>
+
+            {%- if form.errors -%}
+              <div class="form-error mb-md">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            <div class="form-field">
+              <label class="form-label" for="comment-author">Name</label>
+              <input class="form-input" type="text" id="comment-author" name="comment[author]" required>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="comment-email">Email</label>
+              <input class="form-input" type="email" id="comment-email" name="comment[email]" required>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="comment-body">Comment</label>
+              <textarea class="form-textarea" id="comment-body" name="comment[body]" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Post Comment</button>
+          </div>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article",
+  "tag": "section",
+  "class": "main-article-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Show date"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,117 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="section-header__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.collection != blank -%}
+      {%- assign collection = section.settings.collection -%}
+
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_view_all -%}
+        <div class="text-center mt-xl">
+          <a href="{{ collection.url }}" class="btn btn--secondary">
+            View All {{ collection.title }}
+          </a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="grid grid--{{ section.settings.columns }}">
+        {%- for i in (1..section.settings.products_to_show) -%}
+          <div class="product-card">
+            <div class="product-card__media">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-card__content">
+              <span class="product-card__vendor label-caps text-muted">Author Name</span>
+              <h3 class="product-card__title"><a href="#">Example Product {{ i }}</a></h3>
+              <div class="product-card__price"><span>{{ 2999 | money }}</span></div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "tag": "section",
+  "class": "featured-collection-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "Curated For You",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Staff Picks",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Columns"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": true,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "Show 'View All' button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,77 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="customer">
+      <h1 class="customer__title h1">{{ 'customer.login.title' | t }}</h1>
+
+      <div class="customer__form">
+        {%- form 'customer_login' -%}
+          {%- if form.errors -%}
+            <div class="form-error mb-md">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+
+          <div class="form-field">
+            <label class="form-label" for="customer-email">{{ 'customer.login.email' | t }}</label>
+            <input class="form-input" type="email" id="customer-email" name="customer[email]" autocomplete="email" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="customer-password">{{ 'customer.login.password' | t }}</label>
+            <input class="form-input" type="password" id="customer-password" name="customer[password]" autocomplete="current-password" required>
+          </div>
+
+          <div class="form-field text-right">
+            <a href="#recover" class="body-sm" style="color: var(--color-primary); text-decoration: underline;">
+              {{ 'customer.login.forgot_password' | t }}
+            </a>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">{{ 'customer.login.sign_in' | t }}</button>
+        {%- endform -%}
+      </div>
+
+      <div class="customer__footer">
+        <a href="{{ routes.account_register_url }}">{{ 'customer.login.create_account' | t }}</a>
+      </div>
+
+      <!-- Password Recovery Form -->
+      <div id="recover" class="customer__form mt-xl" style="display: none;">
+        <h2 class="h3 mb-md">{{ 'customer.recover_password.title' | t }}</h2>
+        <p class="text-muted mb-md">{{ 'customer.recover_password.subtext' | t }}</p>
+
+        {%- form 'recover_customer_password' -%}
+          {%- if form.posted_successfully? -%}
+            <p style="color: var(--color-accent);" class="mb-md">{{ 'customer.recover_password.success' | t }}</p>
+          {%- endif -%}
+
+          <div class="form-field">
+            <label class="form-label" for="recover-email">{{ 'customer.recover_password.email' | t }}</label>
+            <input class="form-input" type="email" id="recover-email" name="email" autocomplete="email" required>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">{{ 'customer.recover_password.submit' | t }}</button>
+        {%- endform -%}
+
+        <div class="customer__footer">
+          <a href="#" onclick="document.getElementById('recover').style.display='none'; return false;">
+            {{ 'customer.recover_password.back_to_login' | t }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  if (window.location.hash === '#recover') {
+    document.getElementById('recover').style.display = 'block';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Login",
+  "tag": "section",
+  "class": "main-login-section",
+  "settings": []
+}
+{% endschema %}

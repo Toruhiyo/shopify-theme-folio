@@ -1,0 +1,149 @@
+<footer class="footer">
+  <div class="page-width">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="{{ routes.root_url }}" class="footer__brand-link">
+          <div class="header__logo-container">
+            {%- if section.settings.logo != blank -%}
+              <img
+                src="{{ section.settings.logo | image_url: width: 100 }}"
+                alt="{{ shop.name | escape }}"
+                width="40"
+                height="40"
+                loading="lazy"
+              >
+            {%- else -%}
+              <span class="header__logo-text">{{ shop.name | slice: 0 }}</span>
+            {%- endif -%}
+          </div>
+          <div class="header__brand-text">
+            <span class="header__brand-name">{{ shop.name }}</span>
+            {%- if section.settings.tagline != blank -%}
+              <span class="header__brand-tagline">{{ section.settings.tagline }}</span>
+            {%- endif -%}
+          </div>
+        </a>
+
+        {%- if section.settings.description != blank -%}
+          <p class="footer__brand-description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'link_list' -%}
+            <div class="footer__column" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <h3 class="footer__column-title">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.menu != blank -%}
+                <ul class="footer__links">
+                  {%- for link in block.settings.menu.links -%}
+                    <li>
+                      <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="footer__bottom">
+      <div>
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
+          {%- if section.settings.show_powered_by %}
+            {{ powered_by_link }}
+          {%- endif -%}
+        </p>
+      </div>
+
+      {%- if section.settings.show_payment_icons -%}
+        <div class="footer__payment-icons">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "default": "Books & Curiosities",
+      "label": "Tagline"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "A curated bookshop celebrating the joy of reading. Handpicked titles, beautiful editions, and literary gifts.",
+      "label": "Brand description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "default": true,
+      "label": "Show payment icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "default": true,
+      "label": "Show 'Powered by Shopify'"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Link column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick Links",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        {
+          "type": "link_list",
+          "settings": { "heading": "Shop" }
+        },
+        {
+          "type": "link_list",
+          "settings": { "heading": "About" }
+        },
+        {
+          "type": "link_list",
+          "settings": { "heading": "Help" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,82 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="newsletter">
+      <div class="newsletter__inner">
+        <div>
+          {%- if section.settings.label != blank -%}
+            <span class="label-caps text-muted mb-sm" style="display: block;">{{ section.settings.label }}</span>
+          {%- endif -%}
+
+          {%- if section.settings.heading != blank -%}
+            <h2 class="newsletter__heading h2">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+
+          {%- if section.settings.text != blank -%}
+            <p class="newsletter__text">{{ section.settings.text }}</p>
+          {%- endif -%}
+        </div>
+
+        <div>
+          {%- form 'customer', id: 'newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter__form">
+              <input
+                class="newsletter__input"
+                type="email"
+                name="contact[email]"
+                placeholder="{{ 'sections.newsletter.email_placeholder' | t }}"
+                required
+                aria-label="{{ 'sections.newsletter.email_placeholder' | t }}"
+                autocomplete="email"
+              >
+              <button type="submit" class="btn btn--primary">
+                {{ 'sections.newsletter.subscribe' | t }}
+              </button>
+            </div>
+
+            {%- if form.posted_successfully? -%}
+              <p class="mt-md" style="color: var(--color-accent);">{{ 'sections.newsletter.success' | t }}</p>
+            {%- endif -%}
+
+            {%- if form.errors -%}
+              <p class="form-error mt-sm">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+            {%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "tag": "section",
+  "class": "newsletter-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "Stay in the loop",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Join Our Reading List",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "default": "Get the latest recommendations, new arrivals, and exclusive offers delivered to your inbox.",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

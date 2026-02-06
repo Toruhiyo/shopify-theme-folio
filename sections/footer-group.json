@@ -1,0 +1,37 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "tagline": "Books & Curiosities",
+        "description": "A curated bookshop celebrating the joy of reading. Handpicked titles, beautiful editions, and literary gifts.",
+        "show_payment_icons": true,
+        "show_powered_by": true
+      },
+      "blocks": {
+        "link-list-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop"
+          }
+        },
+        "link-list-2": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About"
+          }
+        },
+        "link-list-3": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Help"
+          }
+        }
+      },
+      "block_order": ["link-list-1", "link-list-2", "link-list-3"]
+    }
+  },
+  "order": ["footer"]
+}

@@ -1,0 +1,127 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="testimonials-grid">
+      {%- for block in section.blocks -%}
+        <div class="testimonial-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.rating > 0 -%}
+            <div class="testimonial-card__stars">
+              {%- for i in (1..block.settings.rating) -%}
+                {% render 'icon-star' %}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          {%- if block.settings.text != blank -%}
+            <p class="testimonial-card__text">"{{ block.settings.text }}"</p>
+          {%- endif -%}
+
+          {%- if block.settings.author != blank -%}
+            <p class="testimonial-card__author">{{ block.settings.author }}</p>
+          {%- endif -%}
+
+          {%- if block.settings.role != blank -%}
+            <p class="testimonial-card__role">{{ block.settings.role }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "class": "testimonials-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "What People Say",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Reader Reviews",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Star rating"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "This bookshop has the most thoughtful selection I've ever seen. Every visit feels like a treasure hunt.",
+          "label": "Testimonial text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "default": "Sarah M.",
+          "label": "Author name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "default": "Loyal Customer",
+          "label": "Author role/title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "This bookshop has the most thoughtful selection I've ever seen. Every visit feels like a treasure hunt.",
+            "author": "Sarah M.",
+            "role": "Loyal Customer"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "The packaging is beautiful, and the handwritten recommendation notes are such a lovely touch.",
+            "author": "James K.",
+            "role": "Book Collector"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "text": "Finally, an online bookshop that captures the feeling of browsing a real independent store.",
+            "author": "Emily R.",
+            "role": "Avid Reader"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

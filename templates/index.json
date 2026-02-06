@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Stories Worth Discovering",
+        "subheading": "Curated collections of books, stationery, and literary gifts for every kind of reader.",
+        "label": "Welcome to our bookshop",
+        "button_label": "Shop Now",
+        "height": "large",
+        "overlay_opacity": 55,
+        "text_alignment": "left"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "label": "Curated For You",
+        "heading": "Staff Picks",
+        "products_to_show": 4,
+        "columns": 4,
+        "show_vendor": true,
+        "show_view_all": true
+      }
+    },
+    "collection-grid": {
+      "type": "collection-grid",
+      "settings": {
+        "label": "Browse",
+        "heading": "Shop by Category",
+        "layout": "scroll",
+        "columns": 3
+      },
+      "blocks": {
+        "collection-1": { "type": "collection" },
+        "collection-2": { "type": "collection" },
+        "collection-3": { "type": "collection" },
+        "collection-4": { "type": "collection" }
+      },
+      "block_order": ["collection-1", "collection-2", "collection-3", "collection-4"]
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+        "label": "New Arrivals",
+        "heading": "Just In",
+        "products_to_show": 8,
+        "columns": 4,
+        "show_vendor": true,
+        "show_filters": false
+      }
+    },
+    "about-story": {
+      "type": "about-story",
+      "settings": {
+        "label": "Our Story",
+        "heading": "A Love Letter to Books",
+        "text": "<p>We started as a tiny corner shop with a big dream: to create a space where every reader feels at home. Today, we bring that same warmth and curation to your doorstep — hand-picking every title, wrapping every order with care, and celebrating the joy of reading.</p>",
+        "button_label": "Learn More",
+        "image_position": "left"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "label": "What People Say",
+        "heading": "Reader Reviews"
+      },
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "This bookshop has the most thoughtful selection I've ever seen. Every visit feels like a treasure hunt.",
+            "author": "Sarah M.",
+            "role": "Loyal Customer"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "The packaging is beautiful, and the handwritten recommendation notes are such a lovely touch.",
+            "author": "James K.",
+            "role": "Book Collector"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "text": "Finally, an online bookshop that captures the feeling of browsing a real independent store.",
+            "author": "Emily R.",
+            "role": "Avid Reader"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "label": "Stay in the loop",
+        "heading": "Join Our Reading List",
+        "text": "Get the latest recommendations, new arrivals, and exclusive offers delivered to your inbox."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured-collection",
+    "collection-grid",
+    "product-grid",
+    "about-story",
+    "testimonials",
+    "newsletter"
+  ]
+}

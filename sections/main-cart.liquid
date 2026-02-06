@@ -1,0 +1,125 @@
+<section class="section-spacing">
+  <div class="page-width">
+    <h1 class="h1 text-center mb-xl">{{ 'general.cart.title' | t }}</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart-page__empty">
+        <p>{{ 'general.cart.empty' | t }}</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--primary">
+          {{ 'general.cart.continue_shopping' | t }}
+        </a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post">
+        <div class="hidden-mobile">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>{{ 'products.product.quantity' | t }}</th>
+                <th class="text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for item in cart.items -%}
+                <tr>
+                  <td>
+                    <div class="cart-table__product">
+                      <div class="cart-table__image">
+                        {%- if item.image -%}
+                          <a href="{{ item.url }}">
+                            <img
+                              src="{{ item.image | image_url: width: 200 }}"
+                              alt="{{ item.image.alt | escape }}"
+                              loading="lazy"
+                              width="72"
+                              height="108"
+                            >
+                          </a>
+                        {%- endif -%}
+                      </div>
+                      <div>
+                        <a href="{{ item.url }}" class="cart-table__title">{{ item.product.title }}</a>
+                        {%- if item.variant.title != 'Default Title' -%}
+                          <p class="cart-table__variant">{{ item.variant.title }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{ item.original_price | money }}</td>
+                  <td>
+                    <div class="cart-item__quantity">
+                      <button type="button" class="cart-item__quantity-btn" data-cart-quantity="minus" data-cart-key="{{ item.key }}">−</button>
+                      <span class="cart-item__quantity-value" data-cart-quantity-value>{{ item.quantity }}</span>
+                      <button type="button" class="cart-item__quantity-btn" data-cart-quantity="plus" data-cart-key="{{ item.key }}">+</button>
+                    </div>
+                  </td>
+                  <td class="text-right">{{ item.final_line_price | money }}</td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile cart items -->
+        <div class="hidden-desktop hidden-tablet">
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <div class="cart-item__image">
+                {%- if item.image -%}
+                  <a href="{{ item.url }}">
+                    <img
+                      src="{{ item.image | image_url: width: 200 }}"
+                      alt="{{ item.image.alt | escape }}"
+                      loading="lazy"
+                      width="72"
+                      height="108"
+                    >
+                  </a>
+                {%- endif -%}
+              </div>
+              <div class="cart-item__details">
+                <a href="{{ item.url }}" class="cart-item__title">{{ item.product.title }}</a>
+                {%- if item.variant.title != 'Default Title' -%}
+                  <span class="cart-item__variant">{{ item.variant.title }}</span>
+                {%- endif -%}
+                <span class="cart-item__price">{{ item.final_line_price | money }}</span>
+                <div class="cart-item__quantity">
+                  <button type="button" class="cart-item__quantity-btn" data-cart-quantity="minus" data-cart-key="{{ item.key }}">−</button>
+                  <span class="cart-item__quantity-value" data-cart-quantity-value>{{ item.quantity }}</span>
+                  <button type="button" class="cart-item__quantity-btn" data-cart-quantity="plus" data-cart-key="{{ item.key }}">+</button>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart-totals">
+          <div class="cart-totals__row">
+            <span>{{ 'general.cart.subtotal' | t }}</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          <p class="cart-totals__note">{{ 'general.cart.taxes_and_shipping' | t }}</p>
+          <button type="submit" name="checkout" class="btn btn--primary btn--full btn--large">
+            {{ 'general.cart.checkout' | t }}
+          </button>
+          <div class="text-center mt-md">
+            <a href="{{ routes.all_products_collection_url }}" class="btn btn--ghost">
+              {{ 'general.cart.continue_shopping' | t }}
+            </a>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "tag": "section",
+  "class": "main-cart-section",
+  "settings": []
+}
+{% endschema %}

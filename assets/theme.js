@@ -335,6 +335,31 @@
     return moneyFormat;
   }
 
+  /* --- Picks Carousel --- */
+  const picksTrack = document.querySelector('[data-picks-track]');
+  const picksPrev = document.querySelector('[data-picks-prev]');
+  const picksNext = document.querySelector('[data-picks-next]');
+
+  if (picksTrack) {
+    const getScrollAmount = () => {
+      const card = picksTrack.querySelector('.hero-immersive__pick');
+      if (!card) return 300;
+      return card.offsetWidth + 14; /* card width + gap */
+    };
+
+    if (picksNext) {
+      picksNext.addEventListener('click', () => {
+        picksTrack.scrollBy({ left: getScrollAmount() * 2, behavior: 'smooth' });
+      });
+    }
+
+    if (picksPrev) {
+      picksPrev.addEventListener('click', () => {
+        picksTrack.scrollBy({ left: -(getScrollAmount() * 2), behavior: 'smooth' });
+      });
+    }
+  }
+
   /* --- Initialize --- */
   updateCartCount();
 

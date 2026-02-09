@@ -75,7 +75,13 @@
         </div>
 
         <div class="hero-immersive__picks-track-wrapper">
-          <div class="hero-immersive__picks-track">
+          <button class="hero-immersive__picks-nav hero-immersive__picks-nav--prev" data-picks-prev aria-label="Scroll left">
+            {% render 'icon-arrow', direction: 'left' %}
+          </button>
+          <button class="hero-immersive__picks-nav hero-immersive__picks-nav--next" data-picks-next aria-label="Scroll right">
+            {% render 'icon-arrow', direction: 'right' %}
+          </button>
+          <div class="hero-immersive__picks-track" data-picks-track>
             {%- for product in picks_collection.products limit: section.settings.picks_count -%}
               <div class="hero-immersive__pick">
                 <a href="{{ product.url }}" class="hero-immersive__pick-media">

@@ -335,30 +335,48 @@
     return moneyFormat;
   }
 
-  /* --- Picks Carousel --- */
-  const picksTrack = document.querySelector('[data-picks-track]');
-  const picksPrev = document.querySelector('[data-picks-prev]');
-  const picksNext = document.querySelector('[data-picks-next]');
+  /* --- Drag Carousel --- */
+  function initDragCarousel(el) {
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let hasDragged = false;
+    const DRAG_THRESHOLD = 5;
 
-  if (picksTrack) {
-    const getScrollAmount = () => {
-      const card = picksTrack.querySelector('.hero-immersive__pick');
-      if (!card) return 300;
-      return card.offsetWidth + 14; /* card width + gap */
-    };
+    el.addEventListener('mousedown', (e) => {
+      isDown = true;
+      hasDragged = false;
+      startX = e.pageX - el.offsetLeft;
+      scrollStart = el.scrollLeft;
+      el.classList.add('is-dragging');
+    });
 
-    if (picksNext) {
-      picksNext.addEventListener('click', () => {
-        picksTrack.scrollBy({ left: getScrollAmount() * 2, behavior: 'smooth' });
-      });
-    }
+    el.addEventListener('mouseleave', () => {
+      if (!isDown) return;
+      isDown = false;
+      el.classList.remove('is-dragging');
+    });
 
-    if (picksPrev) {
-      picksPrev.addEventListener('click', () => {
-        picksTrack.scrollBy({ left: -(getScrollAmount() * 2), behavior: 'smooth' });
-      });
-    }
+    el.addEventListener('mouseup', () => {
+      isDown = false;
+      el.classList.remove('is-dragging');
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const delta = x - startX;
+      if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
+      el.scrollLeft = scrollStart - delta;
+    });
+
+    el.addEventListener('click', (e) => {
+      if (hasDragged) e.preventDefault();
+    }, true);
   }
+
+  document.querySelectorAll('.drag-carousel').forEach(initDragCarousel);
 
   /* --- Initialize --- */
   updateCartCount();

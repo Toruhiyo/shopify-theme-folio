@@ -19,7 +19,7 @@
         </div>
 
         {%- if product.media.size > 1 -%}
-          <div class="product__media-thumbs">
+          <div class="product__media-thumbs drag-carousel">
             {%- for media in product.media -%}
               <button
                 class="product__media-thumb{% if forloop.first %} is-active{% endif %}"

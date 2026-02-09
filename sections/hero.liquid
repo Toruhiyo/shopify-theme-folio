@@ -1,86 +1,139 @@
-<section class="hero{% if section.settings.height == 'large' %} hero--large{% endif %}">
-  <div class="hero__media">
-    {%- if section.settings.image != blank -%}
-      <img
-        src="{{ section.settings.image | image_url: width: 2000 }}"
-        alt="{{ section.settings.image.alt | escape | default: section.settings.heading | escape }}"
-        loading="eager"
-        fetchpriority="high"
-        width="{{ section.settings.image.width }}"
-        height="{{ section.settings.image.height }}"
-      >
-    {%- else -%}
-      <img
-        src="{{ 'hero-default.jpg' | asset_url }}"
-        alt="{{ section.settings.heading | escape }}"
-        loading="eager"
-        fetchpriority="high"
-      >
-    {%- endif -%}
-  </div>
+{%- liquid
+  if section.settings.collection != blank
+    assign picks_collection = section.settings.collection
+  else
+    assign picks_collection = collections.all
+  endif
+-%}
 
-  <div class="hero__overlay" style="background: linear-gradient(to right, rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 100.0 }}) 0%, rgba(0,0,0,{{ section.settings.overlay_opacity | divided_by: 200.0 }}) 100%);"></div>
-
-  <div class="page-width">
-    <div class="hero__content" style="text-align: {{ section.settings.text_alignment }};">
-      {%- if section.settings.label != blank -%}
-        <span class="hero__label label-caps">{{ section.settings.label }}</span>
+<section class="hero-integrated">
+  <!-- Background image area -->
+  <div class="hero-integrated__banner">
+    <div class="hero-integrated__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 2000 }}"
+          alt="{{ section.settings.image.alt | escape | default: section.settings.heading | escape }}"
+          loading="eager"
+          fetchpriority="high"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'hero-default.jpg' | asset_url }}"
+          alt="{{ section.settings.heading | escape }}"
+          loading="eager"
+          fetchpriority="high"
+        >
       {%- endif -%}
+    </div>
 
-      {%- if section.settings.heading != blank -%}
-        <h1 class="hero__heading">{{ section.settings.heading }}</h1>
-      {%- endif -%}
+    <div class="hero-integrated__overlay"></div>
 
-      {%- if section.settings.subheading != blank -%}
-        <p class="hero__subheading">{{ section.settings.subheading }}</p>
-      {%- endif -%}
-
-      <div class="hero__actions">
-        {%- if section.settings.button_label != blank -%}
-          <a href="{{ section.settings.button_link }}" class="btn btn--primary btn--large">
-            {{ section.settings.button_label }}
-          </a>
+    <div class="page-width">
+      <div class="hero-integrated__content">
+        {%- if section.settings.label != blank -%}
+          <span class="hero-integrated__label label-caps">{{ section.settings.label }}</span>
         {%- endif -%}
-        {%- if section.settings.button_label_2 != blank -%}
-          <a href="{{ section.settings.button_link_2 }}" class="btn btn--secondary btn--large">
-            {{ section.settings.button_label_2 }}
-          </a>
+
+        {%- if section.settings.heading != blank -%}
+          <h1 class="hero-integrated__heading">{{ section.settings.heading }}</h1>
         {%- endif -%}
+
+        {%- if section.settings.subheading != blank -%}
+          <p class="hero-integrated__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+
+        <div class="hero-integrated__actions">
+          {%- if section.settings.button_label != blank -%}
+            <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn btn--primary btn--large">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.button_label_2 != blank -%}
+            <a href="{{ section.settings.button_link_2 }}" class="btn btn--secondary btn--large">
+              {{ section.settings.button_label_2 }}
+            </a>
+          {%- endif -%}
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Top Picks strip that overlaps the hero bottom -->
+  {%- if picks_collection.products.size > 0 -%}
+    <div class="hero-picks">
+      <div class="page-width">
+        <div class="hero-picks__header">
+          <h2 class="hero-picks__title h3">
+            {%- if section.settings.picks_heading != blank -%}
+              {{ section.settings.picks_heading }}
+            {%- else -%}
+              Top Picks
+            {%- endif -%}
+          </h2>
+          <a href="{{ picks_collection.url }}" class="hero-picks__view-all btn btn--ghost btn--small">
+            View All {% render 'icon-arrow', direction: 'right' %}
+          </a>
+        </div>
+
+        <div class="hero-picks__scroll">
+          {%- for product in picks_collection.products limit: section.settings.picks_count -%}
+            <div class="hero-picks__card">
+              <a href="{{ product.url }}" class="hero-picks__card-media">
+                {%- if product.featured_media -%}
+                  <img
+                    src="{{ product.featured_media | image_url: width: 400 }}"
+                    alt="{{ product.featured_media.alt | escape | default: product.title | escape }}"
+                    loading="eager"
+                    width="200"
+                    height="300"
+                  >
+                {%- else -%}
+                  <div class="product-card__no-image" aria-hidden="true">
+                    {% render 'icon-cart', size: 24 %}
+                  </div>
+                {%- endif -%}
+              </a>
+              <div class="hero-picks__card-info">
+                {%- if section.settings.picks_show_vendor and product.vendor != blank -%}
+                  <span class="hero-picks__vendor label-caps text-muted">{{ product.vendor }}</span>
+                {%- endif -%}
+                <h3 class="hero-picks__card-title">
+                  <a href="{{ product.url }}">{{ product.title }}</a>
+                </h3>
+                <span class="hero-picks__card-price">
+                  {%- if product.compare_at_price > product.price -%}
+                    <span class="hero-picks__card-price--sale">{{ product.price | money }}</span>
+                    <span class="hero-picks__card-price--compare">{{ product.compare_at_price | money }}</span>
+                  {%- else -%}
+                    {{ product.price | money }}
+                  {%- endif -%}
+                </span>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
 </section>
 
 {% schema %}
 {
-  "name": "Hero banner",
+  "name": "Hero + Top Picks",
   "tag": "section",
-  "class": "hero-section",
+  "class": "hero-integrated-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Hero banner"
+    },
     {
       "type": "image_picker",
       "id": "image",
       "label": "Background image"
-    },
-    {
-      "type": "select",
-      "id": "height",
-      "default": "large",
-      "label": "Section height",
-      "options": [
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 55,
-      "unit": "%",
-      "label": "Overlay opacity"
     },
     {
       "type": "text",
@@ -99,16 +152,6 @@
       "id": "subheading",
       "default": "Curated collections of books, stationery, and literary gifts for every kind of reader.",
       "label": "Subheading"
-    },
-    {
-      "type": "select",
-      "id": "text_alignment",
-      "default": "left",
-      "label": "Text alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" }
-      ]
     },
     {
       "type": "text",
@@ -130,11 +173,41 @@
       "type": "url",
       "id": "button_link_2",
       "label": "Secondary button link"
+    },
+    {
+      "type": "header",
+      "content": "Top Picks"
+    },
+    {
+      "type": "text",
+      "id": "picks_heading",
+      "default": "Top Picks",
+      "label": "Heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "picks_count",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 6,
+      "label": "Products to show"
+    },
+    {
+      "type": "checkbox",
+      "id": "picks_show_vendor",
+      "default": true,
+      "label": "Show vendor"
     }
   ],
   "presets": [
     {
-      "name": "Hero banner"
+      "name": "Hero + Top Picks"
     }
   ]
 }

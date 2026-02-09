@@ -7,20 +7,9 @@
         "subheading": "Curated collections of books, stationery, and literary gifts for every kind of reader.",
         "label": "Welcome to our bookshop",
         "button_label": "Shop Now",
-        "height": "large",
-        "overlay_opacity": 55,
-        "text_alignment": "left"
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "label": "Curated For You",
-        "heading": "Staff Picks",
-        "products_to_show": 4,
-        "columns": 4,
-        "show_vendor": true,
-        "show_view_all": true
+        "picks_heading": "Top Picks",
+        "picks_count": 6,
+        "picks_show_vendor": true
       }
     },
     "collection-grid": {
@@ -108,7 +97,6 @@
   },
   "order": [
     "hero",
-    "featured-collection",
     "collection-grid",
     "product-grid",
     "about-story",

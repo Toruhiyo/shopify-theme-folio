@@ -378,6 +378,48 @@
 
   document.querySelectorAll('.drag-carousel').forEach(initDragCarousel);
 
+  /* --- Hero Mosaic Auto-Scroll --- */
+  function initMosaicRows() {
+    const rows = document.querySelectorAll('[data-mosaic-row]');
+    if (!rows.length) return;
+
+    const DEFAULT_SPEED = 50;
+    const SPEED_VARIATION = [1, 0.85, 1.15, 0.95];
+    const heroSection = document.querySelector('.hero-mosaic');
+    const baseDuration = heroSection
+      ? parseInt(heroSection.dataset.mosaicSpeed, 10) || DEFAULT_SPEED
+      : DEFAULT_SPEED;
+
+    rows.forEach((row) => {
+      const track = row.querySelector('.hero-mosaic__track');
+      if (!track) return;
+
+      const isReverse = row.dataset.direction === '1';
+      const rowIndex = parseInt(row.dataset.rowIndex, 10) || 0;
+      const contentWidth = track.scrollWidth / 2;
+
+      if (contentWidth <= 0) return;
+
+      const duration = baseDuration * (SPEED_VARIATION[rowIndex % SPEED_VARIATION.length]);
+      const keyframeName = 'mosaic-slide-' + rowIndex;
+
+      const startX = isReverse ? -contentWidth : 0;
+      const endX = isReverse ? 0 : -contentWidth;
+
+      const style = document.createElement('style');
+      style.textContent =
+        '@keyframes ' + keyframeName + ' {' +
+        '  from { transform: translateX(' + startX + 'px); }' +
+        '  to   { transform: translateX(' + endX + 'px); }' +
+        '}';
+      document.head.appendChild(style);
+
+      track.style.animation = keyframeName + ' ' + duration + 's linear infinite';
+    });
+  }
+
+  initMosaicRows();
+
   /* --- Initialize --- */
   updateCartCount();
 

@@ -1,138 +1,64 @@
 {%- liquid
-  if section.settings.collection != blank
-    assign picks_collection = section.settings.collection
-  else
-    assign picks_collection = collections.all
-  endif
+  assign all_products = collections.all.products
+  assign row_count = 4
+  assign max_per_row = 20
 -%}
 
-<section class="hero-immersive">
-  <div class="hero-immersive__media">
-    {%- if section.settings.image != blank -%}
-      <img
-        src="{{ section.settings.image | image_url: width: 2000 }}"
-        alt="{{ section.settings.image.alt | escape | default: section.settings.heading | escape }}"
-        loading="eager"
-        fetchpriority="high"
-        width="{{ section.settings.image.width }}"
-        height="{{ section.settings.image.height }}"
-      >
-    {%- else -%}
-      <img
-        src="{{ 'hero-default.jpg' | asset_url }}"
-        alt="{{ section.settings.heading | escape }}"
-        loading="eager"
-        fetchpriority="high"
-      >
-    {%- endif -%}
-  </div>
-
-  <div class="hero-immersive__overlay"></div>
-
-  <div class="hero-immersive__inner">
-    <!-- Upper: Brand message -->
-    <div class="hero-immersive__message page-width">
-      {%- if section.settings.label != blank -%}
-        <span class="hero-immersive__label label-caps">{{ section.settings.label }}</span>
-      {%- endif -%}
-
-      {%- if section.settings.heading != blank -%}
-        <h1 class="hero-immersive__heading">{{ section.settings.heading }}</h1>
-      {%- endif -%}
-
-      {%- if section.settings.subheading != blank -%}
-        <p class="hero-immersive__subheading">{{ section.settings.subheading }}</p>
-      {%- endif -%}
-
-      <div class="hero-immersive__actions">
-        {%- if section.settings.button_label != blank -%}
-          <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn btn--primary btn--large">
-            {{ section.settings.button_label }}
-          </a>
-        {%- endif -%}
-        {%- if section.settings.button_label_2 != blank -%}
-          <a href="{{ section.settings.button_link_2 }}" class="btn btn--secondary btn--large">
-            {{ section.settings.button_label_2 }}
-          </a>
-        {%- endif -%}
-      </div>
-    </div>
-
-    <!-- Lower: Top Picks shelf -->
-    {%- if picks_collection.products.size > 0 -%}
-      <div class="hero-immersive__picks page-width">
-        <div class="hero-immersive__picks-header">
-          <h2 class="hero-immersive__picks-title">
-            {%- if section.settings.picks_heading != blank -%}
-              {{ section.settings.picks_heading }}
-            {%- else -%}
-              Top Picks
-            {%- endif -%}
-          </h2>
-          <a href="{{ picks_collection.url }}" class="hero-immersive__picks-viewall">
-            View All {% render 'icon-arrow', direction: 'right' %}
-          </a>
-        </div>
-
-        <div class="hero-immersive__picks-track-wrapper">
-          <div class="hero-immersive__picks-track drag-carousel">
-            {%- for product in picks_collection.products limit: section.settings.picks_count -%}
-              <div class="hero-immersive__pick">
-                <a href="{{ product.url }}" class="hero-immersive__pick-media">
+<section class="hero-mosaic" data-mosaic-speed="{{ section.settings.scroll_speed }}">
+  {%- if all_products.size > 0 -%}
+    <div class="hero-mosaic__bg" aria-hidden="true">
+      {%- for row in (1..row_count) -%}
+        {%- assign direction = row | modulo: 2 -%}
+        <div class="hero-mosaic__row" data-mosaic-row data-direction="{{ direction }}" data-row-index="{{ forloop.index0 }}">
+          <div class="hero-mosaic__track">
+            {%- for i in (1..2) -%}
+              {%- for product in all_products limit: max_per_row -%}
+                <a href="{{ product.url }}" class="hero-mosaic__card" tabindex="-1">
                   {%- if product.featured_media -%}
                     <img
-                      src="{{ product.featured_media | image_url: width: 440 }}"
+                      src="{{ product.featured_media | image_url: width: 300 }}"
                       alt="{{ product.featured_media.alt | escape | default: product.title | escape }}"
                       loading="eager"
-                      width="220"
-                      height="330"
+                      width="150"
+                      height="225"
                     >
                   {%- else -%}
-                    <div class="product-card__no-image" aria-hidden="true">
-                      {% render 'icon-cart', size: 24 %}
+                    <div class="hero-mosaic__card-placeholder">
+                      <span>{{ product.title | truncate: 20 }}</span>
                     </div>
                   {%- endif -%}
                 </a>
-                <div class="hero-immersive__pick-info">
-                  {%- if section.settings.picks_show_vendor and product.vendor != blank -%}
-                    <span class="hero-immersive__pick-vendor label-caps">{{ product.vendor }}</span>
-                  {%- endif -%}
-                  <h3 class="hero-immersive__pick-title">
-                    <a href="{{ product.url }}">{{ product.title }}</a>
-                  </h3>
-                  <span class="hero-immersive__pick-price">
-                    {%- if product.compare_at_price > product.price -%}
-                      <span class="hero-immersive__pick-price--sale">{{ product.price | money }}</span>
-                      <span class="hero-immersive__pick-price--compare">{{ product.compare_at_price | money }}</span>
-                    {%- else -%}
-                      {{ product.price | money }}
-                    {%- endif -%}
-                  </span>
-                </div>
-              </div>
+              {%- endfor -%}
             {%- endfor -%}
           </div>
         </div>
-      </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  <div class="hero-mosaic__overlay"></div>
+
+  <div class="hero-mosaic__content">
+    {%- if section.settings.label != blank -%}
+      <span class="hero-mosaic__label label-caps">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h1 class="hero-mosaic__heading">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="hero-mosaic__subheading">{{ section.settings.subheading }}</p>
     {%- endif -%}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Hero + Top Picks",
+  "name": "Hero",
   "tag": "section",
-  "class": "hero-immersive-section",
+  "class": "hero-mosaic-section",
   "settings": [
-    {
-      "type": "header",
-      "content": "Hero banner"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Background image"
-    },
     {
       "type": "text",
       "id": "label",
@@ -152,60 +78,19 @@
       "label": "Subheading"
     },
     {
-      "type": "text",
-      "id": "button_label",
-      "default": "Shop Now",
-      "label": "Button label"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "text",
-      "id": "button_label_2",
-      "label": "Secondary button label"
-    },
-    {
-      "type": "url",
-      "id": "button_link_2",
-      "label": "Secondary button link"
-    },
-    {
-      "type": "header",
-      "content": "Top Picks"
-    },
-    {
-      "type": "text",
-      "id": "picks_heading",
-      "default": "Top Picks",
-      "label": "Heading"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
       "type": "range",
-      "id": "picks_count",
-      "min": 3,
-      "max": 10,
-      "step": 1,
-      "default": 6,
-      "label": "Products to show"
-    },
-    {
-      "type": "checkbox",
-      "id": "picks_show_vendor",
-      "default": true,
-      "label": "Show vendor"
+      "id": "scroll_speed",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "default": 50,
+      "unit": "s",
+      "label": "Scroll speed (duration per cycle)"
     }
   ],
   "presets": [
     {
-      "name": "Hero + Top Picks"
+      "name": "Hero"
     }
   ]
 }

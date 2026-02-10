@@ -6,10 +6,7 @@
         "heading": "Stories Worth Discovering",
         "subheading": "Curated collections of books, stationery, and literary gifts for every kind of reader.",
         "label": "Welcome to our bookshop",
-        "button_label": "Shop Now",
-        "picks_heading": "Top Picks",
-        "picks_count": 6,
-        "picks_show_vendor": true
+        "scroll_speed": 50
       }
     },
     "collection-grid": {

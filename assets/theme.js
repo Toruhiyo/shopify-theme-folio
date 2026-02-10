@@ -379,11 +379,31 @@
   document.querySelectorAll('.drag-carousel').forEach(initDragCarousel);
 
   /* --- Hero Mosaic Auto-Scroll --- */
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function shuffleTrack(track) {
+    const cards = Array.from(track.children);
+    const half = Math.ceil(cards.length / 2);
+    const uniqueCards = cards.slice(0, half);
+
+    shuffleArray(uniqueCards);
+
+    track.innerHTML = '';
+    uniqueCards.forEach((card) => track.appendChild(card));
+    uniqueCards.forEach((card) => track.appendChild(card.cloneNode(true)));
+  }
+
   function initMosaicRows() {
     const rows = document.querySelectorAll('[data-mosaic-row]');
     if (!rows.length) return;
 
-    const DEFAULT_SPEED = 50;
+    const DEFAULT_SPEED = 120;
     const SPEED_VARIATION = [1, 0.85, 1.15, 0.95];
     const heroSection = document.querySelector('.hero-mosaic');
     const baseDuration = heroSection
@@ -393,6 +413,8 @@
     rows.forEach((row) => {
       const track = row.querySelector('.hero-mosaic__track');
       if (!track) return;
+
+      shuffleTrack(track);
 
       const isReverse = row.dataset.direction === '1';
       const rowIndex = parseInt(row.dataset.rowIndex, 10) || 0;

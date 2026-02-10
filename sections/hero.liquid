@@ -1,7 +1,6 @@
 {%- liquid
   assign all_products = collections.all.products
   assign row_count = 4
-  assign max_per_row = 20
 -%}
 
 <section class="hero-mosaic" data-mosaic-speed="{{ section.settings.scroll_speed }}">
@@ -12,7 +11,7 @@
         <div class="hero-mosaic__row" data-mosaic-row data-direction="{{ direction }}" data-row-index="{{ forloop.index0 }}">
           <div class="hero-mosaic__track">
             {%- for i in (1..2) -%}
-              {%- for product in all_products limit: max_per_row -%}
+              {%- for product in all_products -%}
                 <a href="{{ product.url }}" class="hero-mosaic__card" tabindex="-1">
                   {%- if product.featured_media -%}
                     <img
@@ -80,10 +79,10 @@
     {
       "type": "range",
       "id": "scroll_speed",
-      "min": 20,
-      "max": 120,
-      "step": 5,
-      "default": 50,
+      "min": 30,
+      "max": 300,
+      "step": 10,
+      "default": 120,
       "unit": "s",
       "label": "Scroll speed (duration per cycle)"
     }

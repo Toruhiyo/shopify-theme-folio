@@ -11,7 +11,12 @@
   "customer": {
     "register": {
       "submit": "Créer",
-      "already_have_account": "Vous avez déjà un compte ? Connectez-vous"
+      "already_have_account": "Vous avez déjà un compte ? Connectez-vous",
+      "title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "email": "Courriel",
+      "password": "Mot de passe"
     },
     "recover_password": {
       "title": "Réinitialisez votre mot de passe",
@@ -70,10 +75,153 @@
       "discount": "Remise",
       "shipping": "Expédition",
       "tax": "Impôt"
+    },
+    "account": {
+      "title": "Mon compte",
+      "orders": "Historique des commandes",
+      "no_orders": "Vous n'avez pas encore passé de commandes.",
+      "details": "Détails du compte",
+      "addresses": "Adresses",
+      "default_address": "Par défaut",
+      "view_addresses": "Voir les adresses",
+      "logout": "Déconnexion"
+    },
+    "login": {
+      "title": "Connexion",
+      "email": "Courriel",
+      "password": "Mot de passe",
+      "sign_in": "Connexion",
+      "forgot_password": "Mot de passe oublié ?",
+      "create_account": "Créer un compte",
+      "guest_title": "Continuer en tant qu'invité",
+      "guest_continue": "Continuer"
     }
   },
   "accessibility": {
     "skip_to_content": "Aller au contenu",
     "close": "Fermer"
+  },
+  "sections": {
+    "announcement_bar": {
+      "name": "Barre d'annonce"
+    },
+    "header": {
+      "name": "En-tête",
+      "cart": "Panier",
+      "search": "Rechercher",
+      "close": "Fermer"
+    },
+    "hero": {
+      "name": "Bannière principale"
+    },
+    "featured_collection": {
+      "name": "Collection en vedette"
+    },
+    "collection_grid": {
+      "name": "Grille de collection"
+    },
+    "product_grid": {
+      "name": "Grille de produits"
+    },
+    "newsletter": {
+      "email_placeholder": "Votre adresse e-mail",
+      "subscribe": "S'abonner",
+      "success": "Merci de vous être abonné !"
+    },
+    "testimonials": {
+      "name": "Témoignages"
+    },
+    "about_story": {
+      "name": "À propos / Notre histoire"
+    },
+    "footer": {
+      "name": "Pied de page"
+    }
+  },
+  "general": {
+    "password_page": {
+      "opening_soon": "Ouverture Prochainement",
+      "login_form_heading": "Entrez dans la boutique en utilisant le mot de passe",
+      "login_password_button": "Entrer avec un mot de passe",
+      "close": "Fermer",
+      "password_link": "Entrer avec un mot de passe",
+      "powered_by_shopify_html": "Cette boutique sera optimisée par {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Partager sur Facebook",
+        "share_on_twitter": "Tweeter sur Twitter",
+        "share_on_pinterest": "Épingler sur Pinterest"
+      }
+    },
+    "404": {
+      "title": "Page introuvable",
+      "subtext": "La page que vous recherchez n'existe pas. Vous avez peut-être mal tapé l'adresse ou la page a peut-être été déplacée.",
+      "link": "Continuer les achats"
+    },
+    "meta": {
+      "tags": "Tagué \"{{ tags }}\""
+    },
+    "breadcrumbs": {
+      "home": "Accueil"
+    },
+    "search": {
+      "title": "Rechercher",
+      "placeholder": "Rechercher dans notre boutique...",
+      "submit": "Rechercher",
+      "no_results": "Aucun résultat trouvé pour « {{ terms }} ». Vérifiez l'orthographe ou utilisez un mot ou une expression différente.",
+      "results_count": "{{ count }} résultats pour \"{{ terms }}\""
+    },
+    "cart": {
+      "title": "Votre panier",
+      "empty": "Votre panier est vide",
+      "continue_shopping": "Continuer les achats",
+      "subtotal": "Sous-total",
+      "taxes_and_shipping": "Taxes et frais de port calculés lors du paiement",
+      "checkout": "Paiement",
+      "remove": "Supprimer",
+      "update": "Mettre à jour"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "adding": "Ajout...",
+      "sold_out": "Épuisé",
+      "unavailable": "Indisponible",
+      "sale": "Soldes",
+      "new": "Nouveau",
+      "quantity": "Quantité",
+      "share": "Partager",
+      "vendor": "Fournisseur",
+      "sku": "UGS"
+    }
+  },
+  "collections": {
+    "general": {
+      "all_products": "Tous les produits",
+      "no_products": "Aucun produit trouvé dans cette collection.",
+      "products_count": "{{ count }} produits",
+      "sort_by": "Trier par",
+      "sort_options": {
+        "manual": "En vedette",
+        "best-selling": "Le plus vendu",
+        "title-ascending": "Par ordre alphabétique, A-Z",
+        "title-descending": "Alphabétiquement, Z-A",
+        "price-ascending": "Prix, du plus bas au plus haut",
+        "price-descending": "Prix, du plus élevé au moins élevé",
+        "created-ascending": "Date, de la plus ancienne à la plus récente",
+        "created-descending": "Date, la plus récente à la plus ancienne"
+      },
+      "explore": "Explorer"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "En savoir plus",
+      "written_by": "Rédigé par {{ author }}",
+      "published_on": "Publié le {{ date }}",
+      "back_to_blog": "Retour au {{ blog }}"
+    }
   }
 }

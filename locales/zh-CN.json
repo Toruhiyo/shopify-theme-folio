@@ -883,7 +883,39 @@
         "duties_label": "职责",
         "error_duties_tooltip": "此订单由其他国家发货，可能在交付时收取关税和税费。",
         "deferred_total_due_date_label": "总计应付 {{date}}",
-        "deferred_total_due_date_label_next": "截止 %{date}"
+        "deferred_total_due_date_label_next": "截止 %{date}",
+        "group_title_label": "“%{group_title}”的一部分",
+        "more_items_modal": {
+          "empty_results": "未找到与“%{searchText}”相关的结果。请检查拼写或尝试使用其他词语或短语。",
+          "number_items_shown": "%{shownNumber} / %{totalNumber} 项商品"
+        },
+        "order_name_label": "订购 %{name}",
+        "gift_card_applied": "礼品卡已使用",
+        "gift_cards_apply_to_local_shop": "礼品卡仅适用于 %{shop_name} 的商品",
+        "free_shipping_discount_label": "免运费",
+        "gift_card_has_been_applied": "礼品卡已被使用",
+        "gift_card_has_been_removed": "礼品卡已被移除",
+        "gift_card_subscriptions_notice": "礼品卡仅适用于您的首次付款",
+        "no_pickup_location": "没有可用的自取地点。",
+        "estimated_taxes_label": "预估税费",
+        "information_estimated_taxes_label": "税费（预估）",
+        "order_total_label": "订单总额",
+        "payment_due_label": "应付款项",
+        "gift_card_savings_notice": "获得价值 %{gift_card_amount} 的礼品卡后",
+        "original_price": "原价",
+        "order_total_updated_label": "更新总计",
+        "gift_card_ending": "以 %{last_characters} 结尾的礼品卡",
+        "multiple_shipping_lines_label": "运费总计",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> 不能与您现有的折扣同时使用。",
+        "payment_terms_totals": {
+          "due_later": "应付总额 %{due_at}",
+          "due_later_checkout_to_draft": "稍后应付总额"
+        },
+        "maximum_discount_code_limit_reached": "您已达到优惠码的最大使用数量。请删除一个已有的优惠码以使用 <strong style=\"text-transform:uppercase\">%{code}</strong>。",
+        "may_be_charged_on_delivery": "可能在交货时收费",
+        "expand_component_information": {
+          "one": "显示 %{count} 个项目"
+        }
       },
       "order_payment_collection": {
         "custom_line_item_description": "订单 %{order_name} 的应付金额",

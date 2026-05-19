@@ -303,13 +303,65 @@
         "different_shipping_address_label": "寄送到不同地址",
         "different_shipping_address_text": "此订单使用一次性地址",
         "change_company_location_link_label": "更改公司地址",
-        "change_location_link_label": "更改位置"
+        "change_location_link_label": "更改位置",
+        "shipping_used_as_billing_notice": "这也将作为您此次订单的账单地址。",
+        "stored_addresses_label": "已保存地址",
+        "storefront_link": "商家网站",
+        "province_label": "省份",
+        "province_placeholder": "省份",
+        "state_label": "状态",
+        "state_placeholder": "状态",
+        "region_label": "地区",
+        "region_placeholder": "地区",
+        "region_none": "未选择",
+        "prefecture_label": "县级行政区",
+        "prefecture_placeholder": "县级行政区",
+        "state_and_territory_label": "州/地区",
+        "state_and_territory_placeholder": "州/地区",
+        "pincode_placeholder": "密码",
+        "ship_to_company": "送货至 {{companyName}}"
       },
       "company_location": {
         "location_title": "公司所在地"
       },
       "clipboard": {
         "failed_to_copy": "复制失败"
+      },
+      "customer_account": {
+        "not_user_label": "不是 %{first_name} 吗？",
+        "sign_out_link_label": "登出",
+        "save_my_information_label": "请保存此信息以备下次使用",
+        "invalid_address": "所选地址无效。请 %{update_address_link} 或选择其他地址。",
+        "incomplete_address": "所选地址不完整。%{update_address_link} 或选择其他地址。",
+        "invalid_shipping_method_summary": "请选择有效的送货地址以查看可用的送货方式",
+        "saved_address_option_description": {
+          "one": "您有 {{count}} 个已保存的地址。",
+          "other": "您有 {{count}} 个已保存的地址。"
+        },
+        "saved_address_option_link": "使用已保存的地址",
+        "saved_address_modal_title": "使用我保存的地址"
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "产品不可用",
+          "other": "无货产品"
+        },
+        "products_not_available": {
+          "one": "此产品将从您的购物车中移除，因为它在您所在的国家/地区不可用。",
+          "other": "这些产品将从您的购物车中移除，因为它们在您的国家/地区不可用。"
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "本产品在您所在的国家/地区不可用。",
+          "other": "这些产品在您所在的国家/地区不可用。"
+        },
+        "unavailable_label": "无货"
+      },
+      "customer_payment_methods": {
+        "update_card_button_label": "更新卡片",
+        "delete_customer_mandate": {
+          "generic_error": "处理您的请求时出现问题。",
+          "success_message": "您的付款方式已成功删除"
+        }
       }
     },
     "attributes": {

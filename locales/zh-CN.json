@@ -1485,7 +1485,42 @@
           "free_for_first_n_order": {
             "one": "首次订购",
             "other": "前 %{count} 个订单"
-          }
+          },
+          "prepaid_order_one_cycle": {
+            "one": "再加 %{count} 件，运费 %{shipping_price}",
+            "other": "%{count} 次更多配送，运费 %{shipping_price}（每次配送 %{per_delivery_cost}）"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{count} 件商品的配送费为 %{shipping_price}",
+            "other": "%{count} 次配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}）"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{count} 件更多商品的配送费为 %{shipping_price}，随后为 %{recurring_order_shipping_price}",
+            "other": "%{count} 次更多配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}），随后为 %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{count} 次配送的 %{shipping_price}，随后为 %{recurring_order_shipping_price}",
+            "other": "%{count} 次配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}），随后为 %{recurring_order_shipping_price}"
+          },
+          "subscription_free_with_frequency_label": "免费配送 %{delivery_frequency}",
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "每隔 %{count} 天"
+            },
+            "week": {
+              "other": "每隔 %{count} 周"
+            },
+            "month": {
+              "one": "每个月",
+              "other": "每隔 %{count} 个月"
+            },
+            "year": {
+              "other": "每隔 %{count} 年"
+            }
+          },
+          "prepaid_shipping_price_label": "每次配送 %{shipping_price} x %{delivery_interval_count} 次配送间隔",
+          "prepaid_initial_order_discounted_with_renewal": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}，之后每 %{billing_cycle} 运费为 %{shipping_price}",
+          "recurring_order_shipping_price": "随后是 %{recurring_order_shipping_price}"
         },
         "shipping_used_as_billing_notice": "这也将作为您此次订单的账单地址。",
         "split_shipping_merchandise_quantity_label_additional": "+%{quantity} 更多",
@@ -1497,7 +1532,20 @@
         "split_shipping_multiple_shipment_notice": "您的订单将分多次发货",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "您的订单将分 %{quantity} 批次送达",
         "split_shipping_more_shipping_options": "更多运输选项",
-        "split_shipping_shipment_number": "货运 %{number}"
+        "split_shipping_shipment_number": "货运 %{number}",
+        "title": "运输",
+        "subscription_shipping": "订阅配送",
+        "waiting_on_rate_notice": "正在获取可用的运费价格…",
+        "waiting_on_pickup_location_notice": "正在获取可用的取货地点…",
+        "two_day_delivery": "2天内送达 %{time}",
+        "unbranded_default_description": "准备发货",
+        "unbranded_description_same_day": "当天发货",
+        "unbranded_description_with_fulfillment_days": {
+          "one": "下一个工作日发货"
+        },
+        "third_party_address_error": "加载地址选择时发生错误。请在下方手动输入您的地址。",
+        "third_party_payment_timeout": "无法加载支付方式。请重试或使用其他支付方式。",
+        "third_party_payment_error": "加载支付选项时发生错误。请使用其他支付方式。"
       },
       "session_errors": {
         "session_already_finished": "此订单已提交。您可以返回商店开始新的订单。"
@@ -1511,6 +1559,24 @@
         "subtitle_no_match": "此地址与您保存的任何地址均不匹配。",
         "subtitle_must_use": "您的订单将寄送至此地址。",
         "use_saved_address": "使用不同的地址"
+      },
+      "shipping_errors": {
+        "shipping_method": "您的订单的运输选项已更改。请查看您的选择。",
+        "shipping_method_not_available": "您的购物车已更新，您添加的商品无法配送到您的地址。请移除这些商品以完成订单。",
+        "shipping_method_not_available_generic": {
+          "one": "您的订单无法发送到所选地址。请检查您的地址是否正确后重试，或选择其他地址。",
+          "other": "您购物车中的某些商品无法寄送到您填写的地址。请检查您的地址是否正确后重试，或选择其他地址。"
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "购物车中的商品未达到运费资格的价格或重量要求。请更新您的购物车后再试。",
+        "shipping_method_not_available_updated": {
+          "one": "您添加的商品无法配送到您的地址。请将其移除后结账，或联系商店。",
+          "other": "您添加的一个或多个商品无法配送到您的地址。请移除这些商品以继续结账，或联系商店。"
+        },
+        "payment_method_not_supported": "您无法使用此付款方式支付 %{country}。请使用其他付款方式寄送到该国家。",
+        "empty_state": "请输入您的送货地址以查看可用的送货方式。",
+        "title": "无法配送",
+        "invalid_selected_address": "所选送货地址无效",
+        "invalid_selected_address_with_update_link": "所选的收货地址无效。请 %{update_address_link} 或选择其他地址"
       }
     },
     "attributes": {

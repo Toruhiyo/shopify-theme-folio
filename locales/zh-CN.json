@@ -2072,6 +2072,131 @@
     "challenge": {
       "message": "要继续，请告诉我们您不是机器人。",
       "error": "您的答案不正确，请再试一次。"
+    },
+    "errors": {
+      "blank": "不能为空",
+      "blocked_address": "此地点不受支持",
+      "credit_card_session_expired": "信用卡授权已过期，请重新输入您的付款信息。您的卡片尚未被扣款。",
+      "invalid_email": "必须是有效的电子邮件地址",
+      "discount_disabled": "此折扣已被禁用",
+      "discount_expired": "此折扣已不再有效",
+      "discount_limit_reached": "此折扣已达到使用上限",
+      "discount_not_found": "无法找到与输入代码匹配的有效折扣",
+      "customer_already_used_once_per_customer_discount_notice": "此折扣已达到使用上限",
+      "gift_card_already_applied": "代码已应用于您的结账页面",
+      "gift_card_depleted": "此礼品卡余额不足",
+      "contains_html_tags": "不能包含HTML标签",
+      "contains_spaces": "以空格开始或结束。",
+      "invalid_for_country": "不适用于 %{country}",
+      "invalid_for_country_and_province": "不适用于 %{province} 和 %{country}",
+      "invalid_province_in_country": "不是 %{country} 的有效省份",
+      "full_name_required": "请输入名字和姓氏",
+      "taken": "已被占用",
+      "too_short": "太短（最少需要 %{count} 个字符）",
+      "too_long": "太长（最多 %{count} 个字符）",
+      "invalid_state_in_country": "不是 %{country} 的有效州/省份",
+      "invalid_region_in_country": "不是 %{country} 的有效地区",
+      "not_supported": "不支持",
+      "invalid_type": "抱歉，我们不接受此类型的卡片",
+      "invalid_start_date_or_issue_number_for_debit": "需要有效的起始日期或发行编号",
+      "reset_password_html": "此电子邮件地址已关联一个账户。如果这是您的账户，您可以<a href=\"/account/login#recover\">重设您的密码</a>",
+      "verify_email": "我们已向 %{customer_email} 发送了一封电子邮件，请点击其中的链接以验证您的电子邮件地址。",
+      "product_not_available": "该产品未对该客户发布。",
+      "shop_404": {
+        "title": "创建电子商务网站并在线销售！Shopify电子商务软件",
+        "heros": {
+          "store_unavailable": "抱歉，本店目前无法使用。",
+          "no_storefront": "这家店铺尚未拥有网站。"
+        },
+        "links": {
+          "explore_other_stores": "探索其他商店"
+        },
+        "owner_ctas": {
+          "header": "您是店主吗？",
+          "fix_domain": "完成新网址的设置，请访问 %{domain_settings_link}。点击“连接域名”，然后输入：%{domain}。<br>如果您无法进入您的商店，请尝试访问 %{forgot_your_store_link} 页面。",
+          "fix_domain_link_text": "您的域名设置",
+          "forgot_your_store_link_text": "忘记了您的商店",
+          "add_storefront": "您可以通过在您的 %{admin_link} 中添加在线商店渠道来设置您的网站。如果您无法进入您的商店，请尝试访问 %{forgot_your_store_link} 页面。",
+          "admin_link_text": "管理员"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "亲自销售",
+            "caption": "无论您是刚起步还是正在扩展规模，都能获得运营零售店所需的功能。"
+          },
+          "open_a_store": {
+            "header": "开设一个新的 Shopify 商店",
+            "caption": "开始三天免费试用，随后在接下来的三个月内每月仅需1美元。"
+          },
+          "editions": {
+            "header": "查看 Shopify 版本",
+            "caption": "通过100多项产品更新，您可以比以往任何时候都更高效、更具创造力，并在商业中更具影响力。",
+            "link_text": "探索最新版本"
+          },
+          "store_owner": {
+            "header": "您是店主吗？",
+            "caption": "您是否遇到登录商店的问题？请尝试使用 %{forgot_your_store_link} 功能。如果您想重新激活您的商店，请联系 %{shopify_support_link}。"
+          }
+        }
+      }
+    },
+    "email_marketing": {
+      "unsubscribed": {
+        "disclaimer": "您将不再收到我们的任何营销更新。您可以随时重新订阅。",
+        "preview": "您正在预览客户取消订阅时将看到的内容。"
+      },
+      "sms_unsubscribe_confirm": {
+        "message": "您确定要取消订阅短信营销吗？",
+        "button": "取消订阅"
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>您已选择开启电子邮件开启追踪。</b>",
+          "visibility": "电子邮件开启率将以匿名方式报告。我们只能看到您是否打开了电子邮件，且仅作为整体电子邮件开启率的一部分。",
+          "opt_out_html": "如果您不想分享此信息，可以<a style='text-decoration:underline;' href='%{link}'>选择退出</a>电子邮件打开跟踪。",
+          "preview_bar": "您正在预览客户选择电子邮件开启追踪时将看到的内容。"
+        },
+        "opt_out": {
+          "opted_out_html": "<b>您已选择退出电子邮件开启追踪。</b>",
+          "visibility": "我们不会知道您是否打开了我们的电子邮件。",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>选择加入</a> 邮件打开追踪。",
+          "preview_bar": "您正在预览客户选择退出电子邮件开启追踪时将看到的内容。"
+        },
+        "no_longer_track": {
+          "status_html": "<b>我们不再追踪任何电子邮件的打开情况。</b>"
+        },
+        "track": {
+          "status_html": "<b>电子邮件开启追踪已报告。</b>",
+          "visibility": "我们只会查看您是否打开了电子邮件，作为整体电子邮件开启率的一部分。"
+        },
+        "updated_policy": {
+          "status_html": "<b>电子邮件开启追踪已报告。</b>",
+          "visibility": "我们已更新政策，现在会追踪电子邮件的开启情况。电子邮件开启率将以匿名方式报告。我们只能看到您是否打开了电子邮件，作为总电子邮件开启率的一部分。",
+          "opt_out_html": "如果您不想分享此信息，您可以<a style='text-decoration:underline;' href='%{link}'>取消订阅。</a>"
+        }
+      }
+    },
+    "links": {
+      "powered_by_shopify": "由 Shopify 提供技术支持",
+      "learn_more": "了解更多"
+    },
+    "notices": {
+      "address": {
+        "updated": "地址更新成功。",
+        "created": "地址创建成功",
+        "deleted": "地址删除成功"
+      },
+      "cart": {
+        "all_items_in_cart": "您的购物车中有所有 %{count} 个 %{name}。",
+        "bundle_requires_components": "捆绑产品“%{name}”无法添加到购物车。"
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "有现货"
+        }
+      }
     }
   },
   "products": {

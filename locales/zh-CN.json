@@ -2188,7 +2188,81 @@
       },
       "cart": {
         "all_items_in_cart": "您的购物车中有所有 %{count} 个 %{name}。",
-        "bundle_requires_components": "捆绑产品“%{name}”无法添加到购物车。"
+        "bundle_requires_components": "捆绑产品“%{name}”无法添加到购物车。",
+        "only_n_items_available": "您只能将 %{count} 个 %{name} 添加到购物车。",
+        "too_many_items_in_cart": "您无法将更多 %{name} 添加到购物车。",
+        "only_one_added_to_cart": "由于库存限制，您的购物车中只添加了1件商品。",
+        "only_n_added_to_cart": "由于库存限制，您的购物车中只添加了 %{quantity} 件商品。",
+        "maximum_available_quantity_reached": "此商品的最大数量已在您的购物车中。",
+        "less_than_minimum": "此商品的最低数量为 %{min}。",
+        "more_than_maximum": "此商品最多可有 %{max}。",
+        "not_respect_step": "您只能以 %{step} 的倍数添加此商品。",
+        "missing_parameters": "无效的ID或行参数",
+        "product_not_available": "产品无货",
+        "too_many_line_items_error": "您的购物车中不能超过 %{max} 件商品。",
+        "stock_problems_html": "一个或多个商品已不再可用。我们提供了一个<a href='%{link}'>更新的购物车</a>。",
+        "items_changed": "一个或多个项目已更改。",
+        "variant_not_found": "找不到变体",
+        "variant_requires_selling_plan": "变体只能与销售计划一起购买。",
+        "selling_plan_not_available_for_company_locations": "仅限一次性购买，适用于企业对企业订单",
+        "digital_product_not_available_for_company_locations": "此商品无法添加到企业订单中",
+        "buyer_cannot_purchase_for_company_locations": "您无法为此地点购买",
+        "selling_plan_not_applicable": "无法将销售计划应用于变体",
+        "shipping_address_not_required": "此购物车无需配送",
+        "shipping_address_invalid": "计算您的运费时出现问题。请继续结账，在完成订单前选择运费。",
+        "gift_card_with_components_not_supported": "捆绑产品“%{name}”无法添加到购物车。",
+        "gift_card_price_must_be_greater_than_zero": "捆绑产品“%{name}”无法添加到购物车。",
+        "view_lines_limit_reached": "每行必须少于或等于 %{limit} 个字符",
+        "cart_too_large": "购物车容量过大。",
+        "merchandise_line_transformers": {
+          "run_error": "您的购物车中发生了错误。"
+        },
+        "merchandise_not_applicable": "无法按当前配置购买该商品。"
+      },
+      "customer": {
+        "invalid_credentials": "电子邮件或密码错误。",
+        "denylisted_reset_password": "您的账户无法访问，因为当前密码不安全。您将收到一封电子邮件以更新您的密码。"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "新增 %{delta}",
+          "increment_item": "新增 %{delta}",
+          "decrement_item": "已移除 %{delta} 中的 %{total}",
+          "decrement_fulfilled_line_item": "已退回 %{delta} 中的 %{total}",
+          "decrement_return_line_item": "从退货中移除了 %{delta}"
+        }
+      },
+      "order": {
+        "cancel_reason": {
+          "customer": "客户更改/取消订单",
+          "declined": "付款被拒绝",
+          "inventory": "商品缺货",
+          "fraud": "欺诈订单"
+        },
+        "financial_status": {
+          "authorized": "授权",
+          "pending": "待定",
+          "voided": "无效",
+          "partially_paid": "部分支付"
+        },
+        "fulfillment_status": {
+          "fulfilled": "已完成",
+          "unfulfilled": "未完成",
+          "restocked": "已补货"
+        },
+        "transaction_status": {
+          "pending": "待定"
+        },
+        "cash_on_delivery": "货到付款 (COD)"
+      },
+      "storefront": {
+        "invalid_password": "密码错误，请重试。"
+      },
+      "tags": {
+        "add_articles": "将搜索范围缩小到也包含标签 %{tag} 的文章",
+        "add_products": "将筛选范围缩小到匹配标签 %{tag} 的产品",
+        "remove_articles": "扩大搜索范围至未标记 %{tag} 的文章",
+        "remove_products": "移除标签 %{tag}"
       }
     },
     "filters": {
@@ -2197,6 +2271,21 @@
           "in_stock": "有现货"
         }
       }
+    },
+    "pagination": {
+      "previous": "上一页"
+    },
+    "search": {
+      "error": "加载您的搜索结果时出现问题。请刷新页面或稍后再试。"
+    },
+    "page_titles": {
+      "order": "订购 %{name}",
+      "search_results": {
+        "one": "搜索：找到 %{count} 条与“%{terms}”相关的结果",
+        "other": "搜索：找到 %{count} 条与“%{terms}”相关的结果"
+      },
+      "collections": "系列",
+      "not_found": "404 未找到"
     }
   },
   "products": {

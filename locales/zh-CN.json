@@ -1401,7 +1401,43 @@
         },
         "different_shipping_method_summary": "输入不同的送货地址以查看可用的送货方式",
         "add_shipping_address": "添加送货地址",
-        "add_new_delivery_address": "添加新的收货地址"
+        "add_new_delivery_address": "添加新的收货地址",
+        "shipping_method_rollup_accessibility_label": "运输方式选项",
+        "no_rates_for_cart_or_destination_notice": "您的购物车或地址暂无可用的配送方式",
+        "no_pickup_location_notice": "至少有一件您的产品无法自取",
+        "no_rates_for_country_notice": "未找到该地址的运费信息。",
+        "no_rates_contact_notice": "联系我们获取更多信息",
+        "estimated_delivery_time": "预计送达 %{time}",
+        "estimated_delivery_time_range": "预计送达时间 %{min_time}–%{max_time}",
+        "estimated_time": "预计 %{time}",
+        "estimated_time_range": "预计 %{min_time}–%{max_time}",
+        "shipping_line_phone": "您的快递员可能会使用此号码与您联系。",
+        "shipping_line_delivery_phone": "您可能会收到有关您送货更新的联系。",
+        "optional_shipping_line_delivery_instructions_label": "送货说明（可选）",
+        "shipping_line_delivery_instructions": "输入必要的信息，如门禁码或投递说明。",
+        "other_method": {
+          "zero": "无其他可用方法",
+          "one": "还有 %{count} 种其他方法可用于",
+          "other": "还有 %{count} 种其他方法可选，起价为"
+        },
+        "prime_not_available": {
+          "default": "您的订单不支持优先配送。您的运输选项已更新。"
+        },
+        "one_time_purchase_shipping": "一次性运输",
+        "shipping_information_required_notice": "需要提供运输信息。{{link}}。",
+        "shipping_information_redirect_link": "在此输入您的信息",
+        "no_other_methods_available": "无其他可用方法",
+        "shipping_address_title": "送货至",
+        "shipping_address_rollup_accessibility_label": "送货地址选项",
+        "invalid_shipping_method_summary": "请输入有效的送货地址以查看可用的送货方式",
+        "invalid_shipping_method_summary_selected": "选择不同的送货地址以查看可用的送货方式",
+        "method_summary": {
+          "incomplete_address_entered": "请输入完整的收货地址以查看可用的配送方式",
+          "incomplete_address_selected": "请选择完整的收货地址以查看可用的配送方式"
+        },
+        "missing_shipping_address": "缺少收货地址",
+        "pre_order_ships_now": "现已发货",
+        "pre_order_ships_date": "发货时间 %{date}"
       },
       "session_errors": {
         "session_already_finished": "此订单已提交。您可以返回商店开始新的订单。"

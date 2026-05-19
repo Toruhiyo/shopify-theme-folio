@@ -1695,6 +1695,68 @@
       },
       "store_credit_errors": {
         "generic_error": "您的商店积分出现问题。请重试或重新加载页面。"
+      },
+      "subscriptions": {
+        "recurring_totals_with_initial_order_shipping_discount": "首次付款 %{total_price_with_discount}，随后每期付款 %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "首付款 %{total_price}",
+            "other": "前 %{count} 次付款，每次 %{total_price}"
+          },
+          "following_cycles": "，然后每隔 %{interval} 支付 %{total_price}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "，然后在 %{total_price} 支付 %{count} 次",
+            "other": ", 然后每次支付 %{total_price} 的 %{count} 次付款"
+          }
+        }
+      },
+      "taxes": {
+        "tax_details": "附加税务详情",
+        "vat_number": {
+          "field": {
+            "tooltip": "验证增值税号码并在符合条件的订单上自动应用反向收费"
+          },
+          "add": "添加增值税号码",
+          "domestic_order": "反向收费豁免仅适用于跨境欧盟订单。本地订单将收取标准增值税。",
+          "status": {
+            "invalid_format": {
+              "at": "奥地利增值税号码包含\"AT\"和9个字符",
+              "be": "比利时增值税号码包含BE和10个字符",
+              "bg": "保加利亚增值税号码包含BG和9至10个字符",
+              "hr": "克罗地亚增值税号码包含“HR”和11个字符",
+              "cy": "塞浦路斯增值税号码包含CY和9个字符",
+              "cz": "捷克共和国增值税号码包含CZ和8至10个字符",
+              "dk": "丹麦增值税号码包含 DK 和 8 个字符",
+              "ee": "爱沙尼亚增值税号码包含 EE 和 9 个字符",
+              "fi": "芬兰增值税号码包含FI和8个字符",
+              "fr": "法国增值税号码包含FR和11个字符",
+              "de": "德国增值税号码包含“DE”和9个字符",
+              "gr": "希腊增值税号码包含EL和9个字符",
+              "hu": "匈牙利增值税号码包含HU和8个字符",
+              "ie": "爱尔兰增值税号码包含IE和8至9个字符",
+              "it": "意大利增值税号码包含“IT”和11个字符",
+              "lv": "拉脱维亚增值税号码包含LV和11个字符",
+              "lt": "立陶宛增值税号码包含LT及9至12个字符",
+              "lu": "卢森堡增值税号码包含LU和8个字符",
+              "mt": "马耳他增值税号码包含MT和8个字符",
+              "nl": "荷兰增值税号码包含“NL”和12个字符",
+              "es": "西班牙增值税号码包含“ES”和9个字符",
+              "gb": "英国增值税号码包含 GB 或 XI 以及 5 到 12 个字符"
+            }
+          },
+          "accessibility": {
+            "status": {
+              "validating": "增值税号码验证正在进行中",
+              "applied": "已申请增值税免税",
+              "domestic": "未应用增值税免税",
+              "invalid_number": "增值税免税失败",
+              "service_unavailable": "无法验证增值税免税资格",
+              "service_error": "无法验证增值税免税资格"
+            }
+          }
+        }
       }
     },
     "attributes": {

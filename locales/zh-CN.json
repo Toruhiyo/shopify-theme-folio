@@ -1576,7 +1576,125 @@
         "empty_state": "请输入您的送货地址以查看可用的送货方式。",
         "title": "无法配送",
         "invalid_selected_address": "所选送货地址无效",
-        "invalid_selected_address_with_update_link": "所选的收货地址无效。请 %{update_address_link} 或选择其他地址"
+        "invalid_selected_address_with_update_link": "所选的收货地址无效。请 %{update_address_link} 或选择其他地址",
+        "unavailable_addresses_only_countries": "您的订单只能发货到 {{countriesList}}。请添加新地址以继续。",
+        "unavailable_address_country": "您选择的国家无法配送。请使用其他地址继续。",
+        "unavailable_selected_address": "所选地址无法配送",
+        "unavailable_selected_address_for_region": "{{region}} 不支持配送。请选择其他地址继续。"
+      },
+      "shop_policies": {
+        "select_policy_label": "选择一项政策",
+        "shipping_policy": "运输",
+        "subscription_policy": "取消政策",
+        "contact_information": "联系",
+        "purchase_options_cancellation_policy": "取消政策",
+        "cookie_preferences": "曲奇饼干",
+        "terms_and_policies": "条款与政策"
+      },
+      "split_delivery": {
+        "pickup_all_items": "全部选中",
+        "items_for_pickup": "待取物品",
+        "items_for_shipping": "待发货商品",
+        "items_moved_to_shipping_toast": "无法自提的商品已改为配送",
+        "delivery_method": "分批交付方式",
+        "delivery_method_menu": "分批送货方式菜单",
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "%{count} 件商品无法被取走",
+              "other": "%{count} 件商品无法自提"
+            },
+            "cannot_be_shipped": {
+              "one": "%{count} 件商品无法发货",
+              "other": "%{count} 件商品无法发货"
+            }
+          },
+          "remove_item_only": {
+            "one": "移除项目"
+          },
+          "ship_separately": {
+            "other": "分开发货"
+          },
+          "pick_them_up_in_store": {
+            "one": "到店自取",
+            "other": "到店自取"
+          }
+        },
+        "cross_border": {
+          "modal": {
+            "heading": "更改国家？",
+            "content": "这将把所有商品重置为配送。您的自提地点和配送地点必须位于同一国家。",
+            "change_country": "更改国家"
+          }
+        }
+      },
+      "shop_pay_external": {
+        "errors": {
+          "try_again_later": "请检查您的连接，或关闭此窗口，稍后再试。",
+          "checkout_has_expired": "您的结账已过期。关闭此窗口，然后再次尝试从 {{shopName}} 结账。"
+        },
+        "return_to_store": "返回 {{shopName}}"
+      },
+      "stock": {
+        "items_unavailable_notice": "某些商品已不再供应。",
+        "removed_from_cart_notice": "已从购物车中移除",
+        "reduced_with_quantity_label": "仅剩 %{quantity_available} 件",
+        "remove_from_cart_button_label": "从购物车中移除",
+        "remove": "移除",
+        "empty_cart_label": "您的购物车是空的",
+        "quantity_update": {
+          "description": "这些商品的可用数量已更改，并已在您的购物车中更新。"
+        },
+        "unpurchasable_product": {
+          "title": "无法购买的产品",
+          "header": "您的购物车中有些商品已被移除",
+          "message": "这些商品不适用于企业对企业订单。",
+          "status_column_header": "无货可用"
+        },
+        "unpurchasable_product_generic": {
+          "title": "无法购买的产品",
+          "header": "您的购物车中有些商品已被移除",
+          "message": "这些商品无货。",
+          "status_column_header": "无货可用"
+        },
+        "unfulfillable_product": {
+          "title": "无法送货",
+          "message": {
+            "one": "此商品不再支持 %{delivery_method}。",
+            "other": "这些商品不再支持 %{delivery_method}。"
+          },
+          "default_message": {
+            "one": "所选的送货方式不再适用于此商品。",
+            "other": "所选的送货方式不再适用于这些商品。"
+          }
+        },
+        "unshippable_product": {
+          "title": "无配送服务",
+          "header": {
+            "one": "%{count} 件商品无法配送",
+            "other": "%{count} 件商品无法配送"
+          },
+          "message": {
+            "one": "此商品将从您的购物车中移除，因为您的地址没有可用的送货方式。",
+            "other": "这些商品将从您的购物车中移除，因为您的地址没有可用的送货方式。"
+          },
+          "status_column_header": "无配送服务"
+        },
+        "price_update": {
+          "description": "这些商品的价格已变更，购物车中的价格已更新。",
+          "updated_price": "更新价格"
+        },
+        "price_and_quantity_update": {
+          "description": "这些商品的价格和可用数量已更改，并已在您的购物车中更新。"
+        },
+        "out_of_stock": {
+          "description": "这些商品已不再供应，将从您的购物车中移除。",
+          "items_unavailable": "某些商品已不再供应，将从您的购物车中移除。"
+        },
+        "out_of_stock_in_context_label": "本产品在您所在的国家/地区不可用。"
+      },
+      "store_credit_errors": {
+        "generic_error": "您的商店积分出现问题。请重试或重新加载页面。"
       }
     },
     "attributes": {

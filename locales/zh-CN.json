@@ -1060,7 +1060,59 @@
         "markets_pro_disclaimer_terms_and_conditions_title": "销售记录商条款与条件",
         "markets_pro_disclaimer_privacy_policy_title": "销售商隐私政策",
         "gift_cards_unavailable": "您的礼品卡无法再用于此订单，已被移除",
-        "multiple_primary_payment_not_allowed": "无效的支付方式"
+        "multiple_primary_payment_not_allowed": "无效的支付方式",
+        "network_card_payment_options": "选择一个卡组织",
+        "network_card_persistence_description": "所选网络将与您的付款方式一起保存，以便将来交易使用。",
+        "name_on_card_label": "卡片上的姓名",
+        "name_on_card_placeholder": "卡片上的姓名",
+        "payment_method_saved": "支付方式已保存",
+        "pay_with_payment_method": "使用 %{payment_method} 支付",
+        "order_covered_by_gift_cards_notice": {
+          "one": "您的订单已由您的礼品卡覆盖。",
+          "other": "您的订单已由您的礼品卡支付。"
+        },
+        "offsite_gateway_redirect_hint": "您将被重定向到 %{gateway_label} 完成您的购买。",
+        "offsite_gateway_review_page_redirect_hint": "在您确认订单后，系统将跳转至 %{gateway_label} 完成购买。",
+        "offsite_gateway_redirect_hint_no_button_label": "您将被重定向到 %{gateway_label} 完成您的购买。",
+        "no_js_credit_card_fields_redirect_hint": "您将被重定向以添加您的付款信息。",
+        "no_method_error": "本店目前无法接受付款。",
+        "not_configured_error": "本店目前无法接受付款。",
+        "payment_method_not_available_for_shipping_address_error": "所选送货地址不支持此付款方式。请选择其他付款方式。",
+        "no_real_orders_dev_store": "本店无法接受真实订单或真实付款。",
+        "no_taxes_banner_content": "此订单不收取税费。付款完成后，税费将无法再添加。",
+        "paypal": {
+          "connect": "点击连接您的 PayPal 账户"
+        },
+        "order_covered_by_store_credit_notice": "您的订单已使用您的店铺积分支付。",
+        "order_covered_by_redeemables_notice": "您的订单已受保障。",
+        "no_working_method_error": "本店目前无法接受付款。请刷新此页面或稍后再来。",
+        "order_edit_banner_subtitle": "您的订单 {{order_number}} 已更新。请查看这些更改，然后付款以确认您的订单。",
+        "order_edit_banner_items_removed": {
+          "in_full": "已移除",
+          "with_quantities": "已移除 {{quantity}} 的 {{delta}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "已退回 {{quantity}}",
+          "with_quantities": "已退回 {{delta}} 中的 {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "已从退货中移除",
+          "with_quantities": "从退货中移除 {{delta}}"
+        },
+        "order_edit_banner_single_item_removed": "已移除",
+        "order_edit_banner_multiple_items_removed": "已移除 {{amount}}",
+        "order_edit_banner_single_item_returned": "已退回",
+        "order_edit_banner_multiple_items_returned": "已退回 {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "已从退货中移除",
+        "order_edit_banner_multiple_items_return_line_item_removed": "从退货中移除 {{amount}}",
+        "order_edit_banner_updated_order_label": "订单已更新",
+        "payment_method_incompatible_with_payment_terms": "付款方式与付款条款不兼容。",
+        "pay_in_installments_split_pay_short": "4 次付款，每次 %{amount}",
+        "payment_flexibility_terms_id_mismatch": "付款灵活性条款编号不匹配",
+        "payment_option": {
+          "accessibility_label": "选择付款方式"
+        },
+        "new_bank_account_disclaimer": "通过完成您的订单，您授权 %{shop_name} 通过 ACH 从以下账户扣除所示金额及时间。"
       }
     },
     "attributes": {

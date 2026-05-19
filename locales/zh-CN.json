@@ -1244,7 +1244,16 @@
         "no_pickup_points_near_location": "在您所在位置附近未找到取货点",
         "paginator": {
           "header": {
-            "one": "显示 %{first} - %{last} 共 %{count} 个积分"
+            "one": "显示 %{first} - %{last} 共 %{count} 个积分",
+            "other": "显示第 %{first} - %{last} 条，共 %{count} 条积分"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} / %{count} 个取货点",
+            "other": "%{pickup_point_index} / %{count} 个取货点"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} 共 %{count} 点中的点",
+            "other": "%{first} - %{last} 共 %{count} 点"
           }
         },
         "number_of_pickup_points_near_location": {
@@ -1258,6 +1267,105 @@
             "permission_not_allowed": "允许共享您的位置。",
             "permission_denied": "无法获取您的位置。请重试。"
           }
+        },
+        "selector_tabs": "提货点选择器",
+        "pickup_unavailable_banner_title": {
+          "one": "您的商品暂无取货点可用",
+          "other": "您的物品暂无取货点可用"
+        }
+      },
+      "redeemable_errors": {
+        "gift_card": {
+          "duplicate": "礼品卡已应用到您的订单中",
+          "currency_mismatch": "仅接受以 %{shop_currency} 计价的礼品卡",
+          "insufficient_funds": "此礼品卡余额不足",
+          "not_available": "此礼品卡已不再可用",
+          "generic": "礼品卡无法添加到结账页面",
+          "throttle_limit_exceeded": "您已超过最大尝试次数。请稍后再试。",
+          "no_longer_available": "此礼品卡无法在此结账时使用"
+        }
+      },
+      "post_purchase": {
+        "escape_confirmation": "您已完成订单付款。",
+        "escape_action": "查看订单确认 ›",
+        "components": {
+          "processing": "处理中…"
+        }
+      },
+      "processing": {
+        "redirecting_notice": "请稍候，我们正在为您跳转。",
+        "continue_to_payment_gateway_notice": "继续付款以添加您的付款信息。",
+        "page_title": "处理中订单",
+        "title": "处理中订单",
+        "your_order_has_been_received_title": "感谢您的订单",
+        "you_will_receive_confirmation": "我们现在收到很多订单。您应该很快会通过电子邮件或短信收到确认。如果您在接下来的一小时内没有收到，请告知我们。",
+        "you_will_not_be_charged": "您暂时不会被收费",
+        "wait": {
+          "short": "您的订单正在处理中。",
+          "medium": {
+            "one": "您的订单正在处理中。预计等待时间为 %{count} 分钟。",
+            "other": "您的订单正在处理中。预计等待时间为 %{count} 分钟。"
+          },
+          "long": "您的订单一经处理，您将收到电子邮件通知。目前订单量较大。",
+          "no_auto_refresh_html": "如果您未被自动重定向，请 %{link}。"
+        },
+        "remote_shops_payments_processing": "处理付款",
+        "action_required": "需要采取行动",
+        "remote_checkout_count": "%{current} 共 %{total}"
+      },
+      "remote_merchandise_only": {
+        "title": "完成您的购买",
+        "remote_only_notice": "这些商品由其他商店销售和发货。请分别在每个商店结账以完成购买。",
+        "detail_item_label": {
+          "one": "{{count}} 件商品",
+          "other": "{{count}} 件商品"
+        },
+        "single_shop_transition": "正在将您重定向到 %{advertiser} 完成购买。"
+      },
+      "review": {
+        "checkout_a_different_way": "试试另一种方式",
+        "blocks": {
+          "contact_method_title": "联系",
+          "billing_address_title": "结算",
+          "shipping_address_title": "送货至",
+          "shipping_method_title": "运输方式",
+          "change_link_label": "更换",
+          "change_company_location_link_label": "更改公司地址",
+          "change_shipping_address_link_label": "更改送货地址",
+          "change_shipping_method_link_label": "更改送货方式",
+          "purchase_order_number_title": "采购订单号",
+          "change_purchase_order_number_label": "更改采购订单号",
+          "change_delivery_method_link_label": "更改送货方式",
+          "no_purchase_order_number": "（无采购订单号）",
+          "due_after_order_reviewed_html": "订单审核后付款",
+          "review_title_free_order": "查看并完成您的订单",
+          "payment_method_saved_company_location": "为此地点保存卡片",
+          "company_location": "公司所在地",
+          "pickup_items_at": {
+            "one": "取走 %{count} 件商品于",
+            "other": "取货 %{count} 件商品于"
+          },
+          "ship_items_to": {
+            "one": "寄送 %{count} 件商品至",
+            "other": "运送 %{count} 件物品至"
+          }
+        },
+        "block_title": "请核对您的信息"
+      },
+      "remote_policies": {
+        "unavailable_policy": "此店铺未提供任何 %{policy_name}。如需更多信息，请直接联系 %{shop_name}。"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "结账仅包含远程商品。需要重定向到远程商店以完成结账。",
+          "currency_mismatch": "此商品无法加入购物车，因为它来自使用不同货币的商店。",
+          "currency_mismatch_removal": "您的购物车中有一件商品被移除，因为该商品来自使用不同货币的商店。",
+          "max_remote_shops_exceeded": "此产品无法添加，因为您的购物车中已包含来自其他商店的最大数量。"
+        }
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "需要扩展交互以完成结账。"
         }
       }
     },

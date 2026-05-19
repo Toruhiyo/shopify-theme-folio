@@ -574,7 +574,114 @@
             "retail_attribution_required": "此结账流程需要零售归属信息。"
           },
           "captcha": {
-            "job_already_queued": "验证码验证已为此验证码令牌排队。"
+            "job_already_queued": "验证码验证已为此验证码令牌排队。",
+            "metadata_missing": "完成验证码是此结账流程的必需步骤。",
+            "metadata_mismatch": "提供的验证码服务商和类型与预期值不符。",
+            "token_missing": "必须提供验证码令牌才能完成此结账。",
+            "job_enqueue_failed": "验证码验证任务未能加入队列。",
+            "token_expired": "提供的验证码令牌已过期。请完成新的验证码以继续结账。",
+            "token_invalid": "提供的验证码令牌无效。请完成新的验证码以继续结账。",
+            "token_not_valid_for_session": "所提供的验证码无法用于此结账。"
+          },
+          "line_item_limit_reached": "已达到最大商品项数。",
+          "merchandise": {
+            "bundle_products_not_supported_for_b2b": "捆绑商品无法添加到该地点的企业对企业订单中。",
+            "gift_card_not_supported": "此结账不支持使用礼品卡。",
+            "gift_card_code_changed": "礼品卡代码 {{proposed_code}} 已更改为 {{formatted_code}}，以符合格式规则。",
+            "duplicated_stable_id": "该商品系列与另一个系列具有相同的稳定编号。",
+            "bundle_requires_components": "此组合商品无组成部分。",
+            "combined_listing_parent_not_purchasable": "组合列表的父产品无法直接购买。",
+            "only_value_constraint": "商品输入中只允许填写精确数值。",
+            "merchandise_not_found": "未找到产品。",
+            "merchandise_variant_not_found": "未找到产品变体。",
+            "merchandise_not_applicable": "无法购买该产品规格。",
+            "mixed_currencies": "结账时包含不同货币的商品项。",
+            "gift_card_quantity_mismatch": "在指定礼品卡代码时，订单项数量必须与礼品卡代码的数量相符。",
+            "gift_card_not_unique": "结账时出现了多次带有代码 {{code}} 的礼品卡。代码在比较前已格式化。",
+            "gift_card_used": "礼品卡代码 {{code}} 已经分配给一张礼品卡。代码在比较前会进行格式化。",
+            "gift_card_with_attributes_not_supported": "此结账不支持带有自定义属性的礼品卡。",
+            "gift_card_with_components_not_supported": "此结账不支持含组件的礼品卡。",
+            "selling_plan_not_supported": "不支持订阅。",
+            "selling_plan_not_supported_b2b": "企业对企业结账不支持订阅服务。",
+            "price_mismatch": "之前提出的该商品价格无效，现已更新。",
+            "inventory_not_found": "未找到此商品的库存。",
+            "product_not_published_in_buyer_location": "该产品在当前买家所在地区不可用。",
+            "minimum_quantity_not_met": "某些物品的数量未达到最低要求。",
+            "maximum_quantity_exceeded": "某些物品的数量超过了允许的最大值。",
+            "quantity_increment_not_met": "某些商品的数量未达到订单限制。",
+            "quantity_rules_not_met": "某些商品的数量未达到订单限制。"
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "购物车中只能有一条配送线路。",
+            "wrong_number_of_delivery_lines": "每组商品必须指定一个配送线路。",
+            "external_delivery_promise_error": "外部交付承诺获取错误。",
+            "options_instructions_invalid": "指定的指令与预期的模式不符。",
+            "destination_address_required": "需要填写目的地地址才能继续。",
+            "pickup_points_unavailable": "自提点当前不可用。",
+            "local_pickup_delivery_line_detail_changed": "必须更改当前的本地自提配送策略才能继续。",
+            "selected_pickup_option_no_longer_available": "之前选择的自提选项已不再可用。",
+            "local_pickup_no_delivery_strategy_available": "未找到可用的本地自取配送方案。",
+            "origin_location_id_required": "当选择零售配送方式时，必须提供起始地点编号。",
+            "invalid_origin_location_id": "找不到与起始地点编号匹配的位置。",
+            "origin_location_id_not_allowed": "所请求的送货方式不支持原始地点编号。",
+            "auto_fulfill_not_allowed": "此会话无权覆盖履行行为。",
+            "auto_fulfill_required": "当选择零售配送方式时，必须启用自动履行。",
+            "prefetch_shipping_rates_used": "预取的运费费率不应返回费率。",
+            "fulfillment_constraints_not_satisfied": "一个或多个履行条件未满足。",
+            "must_fulfill_from_constraint_not_satisfied": "无法满足履行条件，因为无法从所需地点履行商品。",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "无法满足履行条件，因为商品无法从同一地点发货。",
+            "delivery_strategy_conditions_not_satisfied": "此地点可用配送策略，但其条件未满足。",
+            "out_of_stock_at_origin_location": "原始地点无库存。",
+            "invalid_signature": "无效的折扣签名。",
+            "mixed_destination_countries": "由于配送线路跨越多个国家，无法提供配送服务。"
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "批发商店不允许使用折扣。",
+            "mixed_destination_countries": "由于配送线路跨越多个国家，折扣不可用。",
+            "custom_discount_not_honoured": "所提供的自定义折扣未被认可。",
+            "unsupported_expectation": "所提供的折扣行包含了策略无法解析的预期。",
+            "additional_requested_discount_code_discarded": "{{code}} 有效但不适用。请检查折扣条款。",
+            "additional_requested_discount_discarded": "您的折扣有效，但不可使用。请查看折扣条款。",
+            "allocations_mismatch": "您的折扣码已更改。请检查您的购物车并重试。",
+            "discount_title_too_long": "折扣标题不能超过255个字符。"
+          },
+          "inventory": {
+            "missing_quantity_value": "买方库存行中缺少数量字段。",
+            "only_one_inventory_behavior_allowed": "目前每次结账仅允许一种库存管理方式。"
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "收到的金额必须使用商店货币。"
+          },
+          "checkout_source": {
+            "revoked": "此结账方式已不再可用。"
+          },
+          "only_empty_terms_accepted": "此政策仅接受空条款。",
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B 商店不允许手动付款。",
+            "positive_amount_expected": "支付金额必须大于0。",
+            "missing_session_id": "缺少信用卡会话信息。",
+            "gateway_not_supported": "支付网关不支持保存支付方式。",
+            "credit_card_last_name_required": "“姓氏”不能为空。",
+            "invalid_address_type": "所提供的地址类型不适用于此付款方式。",
+            "missing_retail_attributions": "手动输入的信用卡付款需要零售归属信息。",
+            "invalid_card_source": "此会话无权使用此卡片来源。",
+            "saved_payment_methods_not_allowed": "不允许使用已保存的付款方式。",
+            "saved_payment_methods_cvv_verification_disabled": "所选的付款方式需要进行CVV验证，但本店未启用此功能。请选择其他付款方式。",
+            "store_credit_not_enabled": "本店未启用店铺积分。",
+            "store_credit_account_not_found": "未找到商店信用账户。",
+            "store_credit_account_mismatch": "商店信用账户与买家身份不符。",
+            "store_credit_mismatched_currency": "商店积分账户的货币与结账货币不符。",
+            "store_credit_insufficient_funds": "商店信用账户中的资金不足。",
+            "store_credit_buying_gift_card": "您不能使用商店积分购买礼品卡。",
+            "gift_cards_not_allowed_for_b2b": "礼品卡不得在企业对企业商店使用。",
+            "method_required": "必须提出一种付款方式。",
+            "paypal_express_address_invalid": "PayPal 返回了一个无效的地址。"
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "您的买方提案应包含不可协商的条款。"
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "此结账不允许拒绝关税。"
           }
         },
         "dates": {

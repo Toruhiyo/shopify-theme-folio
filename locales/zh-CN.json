@@ -76,5 +76,44 @@
     "skip_to_content": "跳至内容",
     "close": "关闭",
     "menu": "菜单"
+  },
+  "sections": {
+    "announcement_bar": {
+      "name": "公告栏"
+    },
+    "header": {
+      "name": "标题",
+      "menu": "菜单",
+      "cart": "购物车",
+      "search": "搜索",
+      "close": "关闭"
+    },
+    "hero": {
+      "name": "英雄横幅"
+    },
+    "featured_collection": {
+      "name": "精选系列"
+    },
+    "collection_grid": {
+      "name": "集合网格"
+    },
+    "product_grid": {
+      "name": "产品网格"
+    },
+    "newsletter": {
+      "name": "通讯简报",
+      "email_placeholder": "您的电子邮件地址",
+      "subscribe": "订阅",
+      "success": "感谢您的订阅！"
+    },
+    "testimonials": {
+      "name": "客户评价"
+    },
+    "about_story": {
+      "name": "关于 / 故事"
+    },
+    "footer": {
+      "name": "页脚"
+    }
   }
 }

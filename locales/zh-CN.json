@@ -1437,7 +1437,67 @@
         },
         "missing_shipping_address": "缺少收货地址",
         "pre_order_ships_now": "现已发货",
-        "pre_order_ships_date": "发货时间 %{date}"
+        "pre_order_ships_date": "发货时间 %{date}",
+        "shipping_method_title": "运输方式",
+        "shipping_rate_discounted_amount": "原价：%{original_amount}。现价：%{amount}",
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "再购买 %{count} 件即可享受免费送货",
+            "other": "再配送 %{count} 次，免运费"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "%{count} 件商品免运费"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "再购买 %{count} 件免运费，之后运费为 %{recurring_order_shipping_price}",
+            "other": "再配送 %{count} 次免运费，之后运费为 %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "前 %{count} 次配送免运费，然后是 %{recurring_order_shipping_price}",
+            "other": "%{count} 次配送免运费，之后运费为 %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "再配送 %{count} 次，运费 %{shipping_price}",
+            "other": "再配送 %{count} 次，每次运费 %{shipping_price}"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{shipping_price} 的 %{count} 次配送",
+            "other": "再配送 %{count} 次，每次运费 %{shipping_price}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "首个 %{cycle} 免运费，之后为 %{recurring_order_shipping_price}",
+            "other": "首个 %{cycle} 免运费，之后为 %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "配送 %{count} 次",
+            "other": "用于 %{count} 次配送"
+          },
+          "initial_order_discounted": "首次运费 %{discounted_shipping_cost}，随后每次 %{frequency_description}",
+          "prepaid_initial_order_discounted": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency} （%{discounted_cost_per_delivery}）",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}（%{discounted_cost_per_delivery}），之后为 %{shipping_price} %{billing_cycle}",
+          "first_order_shipping_price_included": "首单免费，之后每次配送费用为 %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price}（每次配送 %{per_delivery_price}），随后是 %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "首次订购免费",
+            "other": "前 %{count} 个订单免费"
+          },
+          "free_for_first_n_order": {
+            "one": "首次订购",
+            "other": "前 %{count} 个订单"
+          }
+        },
+        "shipping_used_as_billing_notice": "这也将作为您此次订单的账单地址。",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} 更多",
+        "split_shipping_merchandise_shipment_number": "第 %{number} 批货物，共 %{total} 批",
+        "split_shipping_multiple_shipment_label": "多次发货",
+        "split_shipping_shipment_notice": "您的订单将在 %{quantity_shipments} 内送达",
+        "split_shipping_first_shipment_notice": "您的第一笔订单将在 %{quantity_shipments} 内送达",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} 次发货",
+        "split_shipping_multiple_shipment_notice": "您的订单将分多次发货",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "您的订单将分 %{quantity} 批次送达",
+        "split_shipping_more_shipping_options": "更多运输选项",
+        "split_shipping_shipment_number": "货运 %{number}"
       },
       "session_errors": {
         "session_already_finished": "此订单已提交。您可以返回商店开始新的订单。"

@@ -768,6 +768,66 @@
           "change_location_link": "更改您的位置"
         },
         "could_not_resolve_address": "无法定位您的地址。请重试或使用其他地址"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "remove_items_action": {
+          "one": "移除不可用项目",
+          "other": "移除不可用项目"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "%{position} %{name} 商品说明包含一个空的稳定 ID。",
+        "invalid_stable_id_target": "%{position} %{name} 商品说明引用了稳定 ID %{stable_id}，但该稳定 ID 不在商品系列中。",
+        "duplicate_variant_id": "%{position} %{name} 商品说明中包含重复的变体 ID %{variant_id}。",
+        "invalid_variant_id_target": "%{name} 商品说明引用了变体 ID %{variant_id}，但该变体不在商品列表中。",
+        "invalid_price_override_target": "由于是捆绑组件，行项目 %{stable_id} 的价格覆盖商品指令无效。",
+        "discount_not_supported": "应用商品折扣的商家说明不支持此类折扣。"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "销售记录商条款与条件",
+        "privacy_policy": "销售商隐私政策"
+      },
+      "no_address_location": {
+        "title": "无地址的位置",
+        "header": "您尚未为此地点设置送货地址",
+        "message": "联系我们以添加此地点的地址以完成结账。"
+      },
+      "notice_banner": {
+        "subscription_changed": "您的其中一个订阅已发生变更。",
+        "company_location_changed": "您的购物车已更新。请在提交订单前确认您的订单内容。",
+        "company_location_changed_product_removed": "您的购物车已更新，因为某些产品在此地点无货。请在提交订单前检查您的订单。",
+        "individual_violations_title": {
+          "DeliveryViolations": "送货地址"
+        },
+        "all_violations_content": "致电或通过 {{emailLink}} 联系我们以更新此信息并完成您的订单：",
+        "all_violations_email_link": "电子邮件",
+        "editable_shipping_address_violations_message_footer": "要永久更新此位置的地址，请联系 {{emailLink}}。",
+        "calculating_shipping": "运费仍在计算中。请稍后再试。您尚未被收费。",
+        "calculating_taxes": "税费仍在计算中。请稍后再试。您尚未被收费。",
+        "generic_processing_error": {
+          "body": "您尚未被扣款。请重试或使用其他付款方式。"
+        },
+        "payment_method_not_available_with_payment_terms": "您选择的付款方式不再可用，因为此订单的付款现已按照{{paymentTerms}}条款进行。",
+        "payment_method_not_available_with_fulfillment_terms": "您选择的付款方式已不再可用，因为此订单的付款现已在交付时到期。",
+        "payment_method_not_available_with_fixed_terms": "您选择的付款方式已不再可用，因为此订单的付款时间较晚。",
+        "payment_method_not_available_with_review_requirement": "您选择的付款方式已不再可用，因为付款将在您的订单确认后进行。",
+        "contact_information": {
+          "header": "要更新您的信息，请 {{emailLink}}。"
+        },
+        "validation_errors_banner": {
+          "section_label": {
+            "delivery": "交付",
+            "contact": "联系",
+            "billing": "结算"
+          },
+          "errors_in_section": {
+            "one": "{{section}} 中的 {{count}} 个错误",
+            "other": "{{section}} 中的 {{count}} 个错误"
+          }
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "将备注的长度缩减至5000个字符或更少。"
       }
     },
     "attributes": {

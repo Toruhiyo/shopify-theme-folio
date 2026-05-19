@@ -69,7 +69,60 @@
       "cancel": "取消",
       "edit": "编辑",
       "delete": "删除",
-      "delete_confirm": "您确定要删除此地址吗？"
+      "delete_confirm": "您确定要删除此地址吗？",
+      "zip": "邮政编码"
+    },
+    "login": {
+      "title": "登录",
+      "email": "电子邮件",
+      "password": "密码",
+      "sign_in": "登录",
+      "forgot_password": "忘记密码了吗？",
+      "create_account": "创建账户",
+      "guest_title": "以访客身份继续",
+      "guest_continue": "继续"
+    },
+    "register": {
+      "title": "创建账户",
+      "first_name": "名字",
+      "last_name": "姓氏",
+      "email": "电子邮件",
+      "password": "密码",
+      "submit": "创建",
+      "already_have_account": "已经有账户？ 登录"
+    },
+    "recover_password": {
+      "title": "重置您的密码",
+      "subtext": "我们将向您发送一封电子邮件以重置您的密码。",
+      "email": "电子邮件",
+      "submit": "提交",
+      "success": "我们已向您发送了一封电子邮件，内含用于更新密码的链接。",
+      "back_to_login": "返回登录"
+    },
+    "reset_password": {
+      "title": "重置账户密码",
+      "password": "密码",
+      "password_confirm": "确认密码",
+      "submit": "重置密码"
+    },
+    "order": {
+      "title": "订购 {{ name }}",
+      "date": "发布于 {{ date }}",
+      "cancelled": "订单已于 {{ date }} 取消",
+      "cancelled_reason": "原因：{{ reason }}",
+      "billing_address": "账单地址",
+      "shipping_address": "收货地址",
+      "payment_status": "付款状态",
+      "fulfillment_status": "履行状态",
+      "product": "产品",
+      "sku": "库存单位",
+      "price": "价格",
+      "quantity": "数量",
+      "total": "总计",
+      "subtotal": "小计",
+      "discount": "折扣",
+      "shipping": "运输",
+      "tax": "税费"
     }
   },
   "accessibility": {
@@ -114,6 +167,21 @@
     },
     "footer": {
       "name": "页脚"
+    }
+  },
+  "general": {
+    "404": {
+      "title": "页面未找到",
+      "subtext": "您要查找的页面不存在。您可能输入了错误的地址，或者该页面可能已移动。",
+      "link": "继续购物"
+    },
+    "breadcrumbs": {
+      "home": "首页"
+    },
+    "cart": {
+      "empty": "您的购物车是空的",
+      "continue_shopping": "继续购物",
+      "checkout": "结账"
     }
   }
 }

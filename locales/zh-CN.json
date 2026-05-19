@@ -1010,12 +1010,57 @@
           "fields": {
             "default": "设为默认",
             "expiry": "有效期",
-            "billing": "账单寄送至"
-          }
+            "billing": "账单寄送至",
+            "security_code": "安全码",
+            "name": "卡片上的姓名"
+          },
+          "title": "编辑卡片"
         },
         "custom_onsite_payment_method_modal": {
           "title": "定制现场付款确认"
-        }
+        },
+        "gift_card_balance_label": "平衡：",
+        "ftd_vault_credit_card_label": "将此信用卡保存到我的账户以加快结账速度",
+        "expiry_long": "（有效期至 %{month}/%{year}）",
+        "expiry_short": "(有效期至 %{month}/%{year})",
+        "free_order_notice_html": "您的订单是<strong>免费的</strong>。无需付款。",
+        "express_checkout_free_order": "您不会因免费订单被收费",
+        "missing_credit_card_error": "输入您的卡片信息以完成付款",
+        "generic_incorrect_card_info": "您的付款信息无法验证。请检查您的卡片信息并重试。",
+        "klarna_label": "克拉纳",
+        "klarna_pay_later_label": "使用Klarna稍后付款",
+        "klarna_pay_now_label": "现在使用Klarna付款",
+        "giropay_label": "Giropay（德国在线支付系统）",
+        "multibanco_label": "多功能自动取款机",
+        "eps_label": "eps转账",
+        "klarna_slice_it_label": "使用Klarna分期付款",
+        "grabpay_label": "GrabPay (保持品牌名不变)",
+        "google": {
+          "connect": "点击以连接您的 Google Pay 账户"
+        },
+        "mor_disclaimer_html": "通过点击下面并完成您的订单，您同意从 Global-e 作为本次交易的记录商购买您的商品。  \nGlobal-e 的<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">条款和条件</a>  \n以及<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">隐私政策</a>。Global-e 是 %{shop_name} 的国际履行服务提供商。",
+        "location_billing_address_label": "位置账单地址",
+        "location_shipping_address_label": "收货地址",
+        "expired_cards_info": {
+          "one": "您的账户中有 %{count} 张已过期的卡片，您可以查看并编辑。",
+          "other": "有 %{count} 张已过期的卡片，您可以在您的账户中查看和编辑。"
+        },
+        "local_payment_method_receiver_notice": "下单后，您将收到付款详情。请在{{dueDays}}天内通过ATM或在线进行付款。",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "使用礼品卡",
+          "apply_another_gift_card_label": "使用另一张礼品卡"
+        },
+        "gift_card_store_credit": {
+          "add_label": "添加礼品卡或商店积分",
+          "manage_label": "管理礼品卡或商店积分"
+        },
+        "gift_card_checkbox_label": "使用礼品卡",
+        "markets_pro_disclaimer_label": "通过下订单，您同意从 Global-e 作为记录商家进行购买，受 Global-e 的 %{markets_pro_terms} 和 %{privacy_policy} 的约束，并与 %{shop_name} 分享您的信息。",
+        "markets_pro_disclaimer_terms_and_conditions": "条款与条件",
+        "markets_pro_disclaimer_terms_and_conditions_title": "销售记录商条款与条件",
+        "markets_pro_disclaimer_privacy_policy_title": "销售商隐私政策",
+        "gift_cards_unavailable": "您的礼品卡无法再用于此订单，已被移除",
+        "multiple_primary_payment_not_allowed": "无效的支付方式"
       }
     },
     "attributes": {

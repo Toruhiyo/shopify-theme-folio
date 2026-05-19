@@ -230,6 +230,63 @@
       "state_and_territory": "州/地区",
       "governorate": "省份",
       "confirm": "您确定要删除此地址吗？"
+    },
+    "checkout": {
+      "billing": {
+        "billing_address_title": "账单寄送至",
+        "billing_address_rollup_accessibility_label": "账单至选项",
+        "same_as_shipping": "与送货地址相同",
+        "add_address": "使用不同的地址",
+        "address_more": "此地址的更多操作",
+        "address_confirm": "您确定要从您的账户中删除此地址吗？"
+      },
+      "alternative_payment_method_banner": {
+        "or": "或者",
+        "or_pay_another_way": "或者使用其他付款方式",
+        "or_check_out_another_way": "或者查看另一种方式"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "您的信用卡将被扣款 %{amount}",
+        "payment_total_label": "付款总额",
+        "change_currency_link": "切换到 %{currency_name}",
+        "currency_not_supported_by_shop": "您选择的货币已不再可用。所有价格现均以 %{currency_code} 计价。"
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "您的购物车已根据您的送货国家更新。",
+        "cart_and_currency_updated_based_on_country": "您的购物车和货币已根据您的收货国家更新。",
+        "currency_updated_for_country": "货币已更新为 %{country}"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "您的国家/地区已更新。请输入您的送货地址以继续结账。"
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "处理您的请求时出现问题。请联系店主。"
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "处理您的订单时出现问题。请稍后几分钟再试。"
+      },
+      "captcha": {
+        "title": "完成验证码以继续",
+        "errors": {
+          "not_solved": "完成验证码以继续"
+        }
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "您不再有权限下达B2B订单。请访问 %{logout_url} 以改为下个人订单。",
+        "log_out_link_text": "登出",
+        "lost_permissions_subtitle": "您不再有权限下达企业对企业订单。请注销以下达个人订单。",
+        "lost_permissions_title": "无位置权限"
+      },
+      "address_management": {
+        "saved_with_store": "已在此店铺保存"
+      }
+    },
+    "attributes": {
+      "last_name": "姓氏"
+    },
+    "challenge": {
+      "message": "要继续，请告诉我们您不是机器人。",
+      "error": "您的答案不正确，请再试一次。"
     }
   },
   "products": {

@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "collections": {
+    "general": {
+      "all_products": "所有产品",
+      "no_products": "在此系列中未找到产品。",
+      "products_count": "{{ count }} 个产品",
+      "sort_by": "排序方式",
+      "sort_options": {
+        "manual": "精选推荐",
+        "best-selling": "畅销产品",
+        "title-ascending": "按字母顺序，A到Z",
+        "title-descending": "按字母顺序，Z到A",
+        "price-ascending": "价格，从低到高",
+        "price-descending": "价格，从高到低",
+        "created-ascending": "日期，由旧到新",
+        "created-descending": "日期，由新到旧"
+      },
+      "explore": "探索"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "阅读更多",
+      "written_by": "由 {{ author }} 撰写",
+      "back_to_blog": "返回到 {{ blog }}"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "我的账户",
+      "orders": "订单历史",
+      "no_orders": "您还没有下过任何订单。",
+      "details": "账户详情",
+      "addresses": "地址",
+      "default_address": "默认",
+      "view_addresses": "查看地址",
+      "logout": "登出"
+    },
+    "activate_account": {
+      "title": "激活账户",
+      "password": "密码",
+      "password_confirm": "确认密码",
+      "submit": "激活账户",
+      "decline": "拒绝邀请"
+    },
+    "addresses": {
+      "title": "您的地址",
+      "add_new": "添加新地址",
+      "first_name": "名字",
+      "last_name": "姓氏",
+      "company": "公司",
+      "address1": "地址",
+      "address2": "公寓、套房等。",
+      "city": "城市",
+      "country": "国家/地区",
+      "province": "省份",
+      "phone": "电话",
+      "default": "设为默认地址",
+      "update": "更新地址",
+      "cancel": "取消",
+      "edit": "编辑",
+      "delete": "删除",
+      "delete_confirm": "您确定要删除此地址吗？"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "跳至内容",
+    "close": "关闭",
+    "menu": "菜单"
+  }
+}

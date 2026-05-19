@@ -1821,7 +1821,52 @@
           "other": "您将在几分钟内收到包含您的礼品卡的电子邮件。"
         },
         "gift_card_email_title": {
-          "one": "礼品卡已通过电子邮件发送"
+          "one": "礼品卡已通过电子邮件发送",
+          "other": "礼品卡已通过电子邮件发送"
+        },
+        "items_fulfilled_by_store": {
+          "one": "您购买的商品将由 %{remote_shop_name} 发货。",
+          "other": "您购买的商品将由其他商店发货。"
+        },
+        "order_status_confirmed_order_with_email": "您的订单准备好后，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_phone": "当您的订单准备好时，您可能会收到一条短信。",
+        "order_status_confirmed_order_with_email_and_phone": "您的订单准备好后，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_email_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_email_and_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_email_pick_up": "当您的订单准备好取货时，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_phone_pick_up": "当您的订单准备好取货时，您将收到短信通知。",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "当您的订单准备好取货时，您将收到电子邮件和短信通知。",
+        "order_status_payments_app_failed_pending_payment": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "order_status_confirmed_order_local": "我们正在准备您的订单以便发货。",
+        "order_status_confirmed_order_local_pick_up": "我们正在准备您的订单。",
+        "order_status_confirmed_order_local_payment": "我们正在准备您的订单。",
+        "order_status_confirmed_with_installments_payment_return": "请将您的注意力重新集中到销售员身上。",
+        "order_status_confirmed_with_installments_payment_confirm": "您将很快收到一封确认邮件，内含您的订单编号及分期付款计划的详细信息。",
+        "in_transit": "正在路上",
+        "in_transit_title": "您的订单正在配送中",
+        "in_transit_description": "您将收到有关其进展的更新。",
+        "in_transit_description_days": "您应该会在接下来的 %{number} 天内收到您的订单。",
+        "in_transit_description_today": "您今天应该会收到您的订单。",
+        "in_transit_description_tomorrow": "您应在次日收到您的订单。",
+        "no_tracking_number": "此订单没有追踪号码。",
+        "let_us_know": "告诉我们",
+        "login_title": "登录以查看所有订单详情",
+        "login_not_customer_html": "不是 %{name} 吗？你可以 %{link}",
+        "marker": {
+          "current": "当前货物位置",
+          "shipping": "送货地址"
+        },
+        "missing_shipping_address_banner": {
+          "text_html": "%{contact_us} 添加您的地址"
+        },
+        "gift_card_text_title": {
+          "one": "礼品卡已通过短信发送",
+          "other": "礼品卡已通过短信发送"
+        },
+        "gift_card_resent_confirmation": {
+          "one": "礼品卡已重新发送。",
+          "other": "礼品卡已重新发送。"
         }
       }
     },

@@ -362,6 +362,72 @@
           "generic_error": "处理您的请求时出现问题。",
           "success_message": "您的付款方式已成功删除"
         }
+      },
+      "embed": {
+        "shipping": {
+          "shipping_options": "查看所有运输选项"
+        },
+        "payment": {
+          "payment_options": "查看所有付款选项"
+        }
+      },
+      "delivery_options": {
+        "ship": "发货",
+        "ship_to_address": "送货地址",
+        "shipping_address": "送货地址",
+        "pick_up_from_store": "店内自取",
+        "pick_up_in_one_hour": "通常1小时内准备好",
+        "pick_up_in_two_hours": "通常2小时内准备好",
+        "pick_up_in_four_hours": "通常4小时内准备好",
+        "pick_up_in_twenty_four_hours": "通常24小时内准备好",
+        "pick_up_in_two_to_four_days": "通常2-4天内准备好",
+        "pick_up_in_five_or_more_days": "通常需5天以上准备完成",
+        "pick_up_in_zero_to_two_hours": "两小时后可取货",
+        "pick_up_in_two_to_four_hours": "4小时后可取货",
+        "pick_up_next_day": "次日可取货",
+        "pickup_point_method_definition": "送至自提点",
+        "retail_method_definition": "零售运输",
+        "company_location_no_address_banner": "寄往无地址地点的订单将提交审核。",
+        "none_method_definition": "无配送服务",
+        "subscription_pickup_information": "这将是您订阅所有未来订单的取货地点。"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count} 件商品无法配送",
+            "other": "%{count} 件商品无法配送"
+          },
+          "message": {
+            "one": "此商品将从您的购物车中移除，因为您的地址没有可用的送货方式。",
+            "other": "这些商品将从您的购物车中移除，因为您的地址没有可用的送货方式。"
+          },
+          "label": "无配送服务"
+        }
+      },
+      "failed_payment": {
+        "payment_not_processed_title": "您的付款无法处理",
+        "payment_not_processed_text": "您尚未被扣款。请返回购物车完成购买。"
+      },
+      "error_page": {
+        "terminal": {
+          "title": "结账时出现问题",
+          "message": "刷新此页面或几分钟后再试",
+          "request_id": "请求编号：{{requestId}}"
+        },
+        "embed_errors": {
+          "customer_account_required": "完成结账需要客户账户",
+          "invalid_cart": "购物车已失效",
+          "not_authorized": "结账验证失败。请核实您的应用凭证。",
+          "unrecoverable_failure": "无法加载结账页面。请重试。"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "您的订单无法处理，因为您的折扣码已不再有效。请检查您的订单总额并重试。"
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "前往在线商店"
+        }
       }
     },
     "attributes": {

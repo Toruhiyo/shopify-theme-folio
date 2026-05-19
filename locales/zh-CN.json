@@ -828,6 +828,65 @@
       },
       "note": {
         "length_exceeds_maximum": "将备注的长度缩减至5000个字符或更少。"
+      },
+      "order_summary": {
+        "apply_discount_button_label": "应用",
+        "applied_discount_message": "订单总价减免 %{amount}",
+        "automatic_discount_tooltip": "自动应用的折扣无法取消",
+        "calculating_shipping": "计算中…",
+        "calculating": "计算中…",
+        "cost_table_title": "费用汇总",
+        "cost_table_item_column_header": "项目",
+        "compare_at_sale": "促销（%{sale_amount}）",
+        "confirmation_number_label": "确认编号 #%{confirmation_number}",
+        "amount_off_shipping": "运费减免 %{amount}",
+        "collapse_component_information": {
+          "one": "隐藏 %{count} 个项目",
+          "other": "隐藏 %{count} 个项目"
+        },
+        "alternative_payment_currency_total": "已收取 %{amount_due}"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "订单 %{order_name} 的应付金额",
+        "changes_summary": {
+          "removed": "已移除",
+          "subtracted": "已移除 %{count}",
+          "returned": "已退回 %{count}",
+          "return_line_item_removed": "从退货中移除了 %{count} 件"
+        },
+        "checkout_review_and_pay": "您的订单 %{order_name} 已更新。请查看这些更改，然后付款以确认您的订单。",
+        "order_review_and_pay": "您的订单已更新。请查看并付款以确认您的订单。",
+        "pay_now": "立即付款"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "购买 %{product_name} 及其他 %{count} 件商品",
+          "other": "购买 %{product_name} 及其他 %{count} 件商品"
+        }
+      },
+      "order_errors": {
+        "creation_failure": "创建您的订单时出现问题。请重试，或联系我们了解更多详情。",
+        "network_failure": "由于网络错误，您的订单无法提交。请检查您的连接并重试。",
+        "inventory_reservation_failure": "某些商品已不再供应。"
+      },
+      "online_store_chat": {
+        "title": "有疑问？与我们聊天"
+      },
+      "offsite_payment_failed": {
+        "title": "站外支付失败",
+        "payment_not_processed_title": "付款失败",
+        "payment_not_processed_text": "请再次尝试扫描二维码。如果仍然无法使用，请告知我们的工作人员，并尝试其他付款方式。",
+        "payment_link_expired_title": "付款链接已过期",
+        "payment_link_expired_text": "请再次尝试扫描二维码。"
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "礼品卡金额必须大于0。",
+            "subtotal_limit_reached": "已达到订单项的最大数量。",
+            "signature_mismatch": "商品签名与第 %{stable_id} 行不匹配。"
+          }
+        }
       }
     },
     "attributes": {

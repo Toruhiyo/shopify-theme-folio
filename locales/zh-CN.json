@@ -1112,7 +1112,57 @@
         "payment_option": {
           "accessibility_label": "选择付款方式"
         },
-        "new_bank_account_disclaimer": "通过完成您的订单，您授权 %{shop_name} 通过 ACH 从以下账户扣除所示金额及时间。"
+        "new_bank_account_disclaimer": "通过完成您的订单，您授权 %{shop_name} 通过 ACH 从以下账户扣除所示金额及时间。",
+        "technical_error": "由于技术问题，当前无法处理付款。请稍后几分钟再试。",
+        "twint_label": "双子",
+        "swish_label": "刷刷声",
+        "vipps_label": "维普斯",
+        "usdc_label": "美元稳定币",
+        "usdc_cashback_additional_info": "在 Base 上使用 USDC 支付，30 天内您的钱包将返还 %{incentive_percentage}% 。",
+        "usdc_cashback_terms": "条款和限制适用",
+        "subscription_card_update_agreement_label": "更改付款方式将更新您的订阅及未来的定期付款。",
+        "subscription_agreement_label": "您的购物车中有一件或多件商品为延期购买或订阅购买。继续付款即表示您同意您的付款方式将按照本页面所列的价格和频率自动扣费，直到结束或您取消。所有取消均受 %{cancelled} 约束。",
+        "subscription_agreement_label_html": "我明白我同意订阅。它将以所列的价格和频率续订，直到结束或被\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">取消</a>。",
+        "waiting_on_payment_methods": "正在获取可用的付款方式...",
+        "taxes_not_included": "不含税费",
+        "store_credit": {
+          "no_fixed_selling_plans": "您无法在延期购买选项中使用商店积分"
+        },
+        "use_location_billing_address_label": "使用所在地账单地址",
+        "use_location_shipping_address_label": "使用所在地收货地址",
+        "vaulting_agreement_label": "将我的支付信息保存在 %{company}，以加快结账速度。",
+        "use_different_credit_card_label": "使用其他卡片",
+        "waiting_on_taxes_message": "如果您的税费在接下来的几秒内未计算完成，请刷新页面。"
+      },
+      "payment_collection": {
+        "cancelled": "此付款不再需要。请访问订单页面了解详情。",
+        "paid": "此付款已提交。请访问订单页面查看详情。"
+      },
+      "payment_errors": {
+        "amount_too_small": "最低付款金额必须高于0.50美元。请尝试输入更高的金额。",
+        "available_methods_updated": "可用的付款方式已更新。",
+        "credit_card_processing": "由于技术原因，您的付款无法处理。请稍后几分钟再试，或使用其他付款方式。",
+        "checkout_amount_changed": "您的付款无法处理，因为结账时应付金额已更改。请检查您的订单并重试。",
+        "deferred_amount_changed": "您的付款无法处理，因为延期付款金额已更改。请检查您的订单并重试。",
+        "deferred_date_changed": "您的付款无法处理，因为延期付款日期已更改。请检查您的订单并重试。",
+        "cancelled_payment": "您的付款已被取消。请重试或使用其他付款方式。",
+        "cannot_verify": "您的付款信息无法验证。请检查您的卡片信息并重试。",
+        "card_declined": "您的银行卡被拒绝。请重试或使用其他付款方式。",
+        "call_issuer": "您的银行卡被拒绝。请使用其他付款方式或联系您的银行以获取更多信息。",
+        "captcha_required": "输入付款信息并完成验证码以完成您的购买。",
+        "captcha_required_without_payment_information": "请完成验证码以完成您的购买。"
+      },
+      "payment_challenge_modal": {
+        "instructions": "使用您的 {{paymentMethod}} 代码完成购买",
+        "timer_message": "您有 {{timeLeft}} 时间付款",
+        "open_app_text": "打开 {{paymentMethod}} 应用程序",
+        "header": "使用 {{paymentMethod}} 支付",
+        "qr_code": {
+          "instructions": "使用您的 {{paymentMethod}} 代码完成购买"
+        },
+        "external": {
+          "instructions": "请在您的应用程序中确认付款以完成此次购买"
+        }
       }
     },
     "attributes": {

@@ -515,7 +515,85 @@
         "gift_card_invalid": "礼品卡 \"••••%{last_four_characters}\" 已失效",
         "invalid_delivery_address_reference_handle": "送货地址参考标识无法匹配到任何可用的送货地址。",
         "must_use_available_delivery_address": "必须从可用的送货地址中选择送货地址。",
-        "must_use_available_shipping_rate": "必须从可用的运费选项中选择运费。"
+        "must_use_available_shipping_rate": "必须从可用的运费选项中选择运费。",
+        "reduction_code_discount_not_found": "请输入有效的折扣码",
+        "reduction_code_gift_card_code_invalid": "请输入有效的礼品卡",
+        "reduction_code_gift_card_unusable": "您不能使用礼品卡购买另一张礼品卡",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "礼品卡不支持延期购买选项。",
+        "shipping_line_phone_blank": "请输入电话号码以使用此送货方式",
+        "tips_invalid_tip_amount": "输入少于 %{amount} 的小费",
+        "vaulting_agreement_blank": "您的付款方式必须保存，因为此订单余额的付款将在稍后到期。",
+        "sms_marketing_phone_invalid": "请输入有效的电话号码",
+        "shipping_method_invalid_phone_number": "更新您的送货地址中的电话号码以查看可用的运输方式。",
+        "split_cart_international_shipping_not_supported": "所有商品在国际运输时必须使用相同的配送方式。请更新配送方式或拆分为多个订单。",
+        "split_by_delivery_method_not_allowed": "此会话或商店不允许按配送方式拆分。",
+        "split_by_delivery_method_requires_merchandise_from_single_location": "按配送方式拆分要求每个商品行必须从单一地点完成配送。",
+        "split_by_delivery_method_unsupported_method_type": "按尝试的配送方式拆分，使用了不支持的配送方式类型。"
+      },
+      "general": {
+        "breadcrumb": "面包屑导航",
+        "all_rights_reserved": "版权所有 %{shop_name}",
+        "back_to_contact_information": "返回信息",
+        "back_to_shipping_method": "返回运输",
+        "back_to_payment_method": "返回付款",
+        "choose_shipping_method": "选择一种运输方式",
+        "contact_us_html": "联系我们获取更多信息",
+        "autocomplete_single_item": "有1件商品可供购买",
+        "autocomplete_multi_item": "有 {{number}} 件商品可供选择",
+        "autocomplete_selection": "{{number}} / {{total}}",
+        "back_button_label": "返回",
+        "choose_delivery_strategy": "选择送货方式",
+        "autocomplete_zero_item": "无可用商品",
+        "autocomplete_powered_by_google": "由 {{brandName}} 提供技术支持",
+        "datepicker": {
+          "show_previous_month": "显示上个月，{{month}} {{year}}",
+          "show_next_month": "显示下个月，{{month}} {{year}}",
+          "range_start": "范围开始",
+          "in_range": "有货",
+          "range_end": "系列末端"
+        },
+        "errors": {
+          "buyer_identity": {
+            "customer_account_required": "您必须登录才能继续。",
+            "company_location_required": "客户必须选择一个公司地点以继续。",
+            "company_purchase_permission_required": "客户无权下达公司订单。",
+            "personal_order_not_allowed": "本店不接受个人订单。",
+            "lost_access_to_company": "客户失去了对任何公司的访问权限。",
+            "contact_info_does_not_match_customer_account": "联系信息必须与您登录的账户相符。",
+            "phone_number_does_not_match_expected_pattern": "指定的电话号码与预期格式不符。",
+            "email_required": "使用订阅购买商品时，必须提供电子邮件。",
+            "email_domain_is_invalid": "无法解析此指定域名。",
+            "checkout_completion_target_is_missing": "结账完成目标缺失。",
+            "invalid_customer_profile": "提供了无效的客户资料。",
+            "customer_profile_access_restricted": "结账时无权访问客户资料。",
+            "checkout_completion_target_is_invalid_proc": "无效的结账完成目标。",
+            "buyer_identity_presentment_currency_does_not_match": "处理您的订单时出现问题。请稍后几分钟再试。"
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "此结账不允许零售归属。",
+            "retail_attribution_required": "此结账流程需要零售归属信息。"
+          },
+          "captcha": {
+            "job_already_queued": "验证码验证已为此验证码令牌排队。"
+          }
+        },
+        "dates": {
+          "weekdays": {
+            "sunday": "星期日"
+          },
+          "weekdays_abbreviation": {
+            "monday": "月",
+            "tuesday": "图",
+            "wednesday": "我们",
+            "thursday": "谢谢",
+            "friday": "法语",
+            "saturday": "萨",
+            "sunday": "苏"
+          }
+        },
+        "dropzone": {
+          "dragged_over": "拖放文件以上传"
+        }
       }
     },
     "attributes": {

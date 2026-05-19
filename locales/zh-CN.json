@@ -958,6 +958,64 @@
             "signature_mismatch": "商品签名与第 %{stable_id} 行不匹配。"
           }
         }
+      },
+      "payment": {
+        "discount_button_action_label": "使用折扣码",
+        "discount_codes_removed_summary": {
+          "one": "%{count} 折扣码已被移除",
+          "other": "已移除 %{count} 个折扣码"
+        },
+        "discount_codes_modified_summary": {
+          "one": "%{count} 折扣码已被修改",
+          "other": "%{count} 个折扣码已被修改"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "%{count} 折扣码已被移除或修改",
+          "other": "%{count} 个折扣码已被移除或修改"
+        },
+        "discount_show_more_warnings": {
+          "one": "显示更多 %{count} 项",
+          "other": "显示更多 %{count} 项"
+        },
+        "detected_card_brand": "检测到的卡品牌：{brand}",
+        "credit_card_vaulting_sign_in_banner_title": "保存您的信用卡信息",
+        "credit_card_vaulting_sign_in_banner_info": "登录或创建账户以保存您的信用卡信息，便于将来购买使用。",
+        "credit_card_start_year": "起始年份",
+        "delete_customer_mandate_modal_title": "移除此付款卡？",
+        "delete_customer_mandate_modal_body": "如果您移除此卡，使用前需要重新添加。",
+        "delete_customer_mandate_modal_confirm": "移除卡片",
+        "crypto_payment_method": {
+          "description": "安全连接您的钱包。您的余额和地址将不会被共享。",
+          "tooltip": "您的钱包余额和地址将不会被共享，且只能扣除所请求的金额",
+          "cashback_descriptor": {
+            "one": "您将在 %{count} 天后收到您的返现",
+            "other": "您将在 %{count} 天后收到您的返现"
+          }
+        },
+        "crypto_modal": {
+          "error": {
+            "sandbox_error": "出了点问题"
+          }
+        },
+        "different_credit_card_label": "使用另一张信用卡",
+        "different_billing_address_label": "使用不同的账单地址",
+        "cashapppay_label": "现金应用支付",
+        "change_currency_section_description": "选择货币选项",
+        "delete_credit_card_modal": {
+          "title": "删除卡片",
+          "confirmation": "您确定要删除以 {{lastDigits}} 结尾的 {{brandName}} 吗？"
+        },
+        "edit_credit_card_modal": {
+          "description": "您只能修改您的卡片账单地址。",
+          "fields": {
+            "default": "设为默认",
+            "expiry": "有效期",
+            "billing": "账单寄送至"
+          }
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "定制现场付款确认"
+        }
       }
     },
     "attributes": {

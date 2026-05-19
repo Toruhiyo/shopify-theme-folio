@@ -2010,7 +2010,60 @@
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "完成付款后，您将收到一条包含订单编号的确认短信。",
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "完成付款后，您将收到一条包含订单编号的确认短信。",
         "thank_you_payments_app_pending_payment_description_provider_action_required_default": "您的付款正在处理中。付款确认后，您将收到一封电子邮件通知。",
-        "track_shipment": "追踪货件"
+        "track_shipment": "追踪货件",
+        "tracking_number": "追踪号码：",
+        "updated_time": "%{time_ago} 前更新",
+        "unfulfilled_items_description": "我们正在准备这些物品的发货。",
+        "vat_invoices": {
+          "title": "增值税发票"
+        },
+        "verify_shop_account_title": "验证您的商店账户",
+        "verify_shop_account_message": "您的信息已保存在Shop，验证您的账户即可自动在数百万家商店使用。",
+        "verify_shop_account_confirmation": "结账信息已保存"
+      },
+      "tips": {
+        "description": "为 %{shop_name} 的团队表达您的支持",
+        "custom_label": "自定义提示",
+        "update_tip": "更新提示",
+        "message": "谢谢您，我们非常感激。",
+        "not_available_with_spi": "不支持 Shop Pay 分期付款"
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "请稍后再试"
+        },
+        "line_to_check_out": "您已排队等待结账",
+        "inventory": {
+          "partial_inventory_banner": "您购物车中的部分商品已售罄，结账时将无法购买。",
+          "sold_out": {
+            "heading": "您的购物车已售罄",
+            "storefront_body": "返回商店继续购物",
+            "no_storefront_body": "很遗憾，您想购买的商品已不再供应。"
+          }
+        },
+        "title": "排队",
+        "time_to_checkout_title": "结账时间 - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "计算预计等待时间",
+          "less_than_one": "预计等待时间：不到一分钟",
+          "one": "预计等待时间：{{count}} 分钟",
+          "other": "预计等待时间：{{count}} 分钟"
+        },
+        "last_checked": "（最后检查时间：{{time}}）",
+        "footer": {
+          "heading": "请勿刷新此页面，页面将自动更新。",
+          "body": "购物车中的商品在您完成结账前不会被保留。"
+        }
+      },
+      "units": {
+        "centiliter": "克"
+      },
+      "tooltip": {
+        "accessibility_label_context": "关于 %{context} 的更多信息"
+      },
+      "too_many_requests": {
+        "title": "尝试结账次数过多",
+        "body": "请稍等几分钟后再从您的购物车尝试。"
       }
     },
     "attributes": {

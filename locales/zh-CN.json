@@ -1205,6 +1205,60 @@
         "external": {
           "instructions": "请在您的应用程序中确认付款以完成此次购买"
         }
+      },
+      "payment_summary": {
+        "credit_card_expires_on_notice": "有效期至 %{month}/%{year}",
+        "express_payment_gateway_label": "快速",
+        "manual_payment_gateway_label": "手册"
+      },
+      "payment_gateway": {
+        "cash_on_delivery_label": "货到付款 (COD)",
+        "fixed_payment_label": "您的付款截止日期为 {{dueDate}}。",
+        "generic_payment_terms": "您已选择 {{translatedName}} 付款方式。您的付款截止日期为 {{dueDate}}。",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} 到有权访问此地点的账户，以添加或使用已保存的付款方式。"
+          }
+        },
+        "direct_payment_terms": "您正在使用{{translatedName}}条款。您的卡将在{{dueDate}}上被扣款。",
+        "fixed_direct_payment_terms": "您的卡将在 {{dueDate}} 扣款。",
+        "order_due_on_fulfillment_choose_later": "您的付款将在订单完成后到期。",
+        "order_due_on_fulfillment_payment": "您的订单完成后，您的银行卡将被扣款。",
+        "order_due_on_receipt_choose_later": "您的付款将在收到时到期。",
+        "order_deposit_due_now": "{{depositAmount}} 今天到期。余额按照 {{translatedName}} 条款，于 {{dueDate}} 到期。",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} 今天到期。余额将在您的订单完成后支付。",
+        "order_deposit_due_on_receipt": "{{depositAmount}} 今天到期。余额稍后到期。",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} 今天到期。余额将于 {{dueDate}} 到期。",
+        "draft_order_payment_due_later_no_terms": "您的订单确认后，付款将到期。",
+        "draft_order_payment_due_later_no_terms_payment_selected": "您的订单确认后，您的银行卡将被扣款。",
+        "draft_order_payment_due_later_terms": "一旦您的订单确认，您将与{{translatedName}}达成协议。",
+        "draft_order_payment_due_on_fulfillment": "您的付款将在订单确认并完成后到期。",
+        "draft_order_deposit_due_later": "{{depositAmount}} 在您的订单确认时到期。余额将根据 {{translatedName}} 的条款支付。",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} 在您的订单确认时到期。余额将在您的订单完成后支付。"
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "关闭",
+        "no_business_hours": "无营业时间信息",
+        "could_not_resolve_address": "无法定位您的地址。请重试或使用其他地址",
+        "no_pickup_points_near_you": "在所选地址附近未找到取货点",
+        "no_pickup_points_near_location": "在您所在位置附近未找到取货点",
+        "paginator": {
+          "header": {
+            "one": "显示 %{first} - %{last} 共 %{count} 个积分"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "您附近有 %{count} 个取货点",
+          "other": "您附近有 %{count} 个取货点"
+        },
+        "change": "更改位置",
+        "geolocation": {
+          "shared_location_button": "使用我的位置",
+          "errors": {
+            "permission_not_allowed": "允许共享您的位置。",
+            "permission_denied": "无法获取您的位置。请重试。"
+          }
+        }
       }
     },
     "attributes": {

@@ -844,7 +844,46 @@
           "one": "隐藏 %{count} 个项目",
           "other": "隐藏 %{count} 个项目"
         },
-        "alternative_payment_currency_total": "已收取 %{amount_due}"
+        "alternative_payment_currency_total": "已收取 %{amount_due}",
+        "discount_not_found": "无法找到与输入代码匹配的有效折扣",
+        "discount_code_applied": "折扣码已应用",
+        "discount_code_applied_with_code": "折扣码 %{code} 已应用",
+        "discount_code_removed": "折扣码 %{code} 已被移除",
+        "discount_code_replaced": "折扣码 %{old_code} 已被移除，%{code} 已应用",
+        "discount_code_replaced_multiple": "多个折扣码已被移除，%{code} 已应用",
+        "discount_code_allocations_mismatch": "您的 <strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码已更改。请检查您的购物车并重试。",
+        "enter_shipping_address": "输入送货地址",
+        "discount_has_been_applied": "折扣已应用",
+        "discount_has_been_removed": "折扣已被取消",
+        "discount_already_applied": "此订单已应用折扣。您无法再添加其他折扣。",
+        "discount_requires_customer_notice": "请输入您的送货信息以使用 <strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码目前无法使用",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码需符合资格的客户使用",
+        "estimated_taxes_finalization_tooltip_content": "最终税费和总金额将在您下单后通过电子邮件或短信确认。",
+        "estimated_taxes_finalization_tooltip_content_short": "付款后税款已结算",
+        "deposit_label": "沉积物",
+        "duties_included_label": "总计包括税费和关税。送货无额外费用。",
+        "discount_and_gift_card_savings_notice": "在 %{discount_amount} 折扣和 %{gift_card_amount} 礼品卡后",
+        "discount_savings_notice": "享受 %{discount_amount} 折扣后",
+        "estimated_tax_label": "预估税额",
+        "deferred_payment_info": {
+          "title": "支付 %{amount_due} 的款项截止日期为 %{due_at}",
+          "description_html": "有关您的订单的问题，请 %{contact_us}。",
+          "paid_today": "今日支付总额",
+          "paid_today_next": "今日已付款",
+          "due_on_fulfillment_title": "履行时应支付 %{amount_due}",
+          "due_on_receipt_title": "收到后需支付 %{amount_due}"
+        },
+        "deferred_balance_info": {
+          "title": "{{due_at}} 应支付余额 {{amount_due}}",
+          "due_on_fulfillment_title": "{{amount_due}} 的余额在履行时到期"
+        },
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> 目前无法正常使用。如需帮助，请联系我们。",
+        "due_on_fulfillment": "履行时到期",
+        "duties_label": "职责",
+        "error_duties_tooltip": "此订单由其他国家发货，可能在交付时收取关税和税费。",
+        "deferred_total_due_date_label": "总计应付 {{date}}",
+        "deferred_total_due_date_label_next": "截止 %{date}"
       },
       "order_payment_collection": {
         "custom_line_item_description": "订单 %{order_name} 的应付金额",

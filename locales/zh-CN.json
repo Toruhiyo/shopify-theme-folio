@@ -181,7 +181,71 @@
     "cart": {
       "empty": "您的购物车是空的",
       "continue_shopping": "继续购物",
-      "checkout": "结账"
+      "checkout": "结账",
+      "title": "您的购物车",
+      "subtotal": "小计",
+      "taxes_and_shipping": "税费和运费将在结账时计算",
+      "remove": "移除",
+      "update": "更新"
+    },
+    "password_page": {
+      "opening_soon": "即将开业",
+      "login_form_heading": "使用密码进入商店",
+      "login_password_button": "请输入密码登录",
+      "close": "关闭",
+      "password_link": "请输入密码登录",
+      "powered_by_shopify_html": "本店将由 {{ shopify }} 提供技术支持"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "分享到脸书",
+        "share_on_twitter": "在推特上发推文",
+        "share_on_pinterest": "固定在 Pinterest 上"
+      },
+      "links": {
+        "facebook": "脸书",
+        "twitter": "X（推特）",
+        "tiktok": "抖音"
+      }
+    },
+    "meta": {
+      "tags": "标记为 \"{{ tags }}\"",
+      "page": "第 {{ page }} 页"
+    },
+    "search": {
+      "title": "搜索",
+      "placeholder": "搜索我们的商店...",
+      "submit": "搜索",
+      "no_results": "未找到与 \"{{ terms }}\" 相关的结果。请检查拼写或尝试使用其他词语或短语。",
+      "results_count": "{{ count }} 条关于“{{ terms }}”的结果"
+    }
+  },
+  "shopify": {
+    "addresses": {
+      "pincode": "邮政编码",
+      "region": "地区",
+      "prefecture": "县级行政区",
+      "province": "省份",
+      "state": "状态",
+      "state_and_territory": "州/地区",
+      "governorate": "省份",
+      "confirm": "您确定要删除此地址吗？"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "加入购物车",
+      "adding": "正在添加...",
+      "sold_out": "售罄",
+      "unavailable": "无货",
+      "sale": "促销",
+      "new": "新建",
+      "quantity": "数量",
+      "description": "描述",
+      "share": "分享",
+      "vendor": "供应商",
+      "type": "类型",
+      "sku": "库存单位"
     }
   }
 }

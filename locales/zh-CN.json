@@ -1743,7 +1743,29 @@
               "mt": "马耳他增值税号码包含MT和8个字符",
               "nl": "荷兰增值税号码包含“NL”和12个字符",
               "es": "西班牙增值税号码包含“ES”和9个字符",
-              "gb": "英国增值税号码包含 GB 或 XI 以及 5 到 12 个字符"
+              "gb": "英国增值税号码包含 GB 或 XI 以及 5 到 12 个字符",
+              "pl": "波兰增值税号码包含PL和10个字符",
+              "pt": "葡萄牙增值税号码包含PT和9个字符",
+              "ro": "罗马尼亚增值税号码包含RO和10个字符",
+              "sk": "斯洛伐克增值税号码包含“SK”和10个字符",
+              "si": "斯洛文尼亚增值税号码包含“SI”和8个字符",
+              "se": "瑞典增值税号码包含SE和12个字符"
+            },
+            "invalid_number": {
+              "at": "请输入有效的奥地利增值税号码",
+              "be": "请输入有效的比利时增值税号码",
+              "cy": "请输入有效的塞浦路斯增值税号码",
+              "dk": "请输入有效的丹麦增值税号码",
+              "fr": "请输入有效的法国增值税号码",
+              "de": "请输入有效的德国增值税号码",
+              "gr": "请输入有效的希腊增值税号码",
+              "lt": "请输入有效的立陶宛增值税号码",
+              "mt": "请输入有效的马耳他增值税号码",
+              "nl": "请输入有效的荷兰增值税号码",
+              "pt": "请输入有效的葡萄牙增值税号码",
+              "ro": "请输入有效的罗马尼亚增值税号码",
+              "sk": "请输入有效的斯洛伐克增值税号码",
+              "gb": "请输入有效的英国增值税号码"
             }
           },
           "accessibility": {
@@ -1756,6 +1778,50 @@
               "service_error": "无法验证增值税免税资格"
             }
           }
+        }
+      },
+      "thank_you": {
+        "attempted_delivery": "尝试投递",
+        "attempted_delivery_title": "尝试投递您的订单",
+        "attempted_delivery_description_html": "尝试送达您的订单，但未成功。%{contact_us} 以安排另一次送货尝试。",
+        "attempted_delivery_local_title": "未能送达",
+        "attempted_delivery_local_description_html": "我们无法送达您的订单。要安排另一次送货，请 %{contact_us}。",
+        "cancelled_description": "您的订单在 %{date} 被取消。如果您有任何问题，请联系我们。",
+        "confirmation_email_sent_text": "确认邮件已发送至 %{email}",
+        "failed_pending_payment_page_title": "您的付款出现问题",
+        "customer_information_title": "订单详情",
+        "cashback_notice": "您将在30天后收到返现",
+        "company_tracking_number": "%{company} 追踪号码：",
+        "estimated_arrival": "预计送达日期：",
+        "estimated_delivery": "当前预计送达时间：",
+        "confirmed_items_count": "已确认 %{confirmed_count} 件，共 %{total_count} 件",
+        "gift_card_confirmation_by_text": "如果您未收到，请重新发送短信或联系我们。",
+        "gift_card_confirmation_by_email": "如果您未收到，请重新发送电子邮件或联系我们。",
+        "confirmed_description": "我们已接受您的订单，正在准备中。请返回此页面查看您的发货状态更新。",
+        "delivered_description_html": "您的订单已送达您提供的地址。如果您尚未收到，或者有其他问题，请 %{contact_us}。",
+        "delivered_local_description_html": "还没有收到您的订单？%{let_us_know}。",
+        "failed_contact_merchant": "联系%{company}安排交付。",
+        "failed_contact_merchant_no_company": "联系我们安排送货。",
+        "cancelled_title": "您的订单已被取消",
+        "customer_validation_error": "请输入有效的电子邮件或订单号。",
+        "customer_validation_error_phone": "请输入有效的电话号码或订单号。",
+        "fulfillment": {
+          "fulfilled_table_title": "此批货物中的物品",
+          "unfulfilled_table_title": "准备发货的物品"
+        },
+        "delivery_information_label": "送货信息：",
+        "first_payment_complete": "首次付款完成",
+        "company_location_section_title": "公司与地点",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "您将在几分钟内收到包含您的礼品卡的短信。",
+          "other": "您将在几分钟内收到包含您的礼品卡的短信。"
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "您将在几分钟内收到包含您的礼品卡的电子邮件。",
+          "other": "您将在几分钟内收到包含您的礼品卡的电子邮件。"
+        },
+        "gift_card_email_title": {
+          "one": "礼品卡已通过电子邮件发送"
         }
       }
     },

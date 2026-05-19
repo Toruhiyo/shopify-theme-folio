@@ -700,7 +700,74 @@
         },
         "dropzone": {
           "dragged_over": "拖放文件以上传"
-        }
+        },
+        "skip_to_content": "跳至内容",
+        "submit_for_review_button_label": "提交审核",
+        "submit_for_review_notice_label": "付款将在您的订单审核后才到期",
+        "stepper": {
+          "decrease": "减少 {{type}}",
+          "minimum_reached": "达到最低 {{value}}",
+          "maximum_reached": "达到最大值 {{value}}"
+        },
+        "remove_chip": "移除项目",
+        "remove_item": "移除 %{label}",
+        "remove_tag": "移除标签"
+      },
+      "local_pickup": {
+        "location_closest": "您物品的最近地点",
+        "location_closest_one_item": "您物品的最近地点",
+        "location_closest_other_items": "最近有您商品的地点",
+        "location_information": {
+          "one": "离您较近的库存地点有 %{count} 个"
+        },
+        "location_information_far_away": {
+          "one": "有 %{count} 个地点有您的商品",
+          "other": "有 %{count} 个地点有您的商品"
+        },
+        "location_information_far_away_one_item": {
+          "one": "有 %{count} 个地点有您的商品",
+          "other": "有 %{count} 个地点有您的商品"
+        },
+        "location_information_far_away_other_items": {
+          "one": "您的物品位于 %{count} 个地点",
+          "other": "有 %{count} 个地点有您的物品"
+        },
+        "location_nearby": {
+          "one": "附近有 %{count} 个有您商品的地点",
+          "other": "附近有 %{count} 个有您所需商品的地点"
+        },
+        "location_nearby_one_item": {
+          "one": "附近有 %{count} 个有您商品的地点",
+          "other": "附近有 %{count} 个有您所需商品的地点"
+        },
+        "location_nearby_other_items": {
+          "one": "附近有 %{count} 个包含您物品的位置",
+          "other": "附近有 %{count} 个有您物品的地点"
+        },
+        "location_far_away": {
+          "one": "%{count} 个地点与您的物品",
+          "other": "含有您商品的 %{count} 个地点"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} 个地点与您的物品",
+          "other": "含有您商品的 %{count} 个地点"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} 个带有您的物品的位置",
+          "other": "%{count} 个地点有您的物品"
+        },
+        "all_stores_far_away": {
+          "title": "最近的地点距离超过 %{distance}",
+          "title_with_item": {
+            "one": "您所需商品的最近位置距离 %{location} 超过 %{distance}",
+            "other": "您物品最近的地点距离 %{location} 超过 %{distance}"
+          },
+          "title_with_specific_location": "您所需商品的最近地点距离 %{location} 超过 %{distance}。",
+          "description": "选择一个地点或 %{ship_to_address_link}",
+          "ship_to_address_link": "送货地址",
+          "change_location_link": "更改您的位置"
+        },
+        "could_not_resolve_address": "无法定位您的地址。请重试或使用其他地址"
       }
     },
     "attributes": {

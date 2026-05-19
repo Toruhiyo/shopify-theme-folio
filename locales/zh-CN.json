@@ -1350,7 +1350,14 @@
             "other": "运送 %{count} 件物品至"
           }
         },
-        "block_title": "请核对您的信息"
+        "block_title": "请核对您的信息",
+        "title": "评论",
+        "review_and_confirm_title": "审核并确认",
+        "item_header": {
+          "change_value": "更改数值",
+          "section": "章节",
+          "value": "价值"
+        }
       },
       "remote_policies": {
         "unavailable_policy": "此店铺未提供任何 %{policy_name}。如需更多信息，请直接联系 %{shop_name}。"
@@ -1367,6 +1374,47 @@
         "errors": {
           "interaction_required": "需要扩展交互以完成结账。"
         }
+      },
+      "shipping": {
+        "delivery_title": "交付",
+        "delivery_today": "当天送达 %{time}",
+        "delivery_tomorrow": "次日送达 %{time}",
+        "delivery": "交货 %{time}",
+        "delivery_to": "送货至",
+        "arrives_time": "预计 %{time} 到达",
+        "arrives_time_range": "预计在 %{min_time}–%{max_time} 内送达",
+        "default_description": "1个工作日内发货",
+        "duties_and_taxes_options": {
+          "ddu_caption": "可能会产生额外费用",
+          "ddp_title": "立即付款",
+          "ddp_caption": "送货无额外费用"
+        },
+        "add_address": "使用不同的地址",
+        "add_delivery_instructions": "添加送货说明",
+        "back": "返回",
+        "address_more": "此地址的更多操作",
+        "address_confirm": "您确定要从您的账户中删除此地址吗？",
+        "address_default": "设为默认",
+        "address_form": {
+          "generic_error": "保存您的地址时出现问题。请再试一次。",
+          "one_time_address_subtitle": "此订单使用一次性地址"
+        },
+        "different_shipping_method_summary": "输入不同的送货地址以查看可用的送货方式",
+        "add_shipping_address": "添加送货地址",
+        "add_new_delivery_address": "添加新的收货地址"
+      },
+      "session_errors": {
+        "session_already_finished": "此订单已提交。您可以返回商店开始新的订单。"
+      },
+      "review_address_modal": {
+        "title": "评论地址",
+        "subtitle": {
+          "one": "此订单将被发送到{{merchant}}提供的地址。",
+          "other": "此订单将寄送至 {{merchant}} 提供的地址。请选择一个收货地址。"
+        },
+        "subtitle_no_match": "此地址与您保存的任何地址均不匹配。",
+        "subtitle_must_use": "您的订单将寄送至此地址。",
+        "use_saved_address": "使用不同的地址"
       }
     },
     "attributes": {

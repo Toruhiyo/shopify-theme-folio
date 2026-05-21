@@ -447,6 +447,65 @@
 
   initMosaicRows();
 
+  /* --- Product Recommendations --- */
+  const PRODUCT_RECOMMENDATIONS_PRELOAD = '200px';
+
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+      this.observer = null;
+      this.startObserver();
+    }
+
+    disconnectedCallback() {
+      this.stopObserver();
+    }
+
+    startObserver() {
+      if (!this.dataset.url || this.observer) return;
+
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          if (!entries[0].isIntersecting) return;
+          this.stopObserver();
+          this.loadRecommendations();
+        },
+        { rootMargin: '0px 0px ' + PRODUCT_RECOMMENDATIONS_PRELOAD + ' 0px' }
+      );
+
+      this.observer.observe(this);
+    }
+
+    stopObserver() {
+      if (!this.observer) return;
+      this.observer.disconnect();
+      this.observer = null;
+    }
+
+    async loadRecommendations() {
+      const url = this.dataset.url;
+      if (!url) return;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) return;
+
+        const text = await response.text();
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+        const fresh = doc.querySelector('product-recommendations');
+        if (!fresh || !fresh.innerHTML.trim()) return;
+
+        this.innerHTML = fresh.innerHTML;
+      } catch (error) {
+        // Recommendations unavailable; server fallback may already be present
+      }
+    }
+  }
+
+  if (!customElements.get('product-recommendations')) {
+    customElements.define('product-recommendations', ProductRecommendations);
+  }
+
   /* --- Initialize --- */
   updateCartCount();
 

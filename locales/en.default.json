@@ -69,6 +69,9 @@
     "featured_collection": {
       "name": "Featured collection"
     },
+    "related_products": {
+      "name": "Related products"
+    },
     "collection_grid": {
       "name": "Collection grid"
     },

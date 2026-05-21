@@ -1,0 +1,50 @@
+{%- comment -%}
+  Fallback when Shopify recommendations are empty.
+  Uses the product's first collection, excluding the current product.
+  Accepts:
+  - product: {Object} Current product
+  - section: {Object} Section settings
+  - limit: {Number} Max products to show
+{%- endcomment -%}
+
+{%- liquid
+  assign fallback_collection = product.collections.first
+  if fallback_collection == blank
+    assign fallback_collection = collections.all
+  endif
+
+  assign shown_count = 0
+-%}
+
+{%- capture fallback_cards -%}
+  {%- for candidate in fallback_collection.products -%}
+    {%- if candidate.id == product.id -%}
+      {%- continue -%}
+    {%- endif -%}
+    {% render 'product-card', product: candidate, show_vendor: section.settings.show_vendor %}
+    {%- assign shown_count = shown_count | plus: 1 -%}
+    {%- if shown_count >= limit -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- if shown_count > 0 -%}
+  <div class="related-products__content">
+    {%- if section.settings.label != blank or section.settings.heading != blank -%}
+      <div class="section-header">
+        {%- if section.settings.label != blank -%}
+          <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="grid grid--{{ section.settings.columns }}">
+      {{ fallback_cards }}
+    </div>
+  </div>
+{%- endif -%}

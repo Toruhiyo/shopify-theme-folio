@@ -8,14 +8,14 @@
       }
     },
     "related-products": {
-      "type": "featured-collection",
+      "type": "related-products",
       "settings": {
         "label": "You May Also Like",
         "heading": "Related Products",
         "products_to_show": 4,
         "columns": 4,
         "show_vendor": true,
-        "show_view_all": false
+        "enable_collection_fallback": true
       }
     }
   },

@@ -1,0 +1,26 @@
+{%- comment -%}
+  Renders the related products header and grid.
+  Accepts:
+  - products: {Array} Product list
+  - section: {Object} Section settings
+{%- endcomment -%}
+
+<div class="related-products__content">
+  {%- if section.settings.label != blank or section.settings.heading != blank -%}
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="grid grid--{{ section.settings.columns }}">
+    {%- for related_product in products -%}
+      {% render 'product-card', product: related_product, show_vendor: section.settings.show_vendor %}
+    {%- endfor -%}
+  </div>
+</div>

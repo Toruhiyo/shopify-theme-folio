@@ -1,0 +1,92 @@
+{%- liquid
+  assign products_to_show = section.settings.products_to_show
+  assign recommendations_url = routes.product_recommendations_url | append: '?section_id=' | append: section.id | append: '&product_id=' | append: product.id | append: '&limit=' | append: products_to_show | append: '&intent=related'
+-%}
+
+<section
+  class="section-spacing related-products-section"
+  id="related-products-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="page-width">
+    <product-recommendations
+      class="related-products"
+      data-url="{{ recommendations_url }}"
+    >
+      {%- if recommendations.performed -%}
+        {%- if recommendations.products_count > 0 -%}
+          {% render 'related-products-content',
+            products: recommendations.products,
+            section: section
+          %}
+        {%- elsif section.settings.enable_collection_fallback -%}
+          {% render 'related-products-fallback',
+            product: product,
+            section: section,
+            limit: products_to_show
+          %}
+        {%- endif -%}
+      {%- endif -%}
+    </product-recommendations>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Related products",
+  "tag": "section",
+  "class": "related-products-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Uses Shopify's recommendation engine (Search & Discovery app). Until enough order data exists, results may be sparse; enable collection fallback for same-category products."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "default": "You May Also Like",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Related Products",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Columns"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": true,
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_collection_fallback",
+      "default": true,
+      "label": "Fallback to same collection",
+      "info": "When Shopify has no recommendations yet, show other products from this product's primary collection (excluding the current product)."
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}

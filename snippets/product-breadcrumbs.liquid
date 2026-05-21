@@ -1,0 +1,29 @@
+{%- comment -%}
+  Product page breadcrumbs.
+  Accepts:
+  - product: {Object} Shopify product object
+  - collection: {Object} Optional collection context
+{%- endcomment -%}
+
+{%- liquid
+  assign breadcrumb_collection = collection
+  if breadcrumb_collection == blank and product.collections.first
+    assign breadcrumb_collection = product.collections.first
+  endif
+-%}
+
+<nav class="breadcrumbs product__breadcrumbs" aria-label="{{ 'general.breadcrumbs.label' | t }}">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
+    </li>
+    {%- if breadcrumb_collection -%}
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ breadcrumb_collection.url }}">{{ breadcrumb_collection.title }}</a>
+      </li>
+    {%- endif -%}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__current" aria-current="page">{{ product.title }}</span>
+    </li>
+  </ol>
+</nav>

@@ -266,19 +266,47 @@
   const thumbs = document.querySelectorAll('[data-media-thumb]');
   thumbs.forEach(thumb => {
     thumb.addEventListener('click', () => {
-      const mediaId = thumb.dataset.mediaThumb;
       const mainMedia = document.querySelector('[data-media-main]');
       if (!mainMedia) return;
 
       const img = mainMedia.querySelector('img');
       if (img) {
-        img.src = thumb.querySelector('img')?.src?.replace(/&width=\d+/, '&width=800') || '';
+        const mediaSrc = thumb.dataset.mediaSrc;
+        img.src = mediaSrc || thumb.querySelector('img')?.src?.replace(/&width=\d+/, '&width=1200') || '';
         img.srcset = '';
       }
 
       thumbs.forEach(t => t.classList.remove('is-active'));
       thumb.classList.add('is-active');
     });
+  });
+
+  /* --- Product Share --- */
+  document.addEventListener('click', async (e) => {
+    const shareBtn = e.target.closest('[data-product-share]');
+    if (!shareBtn) return;
+
+    const url = shareBtn.dataset.shareUrl || window.location.href;
+    const title = shareBtn.dataset.shareTitle || document.title;
+    const copiedText = shareBtn.dataset.shareCopied || 'Link copied';
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title, url });
+        return;
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      const originalText = shareBtn.textContent;
+      shareBtn.textContent = copiedText;
+      setTimeout(() => { shareBtn.textContent = originalText; }, 2000);
+    } catch (error) {
+      // Clipboard unavailable
+    }
   });
 
   /* --- Quantity Selector --- */

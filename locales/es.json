@@ -79,6 +79,7 @@
       "page": "Página {{ page }}"
     },
     "breadcrumbs": {
+      "label": "Migas de pan",
       "home": "Inicio"
     },
     "search": {
@@ -109,8 +110,13 @@
       "quantity": "Cantidad",
       "description": "Descripción",
       "share": "Compartir",
+      "link_copied": "Enlace copiado",
+      "view_image": "Ver imagen {{ index }}",
+      "decrease_quantity": "Reducir cantidad",
+      "increase_quantity": "Aumentar cantidad",
       "vendor": "Vendedor",
-      "type": "Tipo"
+      "type": "Tipo",
+      "sku": "SKU"
     }
   },
   "collections": {

@@ -32,6 +32,7 @@
       "page": "Page {{ page }}"
     },
     "breadcrumbs": {
+      "label": "Breadcrumb",
       "home": "Home"
     },
     "search": {
@@ -105,6 +106,10 @@
       "quantity": "Quantity",
       "description": "Description",
       "share": "Share",
+      "link_copied": "Link copied",
+      "view_image": "View image {{ index }}",
+      "decrease_quantity": "Decrease quantity",
+      "increase_quantity": "Increase quantity",
       "vendor": "Vendor",
       "type": "Type",
       "sku": "SKU"

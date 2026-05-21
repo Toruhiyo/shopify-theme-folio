@@ -166,6 +166,7 @@
       "tags": "Tagué \"{{ tags }}\""
     },
     "breadcrumbs": {
+      "label": "Fil d'Ariane",
       "home": "Accueil"
     },
     "search": {
@@ -195,8 +196,14 @@
       "sale": "Soldes",
       "new": "Nouveau",
       "quantity": "Quantité",
+      "description": "Description",
       "share": "Partager",
+      "link_copied": "Lien copié",
+      "view_image": "Voir l'image {{ index }}",
+      "decrease_quantity": "Diminuer la quantité",
+      "increase_quantity": "Augmenter la quantité",
       "vendor": "Fournisseur",
+      "type": "Type",
       "sku": "UGS"
     }
   },

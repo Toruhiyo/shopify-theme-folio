@@ -179,6 +179,7 @@
       "link": "继续购物"
     },
     "breadcrumbs": {
+      "label": "面包屑导航",
       "home": "首页"
     },
     "cart": {
@@ -2302,6 +2303,10 @@
       "quantity": "数量",
       "description": "描述",
       "share": "分享",
+      "link_copied": "链接已复制",
+      "view_image": "查看图片 {{ index }}",
+      "decrease_quantity": "减少数量",
+      "increase_quantity": "增加数量",
       "vendor": "供应商",
       "type": "类型",
       "sku": "库存单位"

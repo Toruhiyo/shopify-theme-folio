@@ -534,6 +534,40 @@
     customElements.define('product-recommendations', ProductRecommendations);
   }
 
+  /* --- Product Grid (tagged collection) --- */
+  class ProductGridByTag extends HTMLElement {
+    constructor() {
+      super();
+      this.loadProducts();
+    }
+
+    async loadProducts() {
+      const url = this.dataset.url;
+      const sectionId = this.dataset.sectionId;
+      if (!url || !sectionId) return;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) return;
+
+        const text = await response.text();
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+        const section = doc.getElementById('shopify-section-' + sectionId);
+        const grid = section?.querySelector('product-grid-by-tag');
+        if (!grid || !grid.innerHTML.trim()) return;
+
+        this.innerHTML = grid.innerHTML;
+      } catch (error) {
+        const pendingEmpty = this.querySelector('.product-grid__empty--pending');
+        if (pendingEmpty) pendingEmpty.classList.remove('product-grid__empty--pending');
+      }
+    }
+  }
+
+  if (!customElements.get('product-grid-by-tag')) {
+    customElements.define('product-grid-by-tag', ProductGridByTag);
+  }
+
   /* --- Initialize --- */
   updateCartCount();
 

@@ -23,9 +23,17 @@
       </div>
     {%- endif -%}
 
-    <div class="grid grid--{{ section.settings.columns }}">
+    {%- liquid
+      assign product_tag_handle = section.settings.product_tag | default: 'new' | handleize
+      assign tagged_collection_url = routes.all_products_collection_url | append: '/' | append: product_tag_handle | append: '?section_id=' | append: section.id
+    -%}
+    <product-grid-by-tag
+      class="grid grid--{{ section.settings.columns }}"
+      data-url="{{ tagged_collection_url }}"
+      data-section-id="{{ section.id }}"
+    >
       {% render 'product-grid-items', section: section %}
-    </div>
+    </product-grid-by-tag>
 
     {%- if section.settings.show_view_all -%}
       {%- liquid

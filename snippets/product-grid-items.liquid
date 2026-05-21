@@ -1,5 +1,6 @@
 {%- comment -%}
   Renders product grid cards for products tagged as new.
+  Uses collection.products when rendered on /collections/all/{tag} (same as View all).
   Accepts:
   - section: {Object} Section object with settings
 {%- endcomment -%}
@@ -8,30 +9,32 @@
   assign product_tag = section.settings.product_tag | default: 'new' | downcase
   assign limit = section.settings.products_to_show
   assign match_count = 0
+  assign use_tagged_collection = false
+
+  if collection != blank and collection.handle == 'all' and current_tags.size > 0
+    for tag in current_tags
+      assign tag_normalized = tag | downcase
+      if tag_normalized == product_tag
+        assign use_tagged_collection = true
+        break
+      endif
+    endfor
+  endif
 -%}
 
-{%- for product in collections.all.products -%}
-  {%- assign tag_match = false -%}
-  {%- for tag in product.tags -%}
-    {%- assign tag_normalized = tag | downcase -%}
-    {%- if tag_normalized == product_tag -%}
-      {%- assign tag_match = true -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-  {%- if tag_match -%}
+{%- if use_tagged_collection -%}
+  {%- for product in collection.products limit: limit -%}
     {% render 'product-card',
       product: product,
       show_vendor: section.settings.show_vendor,
       new_tag: product_tag
     %}
     {%- assign match_count = match_count | plus: 1 -%}
-    {%- if match_count >= limit -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
 
 {%- if match_count == 0 -%}
-  <p class="product-grid__empty text-muted">{{ 'sections.product_grid.empty' | t: tag: product_tag }}</p>
+  <p class="product-grid__empty text-muted{% if request.page_type == 'index' %} product-grid__empty--pending{% endif %}">
+    {{ 'sections.product_grid.empty' | t: tag: product_tag }}
+  </p>
 {%- endif -%}

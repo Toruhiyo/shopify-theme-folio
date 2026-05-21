@@ -189,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: pan-x;
 }
 
 .drag-carousel.is-dragging {
@@ -886,11 +887,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .collection-card {
+  display: block;
   flex: 0 0 280px;
   scroll-snap-align: start;
   border-radius: var(--border-radius);
   overflow: hidden;
   background-color: var(--color-card);
+  color: inherit;
+  text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -941,7 +945,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.15s ease;
 }
 
-.collection-card__link:hover {
+.collection-card:hover .collection-card__link {
   color: var(--color-primary);
 }
 
@@ -951,7 +955,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.15s ease;
 }
 
-.collection-card__link:hover svg {
+.collection-card:hover .collection-card__link svg {
   transform: translateX(4px);
 }
 

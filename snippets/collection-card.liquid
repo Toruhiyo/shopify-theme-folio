@@ -4,30 +4,28 @@
   - collection: {Object} Shopify collection object
 {%- endcomment -%}
 
-<div class="collection-card">
+<a href="{{ collection.url }}" class="collection-card">
   <div class="collection-card__media">
-    <a href="{{ collection.url }}">
-      {%- if collection.featured_image -%}
-        <img
-          src="{{ collection.featured_image | image_url: width: 800 }}"
-          alt="{{ collection.featured_image.alt | escape | default: collection.title | escape }}"
-          loading="lazy"
-          decoding="async"
-          width="400"
-          height="300"
-        >
-      {%- else -%}
-        <div class="collection-card__no-image" aria-hidden="true">
-          <span class="h3 serif">{{ collection.title | slice: 0 }}</span>
-        </div>
-      {%- endif -%}
-    </a>
+    {%- if collection.featured_image -%}
+      <img
+        src="{{ collection.featured_image | image_url: width: 800 }}"
+        alt="{{ collection.featured_image.alt | escape | default: collection.title | escape }}"
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="300"
+      >
+    {%- else -%}
+      <div class="collection-card__no-image" aria-hidden="true">
+        <span class="h3 serif">{{ collection.title | slice: 0 }}</span>
+      </div>
+    {%- endif -%}
   </div>
 
   <div class="collection-card__content">
     <h3 class="collection-card__title">{{ collection.title }}</h3>
-    <a href="{{ collection.url }}" class="collection-card__link">
+    <span class="collection-card__link">
       {{ 'collections.general.explore' | t }} {% render 'icon-arrow', direction: 'right' %}
-    </a>
+    </span>
   </div>
-</div>
+</a>

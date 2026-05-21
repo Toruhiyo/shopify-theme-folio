@@ -337,42 +337,47 @@
 
   /* --- Drag Carousel --- */
   function initDragCarousel(el) {
-    let isDown = false;
+    let isPointerDown = false;
     let startX = 0;
     let scrollStart = 0;
     let hasDragged = false;
-    const DRAG_THRESHOLD = 5;
+    const DRAG_THRESHOLD = 8;
 
-    el.addEventListener('mousedown', (e) => {
-      isDown = true;
+    function endPointer() {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      el.classList.remove('is-dragging');
+    }
+
+    el.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || e.pointerType !== 'mouse') return;
+      isPointerDown = true;
       hasDragged = false;
-      startX = e.pageX - el.offsetLeft;
+      startX = e.clientX;
       scrollStart = el.scrollLeft;
-      el.classList.add('is-dragging');
     });
 
-    el.addEventListener('mouseleave', () => {
-      if (!isDown) return;
-      isDown = false;
-      el.classList.remove('is-dragging');
-    });
-
-    el.addEventListener('mouseup', () => {
-      isDown = false;
-      el.classList.remove('is-dragging');
-    });
-
-    el.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
+    el.addEventListener('pointermove', (e) => {
+      if (!isPointerDown) return;
+      const delta = e.clientX - startX;
+      if (!hasDragged) {
+        if (Math.abs(delta) <= DRAG_THRESHOLD) return;
+        hasDragged = true;
+        el.classList.add('is-dragging');
+      }
       e.preventDefault();
-      const x = e.pageX - el.offsetLeft;
-      const delta = x - startX;
-      if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
       el.scrollLeft = scrollStart - delta;
     });
 
+    el.addEventListener('pointerup', endPointer);
+    el.addEventListener('pointercancel', endPointer);
+    el.addEventListener('lostpointercapture', endPointer);
+
     el.addEventListener('click', (e) => {
-      if (hasDragged) e.preventDefault();
+      if (!hasDragged) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      hasDragged = false;
     }, true);
   }
 

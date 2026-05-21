@@ -23,19 +23,19 @@
       </div>
     {%- endif -%}
 
-    {%- liquid
-      if section.settings.collection != blank
-        assign target_collection = section.settings.collection
-      else
-        assign target_collection = collections.all
-      endif
-    -%}
+    <div class="grid grid--{{ section.settings.columns }}">
+      {% render 'product-grid-items', section: section %}
+    </div>
 
-    {%- if target_collection.products.size > 0 -%}
-      <div class="grid grid--{{ section.settings.columns }}">
-        {%- for product in target_collection.products limit: section.settings.products_to_show -%}
-          {% render 'product-card', product: product, show_vendor: section.settings.show_vendor %}
-        {%- endfor -%}
+    {%- if section.settings.show_view_all -%}
+      {%- liquid
+        assign view_all_tag = section.settings.product_tag | default: 'new' | handleize
+        assign view_all_url = routes.all_products_collection_url | append: '/' | append: view_all_tag
+      -%}
+      <div class="text-center mt-xl">
+        <a href="{{ view_all_url }}" class="btn btn--secondary">
+          {{ 'sections.product_grid.view_all' | t }}
+        </a>
       </div>
     {%- endif -%}
   </div>
@@ -47,6 +47,10 @@
   "tag": "section",
   "class": "product-grid-section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Shows products tagged in Shopify admin. Open a product → Tags → add the tag below (default: new)."
+    },
     {
       "type": "text",
       "id": "label",
@@ -60,9 +64,11 @@
       "label": "Heading"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
+      "type": "text",
+      "id": "product_tag",
+      "label": "New product tag",
+      "default": "new",
+      "info": "Case-insensitive. Add this tag under Products → [product] → Tags in Shopify admin."
     },
     {
       "type": "range",
@@ -87,6 +93,12 @@
       "id": "show_vendor",
       "default": true,
       "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "Show 'View all' button"
     },
     {
       "type": "checkbox",
@@ -115,7 +127,10 @@
   ],
   "presets": [
     {
-      "name": "Product grid"
+      "name": "Product grid",
+      "settings": {
+        "product_tag": "new"
+      }
     }
   ]
 }

@@ -9,6 +9,7 @@
 {%- liquid
   assign show_vendor = show_vendor | default: false
   assign lazy_load = lazy_load | default: true
+  assign new_tag = new_tag | default: '' | downcase
 
   assign on_sale = false
   if product.compare_at_price > product.price
@@ -18,6 +19,17 @@
   assign sold_out = true
   if product.available
     assign sold_out = false
+  endif
+
+  assign has_new_tag = false
+  if new_tag != blank
+    for tag in product.tags
+      assign tag_normalized = tag | downcase
+      if tag_normalized == new_tag
+        assign has_new_tag = true
+        break
+      endif
+    endfor
   endif
 -%}
 
@@ -44,6 +56,8 @@
         <span class="product-card__badge product-card__badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
       {%- elsif on_sale -%}
         <span class="product-card__badge product-card__badge--sale">{{ 'products.product.sale' | t }}</span>
+      {%- elsif has_new_tag -%}
+        <span class="product-card__badge product-card__badge--new">{{ 'products.product.new' | t }}</span>
       {%- endif -%}
     </div>
 

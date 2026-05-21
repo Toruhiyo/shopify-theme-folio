@@ -30,9 +30,11 @@
       "settings": {
         "label": "New Arrivals",
         "heading": "Just In",
+        "product_tag": "new",
         "products_to_show": 8,
         "columns": 4,
         "show_vendor": true,
+        "show_view_all": true,
         "show_filters": false
       }
     },

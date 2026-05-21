@@ -77,7 +77,9 @@
       "name": "Collection grid"
     },
     "product_grid": {
-      "name": "Product grid"
+      "name": "Product grid",
+      "empty": "No products tagged \"{{ tag }}\" yet. Add the tag in Shopify admin under Products.",
+      "view_all": "View all new arrivals"
     },
     "newsletter": {
       "name": "Newsletter",

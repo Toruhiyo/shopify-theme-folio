@@ -1135,6 +1135,14 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-primary);
 }
 
+.product-grid__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
 /* --- Newsletter --- */
 .newsletter {
   background-color: var(--color-card);

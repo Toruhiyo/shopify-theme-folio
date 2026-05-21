@@ -154,7 +154,9 @@
       "name": "集合网格"
     },
     "product_grid": {
-      "name": "产品网格"
+      "name": "产品网格",
+      "empty": "尚无标签为「{{ tag }}」的产品。请在 Shopify 后台的产品中添加该标签。",
+      "view_all": "查看全部新品"
     },
     "newsletter": {
       "name": "通讯简报",

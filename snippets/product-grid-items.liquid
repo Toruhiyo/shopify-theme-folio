@@ -1,0 +1,37 @@
+{%- comment -%}
+  Renders product grid cards for products tagged as new.
+  Accepts:
+  - section: {Object} Section object with settings
+{%- endcomment -%}
+
+{%- liquid
+  assign product_tag = section.settings.product_tag | default: 'new' | downcase
+  assign limit = section.settings.products_to_show
+  assign match_count = 0
+-%}
+
+{%- for product in collections.all.products -%}
+  {%- assign tag_match = false -%}
+  {%- for tag in product.tags -%}
+    {%- assign tag_normalized = tag | downcase -%}
+    {%- if tag_normalized == product_tag -%}
+      {%- assign tag_match = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if tag_match -%}
+    {% render 'product-card',
+      product: product,
+      show_vendor: section.settings.show_vendor,
+      new_tag: product_tag
+    %}
+    {%- assign match_count = match_count | plus: 1 -%}
+    {%- if match_count >= limit -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if match_count == 0 -%}
+  <p class="product-grid__empty text-muted">{{ 'sections.product_grid.empty' | t: tag: product_tag }}</p>
+{%- endif -%}

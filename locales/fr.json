@@ -124,7 +124,9 @@
       "name": "Grille de collection"
     },
     "product_grid": {
-      "name": "Grille de produits"
+      "name": "Grille de produits",
+      "empty": "Aucun produit avec l'étiquette \"{{ tag }}\" pour le moment. Ajoutez l'étiquette dans Produits dans l'admin Shopify.",
+      "view_all": "Voir toutes les nouveautés"
     },
     "newsletter": {
       "email_placeholder": "Votre adresse e-mail",

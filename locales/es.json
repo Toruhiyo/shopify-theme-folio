@@ -32,7 +32,9 @@
       "name": "Cuadrícula de la colección"
     },
     "product_grid": {
-      "name": "Cuadrícula de productos"
+      "name": "Cuadrícula de productos",
+      "empty": "Aún no hay productos con la etiqueta \"{{ tag }}\". Añádela en Productos en el admin de Shopify.",
+      "view_all": "Ver todas las novedades"
     },
     "newsletter": {
       "name": "Boletín de noticias",

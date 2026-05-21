@@ -147,6 +147,9 @@
     "featured_collection": {
       "name": "精选系列"
     },
+    "related_products": {
+      "name": "相关产品"
+    },
     "collection_grid": {
       "name": "集合网格"
     },

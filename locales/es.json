@@ -25,6 +25,9 @@
     "featured_collection": {
       "name": "Colección destacada"
     },
+    "related_products": {
+      "name": "Productos relacionados"
+    },
     "collection_grid": {
       "name": "Cuadrícula de la colección"
     },

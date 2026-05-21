@@ -117,6 +117,9 @@
     "featured_collection": {
       "name": "Collection en vedette"
     },
+    "related_products": {
+      "name": "Produits associés"
+    },
     "collection_grid": {
       "name": "Grille de collection"
     },

@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcement_bar": {
+      "name": "Barra de anuncios"
+    },
+    "header": {
+      "name": "Encabezado",
+      "menu": "Menú",
+      "cart": "Cesta",
+      "search": "Buscar",
+      "close": "Cerrar"
+    },
+    "hero": {
+      "name": "Banner principal"
+    },
+    "featured_collection": {
+      "name": "Colección destacada"
+    },
+    "collection_grid": {
+      "name": "Cuadrícula de la colección"
+    },
+    "product_grid": {
+      "name": "Cuadrícula de productos"
+    },
+    "newsletter": {
+      "name": "Boletín de noticias",
+      "email_placeholder": "Su dirección de correo electrónico",
+      "subscribe": "Suscribirse",
+      "success": "¡Gracias por suscribirte!"
+    },
+    "testimonials": {
+      "name": "Testimonios"
+    },
+    "about_story": {
+      "name": "Sobre nosotros / Nuestra historia"
+    },
+    "footer": {
+      "name": "Pie de página"
+    }
+  },
+  "general": {
+    "password_page": {
+      "opening_soon": "Próxima apertura",
+      "login_form_heading": "Entrar a la tienda usando la contraseña",
+      "login_password_button": "Ingresar con contraseña",
+      "close": "Cerrar",
+      "password_link": "Ingresar con contraseña",
+      "powered_by_shopify_html": "Esta tienda funcionará con {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Compartir en Facebook",
+        "share_on_twitter": "Tuitear en Twitter",
+        "share_on_pinterest": "Fijar en Pinterest"
+      },
+      "links": {
+        "twitter": "X (antes Twitter)"
+      }
+    },
+    "404": {
+      "title": "Página no encontrada",
+      "subtext": "La página que busca no existe. Es posible que haya escrito mal la dirección o que la página se haya movido.",
+      "link": "Seguir comprando"
+    },
+    "meta": {
+      "tags": "Etiquetado \"{{ tags }}\"",
+      "page": "Página {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Inicio"
+    },
+    "search": {
+      "title": "Buscar",
+      "placeholder": "Buscar en nuestra tienda...",
+      "submit": "Buscar",
+      "no_results": "No se encontraron resultados para \"{{ terms }}\". Compruebe la ortografía o utilice una palabra o frase diferente.",
+      "results_count": "{{ count }} resultados para \"{{ terms }}\""
+    },
+    "cart": {
+      "title": "Tu carrito",
+      "empty": "Tu carrito está vacío",
+      "continue_shopping": "Seguir comprando",
+      "taxes_and_shipping": "Impuestos y envío calculados al finalizar la compra",
+      "checkout": "Pagar",
+      "remove": "Eliminar",
+      "update": "Actualizar"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Añadir al carrito",
+      "adding": "Agregando...",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "sale": "Rebajas",
+      "new": "Nuevo",
+      "quantity": "Cantidad",
+      "description": "Descripción",
+      "share": "Compartir",
+      "vendor": "Vendedor",
+      "type": "Tipo"
+    }
+  },
+  "collections": {
+    "general": {
+      "all_products": "Todos los productos",
+      "no_products": "No se encontraron productos en esta colección.",
+      "products_count": "{{ count }} productos",
+      "sort_by": "Ordenar por",
+      "sort_options": {
+        "manual": "Destacado",
+        "best-selling": "Más vendido",
+        "title-ascending": "Alfabéticamente, de la A a la Z",
+        "title-descending": "Alfabéticamente, de la Z a la A",
+        "price-ascending": "Precio, de menor a mayor",
+        "price-descending": "Precio, de mayor a menor",
+        "created-ascending": "Fecha, de más antiguo a más nuevo",
+        "created-descending": "Fecha, de más reciente a más antigua"
+      },
+      "explore": "Explorar"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Leer más",
+      "written_by": "Escrito por {{ author }}",
+      "published_on": "Publicado el {{ date }}",
+      "back_to_blog": "Volver al {{ blog }}"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mi cuenta",
+      "orders": "Historial de pedidos",
+      "no_orders": "Aún no has realizado ningún pedido.",
+      "details": "Detalles de la cuenta",
+      "addresses": "Direcciones",
+      "default_address": "Predeterminado",
+      "view_addresses": "Ver Direcciones",
+      "logout": "Cerrar sesión"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "sign_in": "Iniciar sesión",
+      "forgot_password": "¿Olvidó su contraseña?",
+      "create_account": "Crear cuenta",
+      "guest_title": "Continuar como invitado",
+      "guest_continue": "Continuar"
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Crear",
+      "already_have_account": "¿Ya tienes una cuenta? Inicia sesión"
+    },
+    "recover_password": {
+      "title": "Restablezca su contraseña",
+      "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
+      "email": "Correo electrónico",
+      "submit": "Enviar",
+      "success": "Te hemos enviado un correo electrónico con un enlace para actualizar tu contraseña.",
+      "back_to_login": "Volver al inicio de sesión"
+    },
+    "reset_password": {
+      "title": "Restablecer contraseña de cuenta",
+      "password": "Contraseña",
+      "password_confirm": "Confirmar contraseña",
+      "submit": "Restablecer contraseña"
+    },
+    "activate_account": {
+      "title": "Activar cuenta",
+      "password": "Contraseña",
+      "password_confirm": "Confirmar contraseña",
+      "submit": "Activar cuenta",
+      "decline": "Rechazar invitación"
+    },
+    "addresses": {
+      "title": "Tus direcciones",
+      "add_new": "Añadir una nueva dirección",
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "company": "Compañía",
+      "address1": "Dirección",
+      "address2": "Apartamento, suite, etc.",
+      "city": "Ciudad",
+      "country": "País/Región",
+      "province": "Provincia",
+      "zip": "Código postal",
+      "phone": "Teléfono",
+      "default": "Establecer como dirección predeterminada",
+      "update": "Actualizar dirección",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Borrar",
+      "delete_confirm": "¿Está seguro de que desea eliminar esta dirección?"
+    },
+    "order": {
+      "title": "Pedido {{ name }}",
+      "date": "Publicado el {{ date }}",
+      "cancelled": "Pedido Cancelado el {{ date }}",
+      "cancelled_reason": "Motivo: {{ reason }}",
+      "billing_address": "Dirección de facturación",
+      "shipping_address": "Dirección de envío",
+      "payment_status": "Estado del pago",
+      "fulfillment_status": "Estado de cumplimiento",
+      "product": "Producto",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "discount": "Descuento",
+      "shipping": "Envío",
+      "tax": "Impuesto"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "Saltar al contenido",
+    "close": "Cerrar",
+    "menu": "Menú"
+  }
+}

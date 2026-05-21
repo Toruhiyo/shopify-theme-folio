@@ -1,0 +1,2307 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "collections": {
+    "general": {
+      "all_products": "所有产品",
+      "no_products": "在此系列中未找到产品。",
+      "products_count": "{{ count }} 个产品",
+      "sort_by": "排序方式",
+      "sort_options": {
+        "manual": "精选推荐",
+        "best-selling": "畅销产品",
+        "title-ascending": "按字母顺序，A到Z",
+        "title-descending": "按字母顺序，Z到A",
+        "price-ascending": "价格，从低到高",
+        "price-descending": "价格，从高到低",
+        "created-ascending": "日期，由旧到新",
+        "created-descending": "日期，由新到旧"
+      },
+      "explore": "探索"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "阅读更多",
+      "written_by": "由 {{ author }} 撰写",
+      "back_to_blog": "返回到 {{ blog }}"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "我的账户",
+      "orders": "订单历史",
+      "no_orders": "您还没有下过任何订单。",
+      "details": "账户详情",
+      "addresses": "地址",
+      "default_address": "默认",
+      "view_addresses": "查看地址",
+      "logout": "登出"
+    },
+    "activate_account": {
+      "title": "激活账户",
+      "password": "密码",
+      "password_confirm": "确认密码",
+      "submit": "激活账户",
+      "decline": "拒绝邀请"
+    },
+    "addresses": {
+      "title": "您的地址",
+      "add_new": "添加新地址",
+      "first_name": "名字",
+      "last_name": "姓氏",
+      "company": "公司",
+      "address1": "地址",
+      "address2": "公寓、套房等。",
+      "city": "城市",
+      "country": "国家/地区",
+      "province": "省份",
+      "phone": "电话",
+      "default": "设为默认地址",
+      "update": "更新地址",
+      "cancel": "取消",
+      "edit": "编辑",
+      "delete": "删除",
+      "delete_confirm": "您确定要删除此地址吗？",
+      "zip": "邮政编码"
+    },
+    "login": {
+      "title": "登录",
+      "email": "电子邮件",
+      "password": "密码",
+      "sign_in": "登录",
+      "forgot_password": "忘记密码了吗？",
+      "create_account": "创建账户",
+      "guest_title": "以访客身份继续",
+      "guest_continue": "继续"
+    },
+    "register": {
+      "title": "创建账户",
+      "first_name": "名字",
+      "last_name": "姓氏",
+      "email": "电子邮件",
+      "password": "密码",
+      "submit": "创建",
+      "already_have_account": "已经有账户？ 登录"
+    },
+    "recover_password": {
+      "title": "重置您的密码",
+      "subtext": "我们将向您发送一封电子邮件以重置您的密码。",
+      "email": "电子邮件",
+      "submit": "提交",
+      "success": "我们已向您发送了一封电子邮件，内含用于更新密码的链接。",
+      "back_to_login": "返回登录"
+    },
+    "reset_password": {
+      "title": "重置账户密码",
+      "password": "密码",
+      "password_confirm": "确认密码",
+      "submit": "重置密码"
+    },
+    "order": {
+      "title": "订购 {{ name }}",
+      "date": "发布于 {{ date }}",
+      "cancelled": "订单已于 {{ date }} 取消",
+      "cancelled_reason": "原因：{{ reason }}",
+      "billing_address": "账单地址",
+      "shipping_address": "收货地址",
+      "payment_status": "付款状态",
+      "fulfillment_status": "履行状态",
+      "product": "产品",
+      "sku": "库存单位",
+      "price": "价格",
+      "quantity": "数量",
+      "total": "总计",
+      "subtotal": "小计",
+      "discount": "折扣",
+      "shipping": "运输",
+      "tax": "税费"
+    }
+  },
+  "accessibility": {
+    "skip_to_content": "跳至内容",
+    "close": "关闭",
+    "menu": "菜单"
+  },
+  "sections": {
+    "announcement_bar": {
+      "name": "公告栏"
+    },
+    "header": {
+      "name": "标题",
+      "menu": "菜单",
+      "cart": "购物车",
+      "search": "搜索",
+      "close": "关闭"
+    },
+    "hero": {
+      "name": "英雄横幅"
+    },
+    "featured_collection": {
+      "name": "精选系列"
+    },
+    "collection_grid": {
+      "name": "集合网格"
+    },
+    "product_grid": {
+      "name": "产品网格"
+    },
+    "newsletter": {
+      "name": "通讯简报",
+      "email_placeholder": "您的电子邮件地址",
+      "subscribe": "订阅",
+      "success": "感谢您的订阅！"
+    },
+    "testimonials": {
+      "name": "客户评价"
+    },
+    "about_story": {
+      "name": "关于 / 故事"
+    },
+    "footer": {
+      "name": "页脚"
+    }
+  },
+  "general": {
+    "404": {
+      "title": "页面未找到",
+      "subtext": "您要查找的页面不存在。您可能输入了错误的地址，或者该页面可能已移动。",
+      "link": "继续购物"
+    },
+    "breadcrumbs": {
+      "home": "首页"
+    },
+    "cart": {
+      "empty": "您的购物车是空的",
+      "continue_shopping": "继续购物",
+      "checkout": "结账",
+      "title": "您的购物车",
+      "subtotal": "小计",
+      "taxes_and_shipping": "税费和运费将在结账时计算",
+      "remove": "移除",
+      "update": "更新"
+    },
+    "password_page": {
+      "opening_soon": "即将开业",
+      "login_form_heading": "使用密码进入商店",
+      "login_password_button": "请输入密码登录",
+      "close": "关闭",
+      "password_link": "请输入密码登录",
+      "powered_by_shopify_html": "本店将由 {{ shopify }} 提供技术支持"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "分享到脸书",
+        "share_on_twitter": "在推特上发推文",
+        "share_on_pinterest": "固定在 Pinterest 上"
+      },
+      "links": {
+        "facebook": "脸书",
+        "twitter": "X（推特）",
+        "tiktok": "抖音"
+      }
+    },
+    "meta": {
+      "tags": "标记为 \"{{ tags }}\"",
+      "page": "第 {{ page }} 页"
+    },
+    "search": {
+      "title": "搜索",
+      "placeholder": "搜索我们的商店...",
+      "submit": "搜索",
+      "no_results": "未找到与 \"{{ terms }}\" 相关的结果。请检查拼写或尝试使用其他词语或短语。",
+      "results_count": "{{ count }} 条关于“{{ terms }}”的结果"
+    }
+  },
+  "shopify": {
+    "addresses": {
+      "pincode": "邮政编码",
+      "region": "地区",
+      "prefecture": "县级行政区",
+      "province": "省份",
+      "state": "状态",
+      "state_and_territory": "州/地区",
+      "governorate": "省份",
+      "confirm": "您确定要删除此地址吗？"
+    },
+    "checkout": {
+      "billing": {
+        "billing_address_title": "账单寄送至",
+        "billing_address_rollup_accessibility_label": "账单至选项",
+        "same_as_shipping": "与送货地址相同",
+        "add_address": "使用不同的地址",
+        "address_more": "此地址的更多操作",
+        "address_confirm": "您确定要从您的账户中删除此地址吗？"
+      },
+      "alternative_payment_method_banner": {
+        "or": "或者",
+        "or_pay_another_way": "或者使用其他付款方式",
+        "or_check_out_another_way": "或者查看另一种方式"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "您的信用卡将被扣款 %{amount}",
+        "payment_total_label": "付款总额",
+        "change_currency_link": "切换到 %{currency_name}",
+        "currency_not_supported_by_shop": "您选择的货币已不再可用。所有价格现均以 %{currency_code} 计价。"
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "您的购物车已根据您的送货国家更新。",
+        "cart_and_currency_updated_based_on_country": "您的购物车和货币已根据您的收货国家更新。",
+        "currency_updated_for_country": "货币已更新为 %{country}"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "您的国家/地区已更新。请输入您的送货地址以继续结账。"
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "处理您的请求时出现问题。请联系店主。"
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "处理您的订单时出现问题。请稍后几分钟再试。"
+      },
+      "captcha": {
+        "title": "完成验证码以继续",
+        "errors": {
+          "not_solved": "完成验证码以继续"
+        }
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "您不再有权限下达B2B订单。请访问 %{logout_url} 以改为下个人订单。",
+        "log_out_link_text": "登出",
+        "lost_permissions_subtitle": "您不再有权限下达企业对企业订单。请注销以下达个人订单。",
+        "lost_permissions_title": "无位置权限"
+      },
+      "address_management": {
+        "saved_with_store": "已在此店铺保存"
+      },
+      "contact": {
+        "delivery_option_title": "送货方式",
+        "contact_method_title": "联系",
+        "email_rollup_accessibility_label": "电子邮件选项",
+        "email_placeholder": "电子邮件",
+        "last_name_label": "姓氏",
+        "company_attention_label": "公司/注意事项",
+        "optional_company_attention_label": "公司/注意（可选）",
+        "address2_label": "公寓、套房等。",
+        "optional_address2_label": "公寓、套房等（可选）",
+        "governorate_label": "省份",
+        "governorate_placeholder": "省份",
+        "phone_country_code_label": "电话号码国家代码",
+        "optional_zip_code_label": "邮政编码（可选）",
+        "optional_postal_code_label": "邮政编码（可选）",
+        "optional_postcode_label": "邮政编码（可选）",
+        "pincode_label": "密码",
+        "optional_pincode_label": "密码（可选）",
+        "civic_number_warning": "如果您有门牌号，请填写",
+        "optional_last_name_label": "姓氏（可选）",
+        "different_shipping_address_label": "寄送到不同地址",
+        "different_shipping_address_text": "此订单使用一次性地址",
+        "change_company_location_link_label": "更改公司地址",
+        "change_location_link_label": "更改位置",
+        "shipping_used_as_billing_notice": "这也将作为您此次订单的账单地址。",
+        "stored_addresses_label": "已保存地址",
+        "storefront_link": "商家网站",
+        "province_label": "省份",
+        "province_placeholder": "省份",
+        "state_label": "状态",
+        "state_placeholder": "状态",
+        "region_label": "地区",
+        "region_placeholder": "地区",
+        "region_none": "未选择",
+        "prefecture_label": "县级行政区",
+        "prefecture_placeholder": "县级行政区",
+        "state_and_territory_label": "州/地区",
+        "state_and_territory_placeholder": "州/地区",
+        "pincode_placeholder": "密码",
+        "ship_to_company": "送货至 {{companyName}}"
+      },
+      "company_location": {
+        "location_title": "公司所在地"
+      },
+      "clipboard": {
+        "failed_to_copy": "复制失败"
+      },
+      "customer_account": {
+        "not_user_label": "不是 %{first_name} 吗？",
+        "sign_out_link_label": "登出",
+        "save_my_information_label": "请保存此信息以备下次使用",
+        "invalid_address": "所选地址无效。请 %{update_address_link} 或选择其他地址。",
+        "incomplete_address": "所选地址不完整。%{update_address_link} 或选择其他地址。",
+        "invalid_shipping_method_summary": "请选择有效的送货地址以查看可用的送货方式",
+        "saved_address_option_description": {
+          "one": "您有 {{count}} 个已保存的地址。",
+          "other": "您有 {{count}} 个已保存的地址。"
+        },
+        "saved_address_option_link": "使用已保存的地址",
+        "saved_address_modal_title": "使用我保存的地址"
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "产品不可用",
+          "other": "无货产品"
+        },
+        "products_not_available": {
+          "one": "此产品将从您的购物车中移除，因为它在您所在的国家/地区不可用。",
+          "other": "这些产品将从您的购物车中移除，因为它们在您的国家/地区不可用。"
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "本产品在您所在的国家/地区不可用。",
+          "other": "这些产品在您所在的国家/地区不可用。"
+        },
+        "unavailable_label": "无货"
+      },
+      "customer_payment_methods": {
+        "update_card_button_label": "更新卡片",
+        "delete_customer_mandate": {
+          "generic_error": "处理您的请求时出现问题。",
+          "success_message": "您的付款方式已成功删除"
+        }
+      },
+      "embed": {
+        "shipping": {
+          "shipping_options": "查看所有运输选项"
+        },
+        "payment": {
+          "payment_options": "查看所有付款选项"
+        }
+      },
+      "delivery_options": {
+        "ship": "发货",
+        "ship_to_address": "送货地址",
+        "shipping_address": "送货地址",
+        "pick_up_from_store": "店内自取",
+        "pick_up_in_one_hour": "通常1小时内准备好",
+        "pick_up_in_two_hours": "通常2小时内准备好",
+        "pick_up_in_four_hours": "通常4小时内准备好",
+        "pick_up_in_twenty_four_hours": "通常24小时内准备好",
+        "pick_up_in_two_to_four_days": "通常2-4天内准备好",
+        "pick_up_in_five_or_more_days": "通常需5天以上准备完成",
+        "pick_up_in_zero_to_two_hours": "两小时后可取货",
+        "pick_up_in_two_to_four_hours": "4小时后可取货",
+        "pick_up_next_day": "次日可取货",
+        "pickup_point_method_definition": "送至自提点",
+        "retail_method_definition": "零售运输",
+        "company_location_no_address_banner": "寄往无地址地点的订单将提交审核。",
+        "none_method_definition": "无配送服务",
+        "subscription_pickup_information": "这将是您订阅所有未来订单的取货地点。"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count} 件商品无法配送",
+            "other": "%{count} 件商品无法配送"
+          },
+          "message": {
+            "one": "此商品将从您的购物车中移除，因为您的地址没有可用的送货方式。",
+            "other": "这些商品将从您的购物车中移除，因为您的地址没有可用的送货方式。"
+          },
+          "label": "无配送服务"
+        }
+      },
+      "failed_payment": {
+        "payment_not_processed_title": "您的付款无法处理",
+        "payment_not_processed_text": "您尚未被扣款。请返回购物车完成购买。"
+      },
+      "error_page": {
+        "terminal": {
+          "title": "结账时出现问题",
+          "message": "刷新此页面或几分钟后再试",
+          "request_id": "请求编号：{{requestId}}"
+        },
+        "embed_errors": {
+          "customer_account_required": "完成结账需要客户账户",
+          "invalid_cart": "购物车已失效",
+          "not_authorized": "结账验证失败。请核实您的应用凭证。",
+          "unrecoverable_failure": "无法加载结账页面。请重试。"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "您的订单无法处理，因为您的折扣码已不再有效。请检查您的订单总额并重试。"
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "前往在线商店"
+        }
+      },
+      "field_errors": {
+        "address_first_name_blank": "请输入名字",
+        "address_first_name_too_long": "名字太长（最多255个字符）",
+        "address_first_name_contains_html_tags": "名字不能包含HTML标签。",
+        "address_first_name_contains_url": "名字不能包含网址",
+        "address_last_name_blank": "请输入姓氏",
+        "address_last_name_too_long": "姓氏太长（最多255个字符）",
+        "address_last_name_contains_html_tags": "姓氏不能包含HTML标签。",
+        "address_last_name_contains_url": "姓氏不能包含网址",
+        "address_address1_too_long": "第一行地址过长（最多255个字符）",
+        "address_address1_contains_emojis": "地址1不能包含表情符号",
+        "address_address1_contains_html_tags": "地址1不能包含HTML标签。",
+        "address_address1_contains_mathematical_symbols": "第一行地址不能包含数学符号",
+        "address_address2_blank": "输入公寓、套房等。",
+        "address_address2_too_long": "第二地址行过长（最多255个字符）",
+        "address_address2_contains_emojis": "地址2不能包含表情符号",
+        "address_address2_contains_html_tags": "地址2不能包含HTML标签。",
+        "address_address2_contains_mathematical_symbols": "第二地址行不能包含数学符号",
+        "address_city_blank": "输入城市名称",
+        "address_city_too_long": "城市名称过长（最多255个字符）",
+        "address_city_contains_emojis": "城市名称不能包含表情符号",
+        "address_city_contains_html_tags": "城市不能包含HTML标签。",
+        "address_city_contains_mathematical_symbols": "城市名称不能包含数学符号",
+        "address_country_blank": "选择国家/地区",
+        "address_country_not_supported": "我们不向该国家或地区发货。请输入新的收货地址后重试。",
+        "address_province_blank": "选择一个州/省",
+        "address_province_invalid": "请选择有效的州/省份",
+        "address_company_blank": "请输入公司名称",
+        "address_company_too_long": "公司名称过长（最多255个字符）",
+        "address_company_contains_emojis": "公司名称不能包含表情符号",
+        "address_company_contains_html_tags": "公司名称不能包含HTML标签。",
+        "address_company_contains_mathematical_symbols": "公司名称不能包含数学符号",
+        "address_phone_blank": "请输入有效的电话号码",
+        "address_zip_blank": "请输入邮政编码",
+        "address_zip_blocked_address": "此地点不受支持",
+        "address_generic_blank": "必填项",
+        "address_country_invalid": "从列表中选择一个国家/地区",
+        "address_zip_invalid": "请输入有效的邮政编码",
+        "address_suggestion_did_you_mean_html": "您的意思是 %{html}？",
+        "handle_phone_invalid": "请输入有效的电话号码",
+        "handle_email_invalid": "请输入有效的电子邮件地址",
+        "email_invalid": "请输入有效的电子邮件地址",
+        "email_or_phone_blank": "请输入电子邮件或电话号码",
+        "email_or_phone_invalid": "请输入有效的电子邮件地址或手机号码",
+        "address_zip_too_long": "邮政编码过长（最多255个字符）",
+        "address_zip_not_supported": "此地点不受支持",
+        "address_zip_invalid_for_country": "请输入有效的邮政编码 %{country}",
+        "address_zip_invalid_for_province": "请输入 %{province} 的有效邮政编码",
+        "address_zip_invalid_for_country_and_province": "请输入 %{province}, %{country} 的有效邮政编码",
+        "credit_card_name_blank": "请输入与您的卡片上完全相同的姓名",
+        "credit_card_name_invalid": "请输入与您的卡片上完全相同的姓名",
+        "credit_card_number_invalid": "请输入有效的卡号",
+        "credit_card_expiry_invalid": "请输入有效的到期日期",
+        "credit_card_month_invalid": "请输入有效的到期月份",
+        "credit_card_year_invalid": "请输入有效的到期年份",
+        "credit_card_start_invalid": "请输入有效的卡片起始日期",
+        "credit_card_start_month_invalid": "请输入有效的卡片起始月份",
+        "credit_card_start_year_invalid": "请输入有效的卡片起始年份",
+        "credit_card_number_blank": "请输入卡号",
+        "credit_card_verification_value_blank": "请输入您卡上的CVV或安全码",
+        "delivery_line_detail_changed": "某些送货详情可能已更改。请核实您的送货方式后再试。",
+        "delivery_zone_not_found": "指定的区域在指定的国家未找到。",
+        "reduction_code_code_not_found": "请输入有效的折扣码或礼品卡",
+        "gift_card_already_applied": "此礼品卡已应用于您的订单",
+        "gift_card_disabled": "此礼品卡已不再可用",
+        "gift_card_depleted": "此礼品卡余额不足",
+        "gift_card_currency_mismatch": "此订单仅可使用以 %{checkout_currency} 计价的礼品卡",
+        "gift_cards_not_supported_with_deferred_purchase_options": "礼品卡不支持延期购买选项。",
+        "gift_card_buying_gift_card": "您不能使用礼品卡购买另一张礼品卡",
+        "payment_gateway_missing": "选择一种付款方式。",
+        "payment_gateway_needs_paid_plan_error": "此付款方式目前在商店不可用",
+        "payment_gateway_not_in_test_mode": "未设置为测试订单。此商店无法接受真实订单或真实付款。",
+        "payment_gateway_incompatible_with_multi_currency": "要使用您的本地货币完成结账，您需要使用信用卡付款。",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "此付款方式不适用于延期购买选项。",
+        "payment_gateway_unsupported_for_country": "此付款方式在您的送货国家不可用。",
+        "payment_gateway_unsupported_for_development_store_html": "要下一个测试订单，您需要使用测试支付网关。了解更多关于<a href=\"%{docs_link}\">开发商店中的测试订单</a>的信息。",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "您已达到此支付处理器的开发商店订单限制。要下另一个订单，您需要使用测试支付网关。了解有关<a href=\"%{docs_link}\">开发商店中测试订单</a>的更多信息。",
+        "purchase_options_agreement_blank": "要继续购买，请同意延期或定期购买条款。",
+        "physical_gift_card_invalid_quantity": "实体礼品卡商品项的数量必须与礼品卡代码的数量相符。",
+        "physical_gift_card_duplicate_code": "实体礼品卡项目包含重复代码。",
+        "physical_gift_card_invalid_code": "实体礼品卡代码无效。",
+        "email_blank": "输入电子邮件地址",
+        "phone_blank": "请输入电话号码",
+        "gift_card_invalid": "礼品卡 \"••••%{last_four_characters}\" 已失效",
+        "invalid_delivery_address_reference_handle": "送货地址参考标识无法匹配到任何可用的送货地址。",
+        "must_use_available_delivery_address": "必须从可用的送货地址中选择送货地址。",
+        "must_use_available_shipping_rate": "必须从可用的运费选项中选择运费。",
+        "reduction_code_discount_not_found": "请输入有效的折扣码",
+        "reduction_code_gift_card_code_invalid": "请输入有效的礼品卡",
+        "reduction_code_gift_card_unusable": "您不能使用礼品卡购买另一张礼品卡",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "礼品卡不支持延期购买选项。",
+        "shipping_line_phone_blank": "请输入电话号码以使用此送货方式",
+        "tips_invalid_tip_amount": "输入少于 %{amount} 的小费",
+        "vaulting_agreement_blank": "您的付款方式必须保存，因为此订单余额的付款将在稍后到期。",
+        "sms_marketing_phone_invalid": "请输入有效的电话号码",
+        "shipping_method_invalid_phone_number": "更新您的送货地址中的电话号码以查看可用的运输方式。",
+        "split_cart_international_shipping_not_supported": "所有商品在国际运输时必须使用相同的配送方式。请更新配送方式或拆分为多个订单。",
+        "split_by_delivery_method_not_allowed": "此会话或商店不允许按配送方式拆分。",
+        "split_by_delivery_method_requires_merchandise_from_single_location": "按配送方式拆分要求每个商品行必须从单一地点完成配送。",
+        "split_by_delivery_method_unsupported_method_type": "按尝试的配送方式拆分，使用了不支持的配送方式类型。"
+      },
+      "general": {
+        "breadcrumb": "面包屑导航",
+        "all_rights_reserved": "版权所有 %{shop_name}",
+        "back_to_contact_information": "返回信息",
+        "back_to_shipping_method": "返回运输",
+        "back_to_payment_method": "返回付款",
+        "choose_shipping_method": "选择一种运输方式",
+        "contact_us_html": "联系我们获取更多信息",
+        "autocomplete_single_item": "有1件商品可供购买",
+        "autocomplete_multi_item": "有 {{number}} 件商品可供选择",
+        "autocomplete_selection": "{{number}} / {{total}}",
+        "back_button_label": "返回",
+        "choose_delivery_strategy": "选择送货方式",
+        "autocomplete_zero_item": "无可用商品",
+        "autocomplete_powered_by_google": "由 {{brandName}} 提供技术支持",
+        "datepicker": {
+          "show_previous_month": "显示上个月，{{month}} {{year}}",
+          "show_next_month": "显示下个月，{{month}} {{year}}",
+          "range_start": "范围开始",
+          "in_range": "有货",
+          "range_end": "系列末端"
+        },
+        "errors": {
+          "buyer_identity": {
+            "customer_account_required": "您必须登录才能继续。",
+            "company_location_required": "客户必须选择一个公司地点以继续。",
+            "company_purchase_permission_required": "客户无权下达公司订单。",
+            "personal_order_not_allowed": "本店不接受个人订单。",
+            "lost_access_to_company": "客户失去了对任何公司的访问权限。",
+            "contact_info_does_not_match_customer_account": "联系信息必须与您登录的账户相符。",
+            "phone_number_does_not_match_expected_pattern": "指定的电话号码与预期格式不符。",
+            "email_required": "使用订阅购买商品时，必须提供电子邮件。",
+            "email_domain_is_invalid": "无法解析此指定域名。",
+            "checkout_completion_target_is_missing": "结账完成目标缺失。",
+            "invalid_customer_profile": "提供了无效的客户资料。",
+            "customer_profile_access_restricted": "结账时无权访问客户资料。",
+            "checkout_completion_target_is_invalid_proc": "无效的结账完成目标。",
+            "buyer_identity_presentment_currency_does_not_match": "处理您的订单时出现问题。请稍后几分钟再试。"
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "此结账不允许零售归属。",
+            "retail_attribution_required": "此结账流程需要零售归属信息。"
+          },
+          "captcha": {
+            "job_already_queued": "验证码验证已为此验证码令牌排队。",
+            "metadata_missing": "完成验证码是此结账流程的必需步骤。",
+            "metadata_mismatch": "提供的验证码服务商和类型与预期值不符。",
+            "token_missing": "必须提供验证码令牌才能完成此结账。",
+            "job_enqueue_failed": "验证码验证任务未能加入队列。",
+            "token_expired": "提供的验证码令牌已过期。请完成新的验证码以继续结账。",
+            "token_invalid": "提供的验证码令牌无效。请完成新的验证码以继续结账。",
+            "token_not_valid_for_session": "所提供的验证码无法用于此结账。"
+          },
+          "line_item_limit_reached": "已达到最大商品项数。",
+          "merchandise": {
+            "bundle_products_not_supported_for_b2b": "捆绑商品无法添加到该地点的企业对企业订单中。",
+            "gift_card_not_supported": "此结账不支持使用礼品卡。",
+            "gift_card_code_changed": "礼品卡代码 {{proposed_code}} 已更改为 {{formatted_code}}，以符合格式规则。",
+            "duplicated_stable_id": "该商品系列与另一个系列具有相同的稳定编号。",
+            "bundle_requires_components": "此组合商品无组成部分。",
+            "combined_listing_parent_not_purchasable": "组合列表的父产品无法直接购买。",
+            "only_value_constraint": "商品输入中只允许填写精确数值。",
+            "merchandise_not_found": "未找到产品。",
+            "merchandise_variant_not_found": "未找到产品变体。",
+            "merchandise_not_applicable": "无法购买该产品规格。",
+            "mixed_currencies": "结账时包含不同货币的商品项。",
+            "gift_card_quantity_mismatch": "在指定礼品卡代码时，订单项数量必须与礼品卡代码的数量相符。",
+            "gift_card_not_unique": "结账时出现了多次带有代码 {{code}} 的礼品卡。代码在比较前已格式化。",
+            "gift_card_used": "礼品卡代码 {{code}} 已经分配给一张礼品卡。代码在比较前会进行格式化。",
+            "gift_card_with_attributes_not_supported": "此结账不支持带有自定义属性的礼品卡。",
+            "gift_card_with_components_not_supported": "此结账不支持含组件的礼品卡。",
+            "selling_plan_not_supported": "不支持订阅。",
+            "selling_plan_not_supported_b2b": "企业对企业结账不支持订阅服务。",
+            "price_mismatch": "之前提出的该商品价格无效，现已更新。",
+            "inventory_not_found": "未找到此商品的库存。",
+            "product_not_published_in_buyer_location": "该产品在当前买家所在地区不可用。",
+            "minimum_quantity_not_met": "某些物品的数量未达到最低要求。",
+            "maximum_quantity_exceeded": "某些物品的数量超过了允许的最大值。",
+            "quantity_increment_not_met": "某些商品的数量未达到订单限制。",
+            "quantity_rules_not_met": "某些商品的数量未达到订单限制。"
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "购物车中只能有一条配送线路。",
+            "wrong_number_of_delivery_lines": "每组商品必须指定一个配送线路。",
+            "external_delivery_promise_error": "外部交付承诺获取错误。",
+            "options_instructions_invalid": "指定的指令与预期的模式不符。",
+            "destination_address_required": "需要填写目的地地址才能继续。",
+            "pickup_points_unavailable": "自提点当前不可用。",
+            "local_pickup_delivery_line_detail_changed": "必须更改当前的本地自提配送策略才能继续。",
+            "selected_pickup_option_no_longer_available": "之前选择的自提选项已不再可用。",
+            "local_pickup_no_delivery_strategy_available": "未找到可用的本地自取配送方案。",
+            "origin_location_id_required": "当选择零售配送方式时，必须提供起始地点编号。",
+            "invalid_origin_location_id": "找不到与起始地点编号匹配的位置。",
+            "origin_location_id_not_allowed": "所请求的送货方式不支持原始地点编号。",
+            "auto_fulfill_not_allowed": "此会话无权覆盖履行行为。",
+            "auto_fulfill_required": "当选择零售配送方式时，必须启用自动履行。",
+            "prefetch_shipping_rates_used": "预取的运费费率不应返回费率。",
+            "fulfillment_constraints_not_satisfied": "一个或多个履行条件未满足。",
+            "must_fulfill_from_constraint_not_satisfied": "无法满足履行条件，因为无法从所需地点履行商品。",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "无法满足履行条件，因为商品无法从同一地点发货。",
+            "delivery_strategy_conditions_not_satisfied": "此地点可用配送策略，但其条件未满足。",
+            "out_of_stock_at_origin_location": "原始地点无库存。",
+            "invalid_signature": "无效的折扣签名。",
+            "mixed_destination_countries": "由于配送线路跨越多个国家，无法提供配送服务。"
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "批发商店不允许使用折扣。",
+            "mixed_destination_countries": "由于配送线路跨越多个国家，折扣不可用。",
+            "custom_discount_not_honoured": "所提供的自定义折扣未被认可。",
+            "unsupported_expectation": "所提供的折扣行包含了策略无法解析的预期。",
+            "additional_requested_discount_code_discarded": "{{code}} 有效但不适用。请检查折扣条款。",
+            "additional_requested_discount_discarded": "您的折扣有效，但不可使用。请查看折扣条款。",
+            "allocations_mismatch": "您的折扣码已更改。请检查您的购物车并重试。",
+            "discount_title_too_long": "折扣标题不能超过255个字符。"
+          },
+          "inventory": {
+            "missing_quantity_value": "买方库存行中缺少数量字段。",
+            "only_one_inventory_behavior_allowed": "目前每次结账仅允许一种库存管理方式。"
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "收到的金额必须使用商店货币。"
+          },
+          "checkout_source": {
+            "revoked": "此结账方式已不再可用。"
+          },
+          "only_empty_terms_accepted": "此政策仅接受空条款。",
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B 商店不允许手动付款。",
+            "positive_amount_expected": "支付金额必须大于0。",
+            "missing_session_id": "缺少信用卡会话信息。",
+            "gateway_not_supported": "支付网关不支持保存支付方式。",
+            "credit_card_last_name_required": "“姓氏”不能为空。",
+            "invalid_address_type": "所提供的地址类型不适用于此付款方式。",
+            "missing_retail_attributions": "手动输入的信用卡付款需要零售归属信息。",
+            "invalid_card_source": "此会话无权使用此卡片来源。",
+            "saved_payment_methods_not_allowed": "不允许使用已保存的付款方式。",
+            "saved_payment_methods_cvv_verification_disabled": "所选的付款方式需要进行CVV验证，但本店未启用此功能。请选择其他付款方式。",
+            "store_credit_not_enabled": "本店未启用店铺积分。",
+            "store_credit_account_not_found": "未找到商店信用账户。",
+            "store_credit_account_mismatch": "商店信用账户与买家身份不符。",
+            "store_credit_mismatched_currency": "商店积分账户的货币与结账货币不符。",
+            "store_credit_insufficient_funds": "商店信用账户中的资金不足。",
+            "store_credit_buying_gift_card": "您不能使用商店积分购买礼品卡。",
+            "gift_cards_not_allowed_for_b2b": "礼品卡不得在企业对企业商店使用。",
+            "method_required": "必须提出一种付款方式。",
+            "paypal_express_address_invalid": "PayPal 返回了一个无效的地址。"
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "您的买方提案应包含不可协商的条款。"
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "此结账不允许拒绝关税。"
+          }
+        },
+        "dates": {
+          "weekdays": {
+            "sunday": "星期日"
+          },
+          "weekdays_abbreviation": {
+            "monday": "月",
+            "tuesday": "图",
+            "wednesday": "我们",
+            "thursday": "谢谢",
+            "friday": "法语",
+            "saturday": "萨",
+            "sunday": "苏"
+          }
+        },
+        "dropzone": {
+          "dragged_over": "拖放文件以上传"
+        },
+        "skip_to_content": "跳至内容",
+        "submit_for_review_button_label": "提交审核",
+        "submit_for_review_notice_label": "付款将在您的订单审核后才到期",
+        "stepper": {
+          "decrease": "减少 {{type}}",
+          "minimum_reached": "达到最低 {{value}}",
+          "maximum_reached": "达到最大值 {{value}}"
+        },
+        "remove_chip": "移除项目",
+        "remove_item": "移除 %{label}",
+        "remove_tag": "移除标签"
+      },
+      "local_pickup": {
+        "location_closest": "您物品的最近地点",
+        "location_closest_one_item": "您物品的最近地点",
+        "location_closest_other_items": "最近有您商品的地点",
+        "location_information": {
+          "one": "离您较近的库存地点有 %{count} 个"
+        },
+        "location_information_far_away": {
+          "one": "有 %{count} 个地点有您的商品",
+          "other": "有 %{count} 个地点有您的商品"
+        },
+        "location_information_far_away_one_item": {
+          "one": "有 %{count} 个地点有您的商品",
+          "other": "有 %{count} 个地点有您的商品"
+        },
+        "location_information_far_away_other_items": {
+          "one": "您的物品位于 %{count} 个地点",
+          "other": "有 %{count} 个地点有您的物品"
+        },
+        "location_nearby": {
+          "one": "附近有 %{count} 个有您商品的地点",
+          "other": "附近有 %{count} 个有您所需商品的地点"
+        },
+        "location_nearby_one_item": {
+          "one": "附近有 %{count} 个有您商品的地点",
+          "other": "附近有 %{count} 个有您所需商品的地点"
+        },
+        "location_nearby_other_items": {
+          "one": "附近有 %{count} 个包含您物品的位置",
+          "other": "附近有 %{count} 个有您物品的地点"
+        },
+        "location_far_away": {
+          "one": "%{count} 个地点与您的物品",
+          "other": "含有您商品的 %{count} 个地点"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} 个地点与您的物品",
+          "other": "含有您商品的 %{count} 个地点"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} 个带有您的物品的位置",
+          "other": "%{count} 个地点有您的物品"
+        },
+        "all_stores_far_away": {
+          "title": "最近的地点距离超过 %{distance}",
+          "title_with_item": {
+            "one": "您所需商品的最近位置距离 %{location} 超过 %{distance}",
+            "other": "您物品最近的地点距离 %{location} 超过 %{distance}"
+          },
+          "title_with_specific_location": "您所需商品的最近地点距离 %{location} 超过 %{distance}。",
+          "description": "选择一个地点或 %{ship_to_address_link}",
+          "ship_to_address_link": "送货地址",
+          "change_location_link": "更改您的位置"
+        },
+        "could_not_resolve_address": "无法定位您的地址。请重试或使用其他地址"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "remove_items_action": {
+          "one": "移除不可用项目",
+          "other": "移除不可用项目"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "%{position} %{name} 商品说明包含一个空的稳定 ID。",
+        "invalid_stable_id_target": "%{position} %{name} 商品说明引用了稳定 ID %{stable_id}，但该稳定 ID 不在商品系列中。",
+        "duplicate_variant_id": "%{position} %{name} 商品说明中包含重复的变体 ID %{variant_id}。",
+        "invalid_variant_id_target": "%{name} 商品说明引用了变体 ID %{variant_id}，但该变体不在商品列表中。",
+        "invalid_price_override_target": "由于是捆绑组件，行项目 %{stable_id} 的价格覆盖商品指令无效。",
+        "discount_not_supported": "应用商品折扣的商家说明不支持此类折扣。"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "销售记录商条款与条件",
+        "privacy_policy": "销售商隐私政策"
+      },
+      "no_address_location": {
+        "title": "无地址的位置",
+        "header": "您尚未为此地点设置送货地址",
+        "message": "联系我们以添加此地点的地址以完成结账。"
+      },
+      "notice_banner": {
+        "subscription_changed": "您的其中一个订阅已发生变更。",
+        "company_location_changed": "您的购物车已更新。请在提交订单前确认您的订单内容。",
+        "company_location_changed_product_removed": "您的购物车已更新，因为某些产品在此地点无货。请在提交订单前检查您的订单。",
+        "individual_violations_title": {
+          "DeliveryViolations": "送货地址"
+        },
+        "all_violations_content": "致电或通过 {{emailLink}} 联系我们以更新此信息并完成您的订单：",
+        "all_violations_email_link": "电子邮件",
+        "editable_shipping_address_violations_message_footer": "要永久更新此位置的地址，请联系 {{emailLink}}。",
+        "calculating_shipping": "运费仍在计算中。请稍后再试。您尚未被收费。",
+        "calculating_taxes": "税费仍在计算中。请稍后再试。您尚未被收费。",
+        "generic_processing_error": {
+          "body": "您尚未被扣款。请重试或使用其他付款方式。"
+        },
+        "payment_method_not_available_with_payment_terms": "您选择的付款方式不再可用，因为此订单的付款现已按照{{paymentTerms}}条款进行。",
+        "payment_method_not_available_with_fulfillment_terms": "您选择的付款方式已不再可用，因为此订单的付款现已在交付时到期。",
+        "payment_method_not_available_with_fixed_terms": "您选择的付款方式已不再可用，因为此订单的付款时间较晚。",
+        "payment_method_not_available_with_review_requirement": "您选择的付款方式已不再可用，因为付款将在您的订单确认后进行。",
+        "contact_information": {
+          "header": "要更新您的信息，请 {{emailLink}}。"
+        },
+        "validation_errors_banner": {
+          "section_label": {
+            "delivery": "交付",
+            "contact": "联系",
+            "billing": "结算"
+          },
+          "errors_in_section": {
+            "one": "{{section}} 中的 {{count}} 个错误",
+            "other": "{{section}} 中的 {{count}} 个错误"
+          }
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "将备注的长度缩减至5000个字符或更少。"
+      },
+      "order_summary": {
+        "apply_discount_button_label": "应用",
+        "applied_discount_message": "订单总价减免 %{amount}",
+        "automatic_discount_tooltip": "自动应用的折扣无法取消",
+        "calculating_shipping": "计算中…",
+        "calculating": "计算中…",
+        "cost_table_title": "费用汇总",
+        "cost_table_item_column_header": "项目",
+        "compare_at_sale": "促销（%{sale_amount}）",
+        "confirmation_number_label": "确认编号 #%{confirmation_number}",
+        "amount_off_shipping": "运费减免 %{amount}",
+        "collapse_component_information": {
+          "one": "隐藏 %{count} 个项目",
+          "other": "隐藏 %{count} 个项目"
+        },
+        "alternative_payment_currency_total": "已收取 %{amount_due}",
+        "discount_not_found": "无法找到与输入代码匹配的有效折扣",
+        "discount_code_applied": "折扣码已应用",
+        "discount_code_applied_with_code": "折扣码 %{code} 已应用",
+        "discount_code_removed": "折扣码 %{code} 已被移除",
+        "discount_code_replaced": "折扣码 %{old_code} 已被移除，%{code} 已应用",
+        "discount_code_replaced_multiple": "多个折扣码已被移除，%{code} 已应用",
+        "discount_code_allocations_mismatch": "您的 <strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码已更改。请检查您的购物车并重试。",
+        "enter_shipping_address": "输入送货地址",
+        "discount_has_been_applied": "折扣已应用",
+        "discount_has_been_removed": "折扣已被取消",
+        "discount_already_applied": "此订单已应用折扣。您无法再添加其他折扣。",
+        "discount_requires_customer_notice": "请输入您的送货信息以使用 <strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码目前无法使用",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 折扣码需符合资格的客户使用",
+        "estimated_taxes_finalization_tooltip_content": "最终税费和总金额将在您下单后通过电子邮件或短信确认。",
+        "estimated_taxes_finalization_tooltip_content_short": "付款后税款已结算",
+        "deposit_label": "沉积物",
+        "duties_included_label": "总计包括税费和关税。送货无额外费用。",
+        "discount_and_gift_card_savings_notice": "在 %{discount_amount} 折扣和 %{gift_card_amount} 礼品卡后",
+        "discount_savings_notice": "享受 %{discount_amount} 折扣后",
+        "estimated_tax_label": "预估税额",
+        "deferred_payment_info": {
+          "title": "支付 %{amount_due} 的款项截止日期为 %{due_at}",
+          "description_html": "有关您的订单的问题，请 %{contact_us}。",
+          "paid_today": "今日支付总额",
+          "paid_today_next": "今日已付款",
+          "due_on_fulfillment_title": "履行时应支付 %{amount_due}",
+          "due_on_receipt_title": "收到后需支付 %{amount_due}"
+        },
+        "deferred_balance_info": {
+          "title": "{{due_at}} 应支付余额 {{amount_due}}",
+          "due_on_fulfillment_title": "{{amount_due}} 的余额在履行时到期"
+        },
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> 目前无法正常使用。如需帮助，请联系我们。",
+        "due_on_fulfillment": "履行时到期",
+        "duties_label": "职责",
+        "error_duties_tooltip": "此订单由其他国家发货，可能在交付时收取关税和税费。",
+        "deferred_total_due_date_label": "总计应付 {{date}}",
+        "deferred_total_due_date_label_next": "截止 %{date}",
+        "group_title_label": "“%{group_title}”的一部分",
+        "more_items_modal": {
+          "empty_results": "未找到与“%{searchText}”相关的结果。请检查拼写或尝试使用其他词语或短语。",
+          "number_items_shown": "%{shownNumber} / %{totalNumber} 项商品"
+        },
+        "order_name_label": "订购 %{name}",
+        "gift_card_applied": "礼品卡已使用",
+        "gift_cards_apply_to_local_shop": "礼品卡仅适用于 %{shop_name} 的商品",
+        "free_shipping_discount_label": "免运费",
+        "gift_card_has_been_applied": "礼品卡已被使用",
+        "gift_card_has_been_removed": "礼品卡已被移除",
+        "gift_card_subscriptions_notice": "礼品卡仅适用于您的首次付款",
+        "no_pickup_location": "没有可用的自取地点。",
+        "estimated_taxes_label": "预估税费",
+        "information_estimated_taxes_label": "税费（预估）",
+        "order_total_label": "订单总额",
+        "payment_due_label": "应付款项",
+        "gift_card_savings_notice": "获得价值 %{gift_card_amount} 的礼品卡后",
+        "original_price": "原价",
+        "order_total_updated_label": "更新总计",
+        "gift_card_ending": "以 %{last_characters} 结尾的礼品卡",
+        "multiple_shipping_lines_label": "运费总计",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> 不能与您现有的折扣同时使用。",
+        "payment_terms_totals": {
+          "due_later": "应付总额 %{due_at}",
+          "due_later_checkout_to_draft": "稍后应付总额"
+        },
+        "maximum_discount_code_limit_reached": "您已达到优惠码的最大使用数量。请删除一个已有的优惠码以使用 <strong style=\"text-transform:uppercase\">%{code}</strong>。",
+        "may_be_charged_on_delivery": "可能在交货时收费",
+        "expand_component_information": {
+          "one": "显示 %{count} 个项目"
+        }
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "订单 %{order_name} 的应付金额",
+        "changes_summary": {
+          "removed": "已移除",
+          "subtracted": "已移除 %{count}",
+          "returned": "已退回 %{count}",
+          "return_line_item_removed": "从退货中移除了 %{count} 件"
+        },
+        "checkout_review_and_pay": "您的订单 %{order_name} 已更新。请查看这些更改，然后付款以确认您的订单。",
+        "order_review_and_pay": "您的订单已更新。请查看并付款以确认您的订单。",
+        "pay_now": "立即付款"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "购买 %{product_name} 及其他 %{count} 件商品",
+          "other": "购买 %{product_name} 及其他 %{count} 件商品"
+        }
+      },
+      "order_errors": {
+        "creation_failure": "创建您的订单时出现问题。请重试，或联系我们了解更多详情。",
+        "network_failure": "由于网络错误，您的订单无法提交。请检查您的连接并重试。",
+        "inventory_reservation_failure": "某些商品已不再供应。"
+      },
+      "online_store_chat": {
+        "title": "有疑问？与我们聊天"
+      },
+      "offsite_payment_failed": {
+        "title": "站外支付失败",
+        "payment_not_processed_title": "付款失败",
+        "payment_not_processed_text": "请再次尝试扫描二维码。如果仍然无法使用，请告知我们的工作人员，并尝试其他付款方式。",
+        "payment_link_expired_title": "付款链接已过期",
+        "payment_link_expired_text": "请再次尝试扫描二维码。"
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "礼品卡金额必须大于0。",
+            "subtotal_limit_reached": "已达到订单项的最大数量。",
+            "signature_mismatch": "商品签名与第 %{stable_id} 行不匹配。"
+          }
+        }
+      },
+      "payment": {
+        "discount_button_action_label": "使用折扣码",
+        "discount_codes_removed_summary": {
+          "one": "%{count} 折扣码已被移除",
+          "other": "已移除 %{count} 个折扣码"
+        },
+        "discount_codes_modified_summary": {
+          "one": "%{count} 折扣码已被修改",
+          "other": "%{count} 个折扣码已被修改"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "%{count} 折扣码已被移除或修改",
+          "other": "%{count} 个折扣码已被移除或修改"
+        },
+        "discount_show_more_warnings": {
+          "one": "显示更多 %{count} 项",
+          "other": "显示更多 %{count} 项"
+        },
+        "detected_card_brand": "检测到的卡品牌：{brand}",
+        "credit_card_vaulting_sign_in_banner_title": "保存您的信用卡信息",
+        "credit_card_vaulting_sign_in_banner_info": "登录或创建账户以保存您的信用卡信息，便于将来购买使用。",
+        "credit_card_start_year": "起始年份",
+        "delete_customer_mandate_modal_title": "移除此付款卡？",
+        "delete_customer_mandate_modal_body": "如果您移除此卡，使用前需要重新添加。",
+        "delete_customer_mandate_modal_confirm": "移除卡片",
+        "crypto_payment_method": {
+          "description": "安全连接您的钱包。您的余额和地址将不会被共享。",
+          "tooltip": "您的钱包余额和地址将不会被共享，且只能扣除所请求的金额",
+          "cashback_descriptor": {
+            "one": "您将在 %{count} 天后收到您的返现",
+            "other": "您将在 %{count} 天后收到您的返现"
+          }
+        },
+        "crypto_modal": {
+          "error": {
+            "sandbox_error": "出了点问题"
+          }
+        },
+        "different_credit_card_label": "使用另一张信用卡",
+        "different_billing_address_label": "使用不同的账单地址",
+        "cashapppay_label": "现金应用支付",
+        "change_currency_section_description": "选择货币选项",
+        "delete_credit_card_modal": {
+          "title": "删除卡片",
+          "confirmation": "您确定要删除以 {{lastDigits}} 结尾的 {{brandName}} 吗？"
+        },
+        "edit_credit_card_modal": {
+          "description": "您只能修改您的卡片账单地址。",
+          "fields": {
+            "default": "设为默认",
+            "expiry": "有效期",
+            "billing": "账单寄送至",
+            "security_code": "安全码",
+            "name": "卡片上的姓名"
+          },
+          "title": "编辑卡片"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "定制现场付款确认"
+        },
+        "gift_card_balance_label": "平衡：",
+        "ftd_vault_credit_card_label": "将此信用卡保存到我的账户以加快结账速度",
+        "expiry_long": "（有效期至 %{month}/%{year}）",
+        "expiry_short": "(有效期至 %{month}/%{year})",
+        "free_order_notice_html": "您的订单是<strong>免费的</strong>。无需付款。",
+        "express_checkout_free_order": "您不会因免费订单被收费",
+        "missing_credit_card_error": "输入您的卡片信息以完成付款",
+        "generic_incorrect_card_info": "您的付款信息无法验证。请检查您的卡片信息并重试。",
+        "klarna_label": "克拉纳",
+        "klarna_pay_later_label": "使用Klarna稍后付款",
+        "klarna_pay_now_label": "现在使用Klarna付款",
+        "giropay_label": "Giropay（德国在线支付系统）",
+        "multibanco_label": "多功能自动取款机",
+        "eps_label": "eps转账",
+        "klarna_slice_it_label": "使用Klarna分期付款",
+        "grabpay_label": "GrabPay (保持品牌名不变)",
+        "google": {
+          "connect": "点击以连接您的 Google Pay 账户"
+        },
+        "mor_disclaimer_html": "通过点击下面并完成您的订单，您同意从 Global-e 作为本次交易的记录商购买您的商品。  \nGlobal-e 的<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">条款和条件</a>  \n以及<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">隐私政策</a>。Global-e 是 %{shop_name} 的国际履行服务提供商。",
+        "location_billing_address_label": "位置账单地址",
+        "location_shipping_address_label": "收货地址",
+        "expired_cards_info": {
+          "one": "您的账户中有 %{count} 张已过期的卡片，您可以查看并编辑。",
+          "other": "有 %{count} 张已过期的卡片，您可以在您的账户中查看和编辑。"
+        },
+        "local_payment_method_receiver_notice": "下单后，您将收到付款详情。请在{{dueDays}}天内通过ATM或在线进行付款。",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "使用礼品卡",
+          "apply_another_gift_card_label": "使用另一张礼品卡"
+        },
+        "gift_card_store_credit": {
+          "add_label": "添加礼品卡或商店积分",
+          "manage_label": "管理礼品卡或商店积分"
+        },
+        "gift_card_checkbox_label": "使用礼品卡",
+        "markets_pro_disclaimer_label": "通过下订单，您同意从 Global-e 作为记录商家进行购买，受 Global-e 的 %{markets_pro_terms} 和 %{privacy_policy} 的约束，并与 %{shop_name} 分享您的信息。",
+        "markets_pro_disclaimer_terms_and_conditions": "条款与条件",
+        "markets_pro_disclaimer_terms_and_conditions_title": "销售记录商条款与条件",
+        "markets_pro_disclaimer_privacy_policy_title": "销售商隐私政策",
+        "gift_cards_unavailable": "您的礼品卡无法再用于此订单，已被移除",
+        "multiple_primary_payment_not_allowed": "无效的支付方式",
+        "network_card_payment_options": "选择一个卡组织",
+        "network_card_persistence_description": "所选网络将与您的付款方式一起保存，以便将来交易使用。",
+        "name_on_card_label": "卡片上的姓名",
+        "name_on_card_placeholder": "卡片上的姓名",
+        "payment_method_saved": "支付方式已保存",
+        "pay_with_payment_method": "使用 %{payment_method} 支付",
+        "order_covered_by_gift_cards_notice": {
+          "one": "您的订单已由您的礼品卡覆盖。",
+          "other": "您的订单已由您的礼品卡支付。"
+        },
+        "offsite_gateway_redirect_hint": "您将被重定向到 %{gateway_label} 完成您的购买。",
+        "offsite_gateway_review_page_redirect_hint": "在您确认订单后，系统将跳转至 %{gateway_label} 完成购买。",
+        "offsite_gateway_redirect_hint_no_button_label": "您将被重定向到 %{gateway_label} 完成您的购买。",
+        "no_js_credit_card_fields_redirect_hint": "您将被重定向以添加您的付款信息。",
+        "no_method_error": "本店目前无法接受付款。",
+        "not_configured_error": "本店目前无法接受付款。",
+        "payment_method_not_available_for_shipping_address_error": "所选送货地址不支持此付款方式。请选择其他付款方式。",
+        "no_real_orders_dev_store": "本店无法接受真实订单或真实付款。",
+        "no_taxes_banner_content": "此订单不收取税费。付款完成后，税费将无法再添加。",
+        "paypal": {
+          "connect": "点击连接您的 PayPal 账户"
+        },
+        "order_covered_by_store_credit_notice": "您的订单已使用您的店铺积分支付。",
+        "order_covered_by_redeemables_notice": "您的订单已受保障。",
+        "no_working_method_error": "本店目前无法接受付款。请刷新此页面或稍后再来。",
+        "order_edit_banner_subtitle": "您的订单 {{order_number}} 已更新。请查看这些更改，然后付款以确认您的订单。",
+        "order_edit_banner_items_removed": {
+          "in_full": "已移除",
+          "with_quantities": "已移除 {{quantity}} 的 {{delta}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "已退回 {{quantity}}",
+          "with_quantities": "已退回 {{delta}} 中的 {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "已从退货中移除",
+          "with_quantities": "从退货中移除 {{delta}}"
+        },
+        "order_edit_banner_single_item_removed": "已移除",
+        "order_edit_banner_multiple_items_removed": "已移除 {{amount}}",
+        "order_edit_banner_single_item_returned": "已退回",
+        "order_edit_banner_multiple_items_returned": "已退回 {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "已从退货中移除",
+        "order_edit_banner_multiple_items_return_line_item_removed": "从退货中移除 {{amount}}",
+        "order_edit_banner_updated_order_label": "订单已更新",
+        "payment_method_incompatible_with_payment_terms": "付款方式与付款条款不兼容。",
+        "pay_in_installments_split_pay_short": "4 次付款，每次 %{amount}",
+        "payment_flexibility_terms_id_mismatch": "付款灵活性条款编号不匹配",
+        "payment_option": {
+          "accessibility_label": "选择付款方式"
+        },
+        "new_bank_account_disclaimer": "通过完成您的订单，您授权 %{shop_name} 通过 ACH 从以下账户扣除所示金额及时间。",
+        "technical_error": "由于技术问题，当前无法处理付款。请稍后几分钟再试。",
+        "twint_label": "双子",
+        "swish_label": "刷刷声",
+        "vipps_label": "维普斯",
+        "usdc_label": "美元稳定币",
+        "usdc_cashback_additional_info": "在 Base 上使用 USDC 支付，30 天内您的钱包将返还 %{incentive_percentage}% 。",
+        "usdc_cashback_terms": "条款和限制适用",
+        "subscription_card_update_agreement_label": "更改付款方式将更新您的订阅及未来的定期付款。",
+        "subscription_agreement_label": "您的购物车中有一件或多件商品为延期购买或订阅购买。继续付款即表示您同意您的付款方式将按照本页面所列的价格和频率自动扣费，直到结束或您取消。所有取消均受 %{cancelled} 约束。",
+        "subscription_agreement_label_html": "我明白我同意订阅。它将以所列的价格和频率续订，直到结束或被\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">取消</a>。",
+        "waiting_on_payment_methods": "正在获取可用的付款方式...",
+        "taxes_not_included": "不含税费",
+        "store_credit": {
+          "no_fixed_selling_plans": "您无法在延期购买选项中使用商店积分"
+        },
+        "use_location_billing_address_label": "使用所在地账单地址",
+        "use_location_shipping_address_label": "使用所在地收货地址",
+        "vaulting_agreement_label": "将我的支付信息保存在 %{company}，以加快结账速度。",
+        "use_different_credit_card_label": "使用其他卡片",
+        "waiting_on_taxes_message": "如果您的税费在接下来的几秒内未计算完成，请刷新页面。"
+      },
+      "payment_collection": {
+        "cancelled": "此付款不再需要。请访问订单页面了解详情。",
+        "paid": "此付款已提交。请访问订单页面查看详情。"
+      },
+      "payment_errors": {
+        "amount_too_small": "最低付款金额必须高于0.50美元。请尝试输入更高的金额。",
+        "available_methods_updated": "可用的付款方式已更新。",
+        "credit_card_processing": "由于技术原因，您的付款无法处理。请稍后几分钟再试，或使用其他付款方式。",
+        "checkout_amount_changed": "您的付款无法处理，因为结账时应付金额已更改。请检查您的订单并重试。",
+        "deferred_amount_changed": "您的付款无法处理，因为延期付款金额已更改。请检查您的订单并重试。",
+        "deferred_date_changed": "您的付款无法处理，因为延期付款日期已更改。请检查您的订单并重试。",
+        "cancelled_payment": "您的付款已被取消。请重试或使用其他付款方式。",
+        "cannot_verify": "您的付款信息无法验证。请检查您的卡片信息并重试。",
+        "card_declined": "您的银行卡被拒绝。请重试或使用其他付款方式。",
+        "call_issuer": "您的银行卡被拒绝。请使用其他付款方式或联系您的银行以获取更多信息。",
+        "captcha_required": "输入付款信息并完成验证码以完成您的购买。",
+        "captcha_required_without_payment_information": "请完成验证码以完成您的购买。",
+        "method_not_available": "所选的付款方式不可用。请选择其他付款方式并重试。",
+        "rejected_transaction": "您的付款被拒绝。请重试或使用其他付款方式。",
+        "deferred_payment_not_allowed": "不允许延期付款。请检查您的订单并重试。",
+        "deferred_payment_required": "此订单需要延期付款。请检查您的订单并重试。",
+        "order_total_changed": "您的订单总额已更改。请检查后重试。",
+        "payment_processing": "由于技术原因，您的付款无法处理。请重试或使用其他付款方式。",
+        "payment_processing_no_retry": "由于技术原因，您的付款无法处理。请尝试其他付款方式。",
+        "paypal_zero_amount": "您无法使用 PayPal 支付 %{amount} 的订单。请确认您的订单无误，然后选择非 PayPal 方式结账。",
+        "paypal_invalid_token": "PayPal 不可用。请重试或使用其他结账方式。",
+        "pay_later_failed": "使用“稍后付款”处理您的付款时出错。请选择其他付款方式并重试。",
+        "three_d_secure_failed": "您的付款无法验证。请重试或使用其他付款方式。",
+        "three_d_secure_failed_duplicate": "信用卡的3D安全认证失败，因为已有另一个认证正在进行中。",
+        "three_d_secure_failed_payment_method": "您的卡片无法验证。请重试或添加另一张卡。",
+        "three_d_secure_throttled": "尝试次数过多；请稍后再试",
+        "subscription_agreement_blank": "要购买订阅，您的付款信息需要保存。要继续，请确认您同意或从订单中移除订阅项目。",
+        "installments_payment_method_incompatible": "所选的支付方式无法用于分期付款。请选择其他支付方式。",
+        "insufficient_funds": "您的付款因资金不足被拒绝。请重试或使用其他付款方式。",
+        "multiple_deferred_payment_not_allowed": "每个请求仅允许一次延期付款。请检查您的请求并重试。",
+        "shipping_must_match_billing": "账单地址必须与送货地址一致。请使用不同的付款方式。",
+        "shipping_company_required_error": "{{shopName}} 需要一个公司名称作为收货地址。",
+        "pick_up_card": "您的银行卡被拒绝。请重试或使用其他付款方式。",
+        "invalid_number": "请输入有效的卡号",
+        "invalid_expiry_date": "请输入有效的到期日期",
+        "invalid_cvc": "请输入有效的安全码",
+        "expired_card": "您的卡已过期。请使用其他付款方式。",
+        "payment_method_not_applicable": "此付款方式不可用。请使用其他付款方式。",
+        "processing_error_checkout_as_guest": "处理您的付款时出现了问题。请尝试使用其他付款方式或 {{checkout_as_guest_link}}。",
+        "selected_payment_method": "您选择的付款方式出现问题，未能完成扣款。请重试或使用其他付款方式。",
+        "payment_method_billing_address": "您选择的付款方式的账单地址存在问题。请检查地址后重试，或使用其他付款方式。",
+        "test_mode_live_card": "本店无法接受真实订单或真实付款。",
+        "test_mode_enabled_only_test_cards": "测试模式已启用，仅能添加测试信用卡。",
+        "transient_error": "处理您的付款时出现问题。请尝试刷新此页面或检查您的网络连接。",
+        "missing_shipping_address": "您的付款无法处理，因为缺少送货地址。请添加送货地址后重试。",
+        "invalid_shipping_address": "您的付款无法处理，因为我们找不到您的送货地址。请检查您的送货地址后再试一次。",
+        "development_store_order_limit_reached": "您已达到此支付处理器的开发商店订单限制。要下另一个订单，您需要使用测试支付网关。了解有关 %{development_store_order_testing_docs_link} 的更多信息。",
+        "development_store_with_order_limit": "要下测试订单，您需要使用测试支付网关。了解有关 %{development_store_order_testing_docs_link} 的更多信息。",
+        "development_store_order_testing_docs_link": "在开发中的门店测试订单",
+        "payment_above_threshold": "付款金额超过该地区的货币限额。请减少总额后重试。",
+        "name_mismatch": "请检查您的卡片信息。卡片上的姓名与账单地址不符。",
+        "shop_pay_wallet_not_available": "此结账不支持Shop Pay。",
+        "market_manager_blocks_wallet_payments": "您的国家不支持此付款方式。",
+        "paypal_over_capture": "您的订单总额已更新。使用 {{walletName}} 支付以完成您的订单。"
+      },
+      "payment_challenge_modal": {
+        "instructions": "使用您的 {{paymentMethod}} 代码完成购买",
+        "timer_message": "您有 {{timeLeft}} 时间付款",
+        "open_app_text": "打开 {{paymentMethod}} 应用程序",
+        "header": "使用 {{paymentMethod}} 支付",
+        "qr_code": {
+          "instructions": "使用您的 {{paymentMethod}} 代码完成购买"
+        },
+        "external": {
+          "instructions": "请在您的应用程序中确认付款以完成此次购买"
+        }
+      },
+      "payment_summary": {
+        "credit_card_expires_on_notice": "有效期至 %{month}/%{year}",
+        "express_payment_gateway_label": "快速",
+        "manual_payment_gateway_label": "手册"
+      },
+      "payment_gateway": {
+        "cash_on_delivery_label": "货到付款 (COD)",
+        "fixed_payment_label": "您的付款截止日期为 {{dueDate}}。",
+        "generic_payment_terms": "您已选择 {{translatedName}} 付款方式。您的付款截止日期为 {{dueDate}}。",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} 到有权访问此地点的账户，以添加或使用已保存的付款方式。"
+          }
+        },
+        "direct_payment_terms": "您正在使用{{translatedName}}条款。您的卡将在{{dueDate}}上被扣款。",
+        "fixed_direct_payment_terms": "您的卡将在 {{dueDate}} 扣款。",
+        "order_due_on_fulfillment_choose_later": "您的付款将在订单完成后到期。",
+        "order_due_on_fulfillment_payment": "您的订单完成后，您的银行卡将被扣款。",
+        "order_due_on_receipt_choose_later": "您的付款将在收到时到期。",
+        "order_deposit_due_now": "{{depositAmount}} 今天到期。余额按照 {{translatedName}} 条款，于 {{dueDate}} 到期。",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} 今天到期。余额将在您的订单完成后支付。",
+        "order_deposit_due_on_receipt": "{{depositAmount}} 今天到期。余额稍后到期。",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} 今天到期。余额将于 {{dueDate}} 到期。",
+        "draft_order_payment_due_later_no_terms": "您的订单确认后，付款将到期。",
+        "draft_order_payment_due_later_no_terms_payment_selected": "您的订单确认后，您的银行卡将被扣款。",
+        "draft_order_payment_due_later_terms": "一旦您的订单确认，您将与{{translatedName}}达成协议。",
+        "draft_order_payment_due_on_fulfillment": "您的付款将在订单确认并完成后到期。",
+        "draft_order_deposit_due_later": "{{depositAmount}} 在您的订单确认时到期。余额将根据 {{translatedName}} 的条款支付。",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} 在您的订单确认时到期。余额将在您的订单完成后支付。"
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "关闭",
+        "no_business_hours": "无营业时间信息",
+        "could_not_resolve_address": "无法定位您的地址。请重试或使用其他地址",
+        "no_pickup_points_near_you": "在所选地址附近未找到取货点",
+        "no_pickup_points_near_location": "在您所在位置附近未找到取货点",
+        "paginator": {
+          "header": {
+            "one": "显示 %{first} - %{last} 共 %{count} 个积分",
+            "other": "显示第 %{first} - %{last} 条，共 %{count} 条积分"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} / %{count} 个取货点",
+            "other": "%{pickup_point_index} / %{count} 个取货点"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} 共 %{count} 点中的点",
+            "other": "%{first} - %{last} 共 %{count} 点"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "您附近有 %{count} 个取货点",
+          "other": "您附近有 %{count} 个取货点"
+        },
+        "change": "更改位置",
+        "geolocation": {
+          "shared_location_button": "使用我的位置",
+          "errors": {
+            "permission_not_allowed": "允许共享您的位置。",
+            "permission_denied": "无法获取您的位置。请重试。"
+          }
+        },
+        "selector_tabs": "提货点选择器",
+        "pickup_unavailable_banner_title": {
+          "one": "您的商品暂无取货点可用",
+          "other": "您的物品暂无取货点可用"
+        }
+      },
+      "redeemable_errors": {
+        "gift_card": {
+          "duplicate": "礼品卡已应用到您的订单中",
+          "currency_mismatch": "仅接受以 %{shop_currency} 计价的礼品卡",
+          "insufficient_funds": "此礼品卡余额不足",
+          "not_available": "此礼品卡已不再可用",
+          "generic": "礼品卡无法添加到结账页面",
+          "throttle_limit_exceeded": "您已超过最大尝试次数。请稍后再试。",
+          "no_longer_available": "此礼品卡无法在此结账时使用"
+        }
+      },
+      "post_purchase": {
+        "escape_confirmation": "您已完成订单付款。",
+        "escape_action": "查看订单确认 ›",
+        "components": {
+          "processing": "处理中…"
+        }
+      },
+      "processing": {
+        "redirecting_notice": "请稍候，我们正在为您跳转。",
+        "continue_to_payment_gateway_notice": "继续付款以添加您的付款信息。",
+        "page_title": "处理中订单",
+        "title": "处理中订单",
+        "your_order_has_been_received_title": "感谢您的订单",
+        "you_will_receive_confirmation": "我们现在收到很多订单。您应该很快会通过电子邮件或短信收到确认。如果您在接下来的一小时内没有收到，请告知我们。",
+        "you_will_not_be_charged": "您暂时不会被收费",
+        "wait": {
+          "short": "您的订单正在处理中。",
+          "medium": {
+            "one": "您的订单正在处理中。预计等待时间为 %{count} 分钟。",
+            "other": "您的订单正在处理中。预计等待时间为 %{count} 分钟。"
+          },
+          "long": "您的订单一经处理，您将收到电子邮件通知。目前订单量较大。",
+          "no_auto_refresh_html": "如果您未被自动重定向，请 %{link}。"
+        },
+        "remote_shops_payments_processing": "处理付款",
+        "action_required": "需要采取行动",
+        "remote_checkout_count": "%{current} 共 %{total}"
+      },
+      "remote_merchandise_only": {
+        "title": "完成您的购买",
+        "remote_only_notice": "这些商品由其他商店销售和发货。请分别在每个商店结账以完成购买。",
+        "detail_item_label": {
+          "one": "{{count}} 件商品",
+          "other": "{{count}} 件商品"
+        },
+        "single_shop_transition": "正在将您重定向到 %{advertiser} 完成购买。"
+      },
+      "review": {
+        "checkout_a_different_way": "试试另一种方式",
+        "blocks": {
+          "contact_method_title": "联系",
+          "billing_address_title": "结算",
+          "shipping_address_title": "送货至",
+          "shipping_method_title": "运输方式",
+          "change_link_label": "更换",
+          "change_company_location_link_label": "更改公司地址",
+          "change_shipping_address_link_label": "更改送货地址",
+          "change_shipping_method_link_label": "更改送货方式",
+          "purchase_order_number_title": "采购订单号",
+          "change_purchase_order_number_label": "更改采购订单号",
+          "change_delivery_method_link_label": "更改送货方式",
+          "no_purchase_order_number": "（无采购订单号）",
+          "due_after_order_reviewed_html": "订单审核后付款",
+          "review_title_free_order": "查看并完成您的订单",
+          "payment_method_saved_company_location": "为此地点保存卡片",
+          "company_location": "公司所在地",
+          "pickup_items_at": {
+            "one": "取走 %{count} 件商品于",
+            "other": "取货 %{count} 件商品于"
+          },
+          "ship_items_to": {
+            "one": "寄送 %{count} 件商品至",
+            "other": "运送 %{count} 件物品至"
+          }
+        },
+        "block_title": "请核对您的信息",
+        "title": "评论",
+        "review_and_confirm_title": "审核并确认",
+        "item_header": {
+          "change_value": "更改数值",
+          "section": "章节",
+          "value": "价值"
+        }
+      },
+      "remote_policies": {
+        "unavailable_policy": "此店铺未提供任何 %{policy_name}。如需更多信息，请直接联系 %{shop_name}。"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "结账仅包含远程商品。需要重定向到远程商店以完成结账。",
+          "currency_mismatch": "此商品无法加入购物车，因为它来自使用不同货币的商店。",
+          "currency_mismatch_removal": "您的购物车中有一件商品被移除，因为该商品来自使用不同货币的商店。",
+          "max_remote_shops_exceeded": "此产品无法添加，因为您的购物车中已包含来自其他商店的最大数量。"
+        }
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "需要扩展交互以完成结账。"
+        }
+      },
+      "shipping": {
+        "delivery_title": "交付",
+        "delivery_today": "当天送达 %{time}",
+        "delivery_tomorrow": "次日送达 %{time}",
+        "delivery": "交货 %{time}",
+        "delivery_to": "送货至",
+        "arrives_time": "预计 %{time} 到达",
+        "arrives_time_range": "预计在 %{min_time}–%{max_time} 内送达",
+        "default_description": "1个工作日内发货",
+        "duties_and_taxes_options": {
+          "ddu_caption": "可能会产生额外费用",
+          "ddp_title": "立即付款",
+          "ddp_caption": "送货无额外费用"
+        },
+        "add_address": "使用不同的地址",
+        "add_delivery_instructions": "添加送货说明",
+        "back": "返回",
+        "address_more": "此地址的更多操作",
+        "address_confirm": "您确定要从您的账户中删除此地址吗？",
+        "address_default": "设为默认",
+        "address_form": {
+          "generic_error": "保存您的地址时出现问题。请再试一次。",
+          "one_time_address_subtitle": "此订单使用一次性地址"
+        },
+        "different_shipping_method_summary": "输入不同的送货地址以查看可用的送货方式",
+        "add_shipping_address": "添加送货地址",
+        "add_new_delivery_address": "添加新的收货地址",
+        "shipping_method_rollup_accessibility_label": "运输方式选项",
+        "no_rates_for_cart_or_destination_notice": "您的购物车或地址暂无可用的配送方式",
+        "no_pickup_location_notice": "至少有一件您的产品无法自取",
+        "no_rates_for_country_notice": "未找到该地址的运费信息。",
+        "no_rates_contact_notice": "联系我们获取更多信息",
+        "estimated_delivery_time": "预计送达 %{time}",
+        "estimated_delivery_time_range": "预计送达时间 %{min_time}–%{max_time}",
+        "estimated_time": "预计 %{time}",
+        "estimated_time_range": "预计 %{min_time}–%{max_time}",
+        "shipping_line_phone": "您的快递员可能会使用此号码与您联系。",
+        "shipping_line_delivery_phone": "您可能会收到有关您送货更新的联系。",
+        "optional_shipping_line_delivery_instructions_label": "送货说明（可选）",
+        "shipping_line_delivery_instructions": "输入必要的信息，如门禁码或投递说明。",
+        "other_method": {
+          "zero": "无其他可用方法",
+          "one": "还有 %{count} 种其他方法可用于",
+          "other": "还有 %{count} 种其他方法可选，起价为"
+        },
+        "prime_not_available": {
+          "default": "您的订单不支持优先配送。您的运输选项已更新。"
+        },
+        "one_time_purchase_shipping": "一次性运输",
+        "shipping_information_required_notice": "需要提供运输信息。{{link}}。",
+        "shipping_information_redirect_link": "在此输入您的信息",
+        "no_other_methods_available": "无其他可用方法",
+        "shipping_address_title": "送货至",
+        "shipping_address_rollup_accessibility_label": "送货地址选项",
+        "invalid_shipping_method_summary": "请输入有效的送货地址以查看可用的送货方式",
+        "invalid_shipping_method_summary_selected": "选择不同的送货地址以查看可用的送货方式",
+        "method_summary": {
+          "incomplete_address_entered": "请输入完整的收货地址以查看可用的配送方式",
+          "incomplete_address_selected": "请选择完整的收货地址以查看可用的配送方式"
+        },
+        "missing_shipping_address": "缺少收货地址",
+        "pre_order_ships_now": "现已发货",
+        "pre_order_ships_date": "发货时间 %{date}",
+        "shipping_method_title": "运输方式",
+        "shipping_rate_discounted_amount": "原价：%{original_amount}。现价：%{amount}",
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "再购买 %{count} 件即可享受免费送货",
+            "other": "再配送 %{count} 次，免运费"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "%{count} 件商品免运费"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "再购买 %{count} 件免运费，之后运费为 %{recurring_order_shipping_price}",
+            "other": "再配送 %{count} 次免运费，之后运费为 %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "前 %{count} 次配送免运费，然后是 %{recurring_order_shipping_price}",
+            "other": "%{count} 次配送免运费，之后运费为 %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "再配送 %{count} 次，运费 %{shipping_price}",
+            "other": "再配送 %{count} 次，每次运费 %{shipping_price}"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{shipping_price} 的 %{count} 次配送",
+            "other": "再配送 %{count} 次，每次运费 %{shipping_price}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "首个 %{cycle} 免运费，之后为 %{recurring_order_shipping_price}",
+            "other": "首个 %{cycle} 免运费，之后为 %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "配送 %{count} 次",
+            "other": "用于 %{count} 次配送"
+          },
+          "initial_order_discounted": "首次运费 %{discounted_shipping_cost}，随后每次 %{frequency_description}",
+          "prepaid_initial_order_discounted": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency} （%{discounted_cost_per_delivery}）",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}（%{discounted_cost_per_delivery}），之后为 %{shipping_price} %{billing_cycle}",
+          "first_order_shipping_price_included": "首单免费，之后每次配送费用为 %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price}（每次配送 %{per_delivery_price}），随后是 %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "首次订购免费",
+            "other": "前 %{count} 个订单免费"
+          },
+          "free_for_first_n_order": {
+            "one": "首次订购",
+            "other": "前 %{count} 个订单"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "再加 %{count} 件，运费 %{shipping_price}",
+            "other": "%{count} 次更多配送，运费 %{shipping_price}（每次配送 %{per_delivery_cost}）"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{count} 件商品的配送费为 %{shipping_price}",
+            "other": "%{count} 次配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}）"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{count} 件更多商品的配送费为 %{shipping_price}，随后为 %{recurring_order_shipping_price}",
+            "other": "%{count} 次更多配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}），随后为 %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{count} 次配送的 %{shipping_price}，随后为 %{recurring_order_shipping_price}",
+            "other": "%{count} 次配送的运费为 %{shipping_price}（每次配送 %{per_delivery_cost}），随后为 %{recurring_order_shipping_price}"
+          },
+          "subscription_free_with_frequency_label": "免费配送 %{delivery_frequency}",
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "每隔 %{count} 天"
+            },
+            "week": {
+              "other": "每隔 %{count} 周"
+            },
+            "month": {
+              "one": "每个月",
+              "other": "每隔 %{count} 个月"
+            },
+            "year": {
+              "other": "每隔 %{count} 年"
+            }
+          },
+          "prepaid_shipping_price_label": "每次配送 %{shipping_price} x %{delivery_interval_count} 次配送间隔",
+          "prepaid_initial_order_discounted_with_renewal": "首次运费 %{discounted_shipping_price} %{prepaid_delivery_frequency}，之后每 %{billing_cycle} 运费为 %{shipping_price}",
+          "recurring_order_shipping_price": "随后是 %{recurring_order_shipping_price}"
+        },
+        "shipping_used_as_billing_notice": "这也将作为您此次订单的账单地址。",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} 更多",
+        "split_shipping_merchandise_shipment_number": "第 %{number} 批货物，共 %{total} 批",
+        "split_shipping_multiple_shipment_label": "多次发货",
+        "split_shipping_shipment_notice": "您的订单将在 %{quantity_shipments} 内送达",
+        "split_shipping_first_shipment_notice": "您的第一笔订单将在 %{quantity_shipments} 内送达",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} 次发货",
+        "split_shipping_multiple_shipment_notice": "您的订单将分多次发货",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "您的订单将分 %{quantity} 批次送达",
+        "split_shipping_more_shipping_options": "更多运输选项",
+        "split_shipping_shipment_number": "货运 %{number}",
+        "title": "运输",
+        "subscription_shipping": "订阅配送",
+        "waiting_on_rate_notice": "正在获取可用的运费价格…",
+        "waiting_on_pickup_location_notice": "正在获取可用的取货地点…",
+        "two_day_delivery": "2天内送达 %{time}",
+        "unbranded_default_description": "准备发货",
+        "unbranded_description_same_day": "当天发货",
+        "unbranded_description_with_fulfillment_days": {
+          "one": "下一个工作日发货"
+        },
+        "third_party_address_error": "加载地址选择时发生错误。请在下方手动输入您的地址。",
+        "third_party_payment_timeout": "无法加载支付方式。请重试或使用其他支付方式。",
+        "third_party_payment_error": "加载支付选项时发生错误。请使用其他支付方式。"
+      },
+      "session_errors": {
+        "session_already_finished": "此订单已提交。您可以返回商店开始新的订单。"
+      },
+      "review_address_modal": {
+        "title": "评论地址",
+        "subtitle": {
+          "one": "此订单将被发送到{{merchant}}提供的地址。",
+          "other": "此订单将寄送至 {{merchant}} 提供的地址。请选择一个收货地址。"
+        },
+        "subtitle_no_match": "此地址与您保存的任何地址均不匹配。",
+        "subtitle_must_use": "您的订单将寄送至此地址。",
+        "use_saved_address": "使用不同的地址"
+      },
+      "shipping_errors": {
+        "shipping_method": "您的订单的运输选项已更改。请查看您的选择。",
+        "shipping_method_not_available": "您的购物车已更新，您添加的商品无法配送到您的地址。请移除这些商品以完成订单。",
+        "shipping_method_not_available_generic": {
+          "one": "您的订单无法发送到所选地址。请检查您的地址是否正确后重试，或选择其他地址。",
+          "other": "您购物车中的某些商品无法寄送到您填写的地址。请检查您的地址是否正确后重试，或选择其他地址。"
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "购物车中的商品未达到运费资格的价格或重量要求。请更新您的购物车后再试。",
+        "shipping_method_not_available_updated": {
+          "one": "您添加的商品无法配送到您的地址。请将其移除后结账，或联系商店。",
+          "other": "您添加的一个或多个商品无法配送到您的地址。请移除这些商品以继续结账，或联系商店。"
+        },
+        "payment_method_not_supported": "您无法使用此付款方式支付 %{country}。请使用其他付款方式寄送到该国家。",
+        "empty_state": "请输入您的送货地址以查看可用的送货方式。",
+        "title": "无法配送",
+        "invalid_selected_address": "所选送货地址无效",
+        "invalid_selected_address_with_update_link": "所选的收货地址无效。请 %{update_address_link} 或选择其他地址",
+        "unavailable_addresses_only_countries": "您的订单只能发货到 {{countriesList}}。请添加新地址以继续。",
+        "unavailable_address_country": "您选择的国家无法配送。请使用其他地址继续。",
+        "unavailable_selected_address": "所选地址无法配送",
+        "unavailable_selected_address_for_region": "{{region}} 不支持配送。请选择其他地址继续。"
+      },
+      "shop_policies": {
+        "select_policy_label": "选择一项政策",
+        "shipping_policy": "运输",
+        "subscription_policy": "取消政策",
+        "contact_information": "联系",
+        "purchase_options_cancellation_policy": "取消政策",
+        "cookie_preferences": "曲奇饼干",
+        "terms_and_policies": "条款与政策"
+      },
+      "split_delivery": {
+        "pickup_all_items": "全部选中",
+        "items_for_pickup": "待取物品",
+        "items_for_shipping": "待发货商品",
+        "items_moved_to_shipping_toast": "无法自提的商品已改为配送",
+        "delivery_method": "分批交付方式",
+        "delivery_method_menu": "分批送货方式菜单",
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "%{count} 件商品无法被取走",
+              "other": "%{count} 件商品无法自提"
+            },
+            "cannot_be_shipped": {
+              "one": "%{count} 件商品无法发货",
+              "other": "%{count} 件商品无法发货"
+            }
+          },
+          "remove_item_only": {
+            "one": "移除项目"
+          },
+          "ship_separately": {
+            "other": "分开发货"
+          },
+          "pick_them_up_in_store": {
+            "one": "到店自取",
+            "other": "到店自取"
+          }
+        },
+        "cross_border": {
+          "modal": {
+            "heading": "更改国家？",
+            "content": "这将把所有商品重置为配送。您的自提地点和配送地点必须位于同一国家。",
+            "change_country": "更改国家"
+          }
+        }
+      },
+      "shop_pay_external": {
+        "errors": {
+          "try_again_later": "请检查您的连接，或关闭此窗口，稍后再试。",
+          "checkout_has_expired": "您的结账已过期。关闭此窗口，然后再次尝试从 {{shopName}} 结账。"
+        },
+        "return_to_store": "返回 {{shopName}}"
+      },
+      "stock": {
+        "items_unavailable_notice": "某些商品已不再供应。",
+        "removed_from_cart_notice": "已从购物车中移除",
+        "reduced_with_quantity_label": "仅剩 %{quantity_available} 件",
+        "remove_from_cart_button_label": "从购物车中移除",
+        "remove": "移除",
+        "empty_cart_label": "您的购物车是空的",
+        "quantity_update": {
+          "description": "这些商品的可用数量已更改，并已在您的购物车中更新。"
+        },
+        "unpurchasable_product": {
+          "title": "无法购买的产品",
+          "header": "您的购物车中有些商品已被移除",
+          "message": "这些商品不适用于企业对企业订单。",
+          "status_column_header": "无货可用"
+        },
+        "unpurchasable_product_generic": {
+          "title": "无法购买的产品",
+          "header": "您的购物车中有些商品已被移除",
+          "message": "这些商品无货。",
+          "status_column_header": "无货可用"
+        },
+        "unfulfillable_product": {
+          "title": "无法送货",
+          "message": {
+            "one": "此商品不再支持 %{delivery_method}。",
+            "other": "这些商品不再支持 %{delivery_method}。"
+          },
+          "default_message": {
+            "one": "所选的送货方式不再适用于此商品。",
+            "other": "所选的送货方式不再适用于这些商品。"
+          }
+        },
+        "unshippable_product": {
+          "title": "无配送服务",
+          "header": {
+            "one": "%{count} 件商品无法配送",
+            "other": "%{count} 件商品无法配送"
+          },
+          "message": {
+            "one": "此商品将从您的购物车中移除，因为您的地址没有可用的送货方式。",
+            "other": "这些商品将从您的购物车中移除，因为您的地址没有可用的送货方式。"
+          },
+          "status_column_header": "无配送服务"
+        },
+        "price_update": {
+          "description": "这些商品的价格已变更，购物车中的价格已更新。",
+          "updated_price": "更新价格"
+        },
+        "price_and_quantity_update": {
+          "description": "这些商品的价格和可用数量已更改，并已在您的购物车中更新。"
+        },
+        "out_of_stock": {
+          "description": "这些商品已不再供应，将从您的购物车中移除。",
+          "items_unavailable": "某些商品已不再供应，将从您的购物车中移除。"
+        },
+        "out_of_stock_in_context_label": "本产品在您所在的国家/地区不可用。"
+      },
+      "store_credit_errors": {
+        "generic_error": "您的商店积分出现问题。请重试或重新加载页面。"
+      },
+      "subscriptions": {
+        "recurring_totals_with_initial_order_shipping_discount": "首次付款 %{total_price_with_discount}，随后每期付款 %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "首付款 %{total_price}",
+            "other": "前 %{count} 次付款，每次 %{total_price}"
+          },
+          "following_cycles": "，然后每隔 %{interval} 支付 %{total_price}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "，然后在 %{total_price} 支付 %{count} 次",
+            "other": ", 然后每次支付 %{total_price} 的 %{count} 次付款"
+          }
+        }
+      },
+      "taxes": {
+        "tax_details": "附加税务详情",
+        "vat_number": {
+          "field": {
+            "tooltip": "验证增值税号码并在符合条件的订单上自动应用反向收费"
+          },
+          "add": "添加增值税号码",
+          "domestic_order": "反向收费豁免仅适用于跨境欧盟订单。本地订单将收取标准增值税。",
+          "status": {
+            "invalid_format": {
+              "at": "奥地利增值税号码包含\"AT\"和9个字符",
+              "be": "比利时增值税号码包含BE和10个字符",
+              "bg": "保加利亚增值税号码包含BG和9至10个字符",
+              "hr": "克罗地亚增值税号码包含“HR”和11个字符",
+              "cy": "塞浦路斯增值税号码包含CY和9个字符",
+              "cz": "捷克共和国增值税号码包含CZ和8至10个字符",
+              "dk": "丹麦增值税号码包含 DK 和 8 个字符",
+              "ee": "爱沙尼亚增值税号码包含 EE 和 9 个字符",
+              "fi": "芬兰增值税号码包含FI和8个字符",
+              "fr": "法国增值税号码包含FR和11个字符",
+              "de": "德国增值税号码包含“DE”和9个字符",
+              "gr": "希腊增值税号码包含EL和9个字符",
+              "hu": "匈牙利增值税号码包含HU和8个字符",
+              "ie": "爱尔兰增值税号码包含IE和8至9个字符",
+              "it": "意大利增值税号码包含“IT”和11个字符",
+              "lv": "拉脱维亚增值税号码包含LV和11个字符",
+              "lt": "立陶宛增值税号码包含LT及9至12个字符",
+              "lu": "卢森堡增值税号码包含LU和8个字符",
+              "mt": "马耳他增值税号码包含MT和8个字符",
+              "nl": "荷兰增值税号码包含“NL”和12个字符",
+              "es": "西班牙增值税号码包含“ES”和9个字符",
+              "gb": "英国增值税号码包含 GB 或 XI 以及 5 到 12 个字符",
+              "pl": "波兰增值税号码包含PL和10个字符",
+              "pt": "葡萄牙增值税号码包含PT和9个字符",
+              "ro": "罗马尼亚增值税号码包含RO和10个字符",
+              "sk": "斯洛伐克增值税号码包含“SK”和10个字符",
+              "si": "斯洛文尼亚增值税号码包含“SI”和8个字符",
+              "se": "瑞典增值税号码包含SE和12个字符"
+            },
+            "invalid_number": {
+              "at": "请输入有效的奥地利增值税号码",
+              "be": "请输入有效的比利时增值税号码",
+              "cy": "请输入有效的塞浦路斯增值税号码",
+              "dk": "请输入有效的丹麦增值税号码",
+              "fr": "请输入有效的法国增值税号码",
+              "de": "请输入有效的德国增值税号码",
+              "gr": "请输入有效的希腊增值税号码",
+              "lt": "请输入有效的立陶宛增值税号码",
+              "mt": "请输入有效的马耳他增值税号码",
+              "nl": "请输入有效的荷兰增值税号码",
+              "pt": "请输入有效的葡萄牙增值税号码",
+              "ro": "请输入有效的罗马尼亚增值税号码",
+              "sk": "请输入有效的斯洛伐克增值税号码",
+              "gb": "请输入有效的英国增值税号码"
+            }
+          },
+          "accessibility": {
+            "status": {
+              "validating": "增值税号码验证正在进行中",
+              "applied": "已申请增值税免税",
+              "domestic": "未应用增值税免税",
+              "invalid_number": "增值税免税失败",
+              "service_unavailable": "无法验证增值税免税资格",
+              "service_error": "无法验证增值税免税资格"
+            }
+          }
+        }
+      },
+      "thank_you": {
+        "attempted_delivery": "尝试投递",
+        "attempted_delivery_title": "尝试投递您的订单",
+        "attempted_delivery_description_html": "尝试送达您的订单，但未成功。%{contact_us} 以安排另一次送货尝试。",
+        "attempted_delivery_local_title": "未能送达",
+        "attempted_delivery_local_description_html": "我们无法送达您的订单。要安排另一次送货，请 %{contact_us}。",
+        "cancelled_description": "您的订单在 %{date} 被取消。如果您有任何问题，请联系我们。",
+        "confirmation_email_sent_text": "确认邮件已发送至 %{email}",
+        "failed_pending_payment_page_title": "您的付款出现问题",
+        "customer_information_title": "订单详情",
+        "cashback_notice": "您将在30天后收到返现",
+        "company_tracking_number": "%{company} 追踪号码：",
+        "estimated_arrival": "预计送达日期：",
+        "estimated_delivery": "当前预计送达时间：",
+        "confirmed_items_count": "已确认 %{confirmed_count} 件，共 %{total_count} 件",
+        "gift_card_confirmation_by_text": "如果您未收到，请重新发送短信或联系我们。",
+        "gift_card_confirmation_by_email": "如果您未收到，请重新发送电子邮件或联系我们。",
+        "confirmed_description": "我们已接受您的订单，正在准备中。请返回此页面查看您的发货状态更新。",
+        "delivered_description_html": "您的订单已送达您提供的地址。如果您尚未收到，或者有其他问题，请 %{contact_us}。",
+        "delivered_local_description_html": "还没有收到您的订单？%{let_us_know}。",
+        "failed_contact_merchant": "联系%{company}安排交付。",
+        "failed_contact_merchant_no_company": "联系我们安排送货。",
+        "cancelled_title": "您的订单已被取消",
+        "customer_validation_error": "请输入有效的电子邮件或订单号。",
+        "customer_validation_error_phone": "请输入有效的电话号码或订单号。",
+        "fulfillment": {
+          "fulfilled_table_title": "此批货物中的物品",
+          "unfulfilled_table_title": "准备发货的物品"
+        },
+        "delivery_information_label": "送货信息：",
+        "first_payment_complete": "首次付款完成",
+        "company_location_section_title": "公司与地点",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "您将在几分钟内收到包含您的礼品卡的短信。",
+          "other": "您将在几分钟内收到包含您的礼品卡的短信。"
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "您将在几分钟内收到包含您的礼品卡的电子邮件。",
+          "other": "您将在几分钟内收到包含您的礼品卡的电子邮件。"
+        },
+        "gift_card_email_title": {
+          "one": "礼品卡已通过电子邮件发送",
+          "other": "礼品卡已通过电子邮件发送"
+        },
+        "items_fulfilled_by_store": {
+          "one": "您购买的商品将由 %{remote_shop_name} 发货。",
+          "other": "您购买的商品将由其他商店发货。"
+        },
+        "order_status_confirmed_order_with_email": "您的订单准备好后，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_phone": "当您的订单准备好时，您可能会收到一条短信。",
+        "order_status_confirmed_order_with_email_and_phone": "您的订单准备好后，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_email_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_email_and_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "order_status_confirmed_order_with_email_pick_up": "当您的订单准备好取货时，您将收到一封电子邮件通知。",
+        "order_status_confirmed_order_with_phone_pick_up": "当您的订单准备好取货时，您将收到短信通知。",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "当您的订单准备好取货时，您将收到电子邮件和短信通知。",
+        "order_status_payments_app_failed_pending_payment": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "order_status_confirmed_order_local": "我们正在准备您的订单以便发货。",
+        "order_status_confirmed_order_local_pick_up": "我们正在准备您的订单。",
+        "order_status_confirmed_order_local_payment": "我们正在准备您的订单。",
+        "order_status_confirmed_with_installments_payment_return": "请将您的注意力重新集中到销售员身上。",
+        "order_status_confirmed_with_installments_payment_confirm": "您将很快收到一封确认邮件，内含您的订单编号及分期付款计划的详细信息。",
+        "in_transit": "正在路上",
+        "in_transit_title": "您的订单正在配送中",
+        "in_transit_description": "您将收到有关其进展的更新。",
+        "in_transit_description_days": "您应该会在接下来的 %{number} 天内收到您的订单。",
+        "in_transit_description_today": "您今天应该会收到您的订单。",
+        "in_transit_description_tomorrow": "您应在次日收到您的订单。",
+        "no_tracking_number": "此订单没有追踪号码。",
+        "let_us_know": "告诉我们",
+        "login_title": "登录以查看所有订单详情",
+        "login_not_customer_html": "不是 %{name} 吗？你可以 %{link}",
+        "marker": {
+          "current": "当前货物位置",
+          "shipping": "送货地址"
+        },
+        "missing_shipping_address_banner": {
+          "text_html": "%{contact_us} 添加您的地址"
+        },
+        "gift_card_text_title": {
+          "one": "礼品卡已通过短信发送",
+          "other": "礼品卡已通过短信发送"
+        },
+        "gift_card_resent_confirmation": {
+          "one": "礼品卡已重新发送。",
+          "other": "礼品卡已重新发送。"
+        },
+        "page_title": "谢谢你，%{display_name}！",
+        "page_title_no_name": "谢谢您！",
+        "order_status_payments_app_pending_payment_description_default_with_missing": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_default_with_missing_payment": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_default_with_missing_pick_up": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone_payment": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_email": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_email_payment": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_email_pick_up": "您将很快收到确认电子邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_phone": "您将很快收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_phone_payment": "您将很快收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_default_with_phone_pick_up": "您将很快收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "通过电子邮件或电话联系我们以接收订单确认。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_payment": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_pick_up": "完成付款后，您将收到一封确认邮件。请使用购物应用程序跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone": "完成付款后，您将收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "完成付款后，您将收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "完成付款后，您将收到确认短信。请使用购物应用跟踪您的订单。",
+        "order_status_payments_app_failed_pending_payment_payment": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "order_status_payments_app_failed_pending_payment_pick_up": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "order_status_updates_with_email": "您将通过电子邮件收到运输和交付的更新信息。",
+        "order_status_updates_with_phone": "您可以通过短信获取运输和送货更新。",
+        "order_status_updates_with_email_and_phone": "您将通过电子邮件收到运输和交付的更新信息。",
+        "order_status_updates_with_missing": "选择您希望接收运输更新的方式。",
+        "order_updates_current_step_prefix": "当前步骤：",
+        "order_updates_past_step_prefix": "上一步：",
+        "order_updates_upcoming_step_prefix": "下一步：",
+        "out_for_delivery": "派送中",
+        "out_for_delivery_title": "您的订单正在派送中",
+        "out_for_delivery_description_html": "您的订单正在路上，预计今天到达。如果在接下来的2天内未送达，请 %{contact_us}。",
+        "out_for_delivery_local_title": "您的订单正在派送中",
+        "order_updates_description_missing": "您未收到运输更新。",
+        "order_updates_subscribe_to_email_notifications": "通过电子邮件获取运输更新",
+        "order_updates_subscribe_to_email_or_phone_notifications": "通过电子邮件或短信获取运输更新",
+        "order_updates_subscribe_to_phone_notifications": "通过短信获取运输更新",
+        "other_options": "其他选项",
+        "order_updates_subscribe_to_email_notifications_failed": "我们无法保存此电子邮件以接收更新。请重试或使用其他电子邮件。",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "您输入的电子邮件地址已存在。",
+        "shipping_information_title": "运输信息",
+        "purchase_order_number_title": "采购订单号 #%{purchase_order_number}",
+        "shipping_address_title": "送货地址",
+        "shipping_address_map_title": "谷歌地图显示配送地址的定位点：%{address}",
+        "shipping_method_title": "运输方式",
+        "re-order": "重新订购相同商品",
+        "thank_you_confirmed_with_email_and_phone_description": {
+          "multi_store": "您将很快收到每个商店分别发送的确认电子邮件"
+        },
+        "thank_you_confirmed_order_with_email": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_confirmed_order_with_phone": "您将很快收到包含订单编号的确认短信。",
+        "thank_you_confirmed_order_with_email_and_phone": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_confirmed_orders_with_email": "您将很快收到包含订单号码的单独确认邮件",
+        "thank_you_confirmed_orders_with_phone": "您将很快收到包含订单号码的单独确认短信",
+        "thank_you_confirmed_orders_with_email_and_phone": "您将很快收到包含订单号码的单独确认邮件",
+        "thank_you_confirmed_order_with_email_payment": "您已于 %{date} 对您的订单完成付款。",
+        "thank_you_confirmed_order_with_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "您已于 %{date} 对您的订单完成付款。",
+        "thank_you_confirmed_order_with_email_pick_up": "当您的订单准备好取货时，您将收到一封电子邮件通知。",
+        "thank_you_confirmed_order_with_phone_pick_up": "当您的订单准备好取货时，您将收到短信通知。",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "当您的订单准备好取货时，您将收到一封电子邮件通知。",
+        "thank_you_confirmed_order_with_missing": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_confirmed_order_with_missing_payment": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_confirmed_order_with_missing_pick_up": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_confirmed_order_with_draft": "如果需要更多信息或您的订单已确认，我们会通知您。",
+        "thank_you_confirmed_order_with_draft_payment": "如果需要更多信息或您的订单已确认，我们会通知您。",
+        "thank_you_confirmed_order_with_draft_pick_up": "如果需要更多信息或您的订单已确认，我们会通知您。",
+        "ready_for_pickup_title": "您的订单已准备好，可前来取货",
+        "ready_for_pickup_description": "您的订单已准备好取货。取货时请携带您的订单确认单。",
+        "ready_for_delivery_title": "您的订单已准备好发货",
+        "ready_for_delivery_description": "我们已为您准备好订单。",
+        "shop_phone_description": "您将收到一条包含商店应用链接的短信，以便跟踪您的订单。",
+        "picked_up_title": "您的订单已被取走",
+        "picked_up_description_html": "您的订单已于%{date}在%{location_name}取件。",
+        "pick_up_in_store_marker": {
+          "current": "当前货物位置"
+        },
+        "qr_code": {
+          "send_link_to_phone": "或者发送链接到您的手机"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "用手机扫描"
+          },
+          "sms": {
+            "title": "或者发送链接到您的手机"
+          }
+        },
+        "ready_for_delivery": "准备发货",
+        "subscriptions_management": {
+          "description": "继续登录您的账户以查看和管理您的订阅。"
+        },
+        "thank_you_title_payments_app_pending_default": "您的付款正在处理中",
+        "thank_you_title_payments_app_pending_buyer_action_required": "您的订单已收到",
+        "thank_you_title_payments_app_failed_pending_payment": "您的付款无法处理",
+        "thank_you_confirmed_with_email_description": {
+          "multi_store": "您将很快收到每个商店分别发送的确认电子邮件"
+        },
+        "thank_you_confirmed_with_phone_description": {
+          "multi_store": "您将很快收到每家商店分别发送的确认短信"
+        },
+        "thank_you_unconfirmed_items_heading": {
+          "other": "某些项目尚未确认"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "one": "您尚未被收费",
+          "other": "您尚未被收取这些费用"
+        },
+        "thank_you_payments_app_failed_pending_payment": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "thank_you_payments_app_failed_pending_payment_payment": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "thank_you_payments_app_failed_pending_payment_pick_up": "您的订单未被扣款。请返回购物车查看订单并重新付款。",
+        "thank_you_payments_app_pending_payment_description_default_with_missing": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_payment": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_pick_up": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_payment": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_email": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_email_payment": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_email_pick_up": "您将很快收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_default_with_phone": "您将很快收到包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_payment": "您将很快收到包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_pick_up": "您将很快收到包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "通过电子邮件或电话联系我们以接收订单确认。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_payment": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_pick_up": "完成付款后，您将收到一封包含订单编号的确认邮件。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone": "完成付款后，您将收到一条包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "完成付款后，您将收到一条包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "完成付款后，您将收到一条包含订单编号的确认短信。",
+        "thank_you_payments_app_pending_payment_description_provider_action_required_default": "您的付款正在处理中。付款确认后，您将收到一封电子邮件通知。",
+        "track_shipment": "追踪货件",
+        "tracking_number": "追踪号码：",
+        "updated_time": "%{time_ago} 前更新",
+        "unfulfilled_items_description": "我们正在准备这些物品的发货。",
+        "vat_invoices": {
+          "title": "增值税发票"
+        },
+        "verify_shop_account_title": "验证您的商店账户",
+        "verify_shop_account_message": "您的信息已保存在Shop，验证您的账户即可自动在数百万家商店使用。",
+        "verify_shop_account_confirmation": "结账信息已保存"
+      },
+      "tips": {
+        "description": "为 %{shop_name} 的团队表达您的支持",
+        "custom_label": "自定义提示",
+        "update_tip": "更新提示",
+        "message": "谢谢您，我们非常感激。",
+        "not_available_with_spi": "不支持 Shop Pay 分期付款"
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "请稍后再试"
+        },
+        "line_to_check_out": "您已排队等待结账",
+        "inventory": {
+          "partial_inventory_banner": "您购物车中的部分商品已售罄，结账时将无法购买。",
+          "sold_out": {
+            "heading": "您的购物车已售罄",
+            "storefront_body": "返回商店继续购物",
+            "no_storefront_body": "很遗憾，您想购买的商品已不再供应。"
+          }
+        },
+        "title": "排队",
+        "time_to_checkout_title": "结账时间 - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "计算预计等待时间",
+          "less_than_one": "预计等待时间：不到一分钟",
+          "one": "预计等待时间：{{count}} 分钟",
+          "other": "预计等待时间：{{count}} 分钟"
+        },
+        "last_checked": "（最后检查时间：{{time}}）",
+        "footer": {
+          "heading": "请勿刷新此页面，页面将自动更新。",
+          "body": "购物车中的商品在您完成结账前不会被保留。"
+        }
+      },
+      "units": {
+        "centiliter": "克"
+      },
+      "tooltip": {
+        "accessibility_label_context": "关于 %{context} 的更多信息"
+      },
+      "too_many_requests": {
+        "title": "尝试结账次数过多",
+        "body": "请稍等几分钟后再从您的购物车尝试。"
+      }
+    },
+    "attributes": {
+      "last_name": "姓氏"
+    },
+    "challenge": {
+      "message": "要继续，请告诉我们您不是机器人。",
+      "error": "您的答案不正确，请再试一次。"
+    },
+    "errors": {
+      "blank": "不能为空",
+      "blocked_address": "此地点不受支持",
+      "credit_card_session_expired": "信用卡授权已过期，请重新输入您的付款信息。您的卡片尚未被扣款。",
+      "invalid_email": "必须是有效的电子邮件地址",
+      "discount_disabled": "此折扣已被禁用",
+      "discount_expired": "此折扣已不再有效",
+      "discount_limit_reached": "此折扣已达到使用上限",
+      "discount_not_found": "无法找到与输入代码匹配的有效折扣",
+      "customer_already_used_once_per_customer_discount_notice": "此折扣已达到使用上限",
+      "gift_card_already_applied": "代码已应用于您的结账页面",
+      "gift_card_depleted": "此礼品卡余额不足",
+      "contains_html_tags": "不能包含HTML标签",
+      "contains_spaces": "以空格开始或结束。",
+      "invalid_for_country": "不适用于 %{country}",
+      "invalid_for_country_and_province": "不适用于 %{province} 和 %{country}",
+      "invalid_province_in_country": "不是 %{country} 的有效省份",
+      "full_name_required": "请输入名字和姓氏",
+      "taken": "已被占用",
+      "too_short": "太短（最少需要 %{count} 个字符）",
+      "too_long": "太长（最多 %{count} 个字符）",
+      "invalid_state_in_country": "不是 %{country} 的有效州/省份",
+      "invalid_region_in_country": "不是 %{country} 的有效地区",
+      "not_supported": "不支持",
+      "invalid_type": "抱歉，我们不接受此类型的卡片",
+      "invalid_start_date_or_issue_number_for_debit": "需要有效的起始日期或发行编号",
+      "reset_password_html": "此电子邮件地址已关联一个账户。如果这是您的账户，您可以<a href=\"/account/login#recover\">重设您的密码</a>",
+      "verify_email": "我们已向 %{customer_email} 发送了一封电子邮件，请点击其中的链接以验证您的电子邮件地址。",
+      "product_not_available": "该产品未对该客户发布。",
+      "shop_404": {
+        "title": "创建电子商务网站并在线销售！Shopify电子商务软件",
+        "heros": {
+          "store_unavailable": "抱歉，本店目前无法使用。",
+          "no_storefront": "这家店铺尚未拥有网站。"
+        },
+        "links": {
+          "explore_other_stores": "探索其他商店"
+        },
+        "owner_ctas": {
+          "header": "您是店主吗？",
+          "fix_domain": "完成新网址的设置，请访问 %{domain_settings_link}。点击“连接域名”，然后输入：%{domain}。<br>如果您无法进入您的商店，请尝试访问 %{forgot_your_store_link} 页面。",
+          "fix_domain_link_text": "您的域名设置",
+          "forgot_your_store_link_text": "忘记了您的商店",
+          "add_storefront": "您可以通过在您的 %{admin_link} 中添加在线商店渠道来设置您的网站。如果您无法进入您的商店，请尝试访问 %{forgot_your_store_link} 页面。",
+          "admin_link_text": "管理员"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "亲自销售",
+            "caption": "无论您是刚起步还是正在扩展规模，都能获得运营零售店所需的功能。"
+          },
+          "open_a_store": {
+            "header": "开设一个新的 Shopify 商店",
+            "caption": "开始三天免费试用，随后在接下来的三个月内每月仅需1美元。"
+          },
+          "editions": {
+            "header": "查看 Shopify 版本",
+            "caption": "通过100多项产品更新，您可以比以往任何时候都更高效、更具创造力，并在商业中更具影响力。",
+            "link_text": "探索最新版本"
+          },
+          "store_owner": {
+            "header": "您是店主吗？",
+            "caption": "您是否遇到登录商店的问题？请尝试使用 %{forgot_your_store_link} 功能。如果您想重新激活您的商店，请联系 %{shopify_support_link}。"
+          }
+        }
+      }
+    },
+    "email_marketing": {
+      "unsubscribed": {
+        "disclaimer": "您将不再收到我们的任何营销更新。您可以随时重新订阅。",
+        "preview": "您正在预览客户取消订阅时将看到的内容。"
+      },
+      "sms_unsubscribe_confirm": {
+        "message": "您确定要取消订阅短信营销吗？",
+        "button": "取消订阅"
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>您已选择开启电子邮件开启追踪。</b>",
+          "visibility": "电子邮件开启率将以匿名方式报告。我们只能看到您是否打开了电子邮件，且仅作为整体电子邮件开启率的一部分。",
+          "opt_out_html": "如果您不想分享此信息，可以<a style='text-decoration:underline;' href='%{link}'>选择退出</a>电子邮件打开跟踪。",
+          "preview_bar": "您正在预览客户选择电子邮件开启追踪时将看到的内容。"
+        },
+        "opt_out": {
+          "opted_out_html": "<b>您已选择退出电子邮件开启追踪。</b>",
+          "visibility": "我们不会知道您是否打开了我们的电子邮件。",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>选择加入</a> 邮件打开追踪。",
+          "preview_bar": "您正在预览客户选择退出电子邮件开启追踪时将看到的内容。"
+        },
+        "no_longer_track": {
+          "status_html": "<b>我们不再追踪任何电子邮件的打开情况。</b>"
+        },
+        "track": {
+          "status_html": "<b>电子邮件开启追踪已报告。</b>",
+          "visibility": "我们只会查看您是否打开了电子邮件，作为整体电子邮件开启率的一部分。"
+        },
+        "updated_policy": {
+          "status_html": "<b>电子邮件开启追踪已报告。</b>",
+          "visibility": "我们已更新政策，现在会追踪电子邮件的开启情况。电子邮件开启率将以匿名方式报告。我们只能看到您是否打开了电子邮件，作为总电子邮件开启率的一部分。",
+          "opt_out_html": "如果您不想分享此信息，您可以<a style='text-decoration:underline;' href='%{link}'>取消订阅。</a>"
+        }
+      }
+    },
+    "links": {
+      "powered_by_shopify": "由 Shopify 提供技术支持",
+      "learn_more": "了解更多"
+    },
+    "notices": {
+      "address": {
+        "updated": "地址更新成功。",
+        "created": "地址创建成功",
+        "deleted": "地址删除成功"
+      },
+      "cart": {
+        "all_items_in_cart": "您的购物车中有所有 %{count} 个 %{name}。",
+        "bundle_requires_components": "捆绑产品“%{name}”无法添加到购物车。",
+        "only_n_items_available": "您只能将 %{count} 个 %{name} 添加到购物车。",
+        "too_many_items_in_cart": "您无法将更多 %{name} 添加到购物车。",
+        "only_one_added_to_cart": "由于库存限制，您的购物车中只添加了1件商品。",
+        "only_n_added_to_cart": "由于库存限制，您的购物车中只添加了 %{quantity} 件商品。",
+        "maximum_available_quantity_reached": "此商品的最大数量已在您的购物车中。",
+        "less_than_minimum": "此商品的最低数量为 %{min}。",
+        "more_than_maximum": "此商品最多可有 %{max}。",
+        "not_respect_step": "您只能以 %{step} 的倍数添加此商品。",
+        "missing_parameters": "无效的ID或行参数",
+        "product_not_available": "产品无货",
+        "too_many_line_items_error": "您的购物车中不能超过 %{max} 件商品。",
+        "stock_problems_html": "一个或多个商品已不再可用。我们提供了一个<a href='%{link}'>更新的购物车</a>。",
+        "items_changed": "一个或多个项目已更改。",
+        "variant_not_found": "找不到变体",
+        "variant_requires_selling_plan": "变体只能与销售计划一起购买。",
+        "selling_plan_not_available_for_company_locations": "仅限一次性购买，适用于企业对企业订单",
+        "digital_product_not_available_for_company_locations": "此商品无法添加到企业订单中",
+        "buyer_cannot_purchase_for_company_locations": "您无法为此地点购买",
+        "selling_plan_not_applicable": "无法将销售计划应用于变体",
+        "shipping_address_not_required": "此购物车无需配送",
+        "shipping_address_invalid": "计算您的运费时出现问题。请继续结账，在完成订单前选择运费。",
+        "gift_card_with_components_not_supported": "捆绑产品“%{name}”无法添加到购物车。",
+        "gift_card_price_must_be_greater_than_zero": "捆绑产品“%{name}”无法添加到购物车。",
+        "view_lines_limit_reached": "每行必须少于或等于 %{limit} 个字符",
+        "cart_too_large": "购物车容量过大。",
+        "merchandise_line_transformers": {
+          "run_error": "您的购物车中发生了错误。"
+        },
+        "merchandise_not_applicable": "无法按当前配置购买该商品。"
+      },
+      "customer": {
+        "invalid_credentials": "电子邮件或密码错误。",
+        "denylisted_reset_password": "您的账户无法访问，因为当前密码不安全。您将收到一封电子邮件以更新您的密码。"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "新增 %{delta}",
+          "increment_item": "新增 %{delta}",
+          "decrement_item": "已移除 %{delta} 中的 %{total}",
+          "decrement_fulfilled_line_item": "已退回 %{delta} 中的 %{total}",
+          "decrement_return_line_item": "从退货中移除了 %{delta}"
+        }
+      },
+      "order": {
+        "cancel_reason": {
+          "customer": "客户更改/取消订单",
+          "declined": "付款被拒绝",
+          "inventory": "商品缺货",
+          "fraud": "欺诈订单"
+        },
+        "financial_status": {
+          "authorized": "授权",
+          "pending": "待定",
+          "voided": "无效",
+          "partially_paid": "部分支付"
+        },
+        "fulfillment_status": {
+          "fulfilled": "已完成",
+          "unfulfilled": "未完成",
+          "restocked": "已补货"
+        },
+        "transaction_status": {
+          "pending": "待定"
+        },
+        "cash_on_delivery": "货到付款 (COD)"
+      },
+      "storefront": {
+        "invalid_password": "密码错误，请重试。"
+      },
+      "tags": {
+        "add_articles": "将搜索范围缩小到也包含标签 %{tag} 的文章",
+        "add_products": "将筛选范围缩小到匹配标签 %{tag} 的产品",
+        "remove_articles": "扩大搜索范围至未标记 %{tag} 的文章",
+        "remove_products": "移除标签 %{tag}"
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "有现货"
+        }
+      }
+    },
+    "pagination": {
+      "previous": "上一页"
+    },
+    "search": {
+      "error": "加载您的搜索结果时出现问题。请刷新页面或稍后再试。"
+    },
+    "page_titles": {
+      "order": "订购 %{name}",
+      "search_results": {
+        "one": "搜索：找到 %{count} 条与“%{terms}”相关的结果",
+        "other": "搜索：找到 %{count} 条与“%{terms}”相关的结果"
+      },
+      "collections": "系列",
+      "not_found": "404 未找到"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "加入购物车",
+      "adding": "正在添加...",
+      "sold_out": "售罄",
+      "unavailable": "无货",
+      "sale": "促销",
+      "new": "新建",
+      "quantity": "数量",
+      "description": "描述",
+      "share": "分享",
+      "vendor": "供应商",
+      "type": "类型",
+      "sku": "库存单位"
+    }
+  }
+}

@@ -568,6 +568,10 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.header__nav-list--more-open {
+  overflow: visible;
+}
+
 .header__nav-item {
   flex-shrink: 0;
 }

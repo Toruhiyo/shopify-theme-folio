@@ -134,7 +134,15 @@
 
       this.resizeObserver = new ResizeObserver(() => this.update());
       this.resizeObserver.observe(this.nav);
+
       this.update();
+
+      // Re-measure once web fonts swap in and after full load: text width
+      // (and therefore overflow) changes without the nav being resized.
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => this.update());
+      }
+      window.addEventListener('load', () => this.update());
     }
 
     update() {
@@ -145,13 +153,19 @@
         return;
       }
 
+      const itemEls = this.items();
+
+      // Reveal every item before measuring: items hidden by a previous run
+      // report a width of 0 and would corrupt the recomputation.
+      itemEls.forEach(el => el.classList.remove(this.overflowClass));
+
       this.moreItem.removeAttribute('aria-hidden');
       const listWidth = this.list.getBoundingClientRect().width;
       const moreWidth = this.moreItem.getBoundingClientRect().width;
-      const available = listWidth - moreWidth - 8;
+      const MORE_SAFETY_BUFFER = 16;
+      const available = listWidth - moreWidth - MORE_SAFETY_BUFFER;
 
       let total = 0;
-      const itemEls = this.items();
       let overflowStart = itemEls.length;
 
       for (let i = 0; i < itemEls.length; i++) {
@@ -200,12 +214,17 @@
     }
 
     openMore() {
-      if (this.moreContent.innerHTML) this.moreItem.classList.add(this.moreActiveClass);
+      if (!this.moreContent.innerHTML) return;
+      this.moreItem.classList.add(this.moreActiveClass);
+      // Lift the list's overflow clip so the dropdown can escape; hidden
+      // overflow items stay display:none, so nothing else spills.
+      this.list.classList.add('header__nav-list--more-open');
       this.moreTrigger.setAttribute('aria-expanded', 'true');
     }
 
     closeMore() {
       this.moreItem.classList.remove(this.moreActiveClass);
+      this.list.classList.remove('header__nav-list--more-open');
       this.moreTrigger.setAttribute('aria-expanded', 'false');
     }
 

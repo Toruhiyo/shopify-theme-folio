@@ -990,6 +990,57 @@
     fireConfetti();
   }
 
+  /* --- Newsletter (submit without reloading the page) --- */
+  class NewsletterForms {
+    constructor() {
+      document.querySelectorAll('.js-newsletter-form').forEach(form => this.bind(form));
+    }
+
+    bind(form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        this.submit(form);
+      });
+    }
+
+    submit(form) {
+      const button = form.querySelector('button[type="submit"]');
+      if (button) button.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'text/html' }
+      })
+        .then(response => response.text())
+        .then(html => this.render(form, html))
+        // If the request can't be made, fall back to a normal submit.
+        .catch(() => form.submit())
+        .finally(() => { if (button) button.disabled = false; });
+    }
+
+    render(form, html) {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const scope = (form.id && doc.getElementById(form.id)) || doc;
+      const success = scope.querySelector('[data-newsletter-success]');
+      const message = success || scope.querySelector('.form-error');
+
+      const previous = form.querySelector('[data-newsletter-message]');
+      if (previous) previous.remove();
+      if (!message) return;
+
+      message.setAttribute('data-newsletter-message', '');
+      form.appendChild(message);
+
+      if (success) {
+        form.reset();
+        fireConfetti();
+      }
+    }
+  }
+
+  new NewsletterForms();
+
   /* --- Initialize --- */
   updateCartCount();
 

@@ -7,8 +7,12 @@
       "settings": {
         "tagline": "Books & Curiosities",
         "description": "A curated bookshop celebrating the joy of reading. Handpicked titles, beautiful editions, and literary gifts.",
+        "show_newsletter": true,
+        "newsletter_heading": "Join Our Reading List",
+        "newsletter_text": "New arrivals, recommendations, and exclusive offers, delivered to your inbox.",
         "show_payment_icons": true,
-        "show_powered_by": true
+        "show_powered_by": true,
+        "faq_page_handle": "faq"
       },
       "blocks": {
         "link-list-1": {
@@ -28,9 +32,15 @@
           "settings": {
             "heading": "Help"
           }
+        },
+        "policies-1": {
+          "type": "policies",
+          "settings": {
+            "heading": "Policies"
+          }
         }
       },
-      "block_order": ["link-list-1", "link-list-2", "link-list-3"]
+      "block_order": ["link-list-1", "link-list-2", "link-list-3", "policies-1"]
     }
   },
   "order": ["footer"]

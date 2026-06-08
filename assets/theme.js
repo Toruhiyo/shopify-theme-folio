@@ -568,6 +568,41 @@
     customElements.define('product-grid-by-tag', ProductGridByTag);
   }
 
+  /* --- Locale Selector --- */
+  const localeSelectors = document.querySelectorAll('[data-locale-selector]');
+
+  function closeLocaleSelectors(except) {
+    localeSelectors.forEach(el => {
+      if (el === except) return;
+      el.classList.remove('is-open');
+      const trigger = el.querySelector('.locale-selector__trigger');
+      const dropdown = el.querySelector('.locale-selector__dropdown');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      if (dropdown) dropdown.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  localeSelectors.forEach(el => {
+    const trigger = el.querySelector('.locale-selector__trigger');
+    const dropdown = el.querySelector('.locale-selector__dropdown');
+    if (!trigger || !dropdown) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLocaleSelectors(el);
+      const isOpen = el.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      dropdown.setAttribute('aria-hidden', String(!isOpen));
+    });
+  });
+
+  if (localeSelectors.length) {
+    document.addEventListener('click', () => closeLocaleSelectors(null));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLocaleSelectors(null);
+    });
+  }
+
   /* --- Initialize --- */
   updateCartCount();
 

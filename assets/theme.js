@@ -895,6 +895,82 @@
     });
   }
 
+  /* --- Newsletter Success Confetti --- */
+  function fireConfetti() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const viewWidth = window.innerWidth;
+    const viewHeight = window.innerHeight;
+    canvas.width = viewWidth * dpr;
+    canvas.height = viewHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const palette = ['#2A5C42', '#3B7A57', '#CC8A1E', '#5CA87A', '#EDE8DE'];
+    const PARTICLE_COUNT = 150;
+    const GRAVITY = 0.32;
+    const DRAG = 0.992;
+    const DURATION = 2600;
+    const particles = [];
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 6 + Math.random() * 9;
+      particles.push({
+        x: viewWidth / 2,
+        y: viewHeight * 0.32,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 4,
+        size: 5 + Math.random() * 6,
+        color: palette[Math.floor(Math.random() * palette.length)],
+        rotation: Math.random() * Math.PI,
+        spin: (Math.random() - 0.5) * 0.3
+      });
+    }
+
+    const start = performance.now();
+
+    function frame(now) {
+      const elapsed = now - start;
+      const fade = Math.max(0, 1 - elapsed / DURATION);
+      ctx.clearRect(0, 0, viewWidth, viewHeight);
+
+      particles.forEach(p => {
+        p.vx *= DRAG;
+        p.vy = p.vy * DRAG + GRAVITY;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.spin;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.globalAlpha = fade;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        ctx.restore();
+      });
+
+      if (elapsed < DURATION) {
+        requestAnimationFrame(frame);
+      } else {
+        canvas.remove();
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  if (document.querySelector('[data-newsletter-success]')) {
+    fireConfetti();
+  }
+
   /* --- Initialize --- */
   updateCartCount();
 

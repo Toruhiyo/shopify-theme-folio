@@ -25,7 +25,7 @@
             <button type="submit" class="btn btn--primary">{{ section.settings.newsletter_button | default: 'Subscribe' }}</button>
           </div>
           {%- if form.posted_successfully? -%}
-            <p class="footer__newsletter-message">{{ 'sections.newsletter.success' | t }}</p>
+            <p class="footer__newsletter-message" data-newsletter-success>{{ 'sections.newsletter.success' | t }}</p>
           {%- endif -%}
           {%- if form.errors -%}
             <p class="footer__newsletter-message form-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>

@@ -35,7 +35,7 @@
             </div>
 
             {%- if form.posted_successfully? -%}
-              <p class="mt-md" style="color: var(--color-accent);">{{ 'sections.newsletter.success' | t }}</p>
+              <p class="mt-md" style="color: var(--color-accent);" data-newsletter-success>{{ 'sections.newsletter.success' | t }}</p>
             {%- endif -%}
 
             {%- if form.errors -%}

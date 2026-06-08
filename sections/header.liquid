@@ -1,3 +1,10 @@
+{%- liquid
+  assign nav_menu = linklists['catalog']
+  if nav_menu.links.size == 0
+    assign nav_menu = section.settings.menu
+  endif
+-%}
+
 <header class="header" data-header>
   <div class="header__primary">
     <div class="page-width">
@@ -20,7 +27,7 @@
 
         <nav class="header__nav" role="navigation" aria-label="{{ 'header.navigation' | t }}">
           <div class="header__nav-list" data-nav-list>
-            {%- for link in section.settings.menu.links -%}
+            {%- for link in nav_menu.links -%}
               {%- if link.links.size > 0 -%}
                 <div class="header__nav-item" data-nav-mega data-nav-item>
                   <a
@@ -138,7 +145,7 @@
   <nav class="mobile-menu__nav">
     <a href="{{ routes.root_url }}" class="mobile-menu__link">{{ 'header.home' | t }}</a>
 
-    {%- for link in section.settings.menu.links -%}
+    {%- for link in nav_menu.links -%}
       {%- if link.links.size > 0 -%}
         <div class="mobile-menu__group" data-mobile-accordion>
           <button class="mobile-menu__link mobile-menu__link--parent" aria-expanded="false" data-mobile-accordion-trigger>
@@ -216,8 +223,8 @@
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "Navigation menu",
-      "info": "Primary navigation. Supports up to 2 levels of nesting (Category > Subcategory). Items that don't fit collapse into a 'More' dropdown."
+      "label": "Navigation menu (fallback)",
+      "info": "The header uses the 'catalog' menu if it exists, otherwise this menu. Supports up to 2 levels of nesting (Category > Subcategory). Items that don't fit collapse into a 'More' dropdown."
     }
   ]
 }

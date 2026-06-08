@@ -53,6 +53,33 @@
                 </ul>
               {%- endif -%}
             </div>
+          {%- when 'policies' -%}
+            {%- liquid
+              assign has_policies = false
+              for policy in shop.policies
+                if policy != blank
+                  assign has_policies = true
+                  break
+                endif
+              endfor
+            -%}
+            {%- if has_policies -%}
+              <div class="footer__column" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="footer__column-title">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+
+                <ul class="footer__links">
+                  {%- for policy in shop.policies -%}
+                    {%- if policy != blank -%}
+                      <li>
+                        <a href="{{ policy.url }}" class="footer__link">{{ policy.title }}</a>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -130,6 +157,23 @@
           "label": "Menu"
         }
       ]
+    },
+    {
+      "type": "policies",
+      "name": "Store policies",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Automatically lists the store policies you've set (privacy, refund, shipping, terms of service, subscription). Manage them in Settings > Policies."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Policies",
+          "label": "Heading"
+        }
+      ]
     }
   ],
   "presets": [
@@ -147,6 +191,10 @@
         {
           "type": "link_list",
           "settings": { "heading": "Help" }
+        },
+        {
+          "type": "policies",
+          "settings": { "heading": "Policies" }
         }
       ]
     }

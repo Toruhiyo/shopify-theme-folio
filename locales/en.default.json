@@ -67,6 +67,18 @@
     "contact_us": "Contact Us",
     "faq": "FAQ"
   },
+  "header": {
+    "navigation": "Main navigation",
+    "more": "More",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "menu": "Menu",
+    "mobile_menu": "Menu",
+    "close_menu": "Close menu",
+    "home": "Home",
+    "search_placeholder": "Search our store..."
+  },
   "sections": {
     "announcement_bar": {
       "name": "Announcement bar"

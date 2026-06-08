@@ -1,0 +1,23 @@
+{%- comment -%}
+  Support links for the footer Support column.
+  A FAQ or Contact link is only rendered when the matching page exists in the store.
+
+  Accepts:
+    support_menu  - {link_list}  optional menu that overrides auto-detection
+    faq_page      - {page}       resolved FAQ page (blank if not set)
+    contact_page  - {page}       resolved Contact page (blank if not set)
+    link_class    - {string}     CSS class for each link (default: 'footer__link')
+{%- endcomment -%}
+{%- assign link_class = link_class | default: 'footer__link' -%}
+{%- if support_menu != blank and support_menu.links.size > 0 -%}
+  {%- for link in support_menu.links -%}
+    <a href="{{ link.url }}" class="{{ link_class }}">{{ link.title }}</a>
+  {%- endfor -%}
+{%- else -%}
+  {%- if contact_page != blank -%}
+    <a href="{{ contact_page.url }}" class="{{ link_class }}">{{ contact_page.title }}</a>
+  {%- endif -%}
+  {%- if faq_page != blank -%}
+    <a href="{{ faq_page.url }}" class="{{ link_class }}">{{ faq_page.title }}</a>
+  {%- endif -%}
+{%- endif -%}

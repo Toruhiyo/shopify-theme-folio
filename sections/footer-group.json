@@ -10,37 +10,11 @@
         "show_newsletter": true,
         "newsletter_heading": "Join Our Reading List",
         "newsletter_text": "New arrivals, recommendations, and exclusive offers, delivered to your inbox.",
-        "show_payment_icons": true,
-        "show_powered_by": true,
-        "faq_page_handle": "faq"
-      },
-      "blocks": {
-        "link-list-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Shop"
-          }
-        },
-        "link-list-2": {
-          "type": "link_list",
-          "settings": {
-            "heading": "About"
-          }
-        },
-        "link-list-3": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Help"
-          }
-        },
-        "policies-1": {
-          "type": "policies",
-          "settings": {
-            "heading": "Policies"
-          }
-        }
-      },
-      "block_order": ["link-list-1", "link-list-2", "link-list-3", "policies-1"]
+        "newsletter_placeholder": "Enter your email",
+        "newsletter_button": "Subscribe",
+        "faq_page_handle": "faq",
+        "show_trust_row": true
+      }
     }
   },
   "order": ["footer"]

@@ -1,9 +1,67 @@
 <footer class="footer" role="contentinfo">
-  <div class="page-width">
 
-    {%- comment -%} Top row: brand + newsletter {%- endcomment -%}
-    <div class="footer__top">
-      <div class="footer__brand-col">
+  {%- comment -%} Newsletter banner {%- endcomment -%}
+  {%- if section.settings.show_newsletter -%}
+    <div class="footer__newsletter-banner">
+      <div class="page-width footer__newsletter-inner">
+        <div class="footer__newsletter-copy">
+          <h4 class="footer__newsletter-heading">{{ section.settings.newsletter_heading | default: 'Stay in the Loop' }}</h4>
+          {%- if section.settings.newsletter_text != blank -%}
+            <p class="footer__newsletter-text">{{ section.settings.newsletter_text }}</p>
+          {%- endif -%}
+        </div>
+        {%- form 'customer', id: 'footer-newsletter' -%}
+          <div class="footer__newsletter-form">
+            <input
+              type="email"
+              name="contact[email]"
+              class="footer__newsletter-input"
+              placeholder="{{ section.settings.newsletter_placeholder | default: 'Enter your email' }}"
+              required
+              autocomplete="email"
+              aria-label="{{ section.settings.newsletter_placeholder | default: 'Enter your email' }}"
+            >
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <button type="submit" class="btn btn--primary">{{ section.settings.newsletter_button | default: 'Subscribe' }}</button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="footer__newsletter-message">{{ 'sections.newsletter.success' | t }}</p>
+          {%- endif -%}
+          {%- if form.errors -%}
+            <p class="footer__newsletter-message form-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} Main footer content {%- endcomment -%}
+  {%- liquid
+    assign support_menu = section.settings.support_menu
+    assign faq_page = pages[section.settings.faq_page_handle]
+    assign contact_page = pages['contact']
+
+    assign has_support = false
+    if support_menu != blank and support_menu.links.size > 0
+      assign has_support = true
+    elsif faq_page != blank or contact_page != blank
+      assign has_support = true
+    endif
+
+    assign has_policies = false
+    for policy in shop.policies
+      if policy != blank
+        assign has_policies = true
+        break
+      endif
+    endfor
+  -%}
+
+  <div class="page-width footer__main">
+    <div class="footer__grid">
+
+      {%- comment -%} Brand column {%- endcomment -%}
+      <div class="footer__column footer__column--brand">
         <a href="{{ routes.root_url }}" class="footer__brand-link" aria-label="{{ shop.name | escape }}">
           <div class="header__logo-container">
             {%- if section.settings.logo != blank -%}
@@ -19,191 +77,119 @@
             {%- endif -%}
           </div>
         </a>
-
         {%- if section.settings.description != blank -%}
-          <p class="footer__brand-description">{{ section.settings.description }}</p>
-        {%- endif -%}
-
-        {%- liquid
-          assign has_social = false
-          if settings.social_instagram_link != blank or settings.social_facebook_link != blank or settings.social_twitter_link != blank or settings.social_pinterest_link != blank or settings.social_tiktok_link != blank
-            assign has_social = true
-          endif
-        -%}
-        {%- if has_social -%}
-          <nav class="footer__social" aria-label="{{ shop.name | escape }} social media">
-            {%- if settings.social_instagram_link != blank -%}
-              <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'general.social.links.instagram' | t }}" class="footer__social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-              </a>
-            {%- endif -%}
-            {%- if settings.social_facebook_link != blank -%}
-              <a href="{{ settings.social_facebook_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'general.social.links.facebook' | t }}" class="footer__social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
-            {%- endif -%}
-            {%- if settings.social_twitter_link != blank -%}
-              <a href="{{ settings.social_twitter_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'general.social.links.twitter' | t }}" class="footer__social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-            {%- endif -%}
-            {%- if settings.social_tiktok_link != blank -%}
-              <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'general.social.links.tiktok' | t }}" class="footer__social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-              </a>
-            {%- endif -%}
-            {%- if settings.social_pinterest_link != blank -%}
-              <a href="{{ settings.social_pinterest_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ 'general.social.links.pinterest' | t }}" class="footer__social-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12a4 4 0 1 1 5.3 3.8L12 22l-1.3-6.2A4 4 0 0 1 8 12z"/><circle cx="12" cy="12" r="10"/></svg>
-              </a>
-            {%- endif -%}
-          </nav>
+          <p class="footer__text">{{ section.settings.description }}</p>
         {%- endif -%}
       </div>
 
-      {%- if section.settings.show_newsletter -%}
-        <div class="footer__newsletter-col">
-          {%- if section.settings.newsletter_heading != blank -%}
-            <h3 class="footer__newsletter-title">{{ section.settings.newsletter_heading }}</h3>
-          {%- endif -%}
-          {%- if section.settings.newsletter_text != blank -%}
-            <p class="footer__newsletter-sub">{{ section.settings.newsletter_text }}</p>
-          {%- endif -%}
-          {%- form 'customer', id: 'footer-newsletter-form', class: 'footer__newsletter-form' -%}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <input
-              type="email"
-              name="contact[email]"
-              class="footer__newsletter-input"
-              placeholder="{{ 'sections.newsletter.email_placeholder' | t }}"
-              required
-              autocomplete="email"
-              aria-label="{{ 'sections.newsletter.email_placeholder' | t }}"
-            >
-            <button type="submit" class="btn btn--primary footer__newsletter-btn">
-              {{ 'sections.newsletter.subscribe' | t }}
-            </button>
-            {%- if form.posted_successfully? -%}
-              <p class="footer__newsletter-message">{{ 'sections.newsletter.success' | t }}</p>
-            {%- endif -%}
-            {%- if form.errors -%}
-              <p class="footer__newsletter-message form-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</p>
-            {%- endif -%}
-          {%- endform -%}
+      {%- comment -%} Support column (FAQ shows only if a FAQ page is detected) {%- endcomment -%}
+      {%- if has_support -%}
+        <div class="footer__column">
+          <h4 class="footer__heading">{{ 'footer.support' | t }}</h4>
+          <div class="footer__nav-links">
+            {% render 'support-links', support_menu: support_menu, faq_page: faq_page, contact_page: contact_page, link_class: 'footer__link' %}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Legal column (automatic store policies) {%- endcomment -%}
+      {%- if has_policies -%}
+        <div class="footer__column footer__column--legal">
+          <h4 class="footer__heading">{{ 'footer.legal' | t }}</h4>
+          <div class="footer__legal-links">
+            {%- for policy in shop.policies -%}
+              {%- if policy != blank -%}
+                <a href="{{ policy.url }}" class="footer__link">{{ policy.title }}</a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%} Trust Row {%- endcomment -%}
+    {%- if section.settings.show_trust_row -%}
+      <div class="trust-row">
+        <div class="trust-row__item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          {{ 'footer.secure_checkout' | t }}
+        </div>
+        <div class="trust-row__item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          {{ 'footer.free_shipping' | t }}
+        </div>
+        <div class="trust-row__item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          {{ 'footer.easy_returns' | t }}
+        </div>
+        <div class="trust-row__item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          {{ 'footer.warranty_included' | t }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Bottom Bar {%- endcomment -%}
+  <div class="footer__bottom">
+    <div class="page-width footer__bottom-inner">
+      <div class="footer__social">
+        {%- if settings.social_twitter_link != blank -%}
+          <a href="{{ settings.social_twitter_link }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.links.twitter' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_instagram_link != blank -%}
+          <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.links.instagram' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_facebook_link != blank -%}
+          <a href="{{ settings.social_facebook_link }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.links.facebook' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_pinterest_link != blank -%}
+          <a href="{{ settings.social_pinterest_link }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.links.pinterest' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12a4 4 0 1 1 5.3 3.8L12 22l-1.3-6.2A4 4 0 0 1 8 12z"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if settings.social_tiktok_link != blank -%}
+          <a href="{{ settings.social_tiktok_link }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.links.tiktok' | t }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 10.86 4.49V12.8a8.16 8.16 0 0 0 4.77 1.52h.8V10.9a4.83 4.83 0 0 1-.99-4.21z"/></svg>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <p class="footer__copyright">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'footer.rights' | t }}</p>
+
+      {%- if localization.available_languages.size > 1 -%}
+        <div class="locale-selector locale-selector--up" data-locale-selector>
+          <button class="locale-selector__trigger" type="button" aria-expanded="false" aria-label="{{ 'general.language' | t }}">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M1.5 7h11M7 1.5c-1.5 2-2 3.5-2 5.5s.5 3.5 2 5.5M7 1.5c1.5 2 2 3.5 2 5.5s-.5 3.5-2 5.5"/></svg>
+            {{ localization.language.endonym_name }}
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 6L5 3.5 7.5 6"/></svg>
+          </button>
+          <div class="locale-selector__dropdown" aria-hidden="true">
+            {%- form 'localization' -%}
+              {%- for language in localization.available_languages -%}
+                <button
+                  class="locale-selector__option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}"
+                  type="submit"
+                  name="locale_code"
+                  value="{{ language.iso_code }}"
+                >
+                  {{ language.endonym_name }}
+                </button>
+              {%- endfor -%}
+            {%- endform -%}
+          </div>
         </div>
       {%- endif -%}
     </div>
-
-    {%- comment -%} Navigation columns: link menus + automatic store policies {%- endcomment -%}
-    {%- liquid
-      assign has_nav = false
-      for block in section.blocks
-        if block.type == 'link_list' and block.settings.menu != blank and block.settings.menu.links.size > 0
-          assign has_nav = true
-          break
-        endif
-        if block.type == 'policies'
-          for policy in shop.policies
-            if policy != blank
-              assign has_nav = true
-              break
-            endif
-          endfor
-        endif
-      endfor
-    -%}
-    {%- if has_nav -%}
-      <div class="footer__nav-row">
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'link_list' -%}
-              {%- if block.settings.menu != blank and block.settings.menu.links.size > 0 -%}
-                <div class="footer__nav-col" {{ block.shopify_attributes }}>
-                  {%- if block.settings.heading != blank -%}
-                    <h3 class="footer__nav-heading">{{ block.settings.heading }}</h3>
-                  {%- endif -%}
-                  <nav class="footer__nav-links">
-                    {%- for link in block.settings.menu.links -%}
-                      <a href="{{ link.url }}" class="footer__nav-link">{{ link.title }}</a>
-                    {%- endfor -%}
-                  </nav>
-                </div>
-              {%- endif -%}
-            {%- when 'policies' -%}
-              {%- liquid
-                assign has_policies = false
-                for policy in shop.policies
-                  if policy != blank
-                    assign has_policies = true
-                    break
-                  endif
-                endfor
-              -%}
-              {%- if has_policies -%}
-                <div class="footer__nav-col" {{ block.shopify_attributes }}>
-                  {%- if block.settings.heading != blank -%}
-                    <h3 class="footer__nav-heading">{{ block.settings.heading }}</h3>
-                  {%- endif -%}
-                  <nav class="footer__nav-links">
-                    {%- for policy in shop.policies -%}
-                      {%- if policy != blank -%}
-                        <a href="{{ policy.url }}" class="footer__nav-link">{{ policy.title }}</a>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  </nav>
-                </div>
-              {%- endif -%}
-          {%- endcase -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
-
-    {%- comment -%} Bottom bar: copyright, payment icons, locale selector, legal links {%- endcomment -%}
-    {%- assign faq_page = pages[section.settings.faq_page_handle] -%}
-    <div class="footer__bottom">
-      <p class="footer__copyright">
-        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
-        {%- if section.settings.show_powered_by %} {{ powered_by_link }}{%- endif -%}
-      </p>
-
-      <div class="footer__bottom-center">
-        {%- if section.settings.show_payment_icons -%}
-          <div class="footer__payment-icons">
-            {%- for type in shop.enabled_payment_types -%}
-              {{ type | payment_type_svg_tag: class: 'payment-icon' }}
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
-      </div>
-
-      <div class="footer__bottom-right">
-        {%- if localization.available_languages.size > 1 -%}
-          <div class="locale-selector locale-selector--up" data-locale-selector>
-            <button class="locale-selector__trigger" type="button" aria-expanded="false" aria-label="{{ 'general.language' | t }}">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="7" cy="7" r="5.5"/><path d="M1.5 7h11M7 1.5c-1.5 2-2 3.5-2 5.5s.5 3.5 2 5.5M7 1.5c1.5 2 2 3.5 2 5.5s-.5 3.5-2 5.5"/></svg>
-              {{ localization.language.endonym_name }}
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 4L5 6.5 7.5 4"/></svg>
-            </button>
-            <div class="locale-selector__dropdown" aria-hidden="true">
-              {%- form 'localization' -%}
-                {%- for language in localization.available_languages -%}
-                  <button class="locale-selector__option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}" type="submit" name="locale_code" value="{{ language.iso_code }}">
-                    {{ language.endonym_name }}
-                  </button>
-                {%- endfor -%}
-              {%- endform -%}
-            </div>
-          </div>
-        {%- endif -%}
-
-        {%- if faq_page != blank -%}
-          <div class="footer__legal">
-            <a href="{{ faq_page.url }}" class="footer__legal-link">{{ faq_page.title }}</a>
-          </div>
-        {%- endif -%}
-      </div>
-    </div>
   </div>
+
 </footer>
 
 {% schema %}
@@ -235,13 +221,13 @@
     },
     {
       "type": "header",
-      "content": "Newsletter"
+      "content": "Newsletter banner"
     },
     {
       "type": "checkbox",
       "id": "show_newsletter",
       "default": true,
-      "label": "Show newsletter signup"
+      "label": "Show newsletter banner"
     },
     {
       "type": "text",
@@ -256,86 +242,48 @@
       "label": "Newsletter description"
     },
     {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "default": "Enter your email",
+      "label": "Newsletter placeholder"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "default": "Subscribe",
+      "label": "Newsletter button"
+    },
+    {
       "type": "header",
-      "content": "Bottom bar"
+      "content": "Support column"
     },
     {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "default": true,
-      "label": "Show payment icons"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_powered_by",
-      "default": true,
-      "label": "Show 'Powered by Shopify'"
+      "type": "link_list",
+      "id": "support_menu",
+      "label": "Support menu",
+      "info": "Optional. If empty, the theme auto-detects your Contact and FAQ pages."
     },
     {
       "type": "text",
       "id": "faq_page_handle",
       "default": "faq",
       "label": "FAQ page handle",
-      "info": "The FAQ link only appears if a page with this handle exists. Leave the page unpublished to hide it."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "link_list",
-      "name": "Link column",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Quick Links",
-          "label": "Heading"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "label": "Menu"
-        }
-      ]
+      "info": "The FAQ link only appears if a page with this handle exists in your store."
     },
     {
-      "type": "policies",
-      "name": "Store policies",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "Automatically lists the store policies you've set (privacy, refund, shipping, terms of service, subscription). Manage them in Settings > Policies."
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "Policies",
-          "label": "Heading"
-        }
-      ]
+      "type": "header",
+      "content": "Trust row"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_row",
+      "default": true,
+      "label": "Show trust row"
     }
   ],
   "presets": [
     {
-      "name": "Footer",
-      "blocks": [
-        {
-          "type": "link_list",
-          "settings": { "heading": "Shop" }
-        },
-        {
-          "type": "link_list",
-          "settings": { "heading": "About" }
-        },
-        {
-          "type": "link_list",
-          "settings": { "heading": "Help" }
-        },
-        {
-          "type": "policies",
-          "settings": { "heading": "Policies" }
-        }
-      ]
+      "name": "Footer"
     }
   ]
 }

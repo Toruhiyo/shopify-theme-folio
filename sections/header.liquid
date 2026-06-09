@@ -89,29 +89,10 @@
         </nav>
 
         <div class="header__icons">
-          {%- if localization.available_languages.size > 1 -%}
-            <div class="locale-selector" data-locale-selector>
-              <button class="header__icon-btn locale-selector__trigger" type="button" aria-expanded="false" aria-label="{{ 'general.language' | t }}">
-                <span class="locale-selector__code">{{ localization.language.iso_code | upcase }}</span>
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 4L5 6.5 7.5 4"/></svg>
-              </button>
-              <div class="locale-selector__dropdown" aria-hidden="true">
-                {%- form 'localization' -%}
-                  {%- for language in localization.available_languages -%}
-                    <button
-                      class="locale-selector__option{% if language.iso_code == localization.language.iso_code %} is-active{% endif %}"
-                      type="submit"
-                      name="locale_code"
-                      value="{{ language.iso_code }}"
-                    >
-                      {{ language.endonym_name }}
-                    </button>
-                  {%- endfor -%}
-                {%- endform -%}
-              </div>
-            </div>
-          {%- endif -%}
-
+          {%- comment -%}
+            Language switching is handled by the translation app's switcher, so the
+            theme's native locale selector is intentionally omitted to avoid a duplicate.
+          {%- endcomment -%}
           <button class="header__icon-btn" data-search-toggle aria-label="{{ 'header.search' | t }}">
             {% render 'icon-search' %}
           </button>

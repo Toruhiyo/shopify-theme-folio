@@ -448,15 +448,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- Header --- */
-.header {
+/* Sticky lives on the Shopify section wrapper: its parent is <body> (full page
+   height), so the header stays pinned across the whole page. Sticking the inner
+   .header instead only works within its short section wrapper, so it wouldn't
+   pin once the hero scrolls past. */
+.header-section {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.header {
   background-color: var(--color-background);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header.scrolled {
@@ -477,8 +484,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header.is-transparent .header__brand-name,
 .header.is-transparent .header__nav-link,
-.header.is-transparent .header__icon-btn,
-.header.is-transparent .locale-selector__trigger {
+.header.is-transparent .header__icon-btn {
   color: #fff;
 }
 
@@ -501,14 +507,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* Pull the hero up under the (transparent) header so the artwork sits behind it. */
+/* Pull the hero up under the (transparent) header so the artwork sits behind it.
+   The extra -1px covers the header's bottom border, otherwise a hairline of the
+   page background shows at the very top edge. */
 .template-index .hero-mosaic-section {
-  margin-top: -4rem;
+  margin-top: calc(-4rem - 1px);
 }
 
 @media (min-width: 990px) {
   .template-index .hero-mosaic-section {
-    margin-top: -4.5rem;
+    margin-top: calc(-4.5rem - 1px);
   }
 }
 

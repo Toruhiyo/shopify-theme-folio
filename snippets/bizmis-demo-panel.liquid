@@ -16,6 +16,10 @@
   -%}
   <aside class="bizmis-coach" data-bizmis-coach aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
     <div class="bizmis-coach__bubble" data-bizmis-coach-bubble>
+      <button class="bizmis-coach__close" data-bizmis-coach-close type="button" aria-label="{{ 'accessibility.close' | t }}">
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 4 L12 12 M12 4 L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
       <span
         class="bizmis-coach__watermark"
         style="-webkit-mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}'); mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}');"

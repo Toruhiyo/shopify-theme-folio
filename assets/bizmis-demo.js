@@ -11,11 +11,12 @@
 
   var STORAGE_KEY = 'bizmis:demo:attribution';
   var DISMISS_KEY = 'bizmis:demo:bar-dismissed';
+  var COACH_CLOSED_KEY = 'bizmis:demo:coach-closed';
   var COPIED_RESET_MS = 2000;
 
   /* Coachmark timing (kept slow + calm) and layout. */
   var COACH_START_MS = 1600;   // wait for the widget to mount before the first hint
-  var COACH_SHOW_MS = 6000;    // how long a hint lingers
+  var COACH_SHOW_MS = 4800;    // how long a hint lingers
   var COACH_GAP_MS = 250;      // brief pause between hints (kept short)
   var COACH_FADE_MS = 600;     // matches the CSS fade duration
   var COACH_WORD_MS = 340;     // karaoke dwell per word (matches the landing page)
@@ -296,6 +297,24 @@
         if (timer) window.clearTimeout(timer);
         timer = window.setTimeout(hideText, COACH_SHOW_MS);
       });
+    }
+
+    /* Closing collapses the suggestion card but leaves the install button. */
+    var closeButton = coach.querySelector('[data-bizmis-coach-close]');
+    if (closeButton) {
+      closeButton.addEventListener('click', function () {
+        if (timer) { window.clearTimeout(timer); timer = null; }
+        clearWordTimers();
+        coach.classList.add('is-closed');
+        try { sessionStorage.setItem(COACH_CLOSED_KEY, '1'); } catch (error) { /* ignore */ }
+      });
+    }
+
+    var closed = false;
+    try { closed = sessionStorage.getItem(COACH_CLOSED_KEY) === '1'; } catch (error) { /* show it */ }
+    if (closed) {
+      coach.classList.add('is-closed', 'is-shown');
+      return;
     }
 
     timer = window.setTimeout(function () {

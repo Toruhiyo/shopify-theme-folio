@@ -3396,10 +3396,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Faint white brand mark behind the content so it never takes up layout space. */
 .bizmis-coach__watermark {
   position: absolute;
-  top: -0.55rem;
-  right: -0.5rem;
-  width: 3.75rem;
-  height: 3.75rem;
+  top: 50%;
+  right: -0.6rem;
+  transform: translateY(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
   z-index: 0;
   opacity: 0.1;
   pointer-events: none;
@@ -3412,11 +3413,57 @@ h1, h2, h3, h4, h5, h6 {
   mask-size: contain;
 }
 
+.bizmis-coach__close {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.35rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bizmis-coach__close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.bizmis-coach__close svg {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+/* Closed: collapse the suggestion card chrome, keep only the install button. */
+.bizmis-coach.is-closed .bizmis-coach__bubble {
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.bizmis-coach.is-closed .bizmis-coach__close,
+.bizmis-coach.is-closed .bizmis-coach__watermark,
+.bizmis-coach.is-closed .bizmis-coach__slides {
+  display: none;
+}
+
 .bizmis-coach__slides {
   position: relative;
   z-index: 1;
   display: grid;
   margin-bottom: 0.75rem;
+  padding-right: 1.1rem;
 }
 
 /* The card stays put; the suggestion appears instantly and fades out as a unit. */
@@ -3456,9 +3503,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: baseline;
   gap: 0.12em 0.28em;
   margin: 0;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.35;
   color: #fff;
 }

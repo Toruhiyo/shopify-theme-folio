@@ -38,55 +38,6 @@
         "show_filters": false
       }
     },
-    "demo-guide": {
-      "type": "demo-guide",
-      "settings": {
-        "label": "Try the voice clerk",
-        "heading": "How to use Bizmis",
-        "intro": "Tap the Bizmis button in the corner and just talk, the way you would with a clerk on the shop floor. Here are a few things to try.",
-        "notice_heading": "Good to know",
-        "notice_text": "<p>This is a Bizmis demo store, so feel free to explore and chat as much as you like. It is a showcase, which means checkout, payments, shipping, emails, and phone numbers are not real. Nothing here charges a card or sends a message.</p>",
-        "merchant_heading": "Like what you see?",
-        "merchant_text": "Behind the scenes, Bizmis records session replays, auto-tags every chat, and surfaces funnel insights, so you always know where to improve. Add it to your store in a few clicks.",
-        "button_label": "Install Bizmis",
-        "button_label_with_code": "Install with your early-access code"
-      },
-      "blocks": {
-        "use-case-1": {
-          "type": "use_case",
-          "settings": {
-            "title": "Find the perfect pick",
-            "example": "I need a gift for someone who loves mystery novels.",
-            "text": "Bizmis asks a question or two and guides you to the right book, so more visitors feel confident enough to buy."
-          }
-        },
-        "use-case-2": {
-          "type": "use_case",
-          "settings": {
-            "title": "Discover what pairs well",
-            "example": "What goes well with this journal?",
-            "text": "It suggests complementary add-ons and upgrades the way a great in-store associate would, lifting the order naturally."
-          }
-        },
-        "use-case-3": {
-          "type": "use_case",
-          "settings": {
-            "title": "Ask anything about the store",
-            "example": "What is your return policy, and do you ship internationally?",
-            "text": "Instant, accurate answers on policies, products, and shipping, any time of day, with no waiting."
-          }
-        },
-        "use-case-4": {
-          "type": "use_case",
-          "settings": {
-            "title": "Talk like you would in person",
-            "example": "I am a bit overwhelmed by all the choices, can you help?",
-            "text": "Bizmis reads the moment and responds with warm, genuine guidance that turns hesitation into a happy customer."
-          }
-        }
-      },
-      "block_order": ["use-case-1", "use-case-2", "use-case-3", "use-case-4"]
-    },
     "about-story": {
       "type": "about-story",
       "settings": {
@@ -147,7 +98,6 @@
     "hero",
     "collection-grid",
     "product-grid",
-    "demo-guide",
     "newsletter",
     "about-story",
     "testimonials"

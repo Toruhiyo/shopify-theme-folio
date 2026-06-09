@@ -1,0 +1,69 @@
+{%- comment -%}
+  Floating Bizmis pitch panel (BIZ-134).
+
+  Overlays the hero with the Bizmis claim, how-to, use cases, and the
+  early-access install CTA. The code rides in from bizmis.ai/demo (?code=)
+  and is applied by bizmis-demo.js via the shared data-bizmis-* hooks.
+{%- endcomment -%}
+
+{%- if settings.bizmis_demo_enabled -%}
+  {%- liquid
+    assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
+    assign examples = settings.bizmis_panel_examples | newline_to_br | split: '<br />'
+  -%}
+  <aside class="bizmis-hero-panel" aria-label="{{ settings.bizmis_panel_title | escape }}">
+    {%- if settings.bizmis_panel_eyebrow != blank -%}
+      <span class="bizmis-hero-panel__eyebrow label-caps">
+        <span class="bizmis-hero-panel__dot" aria-hidden="true"></span>
+        {{ settings.bizmis_panel_eyebrow }}
+      </span>
+    {%- endif -%}
+
+    {%- if settings.bizmis_panel_title != blank -%}
+      <h2 class="bizmis-hero-panel__title h4">{{ settings.bizmis_panel_title }}</h2>
+    {%- endif -%}
+
+    {%- if settings.bizmis_panel_intro != blank -%}
+      <p class="bizmis-hero-panel__intro">{{ settings.bizmis_panel_intro }}</p>
+    {%- endif -%}
+
+    {%- if examples.size > 0 -%}
+      <ul class="bizmis-hero-panel__examples">
+        {%- for example in examples -%}
+          {%- assign trimmed = example | strip -%}
+          {%- if trimmed != blank -%}
+            <li class="bizmis-hero-panel__example">{{ trimmed }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <div class="bizmis-hero-panel__actions">
+      <a
+        href="{{ listing_url | escape }}"
+        class="btn btn--small bizmis-hero-panel__cta"
+        data-bizmis-install
+        data-label-with-code="{{ settings.bizmis_install_label_with_code | escape }}"
+        data-label-no-code="{{ settings.bizmis_install_label | escape }}"
+        target="_blank"
+        rel="noopener"
+      >{{ settings.bizmis_install_label }}</a>
+
+      <span class="bizmis-hero-panel__code" data-bizmis-code-chip hidden>
+        <span class="bizmis-hero-panel__code-label">Code</span>
+        <code data-bizmis-code></code>
+        <button
+          type="button"
+          class="bizmis-hero-panel__copy"
+          data-bizmis-code-copy
+          data-copied-label="Copied"
+          aria-label="Copy early-access code"
+        >Copy</button>
+      </span>
+    </div>
+
+    {%- if settings.bizmis_panel_note != blank -%}
+      <p class="bizmis-hero-panel__note">{{ settings.bizmis_panel_note }}</p>
+    {%- endif -%}
+  </aside>
+{%- endif -%}

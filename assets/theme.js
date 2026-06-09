@@ -6,16 +6,28 @@
   'use strict';
 
   /* --- Sticky Header --- */
+  /* Over a hero, the header is transparent (blends with the artwork) and turns
+     into solid chrome once the hero scrolls past, mirroring the bizmis.ai nav. */
   const header = document.querySelector('.header');
   if (header) {
+    const hero = document.querySelector('.hero-mosaic');
     const SCROLL_THRESHOLD = 50;
-    let lastScroll = 0;
+    const HERO_EXIT_OFFSET = 100;
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      header.classList.toggle('scrolled', currentScroll > SCROLL_THRESHOLD);
-      lastScroll = currentScroll;
-    }, { passive: true });
+    function updateHeaderState() {
+      const scrollY = window.pageYOffset;
+      if (hero) {
+        const inHero = scrollY < hero.offsetHeight - HERO_EXIT_OFFSET;
+        header.classList.toggle('is-transparent', inHero);
+        header.classList.toggle('scrolled', !inHero);
+      } else {
+        header.classList.toggle('scrolled', scrollY > SCROLL_THRESHOLD);
+      }
+    }
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', updateHeaderState, { passive: true });
   }
 
   const DESKTOP_NAV_BREAKPOINT = 990;

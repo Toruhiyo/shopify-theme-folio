@@ -467,6 +467,51 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(15, 30, 22, 0.95);
 }
 
+/* Transparent header that blends over the hero artwork (home / hero pages). */
+.header.is-transparent {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+
+.header.is-transparent .header__brand-name,
+.header.is-transparent .header__nav-link,
+.header.is-transparent .header__icon-btn,
+.header.is-transparent .locale-selector__trigger {
+  color: #fff;
+}
+
+.header.is-transparent .header__brand-tagline {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header.is-transparent .header__nav-link:hover,
+.header.is-transparent .header__nav-link.is-active,
+.header.is-transparent .header__nav-item.is-mega-active .header__nav-link {
+  color: #fff;
+}
+
+.header.is-transparent .header__nav-link::after {
+  background: #fff;
+}
+
+.header.is-transparent .header__icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+/* Pull the hero up under the (transparent) header so the artwork sits behind it. */
+.template-index .hero-mosaic-section {
+  margin-top: -4rem;
+}
+
+@media (min-width: 990px) {
+  .template-index .hero-mosaic-section {
+    margin-top: -4.5rem;
+  }
+}
+
 /* Light theme is the default. Dark mode only activates via [data-theme="dark"]. */
 
 .header__primary {
@@ -1045,8 +1090,10 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
   background-color: var(--color-primary);
 }
 
@@ -3218,8 +3265,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
 }
 
-.bizmis-demo-bar__code[hidden],
-.demo-guide__code[hidden] {
+.bizmis-demo-bar__code[hidden] {
   display: none;
 }
 
@@ -3292,159 +3338,152 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --- Bizmis Demo Guide (BIZ-134) --- */
-.demo-guide__grid {
-  list-style: none;
-  margin: 0 0 2rem;
-  padding: 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 750px) {
-  .demo-guide__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* --- Bizmis hero panel (BIZ-134) — floating Bizmis pitch over the hero --- */
+.bizmis-hero-panel {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.35rem;
+  text-align: left;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: calc(var(--border-radius) + 4px);
+  background: rgba(20, 30, 25, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.65);
 }
 
 @media (min-width: 990px) {
-  .demo-guide__grid {
-    grid-template-columns: repeat(4, 1fr);
+  .bizmis-hero-panel {
+    position: absolute;
+    left: clamp(1.5rem, 4vw, 3.5rem);
+    bottom: clamp(1.5rem, 4vw, 3rem);
+    width: 22rem;
+    margin: 0;
   }
 }
 
-.demo-guide__card {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem 1.25rem 1.25rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background-color: var(--color-card);
-}
-
-.demo-guide__index {
+.bizmis-hero-panel__eyebrow {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-bottom: 0.85rem;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-gold);
+}
+
+.bizmis-hero-panel__dot {
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 9999px;
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
-  font-weight: 700;
-  font-size: 0.8125rem;
+  background-color: var(--color-gold);
+  animation: bizmis-demo-pulse 2.4s ease-in-out infinite;
 }
 
-.demo-guide__card-title {
-  margin: 0 0 0.6rem;
+.bizmis-hero-panel__title {
+  margin: 0 0 0.4rem;
+  color: #fff;
 }
 
-.demo-guide__example {
-  margin: 0 0 0.65rem;
+.bizmis-hero-panel__intro {
+  margin: 0 0 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.bizmis-hero-panel__examples {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
-.demo-guide__quote {
+.bizmis-hero-panel__example {
+  position: relative;
+  padding-left: 1.1rem;
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.4;
-  color: var(--color-primary);
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.demo-guide__card-text {
-  margin: 0;
-  color: var(--color-muted-foreground);
-  font-size: 0.875rem;
-  line-height: 1.6;
+.bizmis-hero-panel__example::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-gold);
+  font-style: normal;
 }
 
-.demo-guide__notice {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  max-width: 760px;
-  margin: 0 auto 2rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background-color: var(--color-secondary);
-  text-align: center;
-}
-
-.demo-guide__notice-heading {
-  margin: 0;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.demo-guide__notice-text {
-  color: var(--color-muted-foreground);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.demo-guide__notice-text p {
-  margin: 0;
-}
-
-.demo-guide__cta {
-  text-align: center;
-}
-
-.demo-guide__cta-heading {
-  margin: 0 0 0.5rem;
-}
-
-.demo-guide__cta-text {
-  max-width: 640px;
-  margin: 0 auto 1.25rem;
-  color: var(--color-muted-foreground);
-  line-height: 1.6;
-}
-
-.demo-guide__cta-row {
+.bizmis-hero-panel__actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
-.demo-guide__code {
+.bizmis-hero-panel__cta.btn {
+  background-color: #fff;
+  color: var(--color-primary);
+  border-color: #fff;
+}
+
+.bizmis-hero-panel__cta.btn:hover {
+  opacity: 0.9;
+}
+
+.bizmis-hero-panel__code {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.4rem 0.35rem 0.75rem;
-  border: 1px solid var(--color-border);
+  gap: 0.4rem;
+  padding: 0.2rem 0.25rem 0.2rem 0.6rem;
   border-radius: 9999px;
-  background-color: var(--color-card);
+  background-color: rgba(255, 255, 255, 0.16);
+  font-size: 0.75rem;
 }
 
-.demo-guide__code code {
+.bizmis-hero-panel__code[hidden] {
+  display: none;
+}
+
+.bizmis-hero-panel__code-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.bizmis-hero-panel__code code {
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--color-foreground);
 }
 
-.demo-guide__copy {
+.bizmis-hero-panel__copy {
   border: 0;
   cursor: pointer;
-  padding: 0.25rem 0.6rem;
+  padding: 0.15rem 0.5rem;
   border-radius: 9999px;
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
-  font-size: 0.6875rem;
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-size: 0.625rem;
   font-weight: 600;
 }
 
-.demo-guide__copy:hover {
-  opacity: 0.9;
+.bizmis-hero-panel__copy:hover {
+  background-color: rgba(255, 255, 255, 0.34);
+}
+
+.bizmis-hero-panel__note {
+  margin: 0;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
 }

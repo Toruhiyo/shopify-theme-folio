@@ -284,6 +284,57 @@
         "id": "bizmis_demo_fallback_code",
         "label": "Fallback early-access code",
         "info": "Optional. Shown when a visitor lands without a ?code= param."
+      },
+      {
+        "type": "header",
+        "content": "Hero panel"
+      },
+      {
+        "type": "paragraph",
+        "content": "Floating Bizmis pitch shown over the home hero."
+      },
+      {
+        "type": "text",
+        "id": "bizmis_panel_eyebrow",
+        "default": "Powered by Bizmis",
+        "label": "Eyebrow"
+      },
+      {
+        "type": "text",
+        "id": "bizmis_panel_title",
+        "default": "Meet your voice store clerk",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "bizmis_panel_intro",
+        "default": "Tap the voice button in the corner and just talk, the way you would with a clerk on the shop floor.",
+        "label": "Intro"
+      },
+      {
+        "type": "textarea",
+        "id": "bizmis_panel_examples",
+        "default": "I need a gift for someone who loves mystery novels.\nWhat goes well with this journal?\nWhat is your return policy?\nI am overwhelmed by the choices, can you help?",
+        "label": "Example prompts",
+        "info": "One per line. These reflect the Bizmis sales and support benefits."
+      },
+      {
+        "type": "text",
+        "id": "bizmis_panel_note",
+        "default": "Demo store. Explore freely; checkout, payments, emails, and phone numbers are not real.",
+        "label": "Test-store note"
+      },
+      {
+        "type": "text",
+        "id": "bizmis_install_label",
+        "default": "Install Bizmis",
+        "label": "Install button label (no code)"
+      },
+      {
+        "type": "text",
+        "id": "bizmis_install_label_with_code",
+        "default": "Install with your early-access code",
+        "label": "Install button label (with code)"
       }
     ]
   }

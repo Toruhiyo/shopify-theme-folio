@@ -14,12 +14,13 @@
   var COPIED_RESET_MS = 2000;
 
   /* Coachmark timing (kept slow + calm) and layout. */
-  var COACH_START_MS = 1600;   // wait for the widget to mount before the first pop
-  var COACH_SHOW_MS = 6000;    // how long a bubble lingers
-  var COACH_GAP_MS = 1400;     // empty pause between bubbles
+  var COACH_START_MS = 1600;   // wait for the widget to mount before the first hint
+  var COACH_SHOW_MS = 6000;    // how long a hint lingers
+  var COACH_GAP_MS = 250;      // brief pause between hints (kept short)
   var COACH_FADE_MS = 600;     // matches the CSS fade duration
   var COACH_MARGIN = 12;       // viewport edge padding
-  var COACH_GAP_PX = 14;       // gap between the bubble tail and the widget
+  var COACH_GAP_PX = 10;       // gap between the hint and the widget card
+  var COACH_FIND_MS = 250;     // how often to re-scan for the widget card
   var WIDGET_SELECTORS = ['#bizmis-avatar-embed', '.bizmis-avatar-widget-root', '#avatar-root', '[data-avatar-widget]'];
 
   function isAttributionParam(key) {
@@ -153,18 +154,27 @@
     return null;
   }
 
-  /* The visible widget is a framer-motion draggable inside the fixed mount, so
-     its position only shows on a descendant. Track the largest one — it follows
-     the card (and the user dragging it) without depending on the widget's
-     internal class names. */
-  function largestDescendant(root) {
+  function hasBackground(el) {
+    var bg = window.getComputedStyle(el).backgroundColor;
+    return bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)';
+  }
+
+  /* The visible widget is a framer-motion draggable card inside the fixed mount.
+     The card overflows a much taller transparent avatar canvas, so we can't use
+     the largest descendant. Instead take the largest element that actually paints
+     a background — that's the card box, and it follows drags/scrolls/resizes. */
+  function findWidgetCard(root) {
     var nodes = root.getElementsByTagName('*');
     var best = null;
     var bestArea = 0;
     for (var i = 0; i < nodes.length; i++) {
-      var r = nodes[i].getBoundingClientRect();
+      var el = nodes[i];
+      var r = el.getBoundingClientRect();
       var area = r.width * r.height;
-      if (area > bestArea) { bestArea = area; best = nodes[i]; }
+      if (area <= bestArea) continue;
+      if (!hasBackground(el)) continue;
+      bestArea = area;
+      best = el;
     }
     return best;
   }
@@ -173,26 +183,21 @@
     return Math.min(Math.max(value, min), max);
   }
 
-  /* Keep the bubble pinned just above the widget every frame so it rides along
-     with drags, scrolls, and resizes. */
+  /* Keep the hint pinned just above the widget card every frame so it rides
+     along with drags, scrolls, and resizes. */
   function trackToWidget(coach) {
     var root = null;
     var target = null;
+    var lastFind = 0;
 
     function frame() {
       if (!root || !root.isConnected) root = findWidgetRoot();
-
-      var rect = null;
-      if (root) {
-        if (!target || !target.isConnected) {
-          target = largestDescendant(root) || root;
-        } else {
-          var tr = target.getBoundingClientRect();
-          if (tr.width * tr.height === 0) target = largestDescendant(root) || root;
-        }
-        rect = target.getBoundingClientRect();
-        if (rect.width * rect.height === 0) rect = root.getBoundingClientRect();
+      if (root && (!target || !target.isConnected)) {
+        var now = (window.performance && performance.now()) || Date.now();
+        if (now - lastFind > COACH_FIND_MS) { target = findWidgetCard(root); lastFind = now; }
       }
+
+      var rect = target ? target.getBoundingClientRect() : (root ? root.getBoundingClientRect() : null);
 
       var vw = window.innerWidth;
       var vh = window.innerHeight;
@@ -209,11 +214,8 @@
         anchorTop = vh - 96;
       }
 
-      var left = clamp(centerX - w / 2, COACH_MARGIN, vw - w - COACH_MARGIN);
-      var top = Math.max(anchorTop - COACH_GAP_PX - h, COACH_MARGIN);
-      coach.style.left = left + 'px';
-      coach.style.top = top + 'px';
-      coach.style.setProperty('--tail-x', clamp(centerX - left, 18, w - 18) + 'px');
+      coach.style.left = clamp(centerX - w / 2, COACH_MARGIN, vw - w - COACH_MARGIN) + 'px';
+      coach.style.top = Math.max(anchorTop - COACH_GAP_PX - h, COACH_MARGIN) + 'px';
 
       window.requestAnimationFrame(frame);
     }

@@ -23,14 +23,12 @@
             {%- assign tag = tags[forloop.index0] | strip -%}
             <figure class="bizmis-coach__slide{% if forloop.first %} is-active{% endif %}" data-bizmis-coach-slide>
               <figcaption class="bizmis-coach__tag label-caps">
-                <img
+                <span
                   class="bizmis-coach__logo"
-                  src="{{ 'bizmis-logo-white-transparent.png' | asset_url }}"
-                  alt="Bizmis"
-                  width="281"
-                  height="281"
-                  loading="lazy"
-                >
+                  style="-webkit-mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}'); mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}');"
+                  role="img"
+                  aria-label="Bizmis"
+                ></span>
                 {%- if tag != blank -%}<span>{{ tag }}</span>{%- endif -%}
               </figcaption>
               <blockquote class="bizmis-coach__prompt">{{ trimmed }}</blockquote>

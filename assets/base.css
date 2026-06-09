@@ -3382,7 +3382,7 @@ h1, h2, h3, h4, h5, h6 {
 .bizmis-coach__bubble {
   position: relative;
   pointer-events: auto;
-  padding: 0.8rem 0.9rem 0.85rem;
+  padding: 0.85rem 1rem 0.9rem;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 1rem;
@@ -3392,23 +3392,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 20px 48px -22px rgba(0, 0, 0, 0.8);
 }
 
-/* Tail pointing down toward the widget; --tail-x is synced to the widget centre. */
-.bizmis-coach__bubble::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: var(--tail-x, 50%);
-  width: 12px;
-  height: 12px;
-  transform: translateX(-50%) rotate(45deg);
-  background: rgba(20, 30, 25, 0.85);
-  border-right: 1px solid rgba(255, 255, 255, 0.16);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-}
-
 .bizmis-coach__slides {
   display: grid;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.75rem;
 }
 
 .bizmis-coach__slide {
@@ -3427,7 +3413,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
   font-size: 0.5625rem;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -3435,17 +3421,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .bizmis-coach__logo {
   display: block;
-  height: 0.85rem;
-  width: auto;
+  height: 0.9rem;
+  width: 0.9rem;
   flex: 0 0 auto;
+  background-color: var(--color-accent);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
+/* Framed as something the shopper could say: fancy quotes + italics. */
 .bizmis-coach__prompt {
   margin: 0;
   font-family: var(--font-heading);
+  font-style: italic;
   font-size: 0.95rem;
-  line-height: 1.35;
+  line-height: 1.4;
   color: #fff;
+}
+
+.bizmis-coach__prompt::before {
+  content: '\201C';
+  margin-right: 0.05em;
+  color: var(--color-gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.bizmis-coach__prompt::after {
+  content: '\201D';
+  margin-left: 0.05em;
+  color: var(--color-gold);
+  font-style: normal;
+  font-weight: 600;
 }
 
 .bizmis-coach__cta.btn {

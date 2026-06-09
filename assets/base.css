@@ -3356,60 +3356,59 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --- Bizmis coachmark (BIZ-134) — floating "what to ask" hint, page-wide --- */
+/* --- Bizmis coachmark (BIZ-134) — speech bubble that pops above the widget --- */
 .bizmis-coach {
   position: fixed;
-  left: 50%;
-  bottom: 1.5rem;
-  transform: translateX(-50%);
-  z-index: 90;
-  width: min(24rem, calc(100vw - 2rem));
-  padding: 1rem 1.1rem 0.9rem;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: calc(var(--border-radius) + 6px);
-  background: rgba(20, 30, 25, 0.62);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: min(18rem, calc(100vw - 1.5rem));
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transform-origin: bottom center;
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .bizmis-coach[hidden] {
   display: none;
 }
 
-.bizmis-coach__close {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 0;
-  border: 0;
-  border-radius: 9999px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.55);
-  cursor: pointer;
-  transition: color 0.2s ease, background-color 0.2s ease;
+.bizmis-coach.is-shown {
+  opacity: 1;
+  transform: none;
 }
 
-.bizmis-coach__close:hover {
+.bizmis-coach__bubble {
+  position: relative;
+  pointer-events: auto;
+  padding: 0.8rem 0.9rem 0.85rem;
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1rem;
+  background: rgba(20, 30, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 48px -22px rgba(0, 0, 0, 0.8);
 }
 
-.bizmis-coach__logo {
-  display: block;
-  height: 1.6rem;
-  width: auto;
-  margin-bottom: 0.85rem;
+/* Tail pointing down toward the widget; --tail-x is synced to the widget centre. */
+.bizmis-coach__bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: var(--tail-x, 50%);
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%) rotate(45deg);
+  background: rgba(20, 30, 25, 0.85);
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .bizmis-coach__slides {
   display: grid;
+  margin-bottom: 0.7rem;
 }
 
 .bizmis-coach__slide {
@@ -3417,7 +3416,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease;
 }
 
 .bizmis-coach__slide.is-active {
@@ -3426,92 +3424,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bizmis-coach__tag {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.5625rem;
   letter-spacing: 0.1em;
   color: var(--color-gold);
+}
+
+.bizmis-coach__logo {
+  display: block;
+  height: 0.85rem;
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .bizmis-coach__prompt {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 1.0625rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.35;
   color: #fff;
 }
 
-.bizmis-coach__foot {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.bizmis-coach__cta {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding-bottom: 1px;
-  transition: border-color 0.2s ease;
-}
-
-.bizmis-coach__cta:hover {
+.bizmis-coach__cta.btn {
+  display: inline-flex;
+  background-color: #fff;
+  color: var(--color-primary);
   border-color: #fff;
 }
 
-.bizmis-coach__code {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-left: auto;
-  padding: 0.2rem 0.25rem 0.2rem 0.55rem;
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.14);
-  font-size: 0.7rem;
-}
-
-.bizmis-coach__code[hidden] {
-  display: none;
-}
-
-.bizmis-coach__code code {
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-.bizmis-coach__copy {
-  border: 0;
-  cursor: pointer;
-  padding: 0.15rem 0.5rem;
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.22);
-  color: #fff;
-  font-size: 0.6rem;
-  font-weight: 600;
-}
-
-.bizmis-coach__copy:hover {
-  background-color: rgba(255, 255, 255, 0.34);
-}
-
-@media (max-width: 749px) {
-  .bizmis-coach {
-    left: 1rem;
-    right: 1rem;
-    bottom: 5.5rem;
-    width: auto;
-    transform: none;
-  }
+.bizmis-coach__cta.btn:hover {
+  opacity: 0.9;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bizmis-coach__slide {
-    transition: none;
+  .bizmis-coach {
+    transition: opacity 0.2s ease;
+    transform: none;
   }
 }

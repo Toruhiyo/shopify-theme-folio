@@ -11,9 +11,16 @@
 
   var STORAGE_KEY = 'bizmis:demo:attribution';
   var DISMISS_KEY = 'bizmis:demo:bar-dismissed';
-  var COACH_DISMISS_KEY = 'bizmis:demo:coach-dismissed';
   var COPIED_RESET_MS = 2000;
-  var COACH_ROTATE_MS = 4500;
+
+  /* Coachmark timing (kept slow + calm) and layout. */
+  var COACH_START_MS = 1600;   // wait for the widget to mount before the first pop
+  var COACH_SHOW_MS = 6000;    // how long a bubble lingers
+  var COACH_GAP_MS = 1400;     // empty pause between bubbles
+  var COACH_FADE_MS = 600;     // matches the CSS fade duration
+  var COACH_MARGIN = 12;       // viewport edge padding
+  var COACH_GAP_PX = 14;       // gap between the bubble tail and the widget
+  var WIDGET_SELECTORS = ['#bizmis-avatar-embed', '.bizmis-avatar-widget-root', '#avatar-root', '[data-avatar-widget]'];
 
   function isAttributionParam(key) {
     return key === 'ref' || key === 'code' || key.indexOf('utm_') === 0;
@@ -138,53 +145,131 @@
     }
   }
 
-  /* Floating coachmark: reveal it, wire dismissal, and auto-rotate one
-     tagged use case at a time (no visible controls — pauses on hover). */
+  function findWidgetRoot() {
+    for (var i = 0; i < WIDGET_SELECTORS.length; i++) {
+      var el = document.querySelector(WIDGET_SELECTORS[i]);
+      if (el) return el;
+    }
+    return null;
+  }
+
+  /* The visible widget is a framer-motion draggable inside the fixed mount, so
+     its position only shows on a descendant. Track the largest one — it follows
+     the card (and the user dragging it) without depending on the widget's
+     internal class names. */
+  function largestDescendant(root) {
+    var nodes = root.getElementsByTagName('*');
+    var best = null;
+    var bestArea = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var r = nodes[i].getBoundingClientRect();
+      var area = r.width * r.height;
+      if (area > bestArea) { bestArea = area; best = nodes[i]; }
+    }
+    return best;
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  /* Keep the bubble pinned just above the widget every frame so it rides along
+     with drags, scrolls, and resizes. */
+  function trackToWidget(coach) {
+    var root = null;
+    var target = null;
+
+    function frame() {
+      if (!root || !root.isConnected) root = findWidgetRoot();
+
+      var rect = null;
+      if (root) {
+        if (!target || !target.isConnected) {
+          target = largestDescendant(root) || root;
+        } else {
+          var tr = target.getBoundingClientRect();
+          if (tr.width * tr.height === 0) target = largestDescendant(root) || root;
+        }
+        rect = target.getBoundingClientRect();
+        if (rect.width * rect.height === 0) rect = root.getBoundingClientRect();
+      }
+
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var w = coach.offsetWidth;
+      var h = coach.offsetHeight;
+
+      var centerX;
+      var anchorTop;
+      if (rect && (rect.width || rect.height)) {
+        centerX = rect.left + rect.width / 2;
+        anchorTop = rect.top;
+      } else {
+        centerX = vw - 56;       // fallback: roughly where the bottom-right widget sits
+        anchorTop = vh - 96;
+      }
+
+      var left = clamp(centerX - w / 2, COACH_MARGIN, vw - w - COACH_MARGIN);
+      var top = Math.max(anchorTop - COACH_GAP_PX - h, COACH_MARGIN);
+      coach.style.left = left + 'px';
+      coach.style.top = top + 'px';
+      coach.style.setProperty('--tail-x', clamp(centerX - left, 18, w - 18) + 'px');
+
+      window.requestAnimationFrame(frame);
+    }
+
+    window.requestAnimationFrame(frame);
+  }
+
+  /* Pop one tagged use case at a time: fade in, linger, fade out, pause, next.
+     Pauses while hovered so it can be read. */
   function initCoach() {
     var coach = document.querySelector('[data-bizmis-coach]');
     if (!coach) return;
 
-    var dismissed = false;
-    try {
-      dismissed = sessionStorage.getItem(COACH_DISMISS_KEY) === '1';
-    } catch (error) {
-      /* sessionStorage unavailable — show the coachmark. */
-    }
-    if (dismissed) return;
+    var bubble = coach.querySelector('[data-bizmis-coach-bubble]');
+    var slides = coach.querySelectorAll('[data-bizmis-coach-slide]');
+    if (!slides.length) return;
 
     coach.hidden = false;
-
-    var closeButton = coach.querySelector('[data-bizmis-coach-close]');
-    if (closeButton) {
-      closeButton.addEventListener('click', function () {
-        coach.hidden = true;
-        try { sessionStorage.setItem(COACH_DISMISS_KEY, '1'); } catch (error) { /* ignore */ }
-      });
-    }
-
-    var slides = coach.querySelectorAll('[data-bizmis-coach-slide]');
-    if (slides.length < 2) return;
+    trackToWidget(coach);
 
     var index = 0;
     var timer = null;
 
-    function show(next) {
+    function setActive(i) {
       slides[index].classList.remove('is-active');
-      index = (next + slides.length) % slides.length;
+      index = (i + slides.length) % slides.length;
       slides[index].classList.add('is-active');
     }
 
-    function start() {
-      timer = window.setInterval(function () { show(index + 1); }, COACH_ROTATE_MS);
+    function advance() {
+      coach.classList.remove('is-shown');
+      timer = window.setTimeout(function () {
+        setActive(index + 1);
+        show();
+      }, COACH_FADE_MS + COACH_GAP_MS);
     }
 
-    function stop() {
-      if (timer) { window.clearInterval(timer); timer = null; }
+    function show() {
+      coach.classList.add('is-shown');
+      if (slides.length < 2) return;
+      timer = window.setTimeout(advance, COACH_SHOW_MS);
     }
 
-    coach.addEventListener('mouseenter', stop);
-    coach.addEventListener('mouseleave', start);
-    start();
+    if (bubble && slides.length > 1) {
+      bubble.addEventListener('mouseenter', function () {
+        if (timer) { window.clearTimeout(timer); timer = null; }
+        coach.classList.add('is-shown');
+      });
+      bubble.addEventListener('mouseleave', function () {
+        if (timer) window.clearTimeout(timer);
+        timer = window.setTimeout(advance, COACH_SHOW_MS);
+      });
+    }
+
+    setActive(0);
+    timer = window.setTimeout(show, COACH_START_MS);
   }
 
   function init() {

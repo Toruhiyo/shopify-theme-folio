@@ -3381,6 +3381,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bizmis-coach__bubble {
   position: relative;
+  overflow: hidden;
   pointer-events: auto;
   padding: 0.85rem 1rem 0.9rem;
   color: #fff;
@@ -3392,39 +3393,16 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 20px 48px -22px rgba(0, 0, 0, 0.8);
 }
 
-.bizmis-coach__slides {
-  display: grid;
-  margin-bottom: 0.75rem;
-}
-
-.bizmis-coach__slide {
-  grid-area: 1 / 1;
-  margin: 0;
-  opacity: 0;
+/* Faint brand mark behind the content so it never takes up layout space. */
+.bizmis-coach__watermark {
+  position: absolute;
+  right: -0.85rem;
+  bottom: -1rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: 0;
+  opacity: 0.1;
   pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-
-.bizmis-coach__slide.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.bizmis-coach__tag {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.45rem;
-  font-size: 0.5625rem;
-  letter-spacing: 0.1em;
-  color: var(--color-gold);
-}
-
-.bizmis-coach__logo {
-  display: block;
-  height: 0.9rem;
-  width: 0.9rem;
-  flex: 0 0 auto;
   background-color: var(--color-gold);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -3432,6 +3410,42 @@ h1, h2, h3, h4, h5, h6 {
   mask-position: center;
   -webkit-mask-size: contain;
   mask-size: contain;
+}
+
+.bizmis-coach__slides {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  margin-bottom: 0.75rem;
+}
+
+/* The card stays put; the suggestion appears instantly and fades out as a unit. */
+.bizmis-coach__slide {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.bizmis-coach__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: none;
+}
+
+.bizmis-coach__tag {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bizmis-coach__slide.is-active .bizmis-coach__tag {
+  opacity: 1;
 }
 
 /* Framed as something the shopper could say: fancy quotes + italics. */
@@ -3460,15 +3474,32 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+/* Karaoke caption: words reveal one after another (like the landing page). */
+.bizmis-coach__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.18em);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bizmis-coach__slide.is-active .bizmis-coach__word {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--i) * 0.07s);
+}
+
 .bizmis-coach__cta.btn {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
   width: 100%;
+  border-width: 1px;
   background-color: rgba(255, 255, 255, 0.08);
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -3492,7 +3523,13 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
   }
 
-  .bizmis-coach__slide {
+  .bizmis-coach__slide,
+  .bizmis-coach__tag,
+  .bizmis-coach__word {
     transition: none;
+  }
+
+  .bizmis-coach__word {
+    transform: none;
   }
 }

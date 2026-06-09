@@ -16,22 +16,22 @@
   -%}
   <aside class="bizmis-coach" data-bizmis-coach aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
     <div class="bizmis-coach__bubble" data-bizmis-coach-bubble>
+      <span
+        class="bizmis-coach__watermark"
+        style="-webkit-mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}'); mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}');"
+        aria-hidden="true"
+      ></span>
+
       <div class="bizmis-coach__slides" data-bizmis-coach-slides>
         {%- for prompt in prompts -%}
           {%- assign trimmed = prompt | strip -%}
           {%- if trimmed != blank -%}
             {%- assign tag = tags[forloop.index0] | strip -%}
-            <figure class="bizmis-coach__slide{% if forloop.first %} is-active{% endif %}" data-bizmis-coach-slide>
-              <figcaption class="bizmis-coach__tag label-caps">
-                <span
-                  class="bizmis-coach__logo"
-                  style="-webkit-mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}'); mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}');"
-                  role="img"
-                  aria-label="Bizmis"
-                ></span>
-                {%- if tag != blank -%}<span>{{ tag }}</span>{%- endif -%}
-              </figcaption>
-              <blockquote class="bizmis-coach__prompt">{{ trimmed }}</blockquote>
+            <figure class="bizmis-coach__slide" data-bizmis-coach-slide>
+              {%- if tag != blank -%}
+                <figcaption class="bizmis-coach__tag label-caps">{{ tag }}</figcaption>
+              {%- endif -%}
+              <blockquote class="bizmis-coach__prompt">{% assign words = trimmed | split: ' ' %}{% for word in words %}<span class="bizmis-coach__word" style="--i: {{ forloop.index0 }}">{{ word }}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</blockquote>
             </figure>
           {%- endif -%}
         {%- endfor -%}

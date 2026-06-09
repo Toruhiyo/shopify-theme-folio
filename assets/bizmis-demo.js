@@ -88,7 +88,10 @@
       link.setAttribute('href', buildInstallUrl(link.dataset.base, attribution, fallbackCode));
 
       var label = hasCode ? link.dataset.labelWithCode : link.dataset.labelNoCode;
-      if (label) link.textContent = label;
+      if (label) {
+        var labelTarget = link.querySelector('[data-bizmis-install-label]') || link;
+        labelTarget.textContent = label;
+      }
     });
   }
 
@@ -198,6 +201,9 @@
       }
 
       var rect = target ? target.getBoundingClientRect() : (root ? root.getBoundingClientRect() : null);
+
+      /* Match the widget card's width so the two stack as one column. */
+      if (rect && rect.width) coach.style.width = rect.width + 'px';
 
       var vw = window.innerWidth;
       var vh = window.innerHeight;

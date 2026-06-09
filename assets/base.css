@@ -3424,7 +3424,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 0.9rem;
   width: 0.9rem;
   flex: 0 0 auto;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -3461,13 +3461,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .bizmis-coach__cta.btn {
   display: inline-flex;
-  background-color: #fff;
-  color: var(--color-primary);
-  border-color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .bizmis-coach__cta.btn:hover {
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: #fff;
+  color: #fff;
+}
+
+.bizmis-coach__cta-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: 0 0 auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -10,12 +10,10 @@
   'use strict';
 
   var STORAGE_KEY = 'bizmis:demo:attribution';
-  var DISMISS_KEY = 'bizmis:demo:bar-dismissed';
-  var COPIED_RESET_MS = 2000;
 
   /* Coachmark timing (kept slow + calm) and layout. */
   var COACH_START_MS = 1600;   // wait for the widget to mount before the first hint
-  var COACH_SHOW_MS = 6000;    // how long a hint lingers
+  var COACH_SHOW_MS = 4800;    // how long a hint lingers
   var COACH_GAP_MS = 250;      // brief pause between hints (kept short)
   var COACH_FADE_MS = 600;     // matches the CSS fade duration
   var COACH_WORD_MS = 340;     // karaoke dwell per word (matches the landing page)
@@ -94,60 +92,6 @@
         labelTarget.textContent = label;
       }
     });
-  }
-
-  function hydrateCodeDisplays(attribution, fallbackCode) {
-    var code = effectiveCode(attribution, fallbackCode);
-
-    document.querySelectorAll('[data-bizmis-code]').forEach(function (el) {
-      el.textContent = code;
-    });
-
-    document.querySelectorAll('[data-bizmis-code-chip]').forEach(function (chip) {
-      chip.hidden = !code;
-    });
-  }
-
-  function initCopyButtons() {
-    document.querySelectorAll('[data-bizmis-code-copy]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        var chip = button.closest('[data-bizmis-code-chip]') || document;
-        var codeEl = chip.querySelector('[data-bizmis-code]');
-        var code = codeEl ? codeEl.textContent.trim() : '';
-        if (!code || !navigator.clipboard) return;
-
-        navigator.clipboard.writeText(code).then(function () {
-          var original = button.textContent;
-          button.textContent = button.dataset.copiedLabel || 'Copied';
-          setTimeout(function () { button.textContent = original; }, COPIED_RESET_MS);
-        }).catch(function () { /* clipboard blocked */ });
-      });
-    });
-  }
-
-  function initBar() {
-    var bar = document.querySelector('[data-bizmis-demo-bar]');
-    if (!bar) return;
-
-    var dismissed = false;
-    try {
-      dismissed = sessionStorage.getItem(DISMISS_KEY) === '1';
-    } catch (error) {
-      /* sessionStorage unavailable — show the bar. */
-    }
-    if (dismissed) return;
-
-    bar.hidden = false;
-    document.body.classList.add('has-bizmis-demo-bar');
-
-    var dismissButton = bar.querySelector('[data-bizmis-demo-dismiss]');
-    if (dismissButton) {
-      dismissButton.addEventListener('click', function () {
-        bar.hidden = true;
-        document.body.classList.remove('has-bizmis-demo-bar');
-        try { sessionStorage.setItem(DISMISS_KEY, '1'); } catch (error) { /* ignore */ }
-      });
-    }
   }
 
   function findWidgetRoot() {
@@ -305,14 +249,11 @@
   }
 
   function init() {
-    var bar = document.querySelector('[data-bizmis-demo-bar]');
-    var fallbackCode = bar ? (bar.dataset.fallbackCode || '') : '';
+    var coach = document.querySelector('[data-bizmis-coach]');
+    var fallbackCode = coach ? (coach.dataset.fallbackCode || '') : '';
     var attribution = resolveAttribution();
 
     hydrateInstallLinks(attribution, fallbackCode);
-    hydrateCodeDisplays(attribution, fallbackCode);
-    initCopyButtons();
-    initBar();
     initCoach();
   }
 

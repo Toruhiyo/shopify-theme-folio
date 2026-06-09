@@ -14,7 +14,7 @@
     assign prompts = 'bizmis.panel.examples' | t | newline_to_br | split: '<br />'
     assign tags = 'bizmis.panel.example_tags' | t | newline_to_br | split: '<br />'
   -%}
-  <aside class="bizmis-coach" data-bizmis-coach aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
+  <aside class="bizmis-coach" data-bizmis-coach data-fallback-code="{{ settings.bizmis_demo_fallback_code | escape }}" aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
     <div class="bizmis-coach__bubble" data-bizmis-coach-bubble>
       <span
         class="bizmis-coach__watermark"

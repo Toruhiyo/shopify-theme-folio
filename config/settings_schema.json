@@ -312,11 +312,8 @@
         "label": "Intro"
       },
       {
-        "type": "textarea",
-        "id": "bizmis_panel_examples",
-        "default": "A book for my 12-year-old nephew\nAtomic Habits or Deep Work, which first if I procrastinate a lot?\nDo I need to read the original trilogy before the prequels?\nWhere's my order? I haven't received it yet.\nThe cover arrived damaged, can I exchange it?\nDo you ship to Spain, and how long does it take?",
-        "label": "Example prompts",
-        "info": "One per line. These reflect the Bizmis sales and support benefits."
+        "type": "paragraph",
+        "content": "Example prompts are localized in the theme locale files under bizmis.panel.examples (one prompt per line)."
       },
       {
         "type": "text",

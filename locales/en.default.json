@@ -265,5 +265,10 @@
     "skip_to_content": "Skip to content",
     "close": "Close",
     "menu": "Menu"
+  },
+  "bizmis": {
+    "panel": {
+      "examples": "A book for my 12-year-old nephew\nAtomic Habits or Deep Work, which first if I procrastinate a lot?\nDo I need to read the original trilogy before the prequels?\nWhere's my order? I haven't received it yet.\nThe cover arrived damaged, can I exchange it?\nDo you ship to Spain, and how long does it take?"
+    }
   }
 }

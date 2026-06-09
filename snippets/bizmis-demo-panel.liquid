@@ -9,7 +9,7 @@
 {%- if settings.bizmis_demo_enabled -%}
   {%- liquid
     assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
-    assign examples = settings.bizmis_panel_examples | newline_to_br | split: '<br />'
+    assign examples = 'bizmis.panel.examples' | t | newline_to_br | split: '<br />'
   -%}
   <aside class="bizmis-hero-panel" aria-label="{{ settings.bizmis_panel_title | escape }}">
     {%- if settings.bizmis_panel_eyebrow != blank -%}

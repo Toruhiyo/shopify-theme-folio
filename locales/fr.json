@@ -235,5 +235,10 @@
       "published_on": "Publié le {{ date }}",
       "back_to_blog": "Retour au {{ blog }}"
     }
+  },
+  "bizmis": {
+    "panel": {
+      "examples": "Un livre pour mon neveu de 12 ans\nUn rien peut tout changer ou Deep Work, lequel lire en premier si je procrastine beaucoup ?\nDois-je lire la trilogie originale avant les préquelles ?\nOù est ma commande ? Je ne l'ai pas encore reçue.\nLa couverture est arrivée abîmée, puis-je l'échanger ?\nLivrez-vous en Espagne, et combien de temps faut-il ?"
+    }
   }
 }

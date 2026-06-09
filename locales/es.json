@@ -240,5 +240,10 @@
     "skip_to_content": "Saltar al contenido",
     "close": "Cerrar",
     "menu": "Menú"
+  },
+  "bizmis": {
+    "panel": {
+      "examples": "Un libro para mi sobrino de 12 años\n¿Hábitos atómicos o Deep Work? ¿Cuál leo primero si procrastino mucho?\n¿Necesito leer la trilogía original antes de las precuelas?\n¿Dónde está mi pedido? Todavía no lo he recibido.\nLa cubierta llegó dañada, ¿puedo cambiarlo?\n¿Hacéis envíos a España? ¿Cuánto tarda?"
+    }
   }
 }

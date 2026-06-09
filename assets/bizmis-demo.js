@@ -245,39 +245,37 @@
     var index = 0;
     var timer = null;
 
-    function setActive(i) {
-      slides[index].classList.remove('is-active');
-      index = (i + slides.length) % slides.length;
+    /* The card stays put; only the suggestion text fades in, lingers, fades
+       out, pauses, then the next one fades in. */
+    function showText() {
       slides[index].classList.add('is-active');
-    }
-
-    function advance() {
-      coach.classList.remove('is-shown');
-      timer = window.setTimeout(function () {
-        setActive(index + 1);
-        show();
-      }, COACH_FADE_MS + COACH_GAP_MS);
-    }
-
-    function show() {
-      coach.classList.add('is-shown');
       if (slides.length < 2) return;
-      timer = window.setTimeout(advance, COACH_SHOW_MS);
+      timer = window.setTimeout(hideText, COACH_SHOW_MS);
+    }
+
+    function hideText() {
+      slides[index].classList.remove('is-active');
+      timer = window.setTimeout(function () {
+        index = (index + 1) % slides.length;
+        showText();
+      }, COACH_FADE_MS + COACH_GAP_MS);
     }
 
     if (bubble && slides.length > 1) {
       bubble.addEventListener('mouseenter', function () {
         if (timer) { window.clearTimeout(timer); timer = null; }
-        coach.classList.add('is-shown');
+        slides[index].classList.add('is-active');
       });
       bubble.addEventListener('mouseleave', function () {
         if (timer) window.clearTimeout(timer);
-        timer = window.setTimeout(advance, COACH_SHOW_MS);
+        timer = window.setTimeout(hideText, COACH_SHOW_MS);
       });
     }
 
-    setActive(0);
-    timer = window.setTimeout(show, COACH_START_MS);
+    timer = window.setTimeout(function () {
+      coach.classList.add('is-shown');
+      showText();
+    }, COACH_START_MS);
   }
 
   function init() {

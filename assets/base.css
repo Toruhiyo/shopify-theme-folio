@@ -3401,12 +3401,13 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: 1 / 1;
   margin: 0;
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
 .bizmis-coach__slide.is-active {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
 }
 
 .bizmis-coach__tag {
@@ -3489,5 +3490,9 @@ h1, h2, h3, h4, h5, h6 {
   .bizmis-coach {
     transition: opacity 0.2s ease;
     transform: none;
+  }
+
+  .bizmis-coach__slide {
+    transition: none;
   }
 }

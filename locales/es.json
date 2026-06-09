@@ -243,7 +243,17 @@
   },
   "bizmis": {
     "panel": {
-      "examples": "Un libro para mi sobrino de 12 años\n¿Hábitos atómicos o Deep Work? ¿Cuál leo primero si procrastino mucho?\n¿Necesito leer la trilogía original antes de las precuelas?\n¿Dónde está mi pedido? Todavía no lo he recibido.\nLa cubierta llegó dañada, ¿puedo cambiarlo?\n¿Hacéis envíos a España? ¿Cuánto tarda?"
+      "eyebrow": "Con tecnología de Bizmis",
+      "title": "Conoce a tu dependiente de voz",
+      "intro": "Toca el botón de voz de la esquina y habla sin más, como lo harías con un dependiente en la tienda.",
+      "examples": "Un libro para mi sobrino de 12 años\n¿Hábitos atómicos o Deep Work? ¿Cuál leo primero si procrastino mucho?\n¿Necesito leer la trilogía original antes de las precuelas?\n¿Dónde está mi pedido? Todavía no lo he recibido.\nLa cubierta llegó dañada, ¿puedo cambiarlo?\n¿Hacéis envíos a España? ¿Cuánto tarda?",
+      "note": "Tienda de demostración. Explora con libertad; el proceso de pago, los pagos, los correos electrónicos y los teléfonos no son reales.",
+      "install": "Instala Bizmis",
+      "install_with_code": "Instala con tu código de acceso anticipado",
+      "code_label": "Código",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "copy_aria": "Copiar el código de acceso anticipado"
     }
   }
 }

@@ -44,7 +44,7 @@
       },
       "8765772171712610185": {
         "type": "shopify://apps/t-lab-ai-language-translate/blocks/language_switcher/b5b83690-efd4-434d-8c6a-a5cef4019faf",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "enable_language_switcher": true,
           "enable_country_region_switcher": false,

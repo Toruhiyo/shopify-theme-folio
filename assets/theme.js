@@ -10,6 +10,7 @@
      into solid chrome once the hero scrolls past, mirroring the bizmis.ai nav. */
   const header = document.querySelector('.header');
   if (header) {
+    const headerSection = header.closest('.header-section');
     const hero = document.querySelector('.hero-mosaic');
     const SCROLL_THRESHOLD = 50;
     const HERO_EXIT_OFFSET = 100;
@@ -18,6 +19,7 @@
       const scrollY = window.pageYOffset;
       if (hero) {
         const inHero = scrollY < hero.offsetHeight - HERO_EXIT_OFFSET;
+        if (headerSection) headerSection.classList.toggle('is-pinned', !inHero);
         header.classList.toggle('is-transparent', inHero);
         header.classList.toggle('scrolled', !inHero);
       } else {

@@ -94,13 +94,15 @@
 
   {% render 'bizmis-demo-bar' %}
 
-  {% sections 'header-group' %}
+  <div class="page-shell">
+    {% sections 'header-group' %}
 
-  <main id="MainContent" class="main-content" role="main" tabindex="-1">
-    {{ content_for_layout }}
-  </main>
+    <main id="MainContent" class="main-content" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
-  {% sections 'footer-group' %}
+    {% sections 'footer-group' %}
+  </div>
 
   {% render 'cart-drawer' %}
 

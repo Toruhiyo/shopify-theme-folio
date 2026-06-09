@@ -452,10 +452,33 @@ h1, h2, h3, h4, h5, h6 {
    height), so the header stays pinned across the whole page. Sticking the inner
    .header instead only works within its short section wrapper, so it wouldn't
    pin once the hero scrolls past. */
+/* Positioning context so the home header can float over the hero (absolute)
+   and scroll away with it, before re-pinning as fixed chrome. */
+.page-shell {
+  position: relative;
+}
+
+/* Inner pages: a normal sticky header. The section wrapper is the sticky
+   element because its parent (.page-shell) spans the full page height. */
 .header-section {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+/* Home: the header floats over the hero and scrolls away with it (it is part of
+   the page flow visually, but out of flow so the artwork sits behind it). */
+.template-index .header-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Once the hero is behind us, re-pin the header at the top as solid chrome,
+   mirroring the bizmis.ai landing navbar. */
+.template-index .header-section.is-pinned {
+  position: fixed;
 }
 
 .header {
@@ -505,19 +528,6 @@ h1, h2, h3, h4, h5, h6 {
 .header.is-transparent .header__icon-btn:hover {
   background-color: rgba(255, 255, 255, 0.14);
   color: #fff;
-}
-
-/* Pull the hero up under the (transparent) header so the artwork sits behind it.
-   The extra -1px covers the header's bottom border, otherwise a hairline of the
-   page background shows at the very top edge. */
-.template-index .hero-mosaic-section {
-  margin-top: calc(-4rem - 1px);
-}
-
-@media (min-width: 990px) {
-  .template-index .hero-mosaic-section {
-    margin-top: calc(-4.5rem - 1px);
-  }
 }
 
 /* Light theme is the default. Dark mode only activates via [data-theme="dark"]. */

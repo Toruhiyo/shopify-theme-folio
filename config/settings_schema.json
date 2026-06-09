@@ -314,7 +314,7 @@
       {
         "type": "textarea",
         "id": "bizmis_panel_examples",
-        "default": "I need a gift for someone who loves mystery novels.\nWhat goes well with this journal?\nWhat is your return policy?\nI am overwhelmed by the choices, can you help?",
+        "default": "A book for my 12-year-old nephew\nAtomic Habits or Deep Work, which first if I procrastinate a lot?\nDo I need to read the original trilogy before the prequels?\nWhere's my order? I haven't received it yet.\nThe cover arrived damaged, can I exchange it?\nDo you ship to Spain, and how long does it take?",
         "label": "Example prompts",
         "info": "One per line. These reflect the Bizmis sales and support benefits."
       },

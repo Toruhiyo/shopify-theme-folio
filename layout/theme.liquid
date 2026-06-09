@@ -92,6 +92,8 @@
     {{ 'accessibility.skip_to_content' | t }}
   </a>
 
+  {% render 'bizmis-demo-bar' %}
+
   {% sections 'header-group' %}
 
   <main id="MainContent" class="main-content" role="main" tabindex="-1">
@@ -103,6 +105,10 @@
   {% render 'cart-drawer' %}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  {%- if settings.bizmis_demo_enabled -%}
+    <script src="{{ 'bizmis-demo.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
 
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>

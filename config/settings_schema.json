@@ -251,5 +251,40 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Bizmis Demo",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Demo-store helpers for the Bizmis early-access invite flow. The install CTA and early-access code are read from the ?ref= and ?code= query params carried in from bizmis.ai/demo."
+      },
+      {
+        "type": "checkbox",
+        "id": "bizmis_demo_enabled",
+        "default": true,
+        "label": "Show demo install bar",
+        "info": "Sticky top bar inviting merchants to install Bizmis with their early-access code."
+      },
+      {
+        "type": "url",
+        "id": "bizmis_app_listing_url",
+        "label": "Shopify App Store listing URL",
+        "info": "Where the install CTA points. The early-access code rides along as a query param."
+      },
+      {
+        "type": "text",
+        "id": "bizmis_app_listing_url_fallback",
+        "default": "https://apps.shopify.com/bizmis",
+        "label": "Listing URL fallback",
+        "info": "Used when the URL field above is left blank."
+      },
+      {
+        "type": "text",
+        "id": "bizmis_demo_fallback_code",
+        "label": "Fallback early-access code",
+        "info": "Optional. Shown when a visitor lands without a ?code= param."
+      }
+    ]
   }
 ]

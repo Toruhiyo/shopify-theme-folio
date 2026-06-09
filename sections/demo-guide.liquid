@@ -1,0 +1,219 @@
+{%- liquid
+  assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
+-%}
+<section class="section-spacing demo-guide">
+  <div class="page-width">
+    <div class="section-header">
+      {%- if section.settings.label != blank -%}
+        <span class="section-header__label label-caps text-muted">{{ section.settings.label }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="section-header__title h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro != blank -%}
+        <p class="section-header__description">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="demo-guide__grid">
+        {%- for block in section.blocks -%}
+          <li class="demo-guide__card" {{ block.shopify_attributes }}>
+            <span class="demo-guide__index" aria-hidden="true">{{ forloop.index }}</span>
+            {%- if block.settings.title != blank -%}
+              <h3 class="demo-guide__card-title h5">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.example != blank -%}
+              <p class="demo-guide__example">
+                <span class="demo-guide__example-label label-caps text-muted">Try saying</span>
+                <span class="demo-guide__quote">&ldquo;{{ block.settings.example }}&rdquo;</span>
+              </p>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="demo-guide__card-text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.notice_text != blank -%}
+      <div class="demo-guide__notice" role="note">
+        {%- if section.settings.notice_heading != blank -%}
+          <p class="demo-guide__notice-heading">{{ section.settings.notice_heading }}</p>
+        {%- endif -%}
+        <div class="demo-guide__notice-text rich-text">{{ section.settings.notice_text }}</div>
+      </div>
+    {%- endif -%}
+
+    <div class="demo-guide__cta">
+      {%- if section.settings.merchant_heading != blank -%}
+        <h3 class="demo-guide__cta-heading h4">{{ section.settings.merchant_heading }}</h3>
+      {%- endif -%}
+      {%- if section.settings.merchant_text != blank -%}
+        <p class="demo-guide__cta-text">{{ section.settings.merchant_text }}</p>
+      {%- endif -%}
+
+      <div class="demo-guide__cta-row">
+        <a
+          href="{{ listing_url | escape }}"
+          class="btn btn--primary"
+          data-bizmis-install
+          data-label-with-code="{{ section.settings.button_label_with_code | escape }}"
+          data-label-no-code="{{ section.settings.button_label | escape }}"
+          target="_blank"
+          rel="noopener"
+        >{{ section.settings.button_label }}</a>
+
+        <span class="demo-guide__code" data-bizmis-code-chip hidden>
+          <span class="demo-guide__code-label label-caps text-muted">Your code</span>
+          <code data-bizmis-code></code>
+          <button
+            type="button"
+            class="demo-guide__copy"
+            data-bizmis-code-copy
+            data-copied-label="Copied"
+            aria-label="Copy early-access code"
+          >Copy</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bizmis demo guide",
+  "tag": "section",
+  "class": "demo-guide-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "default": "Try the voice clerk",
+      "label": "Label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "How to use Bizmis",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "default": "Tap the Bizmis button in the corner and just talk, the way you would with a clerk on the shop floor. Here are a few things to try.",
+      "label": "Intro"
+    },
+    {
+      "type": "header",
+      "content": "Test-store notice"
+    },
+    {
+      "type": "text",
+      "id": "notice_heading",
+      "default": "Good to know",
+      "label": "Notice heading"
+    },
+    {
+      "type": "richtext",
+      "id": "notice_text",
+      "default": "<p>This is a Bizmis demo store, so feel free to explore and chat as much as you like. It is a showcase, which means checkout, payments, shipping, emails, and phone numbers are not real. Nothing here charges a card or sends a message.</p>",
+      "label": "Notice text"
+    },
+    {
+      "type": "header",
+      "content": "Merchant call to action"
+    },
+    {
+      "type": "text",
+      "id": "merchant_heading",
+      "default": "Like what you see?",
+      "label": "CTA heading"
+    },
+    {
+      "type": "textarea",
+      "id": "merchant_text",
+      "default": "Behind the scenes, Bizmis records session replays, auto-tags every chat, and surfaces funnel insights, so you always know where to improve. Add it to your store in a few clicks.",
+      "label": "CTA text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Install Bizmis",
+      "label": "Install button label (no code)"
+    },
+    {
+      "type": "text",
+      "id": "button_label_with_code",
+      "default": "Install with your early-access code",
+      "label": "Install button label (with code)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "use_case",
+      "name": "Use case",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Find the perfect pick",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "example",
+          "default": "I need a gift for someone who loves mystery novels.",
+          "label": "Example prompt"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Bizmis asks a question or two and guides you to the right book, so more visitors feel confident enough to buy.",
+          "label": "What happens"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bizmis demo guide",
+      "blocks": [
+        {
+          "type": "use_case",
+          "settings": {
+            "title": "Find the perfect pick",
+            "example": "I need a gift for someone who loves mystery novels.",
+            "text": "Bizmis asks a question or two and guides you to the right book, so more visitors feel confident enough to buy."
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "title": "Discover what pairs well",
+            "example": "What goes well with this journal?",
+            "text": "It suggests complementary add-ons and upgrades the way a great in-store associate would, lifting the order naturally."
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "title": "Ask anything about the store",
+            "example": "What is your return policy, and do you ship internationally?",
+            "text": "Instant, accurate answers on policies, products, and shipping, any time of day, with no waiting."
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "title": "Talk like you would in person",
+            "example": "I am a bit overwhelmed by all the choices, can you help?",
+            "text": "Bizmis reads the moment and responds with warm, genuine guidance that turns hesitation into a happy customer."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

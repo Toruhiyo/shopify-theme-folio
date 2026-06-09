@@ -242,7 +242,7 @@
       "title": "Découvrez votre vendeur vocal",
       "intro": "Touchez le bouton vocal dans le coin et parlez, comme vous le feriez avec un vendeur en boutique.",
       "examples": "Un livre pour mon neveu de 12 ans\nUn rien peut tout changer ou Deep Work, lequel lire en premier si je procrastine beaucoup ?\nDois-je lire la trilogie originale avant les préquelles ?\nOù est ma commande ? Je ne l'ai pas encore reçue.\nLa couverture est arrivée abîmée, puis-je l'échanger ?\nLivrez-vous en Espagne, et combien de temps faut-il ?",
-      "note": "Boutique de démonstration. Explorez librement ; le paiement, les e-mails et les numéros de téléphone ne sont pas réels.",
+      "example_tags": "Plus de ventes · Découverte produit\nPlus de ventes · Comparaison produit\nPlus de ventes · Expertise produit\nMoins de support · Statut de commande\nMoins de support · Retours et échanges\nMoins de support · Questions avant achat",
       "install": "Installer Bizmis",
       "install_with_code": "Installer avec votre code d'accès anticipé",
       "code_label": "Code",

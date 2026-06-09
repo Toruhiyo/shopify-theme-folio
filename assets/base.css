@@ -3356,152 +3356,162 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --- Bizmis hero panel (BIZ-134) — floating Bizmis pitch over the hero --- */
-.bizmis-hero-panel {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  max-width: 30rem;
-  margin: 0 auto;
-  padding: 1.25rem 1.35rem;
-  text-align: left;
+/* --- Bizmis coachmark (BIZ-134) — floating "what to ask" hint, page-wide --- */
+.bizmis-coach {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 90;
+  width: min(24rem, calc(100vw - 2rem));
+  padding: 1rem 1.1rem 0.9rem;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: calc(var(--border-radius) + 4px);
-  background: rgba(20, 30, 25, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: calc(var(--border-radius) + 6px);
+  background: rgba(20, 30, 25, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
 }
 
-@media (min-width: 990px) {
-  .bizmis-hero-panel {
-    position: absolute;
-    left: clamp(1.5rem, 4vw, 3.5rem);
-    bottom: clamp(1.5rem, 4vw, 3rem);
-    width: 22rem;
-    margin: 0;
-  }
+.bizmis-coach[hidden] {
+  display: none;
 }
 
-.bizmis-hero-panel__eyebrow {
+.bizmis-coach__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.6rem;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.bizmis-coach__close:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.bizmis-coach__logo {
+  display: block;
+  height: 1.6rem;
+  width: auto;
+  margin-bottom: 0.85rem;
+}
+
+.bizmis-coach__slides {
+  display: grid;
+}
+
+.bizmis-coach__slide {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.bizmis-coach__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bizmis-coach__tag {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
   color: var(--color-gold);
 }
 
-.bizmis-hero-panel__dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 9999px;
-  background-color: var(--color-gold);
-  animation: bizmis-demo-pulse 2.4s ease-in-out infinite;
-}
-
-.bizmis-hero-panel__title {
-  margin: 0 0 0.4rem;
+.bizmis-coach__prompt {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  line-height: 1.4;
   color: #fff;
 }
 
-.bizmis-hero-panel__intro {
-  margin: 0 0 0.9rem;
-  font-size: 0.875rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.bizmis-hero-panel__examples {
-  list-style: none;
-  margin: 0 0 1rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.bizmis-hero-panel__example {
-  position: relative;
-  padding-left: 1.1rem;
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.bizmis-hero-panel__example::before {
-  content: '\201C';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-gold);
-  font-style: normal;
-}
-
-.bizmis-hero-panel__actions {
+.bizmis-coach__foot {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.bizmis-hero-panel__cta.btn {
-  background-color: #fff;
-  color: var(--color-primary);
+.bizmis-coach__cta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+}
+
+.bizmis-coach__cta:hover {
   border-color: #fff;
 }
 
-.bizmis-hero-panel__cta.btn:hover {
-  opacity: 0.9;
-}
-
-.bizmis-hero-panel__code {
+.bizmis-coach__code {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.2rem 0.25rem 0.2rem 0.6rem;
+  margin-left: auto;
+  padding: 0.2rem 0.25rem 0.2rem 0.55rem;
   border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.16);
-  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.14);
+  font-size: 0.7rem;
 }
 
-.bizmis-hero-panel__code[hidden] {
+.bizmis-coach__code[hidden] {
   display: none;
 }
 
-.bizmis-hero-panel__code-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-
-.bizmis-hero-panel__code code {
+.bizmis-coach__code code {
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
-.bizmis-hero-panel__copy {
+.bizmis-coach__copy {
   border: 0;
   cursor: pointer;
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.22);
   color: #fff;
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   font-weight: 600;
 }
 
-.bizmis-hero-panel__copy:hover {
+.bizmis-coach__copy:hover {
   background-color: rgba(255, 255, 255, 0.34);
 }
 
-.bizmis-hero-panel__note {
-  margin: 0;
-  font-size: 0.6875rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.6);
+@media (max-width: 749px) {
+  .bizmis-coach {
+    left: 1rem;
+    right: 1rem;
+    bottom: 5.5rem;
+    width: auto;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bizmis-coach__slide {
+    transition: none;
+  }
 }

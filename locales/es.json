@@ -247,7 +247,7 @@
       "title": "Conoce a tu dependiente de voz",
       "intro": "Toca el botón de voz de la esquina y habla sin más, como lo harías con un dependiente en la tienda.",
       "examples": "Un libro para mi sobrino de 12 años\n¿Hábitos atómicos o Deep Work? ¿Cuál leo primero si procrastino mucho?\n¿Necesito leer la trilogía original antes de las precuelas?\n¿Dónde está mi pedido? Todavía no lo he recibido.\nLa cubierta llegó dañada, ¿puedo cambiarlo?\n¿Hacéis envíos a España? ¿Cuánto tarda?",
-      "note": "Tienda de demostración. Explora con libertad; el proceso de pago, los pagos, los correos electrónicos y los teléfonos no son reales.",
+      "example_tags": "Más ventas · Descubrir productos\nMás ventas · Comparar productos\nMás ventas · Asesoramiento experto\nMenos soporte · Estado del pedido\nMenos soporte · Devoluciones y cambios\nMenos soporte · Preguntas previas a la compra",
       "install": "Instala Bizmis",
       "install_with_code": "Instala con tu código de acceso anticipado",
       "code_label": "Código",

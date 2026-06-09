@@ -272,7 +272,7 @@
       "title": "Meet your voice store clerk",
       "intro": "Tap the voice button in the corner and just talk, the way you would with a clerk on the shop floor.",
       "examples": "A book for my 12-year-old nephew\nAtomic Habits or Deep Work, which first if I procrastinate a lot?\nDo I need to read the original trilogy before the prequels?\nWhere's my order? I haven't received it yet.\nThe cover arrived damaged, can I exchange it?\nDo you ship to Spain, and how long does it take?",
-      "note": "Demo store. Explore freely; checkout, payments, emails, and phone numbers are not real.",
+      "example_tags": "Boost sales · Product discovery\nBoost sales · Product comparison\nBoost sales · Domain expertise\nCut support · Order status\nCut support · Returns & exchanges\nCut support · Pre-purchase FAQ",
       "install": "Install Bizmis",
       "install_with_code": "Install with your early-access code",
       "code_label": "Code",

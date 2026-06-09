@@ -11,7 +11,9 @@
 
   var STORAGE_KEY = 'bizmis:demo:attribution';
   var DISMISS_KEY = 'bizmis:demo:bar-dismissed';
+  var COACH_DISMISS_KEY = 'bizmis:demo:coach-dismissed';
   var COPIED_RESET_MS = 2000;
+  var COACH_ROTATE_MS = 4500;
 
   function isAttributionParam(key) {
     return key === 'ref' || key === 'code' || key.indexOf('utm_') === 0;
@@ -136,6 +138,55 @@
     }
   }
 
+  /* Floating coachmark: reveal it, wire dismissal, and auto-rotate one
+     tagged use case at a time (no visible controls — pauses on hover). */
+  function initCoach() {
+    var coach = document.querySelector('[data-bizmis-coach]');
+    if (!coach) return;
+
+    var dismissed = false;
+    try {
+      dismissed = sessionStorage.getItem(COACH_DISMISS_KEY) === '1';
+    } catch (error) {
+      /* sessionStorage unavailable — show the coachmark. */
+    }
+    if (dismissed) return;
+
+    coach.hidden = false;
+
+    var closeButton = coach.querySelector('[data-bizmis-coach-close]');
+    if (closeButton) {
+      closeButton.addEventListener('click', function () {
+        coach.hidden = true;
+        try { sessionStorage.setItem(COACH_DISMISS_KEY, '1'); } catch (error) { /* ignore */ }
+      });
+    }
+
+    var slides = coach.querySelectorAll('[data-bizmis-coach-slide]');
+    if (slides.length < 2) return;
+
+    var index = 0;
+    var timer = null;
+
+    function show(next) {
+      slides[index].classList.remove('is-active');
+      index = (next + slides.length) % slides.length;
+      slides[index].classList.add('is-active');
+    }
+
+    function start() {
+      timer = window.setInterval(function () { show(index + 1); }, COACH_ROTATE_MS);
+    }
+
+    function stop() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+
+    coach.addEventListener('mouseenter', stop);
+    coach.addEventListener('mouseleave', start);
+    start();
+  }
+
   function init() {
     var bar = document.querySelector('[data-bizmis-demo-bar]');
     var fallbackCode = bar ? (bar.dataset.fallbackCode || '') : '';
@@ -145,6 +196,7 @@
     hydrateCodeDisplays(attribution, fallbackCode);
     initCopyButtons();
     initBar();
+    initCoach();
   }
 
   if (document.readyState === 'loading') {

@@ -1,41 +1,52 @@
 {%- comment -%}
-  Floating Bizmis pitch panel (BIZ-134).
+  Floating Bizmis coachmark (BIZ-134).
 
-  Overlays the hero with the Bizmis claim, how-to, use cases, and the
-  early-access install CTA. The code rides in from bizmis.ai/demo (?code=)
-  and is applied by bizmis-demo.js via the shared data-bizmis-* hooks.
+  A minimal, page-wide hint that rotates through one use case at a time, each
+  tagged with its benefit / sub-benefit. The early-access code rides in from
+  bizmis.ai/demo (?code=) and is applied by bizmis-demo.js via the shared
+  data-bizmis-* hooks. Rendered once at layout level so it persists across the
+  whole store, not just the hero.
 {%- endcomment -%}
 
 {%- if settings.bizmis_demo_enabled -%}
   {%- liquid
     assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
-    assign examples = 'bizmis.panel.examples' | t | newline_to_br | split: '<br />'
+    assign prompts = 'bizmis.panel.examples' | t | newline_to_br | split: '<br />'
+    assign tags = 'bizmis.panel.example_tags' | t | newline_to_br | split: '<br />'
   -%}
-  <aside class="bizmis-hero-panel" aria-label="{{ 'bizmis.panel.title' | t | escape }}">
-    <span class="bizmis-hero-panel__eyebrow label-caps">
-      <span class="bizmis-hero-panel__dot" aria-hidden="true"></span>
-      {{ 'bizmis.panel.eyebrow' | t }}
-    </span>
+  <aside class="bizmis-coach" data-bizmis-coach aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
+    <button type="button" class="bizmis-coach__close" data-bizmis-coach-close aria-label="{{ 'accessibility.close' | t | escape }}">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+    </button>
 
-    <h2 class="bizmis-hero-panel__title h4">{{ 'bizmis.panel.title' | t }}</h2>
+    <img
+      class="bizmis-coach__logo"
+      src="{{ 'bizmis-logo-white-transparent.png' | asset_url }}"
+      alt="Bizmis"
+      width="281"
+      height="281"
+      loading="lazy"
+    >
 
-    <p class="bizmis-hero-panel__intro">{{ 'bizmis.panel.intro' | t }}</p>
+    <div class="bizmis-coach__slides" data-bizmis-coach-slides>
+      {%- for prompt in prompts -%}
+        {%- assign trimmed = prompt | strip -%}
+        {%- if trimmed != blank -%}
+          {%- assign tag = tags[forloop.index0] | strip -%}
+          <figure class="bizmis-coach__slide{% if forloop.first %} is-active{% endif %}" data-bizmis-coach-slide>
+            {%- if tag != blank -%}
+              <figcaption class="bizmis-coach__tag label-caps">{{ tag }}</figcaption>
+            {%- endif -%}
+            <blockquote class="bizmis-coach__prompt">{{ trimmed }}</blockquote>
+          </figure>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
 
-    {%- if examples.size > 0 -%}
-      <ul class="bizmis-hero-panel__examples">
-        {%- for example in examples -%}
-          {%- assign trimmed = example | strip -%}
-          {%- if trimmed != blank -%}
-            <li class="bizmis-hero-panel__example">{{ trimmed }}</li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-    {%- endif -%}
-
-    <div class="bizmis-hero-panel__actions">
+    <div class="bizmis-coach__foot">
       <a
         href="{{ listing_url | escape }}"
-        class="btn btn--small bizmis-hero-panel__cta"
+        class="bizmis-coach__cta"
         data-bizmis-install
         data-label-with-code="{{ 'bizmis.panel.install_with_code' | t | escape }}"
         data-label-no-code="{{ 'bizmis.panel.install' | t | escape }}"
@@ -43,19 +54,16 @@
         rel="noopener"
       >{{ 'bizmis.panel.install' | t }}</a>
 
-      <span class="bizmis-hero-panel__code" data-bizmis-code-chip hidden>
-        <span class="bizmis-hero-panel__code-label">{{ 'bizmis.panel.code_label' | t }}</span>
+      <span class="bizmis-coach__code" data-bizmis-code-chip hidden>
         <code data-bizmis-code></code>
         <button
           type="button"
-          class="bizmis-hero-panel__copy"
+          class="bizmis-coach__copy"
           data-bizmis-code-copy
           data-copied-label="{{ 'bizmis.panel.copied' | t | escape }}"
           aria-label="{{ 'bizmis.panel.copy_aria' | t | escape }}"
         >{{ 'bizmis.panel.copy' | t }}</button>
       </span>
     </div>
-
-    <p class="bizmis-hero-panel__note">{{ 'bizmis.panel.note' | t }}</p>
   </aside>
 {%- endif -%}

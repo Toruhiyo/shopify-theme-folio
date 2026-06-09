@@ -3393,17 +3393,17 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 20px 48px -22px rgba(0, 0, 0, 0.8);
 }
 
-/* Faint brand mark behind the content so it never takes up layout space. */
+/* Faint white brand mark behind the content so it never takes up layout space. */
 .bizmis-coach__watermark {
   position: absolute;
-  right: -0.85rem;
-  bottom: -1rem;
-  width: 5rem;
-  height: 5rem;
+  top: -0.55rem;
+  right: -0.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
   z-index: 0;
   opacity: 0.1;
   pointer-events: none;
-  background-color: var(--color-gold);
+  background-color: #fff;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -3448,19 +3448,23 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/* Framed as something the shopper could say: fancy quotes + italics. */
+/* Framed as something the shopper could say: fancy quotes + italics. Laid out
+   as a flex row so word spacing stays consistent regardless of whitespace. */
 .bizmis-coach__prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.12em 0.28em;
   margin: 0;
   font-family: var(--font-heading);
   font-style: italic;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.35;
   color: #fff;
 }
 
 .bizmis-coach__prompt::before {
   content: '\201C';
-  margin-right: 0.05em;
   color: var(--color-gold);
   font-style: normal;
   font-weight: 600;
@@ -3468,24 +3472,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .bizmis-coach__prompt::after {
   content: '\201D';
-  margin-left: 0.05em;
   color: var(--color-gold);
   font-style: normal;
   font-weight: 600;
 }
 
-/* Karaoke caption: words reveal one after another (like the landing page). */
+/* Karaoke caption: a white chip highlight sweeps word by word (like the landing
+   page). The chip is painted via box-shadow + scale so it never reflows. */
 .bizmis-coach__word {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(0.18em);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 0.3em;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.bizmis-coach__slide.is-active .bizmis-coach__word {
-  opacity: 1;
-  transform: none;
-  transition-delay: calc(var(--i) * 0.07s);
+.bizmis-coach__word.is-current {
+  background-color: #fff;
+  color: var(--color-primary);
+  box-shadow: 0 0 0 0.18em #fff;
+  font-style: normal;
+  transform: scale(1.05);
 }
 
 .bizmis-coach__cta.btn {

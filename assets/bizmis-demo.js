@@ -18,6 +18,7 @@
   var COACH_SHOW_MS = 6000;    // how long a hint lingers
   var COACH_GAP_MS = 250;      // brief pause between hints (kept short)
   var COACH_FADE_MS = 600;     // matches the CSS fade duration
+  var COACH_WORD_MS = 340;     // karaoke dwell per word (matches the landing page)
   var COACH_MARGIN = 12;       // viewport edge padding
   var COACH_GAP_PX = 10;       // gap between the hint and the widget card
   var COACH_FIND_MS = 250;     // how often to re-scan for the widget card
@@ -244,16 +245,41 @@
 
     var index = 0;
     var timer = null;
+    var wordTimers = [];
+
+    function clearWordTimers() {
+      for (var i = 0; i < wordTimers.length; i++) window.clearTimeout(wordTimers[i]);
+      wordTimers = [];
+    }
+
+    /* Karaoke caption: sweep the highlight across the words one at a time, like
+       the landing page. */
+    function runKaraoke(slide) {
+      clearWordTimers();
+      var words = slide.querySelectorAll('.bizmis-coach__word');
+      if (!words.length) return;
+
+      function step(i) {
+        for (var w = 0; w < words.length; w++) words[w].classList.remove('is-current');
+        if (i >= words.length) return;
+        words[i].classList.add('is-current');
+        wordTimers.push(window.setTimeout(function () { step(i + 1); }, COACH_WORD_MS));
+      }
+      step(0);
+    }
 
     /* The card stays put; only the suggestion text fades in, lingers, fades
        out, pauses, then the next one fades in. */
     function showText() {
-      slides[index].classList.add('is-active');
+      var slide = slides[index];
+      slide.classList.add('is-active');
+      runKaraoke(slide);
       if (slides.length < 2) return;
       timer = window.setTimeout(hideText, COACH_SHOW_MS);
     }
 
     function hideText() {
+      clearWordTimers();
       slides[index].classList.remove('is-active');
       timer = window.setTimeout(function () {
         index = (index + 1) % slides.length;

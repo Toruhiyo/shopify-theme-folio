@@ -1000,60 +1000,58 @@
     requestAnimationFrame(frame);
   }
 
-  if (document.querySelector('[data-newsletter-success]')) {
-    fireConfetti();
+  /* --- Subscription celebration ---
+     After a successful subscribe, Shopify reloads with ?customer_posted=true
+     and the form id as the fragment (e.g. #footer-newsletter). Auto-scroll to
+     that section, then fire confetti once the scroll has settled. */
+  function whenScrollSettles(callback) {
+    let done = false;
+    let idle;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(idle);
+      clearTimeout(safety);
+      callback();
+    };
+    const onScroll = () => {
+      clearTimeout(idle);
+      idle = setTimeout(finish, 140);
+    };
+    const safety = setTimeout(finish, 2000);
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* --- Newsletter (submit without reloading the page) --- */
-  class NewsletterForms {
-    constructor() {
-      document.querySelectorAll('.js-newsletter-form').forEach(form => this.bind(form));
+  function initSubscriptionCelebration() {
+    const successEl = document.querySelector('[data-newsletter-success]');
+    if (!successEl) return;
+
+    const hashId = window.location.hash.length > 1
+      ? decodeURIComponent(window.location.hash.slice(1))
+      : null;
+    const target = (hashId && document.getElementById(hashId))
+      || successEl.closest('section, .footer__newsletter-banner')
+      || successEl;
+
+    const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
+    const centerMargin = Math.max(0, (window.innerHeight - target.offsetHeight) / 2);
+    const targetY = Math.max(0, absoluteTop - centerMargin);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || Math.abs(window.scrollY - targetY) < 4) {
+      window.scrollTo(0, targetY);
+      fireConfetti();
+      return;
     }
 
-    bind(form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        this.submit(form);
-      });
-    }
-
-    submit(form) {
-      const button = form.querySelector('button[type="submit"]');
-      if (button) button.disabled = true;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'text/html' }
-      })
-        .then(response => response.text())
-        .then(html => this.render(form, html))
-        // If the request can't be made, fall back to a normal submit.
-        .catch(() => form.submit())
-        .finally(() => { if (button) button.disabled = false; });
-    }
-
-    render(form, html) {
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const scope = (form.id && doc.getElementById(form.id)) || doc;
-      const success = scope.querySelector('[data-newsletter-success]');
-      const message = success || scope.querySelector('.form-error');
-
-      const previous = form.querySelector('[data-newsletter-message]');
-      if (previous) previous.remove();
-      if (!message) return;
-
-      message.setAttribute('data-newsletter-message', '');
-      form.appendChild(message);
-
-      if (success) {
-        form.reset();
-        fireConfetti();
-      }
-    }
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    whenScrollSettles(fireConfetti);
+    requestAnimationFrame(() => window.scrollTo({ top: targetY, behavior: 'smooth' }));
   }
 
-  new NewsletterForms();
+  window.addEventListener('load', initSubscriptionCelebration);
 
   /* --- Initialize --- */
   updateCartCount();

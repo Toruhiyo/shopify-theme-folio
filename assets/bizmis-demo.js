@@ -20,6 +20,7 @@
   var COACH_MARGIN = 12;       // viewport edge padding
   var COACH_GAP_PX = 10;       // gap between the hint and the widget card
   var COACH_FIND_MS = 250;     // how often to re-scan for the widget card
+  var DESKTOP_MQ = '(min-width: 990px)'; // below this we collapse to the CTA only
   var WIDGET_SELECTORS = ['#bizmis-avatar-embed', '.bizmis-avatar-widget-root', '#avatar-root', '[data-avatar-widget]'];
 
   function isAttributionParam(key) {
@@ -139,6 +140,12 @@
     var lastFind = 0;
 
     function frame() {
+      /* When collapsed to the CTA the bubble is CSS-positioned; stay out of it. */
+      if (coach.classList.contains('bizmis-coach--cta-only')) {
+        window.requestAnimationFrame(frame);
+        return;
+      }
+
       if (!root || !root.isConnected) root = findWidgetRoot();
       if (root && (!target || !target.isConnected)) {
         var now = (window.performance && performance.now()) || Date.now();
@@ -174,78 +181,106 @@
     window.requestAnimationFrame(frame);
   }
 
-  /* Pop one tagged use case at a time: fade in, linger, fade out, pause, next.
-     Pauses while hovered so it can be read. */
+  /* The full coachmark (widget tracking + rotating hints) is desktop-only.
+     Below the desktop breakpoint we collapse to a standalone install CTA. */
   function initCoach() {
     var coach = document.querySelector('[data-bizmis-coach]');
     if (!coach) return;
 
     var bubble = coach.querySelector('[data-bizmis-coach-bubble]');
     var slides = coach.querySelectorAll('[data-bizmis-coach-slide]');
-    if (!slides.length) return;
 
     coach.hidden = false;
-    trackToWidget(coach);
 
-    var index = 0;
-    var timer = null;
-    var wordTimers = [];
+    var desktopQuery = window.matchMedia(DESKTOP_MQ);
+    var desktopStarted = false;
 
-    function clearWordTimers() {
-      for (var i = 0; i < wordTimers.length; i++) window.clearTimeout(wordTimers[i]);
-      wordTimers = [];
+    function startDesktopCoach() {
+      if (desktopStarted || !slides.length) return;
+      desktopStarted = true;
+      trackToWidget(coach);
+      runRotation();
     }
 
-    /* Karaoke caption: sweep the highlight across the words one at a time, like
-       the landing page. */
-    function runKaraoke(slide) {
-      clearWordTimers();
-      var words = slide.querySelectorAll('.bizmis-coach__word');
-      if (!words.length) return;
+    /* Pop one tagged use case at a time: fade in, linger, fade out, pause, next.
+       Pauses while hovered so it can be read. */
+    function runRotation() {
+      var index = 0;
+      var timer = null;
+      var wordTimers = [];
 
-      function step(i) {
-        for (var w = 0; w < words.length; w++) words[w].classList.remove('is-current');
-        if (i >= words.length) return;
-        words[i].classList.add('is-current');
-        wordTimers.push(window.setTimeout(function () { step(i + 1); }, COACH_WORD_MS));
+      function clearWordTimers() {
+        for (var i = 0; i < wordTimers.length; i++) window.clearTimeout(wordTimers[i]);
+        wordTimers = [];
       }
-      step(0);
-    }
 
-    /* The card stays put; only the suggestion text fades in, lingers, fades
-       out, pauses, then the next one fades in. */
-    function showText() {
-      var slide = slides[index];
-      slide.classList.add('is-active');
-      runKaraoke(slide);
-      if (slides.length < 2) return;
-      timer = window.setTimeout(hideText, COACH_SHOW_MS);
-    }
+      /* Karaoke caption: sweep the highlight across the words one at a time,
+         like the landing page. */
+      function runKaraoke(slide) {
+        clearWordTimers();
+        var words = slide.querySelectorAll('.bizmis-coach__word');
+        if (!words.length) return;
 
-    function hideText() {
-      clearWordTimers();
-      slides[index].classList.remove('is-active');
-      timer = window.setTimeout(function () {
-        index = (index + 1) % slides.length;
-        showText();
-      }, COACH_FADE_MS + COACH_GAP_MS);
-    }
+        function step(i) {
+          for (var w = 0; w < words.length; w++) words[w].classList.remove('is-current');
+          if (i >= words.length) return;
+          words[i].classList.add('is-current');
+          wordTimers.push(window.setTimeout(function () { step(i + 1); }, COACH_WORD_MS));
+        }
+        step(0);
+      }
 
-    if (bubble && slides.length > 1) {
-      bubble.addEventListener('mouseenter', function () {
-        if (timer) { window.clearTimeout(timer); timer = null; }
-        slides[index].classList.add('is-active');
-      });
-      bubble.addEventListener('mouseleave', function () {
-        if (timer) window.clearTimeout(timer);
+      /* The card stays put; only the suggestion text fades in, lingers, fades
+         out, pauses, then the next one fades in. */
+      function showText() {
+        var slide = slides[index];
+        slide.classList.add('is-active');
+        runKaraoke(slide);
+        if (slides.length < 2) return;
         timer = window.setTimeout(hideText, COACH_SHOW_MS);
-      });
+      }
+
+      function hideText() {
+        clearWordTimers();
+        slides[index].classList.remove('is-active');
+        timer = window.setTimeout(function () {
+          index = (index + 1) % slides.length;
+          showText();
+        }, COACH_FADE_MS + COACH_GAP_MS);
+      }
+
+      if (bubble && slides.length > 1) {
+        bubble.addEventListener('mouseenter', function () {
+          if (timer) { window.clearTimeout(timer); timer = null; }
+          slides[index].classList.add('is-active');
+        });
+        bubble.addEventListener('mouseleave', function () {
+          if (timer) window.clearTimeout(timer);
+          timer = window.setTimeout(hideText, COACH_SHOW_MS);
+        });
+      }
+
+      timer = window.setTimeout(function () {
+        coach.classList.add('is-shown');
+        showText();
+      }, COACH_START_MS);
     }
 
-    timer = window.setTimeout(function () {
-      coach.classList.add('is-shown');
-      showText();
-    }, COACH_START_MS);
+    function applyMode() {
+      if (desktopQuery.matches) {
+        coach.classList.remove('bizmis-coach--cta-only');
+        startDesktopCoach();
+      } else {
+        coach.classList.add('bizmis-coach--cta-only', 'is-shown');
+        coach.style.left = '';
+        coach.style.top = '';
+        coach.style.width = '';
+      }
+    }
+
+    applyMode();
+    if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', applyMode);
+    else if (desktopQuery.addListener) desktopQuery.addListener(applyMode);
   }
 
   function init() {

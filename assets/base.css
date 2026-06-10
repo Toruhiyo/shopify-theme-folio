@@ -3382,6 +3382,43 @@ h1, h2, h3, h4, h5, h6 {
   flex: 0 0 auto;
 }
 
+/* Tablet / mobile: collapse the coachmark down to just the install CTA, pinned
+   to the bottom-left so it never fights the bottom-right Bizmis widget. */
+.bizmis-coach--cta-only {
+  top: auto;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  left: 1rem;
+  width: auto;
+  max-width: calc(100vw - 2rem);
+}
+
+.bizmis-coach--cta-only .bizmis-coach__bubble {
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.bizmis-coach--cta-only .bizmis-coach__slides,
+.bizmis-coach--cta-only .bizmis-coach__watermark {
+  display: none;
+}
+
+.bizmis-coach--cta-only .bizmis-coach__cta.btn {
+  width: auto;
+  background-color: rgba(20, 30, 25, 0.95);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.85);
+}
+
+.bizmis-coach--cta-only .bizmis-coach__cta.btn:hover {
+  background-color: rgba(20, 30, 25, 1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bizmis-coach {
     transition: opacity 0.2s ease;

@@ -242,7 +242,19 @@
       "examples": "Un livre pour mon neveu de 12 ans\nUn rien peut tout changer ou Deep Work, lequel je lis en premier si je procrastine beaucoup ?\nFaut-il lire la trilogie originale avant les préquelles ?\nOù est ma commande ? Je ne l'ai pas encore reçue.\nLa couverture est arrivée abîmée, je peux l'échanger ?\nLivrez-vous en Belgique ? Sous combien de temps ?",
       "example_tags": "Plus de ventes · Découverte de produits\nPlus de ventes · Comparaison de produits\nPlus de ventes · Conseil d'expert\nMoins de SAV · Suivi de commande\nMoins de SAV · Retours et échanges\nMoins de SAV · Questions avant l'achat",
       "install": "Installer Bizmis",
-      "install_with_code": "Installer avec votre code d'accès anticipé"
+      "install_with_code": "Installer avec votre code d'accès anticipé",
+      "coach_hide": "Masquer les suggestions",
+      "coach_show": "Afficher les suggestions",
+      "coach_examples": "Exemples"
+    },
+    "promo": {
+      "label": "Boutique démo Bizmis",
+      "demo_badge": "BOUTIQUE DÉMO",
+      "message": "Vous êtes dans une boutique démo Bizmis. Tout cela fonctionne aussi sur votre boutique.",
+      "landing": "Voir Bizmis",
+      "other_demos": "Autres démos",
+      "demos_hint": "Ces démos sont protégées par mot de passe.",
+      "password_label": "Mot de passe"
     }
   }
 }

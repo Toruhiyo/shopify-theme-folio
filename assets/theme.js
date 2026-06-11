@@ -11,6 +11,7 @@
   const header = document.querySelector('.header');
   if (header) {
     const headerSection = header.closest('.header-section');
+    const promoSection = document.querySelector('.announcement-bar-section');
     const hero = document.querySelector('.hero-mosaic');
     const SCROLL_THRESHOLD = 50;
     const HERO_EXIT_OFFSET = 100;
@@ -20,6 +21,7 @@
       if (hero) {
         const inHero = scrollY < hero.offsetHeight - HERO_EXIT_OFFSET;
         if (headerSection) headerSection.classList.toggle('is-pinned', !inHero);
+        if (promoSection) promoSection.classList.toggle('is-pinned', !inHero);
         header.classList.toggle('is-transparent', inHero);
         header.classList.toggle('scrolled', !inHero);
       } else {
@@ -30,6 +32,16 @@
     updateHeaderState();
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('resize', updateHeaderState, { passive: true });
+  }
+
+  /* Measure the demo promo bar so the header floats just below it. Handles
+     wrapping on small screens. */
+  const promoBar = document.querySelector('.promo-bar');
+  if (promoBar) {
+    const applyPromoHeight = () => document.body.style.setProperty('--promo-height', `${promoBar.offsetHeight}px`);
+    applyPromoHeight();
+    window.addEventListener('resize', applyPromoHeight, { passive: true });
+    window.addEventListener('load', applyPromoHeight);
   }
 
   const DESKTOP_NAV_BREAKPOINT = 990;

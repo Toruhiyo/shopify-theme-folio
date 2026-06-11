@@ -247,7 +247,19 @@
       "examples": "Un libro para mi sobrino de 12 años\n¿Hábitos atómicos o Deep Work? ¿Cuál me leo primero si procrastino mucho?\n¿Hace falta leer la trilogía original antes de las precuelas?\n¿Dónde está mi pedido? Aún no me ha llegado.\nEl libro me ha llegado con la tapa dañada, ¿puedo cambiarlo?\n¿Hacéis envíos a Canarias? ¿Cuánto tardan?",
       "example_tags": "Más ventas · Descubrir productos\nMás ventas · Comparar productos\nMás ventas · Asesoramiento experto\nMenos consultas · Estado del pedido\nMenos consultas · Devoluciones y cambios\nMenos consultas · Dudas antes de comprar",
       "install": "Instala Bizmis",
-      "install_with_code": "Instala con tu código de acceso anticipado"
+      "install_with_code": "Instala con tu código de acceso anticipado",
+      "coach_hide": "Ocultar sugerencias",
+      "coach_show": "Mostrar sugerencias",
+      "coach_examples": "Ejemplos"
+    },
+    "promo": {
+      "label": "Tienda demo de Bizmis",
+      "demo_badge": "TIENDA DEMO",
+      "message": "Estás en una tienda demo de Bizmis. Todo esto funciona también en tu tienda.",
+      "landing": "Ir a Bizmis",
+      "other_demos": "Otras demos",
+      "demos_hint": "Estas demos están protegidas con contraseña.",
+      "password_label": "Contraseña"
     }
   }
 }

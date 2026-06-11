@@ -263,8 +263,15 @@
         "type": "checkbox",
         "id": "bizmis_demo_enabled",
         "default": true,
-        "label": "Show demo install bar",
-        "info": "Sticky top bar inviting merchants to install Bizmis with their early-access code."
+        "label": "Enable Bizmis demo mode",
+        "info": "Master switch: shows the top demo promo bar and hydrates the Install Bizmis CTAs with the early-access code."
+      },
+      {
+        "type": "checkbox",
+        "id": "bizmis_coachmark_enabled",
+        "default": true,
+        "label": "Show floating coachmark",
+        "info": "Speech bubble above the voice widget with a single suggested phrase, so visitors know what to say right away."
       },
       {
         "type": "url",
@@ -287,11 +294,35 @@
       },
       {
         "type": "header",
-        "content": "Hero panel"
+        "content": "Promo bar links"
+      },
+      {
+        "type": "url",
+        "id": "bizmis_landing_url",
+        "label": "Bizmis landing URL",
+        "info": "Promo bar link to the Bizmis marketing site. Defaults to https://www.bizmis.ai/ when blank."
+      },
+      {
+        "type": "textarea",
+        "id": "bizmis_demos",
+        "label": "Other demo stores",
+        "info": "One per line as 'Label | URL'. Shown in the promo bar 'Other demos' menu.",
+        "default": "Meridian Consumer Electronics | https://meridian-consumer-electronics.myshopify.com/"
+      },
+      {
+        "type": "text",
+        "id": "bizmis_demos_password",
+        "label": "Demo store password",
+        "default": "bizmis",
+        "info": "Shown in the 'Other demos' menu so visitors can unlock the password-protected demos."
+      },
+      {
+        "type": "header",
+        "content": "Coachmark copy"
       },
       {
         "type": "paragraph",
-        "content": "Floating Bizmis pitch shown over the home hero. All copy (eyebrow, title, intro, note, buttons, example prompts) is localized in the theme locale files under bizmis.panel.*"
+        "content": "All copy (title, example prompts, tags, buttons) is localized in the theme locale files under bizmis.panel.*"
       }
     ]
   }

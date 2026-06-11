@@ -2320,7 +2320,19 @@
       "examples": "帮我给12岁的侄子挑本书\n我特别爱拖延，《掌控习惯》和《深度工作》该先读哪本？\n看前传之前，要先读原三部曲吗？\n我的订单到哪了？怎么还没收到？\n收到时书的封面破损了，可以换一本吗？\n你们能寄到海外吗？大概多久能到？",
       "example_tags": "提升销量 · 商品发现\n提升销量 · 商品对比\n提升销量 · 专业导购\n减少客服 · 订单状态\n减少客服 · 退换货\n减少客服 · 售前咨询",
       "install": "安装 Bizmis",
-      "install_with_code": "使用你的抢先体验码安装"
+      "install_with_code": "使用你的抢先体验码安装",
+      "coach_hide": "隐藏建议",
+      "coach_show": "显示建议",
+      "coach_examples": "示例"
+    },
+    "promo": {
+      "label": "Bizmis 演示商店",
+      "demo_badge": "演示商店",
+      "message": "您正在浏览 Bizmis 演示商店。这里的一切也能在您的商店中运行。",
+      "landing": "访问 Bizmis",
+      "other_demos": "其他演示",
+      "demos_hint": "这些演示受密码保护。",
+      "password_label": "密码"
     }
   }
 }

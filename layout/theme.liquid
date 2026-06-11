@@ -87,7 +87,7 @@
   </script>
 </head>
 
-<body class="template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}">
+<body class="template-{{ template.name }}{% if template.suffix %} template-{{ template.name }}-{{ template.suffix }}{% endif %}{% if settings.bizmis_demo_enabled %} bizmis-demo{% endif %}">
   <a class="skip-to-content" href="#MainContent">
     {{ 'accessibility.skip_to_content' | t }}
   </a>

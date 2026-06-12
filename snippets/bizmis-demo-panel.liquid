@@ -24,12 +24,6 @@
   -%}
   <aside class="bizmis-coach" data-bizmis-coach data-fallback-code="{{ settings.bizmis_demo_fallback_code | escape }}" aria-label="{{ 'bizmis.panel.title' | t | escape }}" aria-live="polite" hidden>
     <div class="bizmis-coach__bubble" data-bizmis-coach-bubble>
-      <span
-        class="bizmis-coach__watermark"
-        style="-webkit-mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}'); mask-image: url('{{ 'bizmis-logo-white-transparent.png' | asset_url }}');"
-        aria-hidden="true"
-      ></span>
-
       <button
         type="button"
         class="bizmis-coach__close"

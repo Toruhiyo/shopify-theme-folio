@@ -784,6 +784,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Phones: anchored to the toggle's right edge the menu dangles off toward
+   the screen edge, so pin it under the promo bar as a full-width sheet. */
+@media (max-width: 749px) {
+  .promo-bar__demos-menu {
+    position: fixed;
+    top: calc(var(--promo-height, 2.75rem) + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .promo-bar__demos-menu {
     animation: none;
@@ -3742,25 +3755,6 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 20px 48px -22px rgba(0, 0, 0, 0.8);
-}
-
-/* Faint white brand mark behind the content so it never takes up layout space. */
-.bizmis-coach__watermark {
-  position: absolute;
-  top: -0.55rem;
-  right: -0.5rem;
-  width: 3.75rem;
-  height: 3.75rem;
-  z-index: 0;
-  opacity: 0.06;
-  pointer-events: none;
-  background-color: #fff;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
 }
 
 .bizmis-coach__slides {

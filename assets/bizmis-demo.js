@@ -83,11 +83,14 @@
 
   function hydrateInstallLinks(attribution, fallbackCode) {
     var hasCode = Boolean(effectiveCode(attribution, fallbackCode));
+    /* The long with-code label blows up the promo bar on phones; the code
+       still rides along in the URL either way. */
+    var compact = window.matchMedia('(max-width: 749px)').matches;
     document.querySelectorAll('[data-bizmis-install]').forEach(function (link) {
       if (!link.dataset.base) link.dataset.base = link.getAttribute('href') || '';
       link.setAttribute('href', buildInstallUrl(link.dataset.base, attribution, fallbackCode));
 
-      var label = hasCode ? link.dataset.labelWithCode : link.dataset.labelNoCode;
+      var label = hasCode && !compact ? link.dataset.labelWithCode : link.dataset.labelNoCode;
       if (label) {
         var labelTarget = link.querySelector('[data-bizmis-install-label]') || link;
         labelTarget.textContent = label;

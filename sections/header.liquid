@@ -184,6 +184,10 @@
         <a href="{{ link.url }}" class="mobile-menu__link">{{ link.title }}</a>
       {%- endif -%}
     {%- endfor -%}
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a href="{{ routes.account_url }}" class="mobile-menu__link mobile-menu__link--account">{{ 'header.account' | t }}</a>
+    {%- endif -%}
   </nav>
 </div>
 

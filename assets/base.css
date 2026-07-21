@@ -3666,10 +3666,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* While the widget is minimized to its corner bubble (BIZ-275) the coachmark
-   has nothing to point at, so it hides entirely (bubble and chip alike).
-   Placed after .is-collapsed so it wins when both classes are present. */
+   has nothing to point at, so it softly fades away (bubble and chip alike).
+   Visibility flips only after the fade so the exit stays smooth; on restore
+   it flips back instantly and the base transition eases the card back in.
+   Placed after .is-shown and .is-collapsed so it wins when combined. */
 .bizmis-coach.is-widget-minimized {
-  display: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0s linear 0.45s;
 }
 
 .bizmis-coach__close {
@@ -3902,6 +3910,13 @@ h1, h2, h3, h4, h5, h6 {
   .bizmis-coach {
     transition: opacity 0.2s ease;
     transform: none;
+  }
+
+  .bizmis-coach.is-widget-minimized {
+    transform: none;
+    transition:
+      opacity 0.2s ease,
+      visibility 0s linear 0.2s;
   }
 
   .bizmis-coach__slide,

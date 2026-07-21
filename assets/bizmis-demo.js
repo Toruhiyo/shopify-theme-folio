@@ -22,6 +22,10 @@
   var COACH_GAP_PX = 10;       // gap between the hint and the widget card
   var COACH_FIND_MS = 250;     // how often to re-scan for the widget card
   var WIDGET_SELECTORS = ['#bizmis-avatar-embed', '.bizmis-avatar-widget-root', '#avatar-root', '[data-avatar-widget]'];
+  /* Rendered by the widget when the visitor tucks it into the corner bubble
+     (BIZ-275) — the coachmark must disappear with the card. */
+  var WIDGET_MINIMIZED_SELECTOR = '.bizmis-minimized-bubble';
+  var COACH_MINIMIZED_POLL_MS = 250;
 
   function isAttributionParam(key) {
     return key === 'ref' || key === 'code' || key.indexOf('utm_') === 0;
@@ -338,6 +342,22 @@
     if (expandBtn) expandBtn.addEventListener('click', expand);
 
     if (readCollapsed()) coach.classList.add('is-collapsed');
+
+    /* Hide the whole coachmark (bubble and chip) while the widget is
+       minimized to its corner bubble; resume the rotation on restore. */
+    var widgetMinimized = false;
+    window.setInterval(function () {
+      var minimized = Boolean(document.querySelector(WIDGET_MINIMIZED_SELECTOR));
+      if (minimized === widgetMinimized) return;
+      widgetMinimized = minimized;
+      if (minimized) {
+        stopRotation();
+        coach.classList.add('is-widget-minimized');
+      } else {
+        coach.classList.remove('is-widget-minimized');
+        if (coach.classList.contains('is-shown') && !coach.classList.contains('is-collapsed')) showText();
+      }
+    }, COACH_MINIMIZED_POLL_MS);
 
     timer = window.setTimeout(function () {
       coach.classList.add('is-shown');

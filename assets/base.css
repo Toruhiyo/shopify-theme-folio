@@ -3665,6 +3665,13 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
+/* While the widget is minimized to its corner bubble (BIZ-275) the coachmark
+   has nothing to point at, so it hides entirely (bubble and chip alike).
+   Placed after .is-collapsed so it wins when both classes are present. */
+.bizmis-coach.is-widget-minimized {
+  display: none;
+}
+
 .bizmis-coach__close {
   position: absolute;
   top: 0.45rem;

@@ -3665,6 +3665,16 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
+/* On the widget's mobile form factor (same breakpoint as the widget's own
+   isMobile detection: innerWidth < 768) the coachmark never shows — neither
+   the examples card nor the collapsed chip. Phones don't have the room, and
+   the mobile widget carries its own onboarding hints. */
+@media (max-width: 767px) {
+  .bizmis-coach {
+    display: none !important;
+  }
+}
+
 /* While the widget is minimized to its corner bubble (BIZ-275) the coachmark
    has nothing to point at, so it softly fades away (bubble and chip alike).
    Visibility flips only after the fade so the exit stays smooth; on restore

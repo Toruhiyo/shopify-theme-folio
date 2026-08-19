@@ -105,6 +105,7 @@
     "product": {
       "add_to_cart": "Añadir al carrito",
       "adding": "Agregando...",
+      "added_to_cart": "Añadido al carrito",
       "sold_out": "Agotado",
       "unavailable": "No disponible",
       "sale": "Rebajas",

@@ -123,6 +123,7 @@
                   {% unless product.available %}disabled{% endunless %}
                   data-add-text="{{ 'products.product.add_to_cart' | t }}"
                   data-adding-text="{{ 'products.product.adding' | t }}"
+                  data-added-text="{{ 'products.product.added_to_cart' | t }}"
                 >
                   {%- if product.available -%}
                     {{ 'products.product.add_to_cart' | t }}
@@ -179,8 +180,9 @@
     <button
       type="button"
       class="btn btn--primary btn--full"
-      data-cart-toggle
-      onclick="document.getElementById('product-form').dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}))"
+      onclick="document.getElementById('product-form').requestSubmit()"
+      data-add-text="{{ 'products.product.add_to_cart' | t }}"
+      data-added-text="{{ 'products.product.added_to_cart' | t }}"
       {% unless product.available %}disabled{% endunless %}
     >
       {%- if product.available -%}

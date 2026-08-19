@@ -445,15 +445,53 @@
   };
 
   /* --- Add to Cart --- */
+  const ATC_SUCCESS_MS = 1800;
+  const ATC_PULSE_MS = 900;
+
+  function playAddToCartSuccess(btn) {
+    if (!btn) return;
+    clearTimeout(btn._addedTimer);
+    const label = btn.dataset.addedText || window.themeStrings?.addedToCart || 'Added to cart';
+    if (!btn.dataset.originalHtml) btn.dataset.originalHtml = btn.innerHTML;
+    btn.classList.add('is-added-to-cart');
+    btn.disabled = true;
+    btn.textContent = label;
+    btn._addedTimer = setTimeout(() => {
+      btn.classList.remove('is-added-to-cart');
+      btn.innerHTML = btn.dataset.originalHtml;
+      delete btn.dataset.originalHtml;
+      btn.disabled = false;
+    }, ATC_SUCCESS_MS);
+  }
+
+  function pulseCartIcon() {
+    const toggle = document.querySelector('.header__icon-btn[data-cart-toggle]');
+    const badge = document.querySelector('.header__cart-count[data-cart-count]');
+    if (!toggle) return;
+    toggle.classList.remove('is-cart-pulse');
+    badge?.classList.remove('is-cart-count-pop');
+    void toggle.offsetWidth;
+    toggle.classList.add('is-cart-pulse');
+    badge?.classList.add('is-cart-count-pop');
+    clearTimeout(pulseCartIcon._timer);
+    pulseCartIcon._timer = setTimeout(() => {
+      toggle.classList.remove('is-cart-pulse');
+      badge?.classList.remove('is-cart-count-pop');
+    }, ATC_PULSE_MS);
+  }
+
   document.addEventListener('submit', async (e) => {
     const form = e.target.closest('[data-product-form]');
     if (!form) return;
     e.preventDefault();
 
     const submitBtn = form.querySelector('[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = submitBtn.dataset.addingText || 'Adding...';
+    const stickyBtn = document.querySelector('.product__sticky-atc .btn--primary:not([disabled])');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = submitBtn.dataset.addingText || 'Adding...';
+    }
+    if (stickyBtn) stickyBtn.disabled = true;
 
     try {
       const formData = new FormData(form);
@@ -465,14 +503,20 @@
       if (!response.ok) throw new Error('Failed to add item');
 
       await refreshCartDrawer();
-      openCartDrawer();
       updateCartCount();
+      playAddToCartSuccess(submitBtn);
+      if (stickyBtn && stickyBtn !== submitBtn) playAddToCartSuccess(stickyBtn);
+      pulseCartIcon();
     } catch (error) {
-      submitBtn.textContent = 'Error — try again';
-      setTimeout(() => { submitBtn.textContent = originalText; }, 2000);
-    } finally {
-      submitBtn.disabled = false;
-      setTimeout(() => { submitBtn.textContent = originalText; }, 1500);
+      if (submitBtn) {
+        const fallback = submitBtn.dataset.addText || 'Add to Cart';
+        submitBtn.textContent = 'Error — try again';
+        setTimeout(() => {
+          submitBtn.textContent = fallback;
+          submitBtn.disabled = false;
+        }, 2000);
+      }
+      if (stickyBtn) stickyBtn.disabled = false;
     }
   });
 

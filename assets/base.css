@@ -300,6 +300,51 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.btn.is-added-to-cart {
+  background-color: #2d6a4f !important;
+  border-color: #2d6a4f !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  pointer-events: none;
+  transform: none !important;
+  animation: atc-success-pop 0.45s ease;
+}
+
+@keyframes atc-success-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.header__icon-btn.is-cart-pulse {
+  animation: cart-icon-pulse 0.7s ease;
+}
+
+.header__cart-count.is-cart-count-pop {
+  animation: cart-count-pop 0.7s ease;
+}
+
+@keyframes cart-icon-pulse {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.18); }
+  55% { transform: scale(0.94); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cart-count-pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn.is-added-to-cart,
+  .header__icon-btn.is-cart-pulse,
+  .header__cart-count.is-cart-count-pop {
+    animation: none;
+  }
+}
+
 .btn:disabled,
 .btn[disabled] {
   opacity: 0.5;

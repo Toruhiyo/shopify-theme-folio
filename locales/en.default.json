@@ -127,6 +127,7 @@
     "product": {
       "add_to_cart": "Add to Cart",
       "adding": "Adding...",
+      "added_to_cart": "Added to cart",
       "sold_out": "Sold Out",
       "unavailable": "Unavailable",
       "sale": "Sale",

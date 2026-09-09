@@ -269,7 +269,7 @@
       {
         "type": "checkbox",
         "id": "bizmis_coachmark_enabled",
-        "default": true,
+        "default": false,
         "label": "Show floating coachmark",
         "info": "Speech bubble above the voice widget with a single suggested phrase, so visitors know what to say right away."
       },

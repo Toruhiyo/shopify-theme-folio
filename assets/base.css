@@ -2396,19 +2396,23 @@ h1, h2, h3, h4, h5, h6 {
 .product-back {
   display: inline-flex;
   align-items: center;
-  gap: 0.375rem;
-  margin-bottom: 0.75rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--color-muted-foreground);
+  gap: 0.4rem;
+  margin: 0 0 0.85rem;
+  padding: 0.4rem 0.75rem 0.4rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-background);
+  color: var(--color-foreground);
   font: inherit;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
   cursor: pointer;
+  z-index: 2;
 }
 
 .product-back:hover {
-  color: var(--color-foreground);
+  border-color: var(--color-foreground);
 }
 
 .product-back:focus-visible {

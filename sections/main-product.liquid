@@ -5,6 +5,7 @@
     <div class="product">
       <div class="product__media-gallery">
         <div class="product__media-main" data-media-main>
+          {% render 'product-back' %}
           {%- if product.featured_media -%}
             <img
               src="{{ product.featured_media | image_url: width: 1200 }}"
@@ -44,7 +45,6 @@
       </div>
 
       <div class="product__info">
-        {% render 'product-back' %}
         <header class="product__header">
           {%- if section.settings.show_vendor and product.vendor != blank -%}
             <span class="product__vendor label-caps text-muted">{{ product.vendor }}</span>

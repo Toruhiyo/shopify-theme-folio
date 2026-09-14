@@ -125,6 +125,7 @@
   },
   "products": {
     "product": {
+      "back": "Back",
       "add_to_cart": "Add to Cart",
       "adding": "Adding...",
       "added_to_cart": "Added to cart",

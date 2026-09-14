@@ -1,4 +1,4 @@
-{%- if settings.bizmis_demo_enabled -%}
+{%- if settings.bizmis_demo_enabled and settings.bizmis_promo_bar_enabled -%}
   {%- liquid
     assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
     assign landing_url = settings.bizmis_landing_url | default: 'https://www.bizmis.ai/'
@@ -103,7 +103,7 @@
       "id": "text",
       "default": "Free shipping on orders over $50 — Welcome to our bookshop!",
       "label": "Text",
-      "info": "Hidden while Bizmis demo mode is on (the demo promo bar takes its place)."
+      "info": "Hidden while the Bizmis demo promo bar is on."
     },
     {
       "type": "url",

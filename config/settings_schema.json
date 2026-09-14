@@ -264,7 +264,14 @@
         "id": "bizmis_demo_enabled",
         "default": true,
         "label": "Enable Bizmis demo mode",
-        "info": "Master switch: shows the top demo promo bar and hydrates the Install Bizmis CTAs with the early-access code."
+        "info": "Master switch: hydrates the Install Bizmis CTAs with the early-access code."
+      },
+      {
+        "type": "checkbox",
+        "id": "bizmis_promo_bar_enabled",
+        "default": true,
+        "label": "Show top demo promo bar",
+        "info": "The DEMO STORE bar at the top of the page. Turn this off for recordings or screenshots."
       },
       {
         "type": "checkbox",

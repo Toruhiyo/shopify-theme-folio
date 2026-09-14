@@ -35,6 +35,7 @@
     "page_width": 1200,
     "border_radius": 8,
     "cart_type": "drawer",
+    "bizmis_promo_bar_enabled": false,
     "content_for_index": [],
     "blocks": {
       "9413881465143053370": {

@@ -1,4 +1,5 @@
-{%- if settings.bizmis_demo_enabled and settings.bizmis_promo_bar_enabled -%}
+{%- capture bizmis_top_banner_on -%}{% render 'bizmis-top-banner', mode: 'class' %}{%- endcapture -%}
+{%- if bizmis_top_banner_on != blank -%}
   {%- liquid
     assign listing_url = settings.bizmis_app_listing_url | default: settings.bizmis_app_listing_url_fallback
     assign landing_url = settings.bizmis_landing_url | default: 'https://www.bizmis.ai/'

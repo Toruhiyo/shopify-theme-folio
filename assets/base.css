@@ -493,16 +493,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- Bizmis demo promo bar (top strip, above the navbar) --- */
-/* The body carries .bizmis-demo only when the promo is rendered, so the header
-   offset never leaves a gap on non-demo stores. theme.js refines --promo-height
-   to the measured pixel height (handles wrapping on small screens). */
+/* --promo-height is set only when snippets/bizmis-top-banner.liquid
+   adds .has-promo-bar. Demo mode alone must not reserve that strip.
+   theme.js refines --promo-height to the measured pixel height. */
 .bizmis-demo {
-  --promo-height: 2.75rem;
   /* Bizmis brand orange (Visual Identity: primary #F9A353, dark #EC7709).
      Deliberately NOT the store's primary color: the bar must read as the
      vendor's surface, distinct from whatever brand the demo store wears. */
   --bizmis-orange: #f9a353;
   --bizmis-orange-dark: #ec7709;
+}
+
+.has-promo-bar {
+  --promo-height: 2.75rem;
+}
+
+.announcement-bar-section:not(:has(.promo-bar, .announcement-bar)) {
+  display: none;
 }
 
 .promo-bar {

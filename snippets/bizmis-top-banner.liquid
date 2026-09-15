@@ -1,0 +1,13 @@
+{%- comment -%}
+  Single switch for the top Bizmis demo banner and the header offset
+  reserved for it. Flip this one assign.
+  false: the bar and that reserved space are both gone.
+  true: the bar appears and the header sits below it.
+  Widget, demo panel, and install CTAs are independent.
+{%- endcomment -%}
+{%- liquid
+  assign bizmis_top_banner_enabled = false
+-%}
+{%- if bizmis_top_banner_enabled and settings.bizmis_demo_enabled -%}
+  {%- if mode == 'class' -%}has-promo-bar{%- endif -%}
+{%- endif -%}

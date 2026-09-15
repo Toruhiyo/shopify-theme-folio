@@ -269,9 +269,9 @@
       {
         "type": "checkbox",
         "id": "bizmis_promo_bar_enabled",
-        "default": true,
+        "default": false,
         "label": "Show top demo promo bar",
-        "info": "The DEMO STORE bar at the top of the page. Turn this off for recordings or screenshots."
+        "info": "Unused. Flip bizmis_top_banner_enabled in snippets/bizmis-top-banner.liquid. That assign shows or hides the bar and the header space reserved for it."
       },
       {
         "type": "checkbox",

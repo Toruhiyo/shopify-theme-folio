@@ -3,6 +3,62 @@
     {% render 'product-breadcrumbs', product: product, collection: collection %}
 
     <div class="product">
+    {%- form 'product', product, data-product-form: '', id: 'product-form', class: 'product__form' -%}
+      <header class="product__topbar">
+        <div class="product__identity">
+          {%- if section.settings.show_vendor and product.vendor != blank -%}
+            <span class="product__vendor label-caps text-muted">{{ product.vendor }}</span>
+          {%- endif -%}
+
+          <h1 class="product__title">{{ product.title }}</h1>
+        </div>
+
+        <div class="product__purchase">
+          <div class="product__price-wrapper">
+            {%- if product.compare_at_price > product.price -%}
+              <span class="product__badge product__badge--sale label-caps">{{ 'products.product.sale' | t }}</span>
+              <span class="product__price product__price--sale">{{ product.price | money }}</span>
+              <span class="product__price product__price--compare">{{ product.compare_at_price | money }}</span>
+            {%- else -%}
+              <span class="product__price">{{ product.price | money }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="product__actions">
+            <div class="product__quantity-selector" id="product-quantity-{{ section.id }}">
+              <button type="button" class="product__quantity-btn" data-quantity-btn="minus" aria-label="{{ 'products.product.decrease_quantity' | t }}">−</button>
+              <input
+                class="product__quantity-input"
+                type="number"
+                name="quantity"
+                value="1"
+                min="1"
+                data-quantity-input
+                aria-label="{{ 'products.product.quantity' | t }}"
+              >
+              <button type="button" class="product__quantity-btn" data-quantity-btn="plus" aria-label="{{ 'products.product.increase_quantity' | t }}">+</button>
+            </div>
+
+            <div class="product__add-to-cart">
+              <button
+                type="submit"
+                class="btn btn--primary{% unless product.available %} btn--disabled{% endunless %}"
+                {% unless product.available %}disabled{% endunless %}
+                data-add-text="{{ 'products.product.add_to_cart' | t }}"
+                data-adding-text="{{ 'products.product.adding' | t }}"
+                data-added-text="{{ 'products.product.added_to_cart' | t }}"
+              >
+                {%- if product.available -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
       <div class="product__media-gallery">
         <div class="product__media-main" data-media-main>
           {% render 'product-back' %}
@@ -45,24 +101,6 @@
       </div>
 
       <div class="product__info">
-        <header class="product__header">
-          {%- if section.settings.show_vendor and product.vendor != blank -%}
-            <span class="product__vendor label-caps text-muted">{{ product.vendor }}</span>
-          {%- endif -%}
-
-          <h1 class="product__title">{{ product.title }}</h1>
-
-          <div class="product__price-wrapper">
-            {%- if product.compare_at_price > product.price -%}
-              <span class="product__badge product__badge--sale label-caps">{{ 'products.product.sale' | t }}</span>
-              <span class="product__price product__price--sale">{{ product.price | money }}</span>
-              <span class="product__price product__price--compare">{{ product.compare_at_price | money }}</span>
-            {%- else -%}
-              <span class="product__price">{{ product.price | money }}</span>
-            {%- endif -%}
-          </div>
-        </header>
-
         {%- if product.description != blank -%}
           <div class="product__description-block">
             <h2 class="product__description-heading label-caps">{{ 'products.product.description' | t }}</h2>
@@ -72,74 +110,30 @@
           </div>
         {%- endif -%}
 
-        <div class="product__buy-box">
-          {%- form 'product', product, data-product-form: '', id: 'product-form', class: 'product__form' -%}
-            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
-            {%- unless product.has_only_default_variant -%}
-              <div class="product__variant-picker">
-                {%- for option in product.options_with_values -%}
-                  <div class="product__option" data-variant-select data-option-index="{{ forloop.index0 }}">
-                    <p class="product__option-label">{{ option.name }}</p>
-                    <div class="product__option-values">
-                      {%- for value in option.values -%}
-                        <button
-                          type="button"
-                          class="product__option-value{% if option.selected_value == value %} is-selected{% endif %}"
-                          data-option-value="{{ value }}"
-                        >
-                          {{ value }}
-                        </button>
-                      {%- endfor -%}
-                    </div>
-                  </div>
-                {%- endfor -%}
-              </div>
-            {%- endunless -%}
-
-            <div class="product__actions">
-              <div class="product__quantity-row">
-                <label class="product__quantity-label" for="product-quantity-{{ section.id }}">
-                  {{ 'products.product.quantity' | t }}
-                </label>
-                <div class="product__quantity-selector" id="product-quantity-{{ section.id }}">
-                  <button type="button" class="product__quantity-btn" data-quantity-btn="minus" aria-label="{{ 'products.product.decrease_quantity' | t }}">−</button>
-                  <input
-                    class="product__quantity-input"
-                    type="number"
-                    name="quantity"
-                    value="1"
-                    min="1"
-                    data-quantity-input
-                    aria-label="{{ 'products.product.quantity' | t }}"
-                  >
-                  <button type="button" class="product__quantity-btn" data-quantity-btn="plus" aria-label="{{ 'products.product.increase_quantity' | t }}">+</button>
+        {%- unless product.has_only_default_variant -%}
+          <div class="product__variant-picker">
+            {%- for option in product.options_with_values -%}
+              <div class="product__option" data-variant-select data-option-index="{{ forloop.index0 }}">
+                <p class="product__option-label">{{ option.name }}</p>
+                <div class="product__option-values">
+                  {%- for value in option.values -%}
+                    <button
+                      type="button"
+                      class="product__option-value{% if option.selected_value == value %} is-selected{% endif %}"
+                      data-option-value="{{ value }}"
+                    >
+                      {{ value }}
+                    </button>
+                  {%- endfor -%}
                 </div>
               </div>
+            {%- endfor -%}
+          </div>
+        {%- endunless -%}
 
-              <div class="product__add-to-cart">
-                <button
-                  type="submit"
-                  class="btn btn--primary btn--large{% unless product.available %} btn--disabled{% endunless %}"
-                  {% unless product.available %}disabled{% endunless %}
-                  data-add-text="{{ 'products.product.add_to_cart' | t }}"
-                  data-adding-text="{{ 'products.product.adding' | t }}"
-                  data-added-text="{{ 'products.product.added_to_cart' | t }}"
-                >
-                  {%- if product.available -%}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {%- else -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- endif -%}
-                </button>
-              </div>
-            </div>
-
-            <script type="application/json" data-variant-json>
-              {{ product.variants | json }}
-            </script>
-          {%- endform -%}
-        </div>
+        <script type="application/json" data-variant-json>
+          {{ product.variants | json }}
+        </script>
 
         {%- assign selected_variant = product.selected_or_first_available_variant -%}
         {%- if product.type != blank or selected_variant.sku != blank -%}
@@ -174,6 +168,7 @@
           </div>
         {%- endif -%}
       </div>
+    {%- endform -%}
     </div>
   </div>
 

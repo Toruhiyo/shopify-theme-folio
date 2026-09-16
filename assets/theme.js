@@ -618,12 +618,12 @@
       const variantInput = form.querySelector('[name="id"]');
       if (variantInput) variantInput.value = matchedVariant.id;
 
-      const priceEl = form.closest('.product__info')?.querySelector('.product__price');
+      const priceEl = form.querySelector('.product__price:not(.product__price--compare)');
       if (priceEl) {
         priceEl.textContent = formatMoney(matchedVariant.price);
       }
 
-      const compareEl = form.closest('.product__info')?.querySelector('.product__price--compare');
+      const compareEl = form.querySelector('.product__price--compare');
       if (compareEl) {
         if (matchedVariant.compare_at_price && matchedVariant.compare_at_price > matchedVariant.price) {
           compareEl.textContent = formatMoney(matchedVariant.compare_at_price);

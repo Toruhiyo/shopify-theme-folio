@@ -99,6 +99,8 @@
         {%- endif -%}
       </div>
 
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
       <div class="product__info">
         {%- if product.description != blank -%}
           <div class="product__description-block">

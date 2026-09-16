@@ -2670,7 +2670,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product__form {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .product__variant-picker {

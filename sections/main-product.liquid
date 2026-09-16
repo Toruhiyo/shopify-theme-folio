@@ -2,8 +2,7 @@
   <div class="page-width">
     {% render 'product-breadcrumbs', product: product, collection: collection %}
 
-    <div class="product">
-    {%- form 'product', product, data-product-form: '', id: 'product-form', class: 'product__form' -%}
+    {%- form 'product', product, data-product-form: '', id: 'product-form', class: 'product' -%}
       <header class="product__topbar">
         <div class="product__identity">
           {%- if section.settings.show_vendor and product.vendor != blank -%}
@@ -169,7 +168,6 @@
         {%- endif -%}
       </div>
     {%- endform -%}
-    </div>
   </div>
 
   <div class="product__sticky-atc">

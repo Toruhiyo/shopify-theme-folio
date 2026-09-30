@@ -20,7 +20,11 @@
     {%- if search.performed -%}
       {%- if search.results_count > 0 -%}
         <p class="text-center text-muted mb-lg">
-          {{ 'general.search.results_count' | t: count: search.results_count, terms: search.terms }}
+          {%- if search.terms.size > 48 -%}
+            {{ search.results_count }} results
+          {%- else -%}
+            {{ 'general.search.results_count' | t: count: search.results_count, terms: search.terms }}
+          {%- endif -%}
         </p>
         <div class="grid grid--4">
           {%- for item in search.results -%}
